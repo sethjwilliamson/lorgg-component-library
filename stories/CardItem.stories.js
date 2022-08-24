@@ -23,9 +23,9 @@ const Template = (args) => ({
 export const Primary = Template.bind({});
 // More on args: https://storybook.js.org/docs/vue/writing-stories/args
 Primary.args = {
-  cardCodeProp: "01IO015",
+  cardCodeProp: '01IO015',
   isDeckBuilder: false,
   isSimulateMulligan: false,
   hideQuantity: false,
-  isRoot: true
+  isRoot: true,
 };

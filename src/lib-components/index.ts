@@ -4,13 +4,11 @@ import TestComponent from './TestComponent';
 
 // install
 const install = (app: App): void => {
-    app.use(TestComponent);
+  app.use(TestComponent);
 };
 
 export default { install };
 
-export {
-    TestComponent
-}
+export { TestComponent };
 
 export * from './TestComponent';

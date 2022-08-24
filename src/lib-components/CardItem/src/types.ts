@@ -19,10 +19,10 @@ export interface CardItemProps {
 }
 
 export interface CardItemInstance {
-//   pushTo: (arg0: {
-//     name?: string | symbol;
-//     path?: string;
-//   }) => Optional<string | Record<'name', string | symbol>>;
-//   breadcrumbs: ComputedRef<RouteItem[]>;
-//   lastCrumb: ComputedRef<string>;
+  //   pushTo: (arg0: {
+  //     name?: string | symbol;
+  //     path?: string;
+  //   }) => Optional<string | Record<'name', string | symbol>>;
+  //   breadcrumbs: ComputedRef<RouteItem[]>;
+  //   lastCrumb: ComputedRef<string>;
 }

@@ -15,13 +15,13 @@ export type SetJsonCard = {
   levelupDescription: string;
   levelupDescriptionRaw: string;
   name: string;
-  rarityRef: "None" | "Common" | "Rare" | "Epic" | "Champion";
+  rarityRef: 'None' | 'Common' | 'Rare' | 'Epic' | 'Champion';
   regionRefs: Array<string>;
   set: string;
-  spellSpeedRef: "" | "Burst" | "Fast" | "Slow";
+  spellSpeedRef: '' | 'Burst' | 'Fast' | 'Slow';
   subtypeRefs: Array<string>;
   subtypes: Array<string>;
-  supertype: "" | "Champion";
+  supertype: '' | 'Champion';
   typeRef: string;
   updatedAt: string;
 };
@@ -50,16 +50,16 @@ export type DataJsonRegion = {
   icon: string;
   name: string;
   nameRef:
-    | "Targon"
-    | "Noxus"
-    | "Demacia"
-    | "Freljord"
-    | "ShadowIsles"
-    | "Ionia"
-    | "Shurima"
-    | "Bilgewater"
-    | "PiltoverZaun"
-    | "BandleCity";
+    | 'Targon'
+    | 'Noxus'
+    | 'Demacia'
+    | 'Freljord'
+    | 'ShadowIsles'
+    | 'Ionia'
+    | 'Shurima'
+    | 'Bilgewater'
+    | 'PiltoverZaun'
+    | 'BandleCity';
   order: number;
 };
 
@@ -68,13 +68,13 @@ export type DataJsonRank = {
   icon: string;
   name: string;
   nameRef:
-    | "Masters"
-    | "Diamond"
-    | "Platinum"
-    | "Gold"
-    | "Silver"
-    | "Bronze"
-    | "Iron";
+    | 'Masters'
+    | 'Diamond'
+    | 'Platinum'
+    | 'Gold'
+    | 'Silver'
+    | 'Bronze'
+    | 'Iron';
   order: number;
 };
 
@@ -82,32 +82,32 @@ export type DataJsonServer = {
   abbreviation: string;
   color: string;
   name: string;
-  nameRef: "americas" | "europe" | "apac";
+  nameRef: 'americas' | 'europe' | 'apac';
   order: number;
 };
 
 export type DataJsonSpellSpeed = {
   name: string;
-  nameRef: "Slow" | "Burst" | "Fast";
+  nameRef: 'Slow' | 'Burst' | 'Fast';
 };
 
 export type DataJsonRarity = {
   color: string;
   icon: string;
   name: string;
-  nameRef: "Common" | "Rare" | "Epic" | "Champion";
+  nameRef: 'Common' | 'Rare' | 'Epic' | 'Champion';
 };
 export type DataJsonType = {
   color: string;
   icon: string;
   name: string;
   nameRef:
-    | "Champion"
-    | "Follower"
-    | "Spell"
-    | "Landmark"
-    | "Ability"
-    | "Equipment";
+    | 'Champion'
+    | 'Follower'
+    | 'Spell'
+    | 'Landmark'
+    | 'Ability'
+    | 'Equipment';
 };
 
 export type DataJsonSet = {
