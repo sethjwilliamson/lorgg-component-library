@@ -1,0 +1,1141 @@
+{
+  "vocabTerms": [
+      {
+          "description": "When you summon this, it gets its allegiance bonus if the top card of your deck matches its region.",
+          "name": "Allegiance",
+          "nameRef": "Allegiance"
+      },
+      {
+          "description": "Pick the next Moon Weapon for Aphelios.",
+          "name": "Phase",
+          "nameRef": "Phase"
+      },
+      {
+          "description": "Create a random Blade Fragment still needed to restore the blade. Once you\u2019ve played all 3, create the Blade of the Exile.",
+          "name": "Reforge",
+          "nameRef": "Reforge"
+      },
+      {
+          "description": "Immediately draw 1 of each Ascended ally. For the rest of the game, level 2 Ascended allies are level 3.",
+          "name": "Restore the Sun Disc",
+          "nameRef": "SunDiscRestore"
+      },
+      {
+          "description": "Effect when unit strikes with an attack",
+          "name": "Attack Strike",
+          "nameRef": "AttackStrike"
+      },
+      {
+          "description": "For each Spawn:\nSummon a 1|1 Tentacle, or if you already have one, grant your strongest Tentacle +1|+1.",
+          "name": "Spawn",
+          "nameRef": "Spawn"
+      },
+      {
+          "description": "Highest Power, with ties broken by highest Health then highest Cost.",
+          "name": "Strongest",
+          "nameRef": "Strongest"
+      },
+      {
+          "description": "Obliterate X non-champion cards from the bottom of your deck.",
+          "name": "Toss",
+          "nameRef": "Toss"
+      },
+      {
+          "description": "Start a free attack with that many summoned Blades.",
+          "name": "Blade Dance",
+          "nameRef": "BladeDance"
+      },
+      {
+          "description": "You behold something if you have it in play or hand.",
+          "name": "Behold",
+          "nameRef": "Behold"
+      },
+      {
+          "description": "This is how much Mana you need to spend to play this card.",
+          "name": "Cost",
+          "nameRef": "Cost"
+      },
+      {
+          "description": "Get this effect when the round ends.",
+          "name": "Round End",
+          "nameRef": "RoundEnd"
+      },
+      {
+          "description": "This is how much damage the unit can withstand. If it reaches zero, the unit dies.",
+          "name": "Health",
+          "nameRef": "Health"
+      },
+      {
+          "description": "This is how much damage the unit deals when it strikes.",
+          "name": "Power",
+          "nameRef": "Power"
+      },
+      {
+          "description": "Get this effect when this unit attacks.",
+          "name": "Attack",
+          "nameRef": "Attack"
+      },
+      {
+          "description": "A unit is buffed when its Power or Health is increased or it gains a new keyword.",
+          "name": "Buffed",
+          "nameRef": "Buffed"
+      },
+      {
+          "description": "This champion counts as one of your deck's regions. During deckbuilding, you may add the specified cards to your deck regardless of region. Origins may also have an effect that begins at Start of Game.",
+          "name": "Origin",
+          "nameRef": "Origin"
+      },
+      {
+          "description": "Get this effect when a unit attempts to deal damage using its Power, either at the end of battle or with spells. Units with 0 Power can't strike.",
+          "name": "Strike",
+          "nameRef": "Strike"
+      },
+      {
+          "description": "Effect when unit Strikes the enemy Nexus.",
+          "name": "Nexus Strike",
+          "nameRef": "NexusStrike"
+      },
+      {
+          "description": "Activates if allies have struck for 5+ damage at least 4 times this game.",
+          "name": "Reputation",
+          "nameRef": "Reputation"
+      },
+      {
+          "description": "Get this effect when the round starts.",
+          "name": "Round Start",
+          "nameRef": "RoundStart"
+      },
+      {
+          "description": "The opponent in The Path of Champions.",
+          "name": "Foe",
+          "nameRef": "Foe"
+      },
+      {
+          "description": "Get this effect when you play this unit from hand.",
+          "name": "Play",
+          "nameRef": "Play"
+      },
+      {
+          "description": "In play, in hand, in deck, in discard, and even if created\/summoned later.",
+          "name": "Everywhere",
+          "nameRef": "Everywhere"
+      },
+      {
+          "description": "Makes a Countdown landmark count down that many times",
+          "name": "Advance",
+          "nameRef": "Advance"
+      },
+      {
+          "description": "Round Start: I count down 1. At 0, activate the Countdown effect, then destroy me.",
+          "name": "Countdown",
+          "nameRef": "Countdown"
+      },
+      {
+          "description": "If you don't have one, gain the attack token. You can attack this round.",
+          "name": "Rally",
+          "nameRef": "Rally"
+      },
+      {
+          "description": "When you kill a unit via damage, kill effect, or striking it with an ally. (Self-killing, like from Ephemeral, doesn't count.)",
+          "name": "Slay",
+          "nameRef": "Slay"
+      },
+      {
+          "description": "Remove all keywords, abilities, and ongoing effects. Doesn't affect damage or subtype.",
+          "name": "Silence",
+          "nameRef": "Silence"
+      },
+      {
+          "description": "Create in hand 1 of 3 randomly selected cards.",
+          "name": "Manifest",
+          "nameRef": "Manifest"
+      },
+      {
+          "description": "Pick a card from among 3 in your deck. Shuffle the deck and put that card on top.",
+          "name": "Predict",
+          "nameRef": "Predict"
+      }
+  ],
+  "keywords": [
+      {
+          "description": "Inflicts damage beyond what would kill the target(s) to the enemy Nexus.",
+          "name": "Overwhelm",
+          "nameRef": "SpellOverwhelm",
+          "showInFilter": false,
+          "icon": "\/images\/overwhelm.svg"
+      },
+      {
+          "description": "Can be played whenever you may act. Happens instantly and allows you to continue to play other cards.",
+          "name": "Burst",
+          "nameRef": "Burst",
+          "showInFilter": true,
+          "icon": "\/images\/burst.svg"
+      },
+      {
+          "description": "Round Start: I count down 1. At 0, activate the Countdown effect, then destroy me.",
+          "name": "Countdown",
+          "nameRef": "Countdown",
+          "showInFilter": true,
+          "icon": "\/images\/countdown.svg"
+      },
+      {
+          "description": "Get this effect when you play this unit from hand.",
+          "name": "Play",
+          "nameRef": "PlaySkillMark",
+          "showInFilter": false,
+          "icon": "\/images\/overwhelm.svg"
+      },
+      {
+          "description": "Landmarks take up a space on the board. They can't attack, block, or take damage.",
+          "name": "Landmark",
+          "nameRef": "LandmarkVisualOnly",
+          "showInFilter": false,
+          "icon": "\/images\/overwhelm.svg"
+      },
+      {
+          "description": "A Captured card is removed from the game. It returns when the Capturing unit leaves play.",
+          "name": "Capture",
+          "nameRef": "Capture",
+          "showInFilter": false,
+          "icon": "\/images\/capture.svg"
+      },
+      {
+          "description": "Get this effect when this unit attacks.",
+          "name": "Attack",
+          "nameRef": "AttackSkillMark",
+          "showInFilter": false,
+          "icon": "\/images\/overwhelm.svg"
+      },
+      {
+          "description": " ",
+          "name": "Shurima",
+          "nameRef": "Shurima",
+          "showInFilter": false,
+          "icon": "\/images\/overwhelm.svg"
+      },
+      {
+          "description": " ",
+          "name": "Noxus",
+          "nameRef": "Noxus",
+          "showInFilter": false,
+          "icon": "\/images\/overwhelm.svg"
+      },
+      {
+          "description": "Fleeting cards discard from hand when the round ends.",
+          "name": "Fleeting",
+          "nameRef": "Fleeting",
+          "showInFilter": false,
+          "icon": "\/images\/fleeting.svg"
+      },
+      {
+          "description": "Draw a non-champion card from the bottom of the enemy deck.",
+          "name": "Nab",
+          "nameRef": "Nab",
+          "showInFilter": false,
+          "icon": "\/images\/nab.svg"
+      },
+      {
+          "description": "Can be played outside combat or when no other spells or skills are pending. Happens instantly and allows you to continue to play other cards.",
+          "name": "Focus",
+          "nameRef": "Focus",
+          "showInFilter": true,
+          "icon": "\/images\/focus.svg"
+      },
+      {
+          "description": "You're Enlightened when you have 10 max mana.",
+          "name": "Enlightened",
+          "nameRef": "Enlightened",
+          "showInFilter": false,
+          "icon": "\/images\/enlightened.svg"
+      },
+      {
+          "description": "Pick a Celestial card from among 3 to create in hand.",
+          "name": "Invoke",
+          "nameRef": "Invoke",
+          "showInFilter": false,
+          "icon": "\/images\/invoke.svg"
+      },
+      {
+          "description": "Attaches to another card in a deck. When that card is drawn, activate the effect.",
+          "name": "Trap",
+          "nameRef": "Autoplay",
+          "showInFilter": false,
+          "icon": "\/images\/trap.svg"
+      },
+      {
+          "description": "Heal your Nexus for the amount of damage dealt",
+          "name": "Drain",
+          "nameRef": "Drain",
+          "showInFilter": false,
+          "icon": "\/images\/drain.svg"
+      },
+      {
+          "description": "These abilities take effect when the unit dies.",
+          "name": "Last Breath",
+          "nameRef": "LastBreath",
+          "showInFilter": true,
+          "icon": "\/images\/last_breath.svg"
+      },
+      {
+          "description": " ",
+          "name": "Demacia",
+          "nameRef": "Demacia",
+          "showInFilter": false,
+          "icon": "\/images\/overwhelm.svg"
+      },
+      {
+          "description": "A champion levels up once this condition is met, even in hand or deck.",
+          "name": "Level Up",
+          "nameRef": "LevelUp",
+          "showInFilter": false,
+          "icon": "\/images\/levelup.svg"
+      },
+      {
+          "description": "",
+          "name": "Bandle City",
+          "nameRef": "BandleCity",
+          "showInFilter": false,
+          "icon": "\/images\/overwhelm.svg"
+      },
+      {
+          "description": "Can be played whenever you may act. Happens after your opponent has a chance to react.",
+          "name": "Fast",
+          "nameRef": "Fast",
+          "showInFilter": true,
+          "icon": "\/images\/fast.svg"
+      },
+      {
+          "description": " ",
+          "name": "Bilgewater",
+          "nameRef": "Bilgewater",
+          "showInFilter": false,
+          "icon": "\/images\/overwhelm.svg"
+      },
+      {
+          "description": "Return a unit to hand and remove all effects applied to it.",
+          "name": "Recall",
+          "nameRef": "Recall",
+          "showInFilter": false,
+          "icon": "\/images\/recall.svg"
+      },
+      {
+          "description": "Lowest Power, with ties broken by lowest Health then lowest Cost",
+          "name": "Weakest",
+          "nameRef": "Weakest",
+          "showInFilter": false,
+          "icon": "\/images\/weakest.svg"
+      },
+      {
+          "description": "Can be played outside of combat when no spells or skills are pending. Happens after your opponent has a chance to react.",
+          "name": "Slow",
+          "nameRef": "Slow",
+          "showInFilter": true,
+          "icon": "\/images\/slow.svg"
+      },
+      {
+          "description": "Completely removed from the game. Doesn't cause Last Breath and can't be revived.",
+          "name": "Obliterate",
+          "nameRef": "Obliterate",
+          "showInFilter": false,
+          "icon": "\/images\/obliterate.svg"
+      },
+      {
+          "description": "These abilities trigger when you resolve a spell.",
+          "name": "Imbue",
+          "nameRef": "Imbue",
+          "showInFilter": true,
+          "icon": "\/images\/imbue.svg"
+      },
+      {
+          "description": " ",
+          "name": "Targon",
+          "nameRef": "MtTargon",
+          "showInFilter": false,
+          "icon": "\/images\/overwhelm.svg"
+      },
+      {
+          "description": " ",
+          "name": "Shadow Isles",
+          "nameRef": "ShadowIsles",
+          "showInFilter": false,
+          "icon": "\/images\/overwhelm.svg"
+      },
+      {
+          "description": "Missing Translation",
+          "name": "Missing Translation",
+          "nameRef": "AuraVisualFakeKeyword",
+          "showInFilter": false,
+          "icon": "\/images\/overwhelm.svg"
+      },
+      {
+          "description": " ",
+          "name": "Ionia",
+          "nameRef": "Ionia",
+          "showInFilter": false,
+          "icon": "\/images\/overwhelm.svg"
+      },
+      {
+          "description": "Bonus if this is NOT the first card you play in a round.",
+          "name": "Nightfall",
+          "nameRef": "Nightfall",
+          "showInFilter": false,
+          "icon": "\/images\/nightfall.svg"
+      },
+      {
+          "description": " ",
+          "name": "Piltover & Zaun",
+          "nameRef": "PiltoverZaun",
+          "showInFilter": false,
+          "icon": "\/images\/overwhelm.svg"
+      },
+      {
+          "description": " ",
+          "name": "Freljord",
+          "nameRef": "Freljord",
+          "showInFilter": false,
+          "icon": "\/images\/overwhelm.svg"
+      },
+      {
+          "description": "Missing Translation",
+          "name": "Missing Translation",
+          "nameRef": "Blocked",
+          "showInFilter": false,
+          "icon": "\/images\/overwhelm.svg"
+      },
+      {
+          "description": "When I'm summoned, refill 1 spell mana.",
+          "name": "Attune",
+          "nameRef": "Attune",
+          "showInFilter": true,
+          "icon": "\/images\/attune.svg"
+      },
+      {
+          "description": "Bonus if this is the FIRST card you play in a round.",
+          "name": "Daybreak",
+          "nameRef": "Daybreak",
+          "showInFilter": false,
+          "icon": "\/images\/daybreak.svg"
+      },
+      {
+          "description": "Missing Translation",
+          "name": "Missing Translation",
+          "nameRef": "SilenceIndividualKeyword",
+          "showInFilter": false,
+          "icon": "\/images\/overwhelm.svg"
+      },
+      {
+          "description": "A unit's spell-like effect that allows enemy reactions.",
+          "name": "Skill",
+          "nameRef": "Skill",
+          "showInFilter": false,
+          "icon": "\/images\/overwhelm.svg"
+      },
+      {
+          "description": "While attacking, it strikes both before AND at the same time as its blocker.",
+          "name": "Double Attack",
+          "nameRef": "DoubleStrike",
+          "showInFilter": true,
+          "icon": "\/images\/double_attack.svg"
+      },
+      {
+          "description": "The enemy can challenge this unit, forcing it to block.",
+          "name": "Vulnerable",
+          "nameRef": "Vulnerable",
+          "showInFilter": true,
+          "icon": "\/images\/vulnerable.svg"
+      },
+      {
+          "description": "Can only be blocked by an Elusive unit.",
+          "name": "Elusive",
+          "nameRef": "Elusive",
+          "showInFilter": true,
+          "icon": "\/images\/elusive.svg"
+      },
+      {
+          "description": "Remove a unit from combat. It can't attack or block for the rest of the round.",
+          "name": "Stun",
+          "nameRef": "Stun",
+          "showInFilter": false,
+          "icon": "\/images\/stun.svg"
+      },
+      {
+          "description": "Missing Translation",
+          "name": "Can block Elusives",
+          "nameRef": "BlockElusive",
+          "showInFilter": false,
+          "icon": "\/images\/overwhelm.svg"
+      },
+      {
+          "description": "When I kill a unit, grant me +1|+1.",
+          "name": "Fury",
+          "nameRef": "Fury",
+          "showInFilter": true,
+          "icon": "\/images\/fury.svg"
+      },
+      {
+          "description": "Negates the next damage the unit would take. Lasts one round.",
+          "name": "Barrier",
+          "nameRef": "Barrier",
+          "showInFilter": true,
+          "icon": "\/images\/barrier.svg"
+      },
+      {
+          "description": "Can't attack or block.",
+          "name": "Immobile",
+          "nameRef": "Immobile",
+          "showInFilter": true,
+          "icon": "\/images\/cant_attack.svg"
+      },
+      {
+          "description": "Set a unit's Power to 0 this round. It can be changed after.",
+          "name": "Frostbite",
+          "nameRef": "Frostbite",
+          "showInFilter": false,
+          "icon": "\/images\/frostbite.svg"
+      },
+      {
+          "description": "Excess damage I deal to my blocker is dealt to the enemy Nexus.",
+          "name": "Overwhelm",
+          "nameRef": "Overwhelm",
+          "showInFilter": true,
+          "icon": "\/images\/overwhelm.svg"
+      },
+      {
+          "description": "While attacking, strikes before its blocker.",
+          "name": "Quick Attack",
+          "nameRef": "QuickStrike",
+          "showInFilter": true,
+          "icon": "\/images\/quick_attack.svg"
+      },
+      {
+          "description": "Takes 1 less damage from all sources.",
+          "name": "Tough",
+          "nameRef": "Tough",
+          "showInFilter": true,
+          "icon": "\/images\/tough.svg"
+      },
+      {
+          "description": "Heals fully at the end of each round.",
+          "name": "Regeneration",
+          "nameRef": "Regeneration",
+          "showInFilter": true,
+          "icon": "\/images\/regeneration.svg"
+      },
+      {
+          "description": "Removes all text and keywords from a unit.",
+          "name": "Silenced",
+          "nameRef": "Silenced",
+          "showInFilter": false,
+          "icon": "\/images\/silenced.svg"
+      },
+      {
+          "description": "Negates the next enemy spell or skill that would affect me.",
+          "name": "SpellShield",
+          "nameRef": "SpellShield",
+          "showInFilter": true,
+          "icon": "\/images\/spellshield.svg"
+      },
+      {
+          "description": "Damage this unit deals heals its Nexus that amount.",
+          "name": "Lifesteal",
+          "nameRef": "Lifesteal",
+          "showInFilter": true,
+          "icon": "\/images\/lifesteal.svg"
+      },
+      {
+          "description": "When you play a created card, grant me +1|+0.",
+          "name": "Augment",
+          "nameRef": "Augment",
+          "showInFilter": true,
+          "icon": "\/images\/augment.svg"
+      },
+      {
+          "description": "When this strikes while attacking, it deals 1 to the enemy Nexus. This keyword can stack.",
+          "name": "Impact",
+          "nameRef": "Impact",
+          "showInFilter": true,
+          "icon": "\/images\/impact.svg"
+      },
+      {
+          "description": "The first time only Scout units attack each round, ready your attack.",
+          "name": "Scout",
+          "nameRef": "Scout",
+          "showInFilter": true,
+          "icon": "\/images\/scout.svg"
+      },
+      {
+          "description": "This unit dies when it strikes or when the round ends.",
+          "name": "Ephemeral",
+          "nameRef": "Ephemeral",
+          "showInFilter": true,
+          "icon": "\/images\/ephemeral.svg"
+      },
+      {
+          "description": "When you attack while I'm on top of your deck, I Lurk, granting Lurker allies everywhere +1|+0. Max once per round.",
+          "name": "Lurk",
+          "nameRef": "Lurker",
+          "showInFilter": true,
+          "icon": "\/images\/lurk.svg"
+      },
+      {
+          "description": "Can choose which enemy unit blocks.",
+          "name": "Challenger",
+          "nameRef": "Challenger",
+          "showInFilter": true,
+          "icon": "\/images\/challenger.svg"
+      },
+      {
+          "description": "Can only be blocked by enemies with 3 or more Power.",
+          "name": "Fearsome",
+          "nameRef": "Fearsome",
+          "showInFilter": true,
+          "icon": "\/images\/fearsome.svg"
+      },
+      {
+          "description": " ",
+          "name": "Can't Block",
+          "nameRef": "CantBlock",
+          "showInFilter": true,
+          "icon": "\/images\/cant_block.svg"
+      },
+      {
+          "description": "",
+          "name": "Deep",
+          "nameRef": "Deep",
+          "showInFilter": true,
+          "icon": "\/images\/deep.svg"
+      },
+      {
+          "nameRef": "Fated",
+          "showInFilter": true,
+          "icon": "\/images\/cant_block.svg",
+          "name": "Fated",
+          "description": "Each round, the first time an allied card targets me, grant me +1|+1."
+      },
+      {
+          "nameRef": "Attach",
+          "showInFilter": true,
+          "icon": "\/images\/cant_block.svg",
+          "name": "Attach",
+          "description": "Attach me to an ally to give it my stats and keywords while I'm attached. When that ally leaves play, Recall me."
+      },
+      {
+          "nameRef": "Formidable",
+          "showInFilter": true,
+          "icon": "\/images\/cant_block.svg",
+          "name": "Formidable",
+          "description": "I strike with my Health instead of my Power."
+      },
+      {
+          "nameRef": "Boon",
+          "showInFilter": true,
+          "icon": "\/images\/cant_block.svg",
+          "name": "Boon",
+          "description": "Attaches to another card in a deck. When that card is drawn, activate the effect."
+      },
+      {
+          "nameRef": "Runeterra",
+          "showInFilter": true,
+          "icon": "\/images\/cant_block.svg",
+          "name": "Runeterra",
+          "description": ""
+      },
+      {
+          "nameRef": "Support",
+          "showInFilter": true,
+          "icon": "\/images\/cant_block.svg",
+          "name": "Support",
+          "description": "Attacking with a support unit will buff the unit to its right."
+      },
+      {
+          "nameRef": "Plunder",
+          "showInFilter": true,
+          "icon": "\/images\/cant_block.svg",
+          "name": "Plunder",
+          "description": "A card triggers its plunder ability when played if you damaged the enemy Nexus this round."
+      },
+      {
+          "nameRef": "ClobberNoEmptySlotRequirement",
+          "showInFilter": true,
+          "icon": "\/images\/cant_block.svg",
+          "name": "Missing Translation",
+          "description": "Missing Translation"
+      },
+      {
+          "nameRef": "Hallowed",
+          "showInFilter": true,
+          "icon": "\/images\/cant_block.svg",
+          "name": "Hallowed",
+          "description": "After I die, for the rest of the game when allies attack, hallow your first attacker giving it +1|+0 that round"
+      },
+      {
+          "nameRef": "Evolve",
+          "showInFilter": true,
+          "icon": "\/images\/cant_block.svg",
+          "name": "Evolve",
+          "description": "I have +2|+2 once you've had Units with 6+ other unique positive keywords in play this game."
+      },
+      {
+          "nameRef": "BlocksElusive",
+          "showInFilter": true,
+          "icon": "\/images\/cant_block.svg",
+          "name": "Blocks Elusive",
+          "description": "Can block Elusive units"
+      }
+  ],
+  "regions": [
+      {
+          "abbreviation": "MT",
+          "icon": "\/images\/targon.svg",
+          "name": "Targon",
+          "nameRef": "Targon",
+          "color": "#4D38B0",
+          "order": 2
+      },
+      {
+          "abbreviation": "NX",
+          "icon": "\/images\/noxus.svg",
+          "name": "Noxus",
+          "nameRef": "Noxus",
+          "color": "#962d27",
+          "order": 0
+      },
+      {
+          "abbreviation": "DE",
+          "icon": "\/images\/demacia.svg",
+          "name": "Demacia",
+          "nameRef": "Demacia",
+          "color": "#B9AC98",
+          "order": 0
+      },
+      {
+          "abbreviation": "FR",
+          "icon": "\/images\/freljord.svg",
+          "name": "Freljord",
+          "nameRef": "Freljord",
+          "color": "#4A7DC3",
+          "order": 0
+      },
+      {
+          "abbreviation": "SI",
+          "icon": "\/images\/shadowisles.svg",
+          "name": "Shadow Isles",
+          "nameRef": "ShadowIsles",
+          "color": "#2A725D",
+          "order": 0
+      },
+      {
+          "abbreviation": "IO",
+          "icon": "\/images\/ionia.svg",
+          "name": "Ionia",
+          "nameRef": "Ionia",
+          "color": "#C45987",
+          "order": 0
+      },
+      {
+          "abbreviation": "SH",
+          "icon": "\/images\/shurima.svg",
+          "name": "Shurima",
+          "nameRef": "Shurima",
+          "color": "#C4AE3D",
+          "order": 3
+      },
+      {
+          "abbreviation": "BW",
+          "icon": "\/images\/bilgewater.svg",
+          "name": "Bilgewater",
+          "nameRef": "Bilgewater",
+          "color": "#B05925",
+          "order": 1
+      },
+      {
+          "abbreviation": "PZ",
+          "icon": "\/images\/pnz.svg",
+          "name": "Piltover & Zaun",
+          "nameRef": "PiltoverZaun",
+          "color": "#FD9061",
+          "order": 0
+      },
+      {
+          "abbreviation": "BC",
+          "icon": "\/images\/bandlecity.svg",
+          "name": "Bandle City",
+          "nameRef": "BandleCity",
+          "color": "#98A711",
+          "order": 4
+      }
+  ],
+  "ranks": [
+      {
+          "icon": "..\/..\/images\/masters.svg",
+          "name": "Masters",
+          "nameRef": "Masters",
+          "color": "#4D38B0",
+          "order": 0
+      },
+      {
+          "icon": "..\/..\/images\/diamond.svg",
+          "name": "Diamond",
+          "nameRef": "Diamond",
+          "color": "#962d27",
+          "order": 1
+      },
+      {
+          "icon": "..\/..\/images\/platinum.svg",
+          "name": "Platinum",
+          "nameRef": "Platinum",
+          "color": "#B9AC98",
+          "order": 2
+      },
+      {
+          "icon": "..\/..\/images\/gold.svg",
+          "name": "Gold",
+          "nameRef": "Gold",
+          "color": "#4A7DC3",
+          "order": 3
+      },
+      {
+          "icon": "..\/..\/images\/silver.svg",
+          "name": "Silver",
+          "nameRef": "Silver",
+          "color": "#2A725D",
+          "order": 4
+      },
+      {
+          "icon": "..\/..\/images\/bronze.svg",
+          "name": "Bronze",
+          "nameRef": "Bronze",
+          "color": "#C45987",
+          "order": 5
+      },
+      {
+          "icon": "..\/..\/images\/iron.svg",
+          "name": "Iron",
+          "nameRef": "Iron",
+          "color": "#C4AE3D",
+          "order": 6
+      }
+  ],
+  "servers": [
+      {
+          "abbreviation": "AM",
+          "name": "Americas",
+          "nameRef": "americas",
+          "color": "#4D38B0",
+          "order": 0
+      },
+      {
+          "abbreviation": "EU",
+          "name": "Europe",
+          "nameRef": "europe",
+          "color": "#962d27",
+          "order": 1
+      },
+      {
+          "abbreviation": "APAC",
+          "name": "Asia",
+          "nameRef": "apac",
+          "color": "#B9AC98",
+          "order": 2
+      }
+  ],
+  "spellSpeeds": [
+      {
+          "name": "Slow",
+          "nameRef": "Slow"
+      },
+      {
+          "name": "Burst",
+          "nameRef": "Burst"
+      },
+      {
+          "name": "Fast",
+          "nameRef": "Fast"
+      }
+  ],
+  "rarities": [
+      {
+          "name": "Common",
+          "nameRef": "Common",
+          "color": "#10C26E",
+          "icon": "..\/..\/images\/common.svg"
+      },
+      {
+          "name": "Rare",
+          "nameRef": "Rare",
+          "color": "#3D98FB",
+          "icon": "..\/..\/images\/rare.svg"
+      },
+      {
+          "name": "Epic",
+          "nameRef": "Epic",
+          "color": "#EF7DFF",
+          "icon": "..\/..\/images\/epic.svg"
+      },
+      {
+          "name": "Champion",
+          "nameRef": "Champion",
+          "color": "#F7C321",
+          "icon": "..\/..\/images\/championRarity.svg"
+      },
+      {
+          "name": "None",
+          "nameRef": "None"
+      }
+  ],
+  "sets": [
+      {
+          "icon": "..\/..\/images\/set2.svg",
+          "name": "Rising Tides",
+          "nameRef": "Set2"
+      },
+      {
+          "icon": "..\/..\/images\/set3.svg",
+          "name": "Call of the Mountain",
+          "nameRef": "Set3"
+      },
+      {
+          "icon": "..\/..\/images\/set4.svg",
+          "name": "Empires of the Ascended",
+          "nameRef": "Set4"
+      },
+      {
+          "icon": "..\/..\/images\/set5.svg",
+          "name": "Beyond the Bandlewood",
+          "nameRef": "Set5"
+      },
+      {
+          "nameRef": "SetEvent",
+          "icon": "\/images\/cant_block.svg",
+          "name": "Events"
+      },
+      {
+          "nameRef": "Set1",
+          "icon": "..\/..\/images\/set1.svg",
+          "name": "Foundations"
+      },
+      {
+          "nameRef": "Set6",
+          "icon": "\/images\/cant_block.svg",
+          "name": "Worldwalker"
+      }
+  ],
+  "types": [
+      {
+          "name": "Champion",
+          "nameRef": "Champion",
+          "icon": "..\/..\/images\/champion.svg",
+          "color": "#FFC53E"
+      },
+      {
+          "name": "Follower",
+          "nameRef": "Follower",
+          "icon": "..\/..\/images\/follower.svg",
+          "color": "#0067EE"
+      },
+      {
+          "name": "Spell",
+          "nameRef": "Spell",
+          "icon": "..\/..\/images\/spell.svg",
+          "color": "#0050B9"
+      },
+      {
+          "name": "Landmark",
+          "nameRef": "Landmark",
+          "icon": "..\/..\/images\/landmark.svg",
+          "color": "#003780"
+      },
+      {
+          "name": "Skill",
+          "nameRef": "Ability",
+          "icon": "..\/..\/images\/spell.svg",
+          "color": "#003780"
+      },
+      {
+          "name": "Skill",
+          "nameRef": "Ability",
+          "icon": "..\/..\/images\/spell.svg",
+          "color": "#003780"
+      }
+  ],
+  "patches": [
+      {
+          "name": "2.19",
+          "nameRef": "patch_2.19",
+          "startTime": "2021-11-10 17:00",
+          "endTime": "2021-11-23 17:00"
+      },
+      {
+          "name": "2.20",
+          "nameRef": "patch_2.20",
+          "startTime": "2021-11-23 17:00",
+          "endTime": "2021-12-08 17:00"
+      },
+      {
+          "name": "2.21",
+          "nameRef": "patch_2.21",
+          "startTime": "2021-12-08 17:00",
+          "endTime": "2021-01-05 17:00"
+      },
+      {
+          "nameRef": "patch_3.0",
+          "name": "3.0",
+          "startTime": "2022-01-05 17:00",
+          "endTime": "2022-02-02 17:00"
+      },
+      {
+          "nameRef": "patch_3.1",
+          "name": "3.1",
+          "startTime": "2022-02-02 17:00",
+          "endTime": "2022-02-16 17:00"
+      },
+      {
+          "nameRef": "patch_3.2",
+          "name": "3.2",
+          "startTime": "2022-02-16 17:00",
+          "endTime": "2022-03-02 17:00"
+      },
+      {
+          "nameRef": "patch_3.3",
+          "name": "3.3",
+          "startTime": "2022-03-02 17:00",
+          "endTime": "2022-03-30 17:00"
+      },
+      {
+          "nameRef": "patch_3.4",
+          "name": "3.4",
+          "startTime": "2022-03-30 17:00",
+          "endTime": "2022-04-13 17:00"
+      },
+      {
+          "name": "3.5",
+          "nameRef": "patch_3.5",
+          "startTime": "2022-04-13 17:00",
+          "endTime": "2022-04-27 17:00"
+      },
+      {
+          "nameRef": "patch_3.6",
+          "name": "3.6",
+          "startTime": "2022-04-27 17:00",
+          "endTime": "2022-05-11 17:00"
+      },
+      {
+          "nameRef": "patch_3.7",
+          "name": "3.7",
+          "startTime": "2022-05-11 17:00",
+          "endTime": "2022-05-25 17:00"
+      },
+      {
+          "nameRef": "patch_3.8",
+          "name": "3.8",
+          "startTime": "2022-05-25 17:00",
+          "endTime": "2022-06-15 17:00"
+      },
+      {
+          "nameRef": "patch_3.9",
+          "name": "3.9",
+          "startTime": "2022-06-15 17:00",
+          "endTime": "2022-06-28 17:00"
+      },
+      {
+          "nameRef": "patch_3.10",
+          "name": "3.10",
+          "startTime": "2022-06-28 17:00",
+          "endTime": "2022-07-20 17:00"
+      },
+      {
+          "nameRef": "patch_3.11",
+          "name": "3.11",
+          "startTime": "2022-07-20 17:00",
+          "endTime": "2022-08-03 17:00"
+      },
+      {
+          "nameRef": "patch_3.12",
+          "name": "3.12",
+          "startTime": "2022-08-03 17:00",
+          "endTime": "2022-08-17 17:00"
+      },
+      {
+          "nameRef": "patch_3.13",
+          "name": "3.13",
+          "startTime": "2022-08-17 17:00",
+          "endTime": "2022-08-31 17:00"
+      },
+      {
+          "nameRef": "patch_3.14",
+          "name": "3.14",
+          "startTime": "2022-08-31 17:00",
+          "endTime": "9999-12-31 23:59"
+      }
+  ],
+  "seasons": [
+      {
+          "name": "Magic Misadventures",
+          "nameRef": "season_Magic_Misadventures",
+          "startTime": "2021-12-08 17:00",
+          "endTime": "2022-02-16 17:00"
+      },
+      {
+          "name": "The Path of Champions",
+          "nameRef": "season_The_Path_of_Champions",
+          "startTime": "2021-11-10 17:00",
+          "endTime": "2021-12-08 17:00"
+      },
+      {
+          "name": "Beyond The Bandlewood",
+          "nameRef": "season_Beyond_The_Bandlewood",
+          "startTime": "2021-08-25 17:00",
+          "endTime": "2021-11-10 17:00"
+      },
+      {
+          "name": "A Curious Journey",
+          "nameRef": "season_curious_journey",
+          "startTime": "2022-02-16 17:00",
+          "endTime": "2022-05-25 17:00"
+      },
+      {
+          "nameRef": "season_Worldwalker",
+          "name": "Worldwalker",
+          "startTime": "2022-05-25 17:00",
+          "endTime": "2022-07-20 17:00"
+      },
+      {
+          "name": "Forces From Beyond",
+          "nameRef": "season_Forces_From_Beyond",
+          "startTime": "2022-07-20 17:00",
+          "endTime": "2022-08-31 17:00"
+      },
+      {
+          "nameRef": "season_1",
+          "name": "Unnamed Season 1",
+          "startTime": "2022-08-31 17:00",
+          "endTime": "9999-12-31 23:59"
+      }
+  ],
+  "runeterraChampions": [
+      {
+          "abbreviation": "06RU025",
+          "icon": "\/images\/06RU025.svg",
+          "name": "Evelynn",
+          "nameRef": "06RU025",
+          "color": "white",
+          "order": 0
+      },
+      {
+          "abbreviation": "06RU001",
+          "icon": "\/images\/06RU001.svg",
+          "name": "Bard",
+          "nameRef": "06RU001",
+          "color": "white",
+          "order": 0
+      },
+      {
+          "abbreviation": "06RU002",
+          "icon": "\/images\/06RU002.svg",
+          "name": "Jhin",
+          "nameRef": "06RU002",
+          "color": "white",
+          "order": 0
+      }
+  ]
+}
