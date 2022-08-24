@@ -7,8 +7,11 @@
     "serve": "vite preview",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "lint": "eslint --ext .js,.vue --ignore-path .gitignore --ignore-path setJson.json --ignore-path data.json --fix src",
-    "format": "prettier .  --write"
+    "lint": "eslint --ext .js,.ts,.vue --ignore-path .gitignore --ignore-path setJson.json --ignore-path data.json --fix src",
+    "lint:check": "eslint --ext .js,.ts,.vue",
+    "format": "prettier . --write",
+    "format:check": "prettier . --check",
+    "prepare": "husky install"
   },
   "dependencies": {
     "node": "^16.17.0",
