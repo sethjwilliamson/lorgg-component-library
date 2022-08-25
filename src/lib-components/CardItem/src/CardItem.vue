@@ -4,6 +4,7 @@
     @mouseover="mouseOver = true"
     @mouseleave="mouseOver = false"
   >
+    <!-- TODO: Create a global function to get card -->
     <img
       ref="card-item"
       :alt="card.name"
@@ -20,9 +21,7 @@
     />
 
     <div
-      v-if="
-        (isDeckBuilder || card.quantityPossessed !== undefined) && !hideQuantity
-      "
+      v-if="(isDeckBuilder || userCardQuantity != undefined) && card.collectible"
       class="quantity-ticks-container"
     >
       <div
@@ -34,27 +33,23 @@
     </div>
 
     <div
-      v-if="
-        card.quantityPossessed !== undefined ||
-        card.keywordRefs.length > 0 ||
-        card.associatedCardRefs.length > 0
-      "
+      v-if="showDetailsOnHover"
       ref="card-info"
       :class="showRelatedCards ? null : 'card-info'"
     >
       <div v-if="!showRelatedCards">
         <div
-          v-if="card.quantityPossessed !== undefined"
+          v-if="quantityPossessed !== undefined"
           class="card-info-quantity-possessed"
         >
           {{ 'You have: ' }}
           <b :class="quantityNeededClass">
-            {{ card.quantityPossessed + ' / ' + (quantityNeeded || 3) }}
+            {{ quantityPossessed + ' / ' + (quantityNeeded || 3) }}
           </b>
         </div>
         <hr
           v-if="
-            card.quantityPossessed !== undefined &&
+            quantityPossessed !== undefined &&
             (card.keywordRefs.length > 0 || card.associatedCardRefs.length > 0)
           "
           class="line"
@@ -105,55 +100,19 @@ export default defineComponent({
     cardProp: {
       type: Object as PropType<SetJsonCard>,
       required: false,
-      default() {
-        return {
-          associatedCardRefs: [],
-          regionRefs: ['Ionia'],
-          attack: 0,
-          cost: 7,
-          health: 0,
-          description: 'Heal an ally or your Nexus 7. Draw 1.',
-          descriptionRaw: 'Heal an ally or your Nexus 7. Draw 1.',
-          levelupDescription: '',
-          levelupDescriptionRaw: '',
-          flavorText:
-            '"Only when the mind is elevated can the body be made whole." - Karma',
-          artistName: 'Kudos Productions',
-          name: 'Ritual of Renewal',
-          cardCode: '01IO001',
-          keywords: ['Slow'],
-          keywordRefs: ['Slow'],
-          spellSpeedRef: 'Slow',
-          rarityRef: 'Rare',
-          subtypes: [],
-          subtypeRefs: [],
-          supertype: '',
-          typeRef: 'Spell',
-          collectible: true,
-          set: 'Set1',
-          createdAt: '2020-01-24',
-          updatedAt: '2020-01-24',
-        };
-      },
+      default: undefined,
     },
     cardCodeProp: {
       type: String,
       required: false,
-      default: '01IO001',
+      default: undefined,
     },
-    isDeckBuilder: {
-      type: Boolean,
-      required: true,
-    },
-    isSimulateMulligan: {
-      type: Boolean,
-      required: true,
-    },
-    hideQuantity: {
-      type: Boolean,
-      required: true,
-      default: false,
-    },
+    // See if showQuantity is actually necessary
+    // showQuantity: {
+    //   type: Boolean,
+    //   required: true,
+    //   default: true,
+    // },
     isRoot: {
       type: Boolean,
       required: true,
@@ -161,7 +120,25 @@ export default defineComponent({
     quantityNeeded: {
       type: Number,
       required: false,
-      default: 0,
+      default: undefined,
+    },
+    deckList: {
+      type: Object as PropType<{ [key: string]: number }>,
+      required: false,
+      default() {
+        return {};
+      },
+    },
+    isDeckBuilder: {
+      type: Boolean,
+      required: false,
+      default: false,
+    },
+    // TODO: Change this to global variable
+    userCardQuantity: {
+      type: Object as PropType<{ [key: string]: number }>,
+      required: false,
+      default: undefined,
     },
   },
   data() {
@@ -185,11 +162,18 @@ export default defineComponent({
 
       return this.setJsonObject[this.cardCodeProp];
     },
-    // quantityNeededClass() {
-    //   if (this.quantityNeeded != undefined && this.card.quantityPossessed != undefined && this.quantityNeeded > this.card.quantityPossessed) {
-    //     return "bad"
-    //   }
-    // },
+    quantityNeededClass(): 'bad' | null {
+      if (
+        this.quantityNeeded != undefined &&
+        this.userCardQuantity != undefined &&
+        this.card.cardCode in this.userCardQuantity &&
+        this.quantityNeeded > this.userCardQuantity[this.card.cardCode]
+      ) {
+        return 'bad';
+      }
+
+      return null;
+    },
     associatedCards(): Array<SetJsonCard> {
       const associatedCards = [];
 
@@ -216,10 +200,28 @@ export default defineComponent({
 
       return keywordObjects;
     },
+    showDetailsOnHover(): Boolean {
+      return (
+        this.isRoot &&
+        (this.userCardQuantity != undefined ||
+          this.card.keywordRefs.length > 0 ||
+          this.card.associatedCardRefs.length > 0)
+      );
+    },
+    quantityPossessed(): Number {
+      if (
+        this.userCardQuantity == undefined ||
+        !(this.card.cardCode in this.userCardQuantity)
+      ) {
+        return 0;
+      }
+
+      return this.userCardQuantity[this.card.cardCode];
+    },
   },
   mounted() {
-    // this.card.quantityPossessed !== undefined ||
     if (
+      this.userCardQuantity != undefined ||
       this.card.keywordRefs.length > 0 ||
       this.card.associatedCardRefs.length > 0
     ) {
@@ -239,8 +241,10 @@ export default defineComponent({
     }
   },
   unmounted() {
-    window.removeEventListener('keydown', this.keyUpRelatedCards);
-    window.removeEventListener('keyup', this.keyDownRelatedCards);
+    if (this.card.associatedCardRefs.length > 0) {
+      window.removeEventListener('keydown', this.keyUpRelatedCards);
+      window.removeEventListener('keyup', this.keyDownRelatedCards);
+    }
   },
   methods: {
     forceShowTippy: function (isRight: boolean) {
@@ -270,8 +274,109 @@ export default defineComponent({
         }
       });
     },
+    quantityTickClass: function (index: number) {
+      if (this.isDeckBuilder) {
+        if (
+          !(this.card.cardCode in this.deckList) ||
+          index > this.deckList[this.card.cardCode]
+        ) {
+          return 'disabled';
+        }
+
+        return null;
+      }
+
+      if (index > this.quantityPossessed) {
+        return 'disabled';
+      }
+
+      return null;
+    },
   },
 });
 </script>
 
-<style scoped></style>
+<style scoped>
+.card-item-container {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  padding: 3px;
+  position: relative;
+}
+
+.card-item-container:hover {
+  padding: 0px;
+}
+
+.card-item {
+  cursor: pointer;
+  height: 100%;
+  width: 100%;
+}
+
+.quantity-ticks-container {
+  display: flex;
+  margin: 0 auto;
+}
+
+.quantity-tick {
+  background-color: #0067ee;
+  border-radius: 15px;
+  height: 10px;
+  margin: 3px;
+  width: 10px;
+}
+
+.disabled {
+  opacity: 0.25;
+}
+
+.icon {
+  color: white;
+  height: 20%;
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  width: 20%;
+}
+
+.card-info {
+  width: 20vh;
+}
+
+.card-info-section {
+  margin-bottom: 10px;
+}
+
+.card-info-section:last-child {
+  margin-bottom: 0;
+}
+
+.card-info-title {
+  color: white;
+  margin-bottom: 5px;
+  margin: 0;
+}
+
+.card-info-text {
+  color: #828295;
+  margin: 0;
+}
+
+.line {
+  background-color: #828295;
+  border: none;
+  color: #828295;
+  height: 2px;
+}
+
+.associated-card {
+  width: 20vh;
+}
+
+.associated-card-container {
+  display: flex;
+}
+</style>
