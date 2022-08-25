@@ -9,9 +9,4 @@ TestComponent.install = (app: App): void => {
   app.component(TestComponent.name, TestComponent);
 };
 
-// export type {
-//     TestComponentProps,
-//     TestComponentPropRoute,
-//     TestComponentInstance
-// } from './src/types';
 export default TestComponent as SFCWithInstall<App, typeof TestComponent>;

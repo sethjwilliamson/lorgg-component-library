@@ -65,8 +65,8 @@
           :key="keyword.nameRef"
           class="card-info-section"
         >
-          <h4 class="card-info-title" v-html="keyword.name"></h4>
-          <p class="card-info-text" v-html="keyword.description"></p>
+          <h4 class="card-info-title">{{ keyword.name }}</h4>
+          <p class="card-info-text">{{ keyword.description }}</p>
         </div>
 
         <hr
@@ -95,7 +95,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
+import { defineComponent, PropType } from 'vue';
 import { Instance, Props } from 'tippy.js';
 import tippy from 'tippy.js';
 import { DataJsonKeyword, SetJsonCard } from '#/jsons';
@@ -103,12 +103,43 @@ import { DataJsonKeyword, SetJsonCard } from '#/jsons';
 export default defineComponent({
   props: {
     cardProp: {
-      type: Object as () => SetJsonCard,
+      type: Object as PropType<SetJsonCard>,
       required: false,
+      default() {
+        return {
+          associatedCardRefs: [],
+          regionRefs: ['Ionia'],
+          attack: 0,
+          cost: 7,
+          health: 0,
+          description: 'Heal an ally or your Nexus 7. Draw 1.',
+          descriptionRaw: 'Heal an ally or your Nexus 7. Draw 1.',
+          levelupDescription: '',
+          levelupDescriptionRaw: '',
+          flavorText:
+            '"Only when the mind is elevated can the body be made whole." - Karma',
+          artistName: 'Kudos Productions',
+          name: 'Ritual of Renewal',
+          cardCode: '01IO001',
+          keywords: ['Slow'],
+          keywordRefs: ['Slow'],
+          spellSpeedRef: 'Slow',
+          rarityRef: 'Rare',
+          subtypes: [],
+          subtypeRefs: [],
+          supertype: '',
+          typeRef: 'Spell',
+          collectible: true,
+          set: 'Set1',
+          createdAt: '2020-01-24',
+          updatedAt: '2020-01-24',
+        };
+      },
     },
     cardCodeProp: {
       type: String,
       required: false,
+      default: '01IO001',
     },
     isDeckBuilder: {
       type: Boolean,
