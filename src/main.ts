@@ -97,7 +97,7 @@ library.add(
   faSyncAlt,
   faCog,
 );
-app.component('font-awesome-icon', FontAwesomeIcon);
+app.component('FontAwesomeIcon', FontAwesomeIcon);
 
 app.mount('#app');
 

@@ -1,15 +1,15 @@
 <template>
   <div class="card-item-link-wrapper">
-    <div class="card-item-wrapper" v-if="!isDeckBuilder">
+    <div v-if="!isDeckBuilder" class="card-item-wrapper">
       <a href="https://lor.gg">
-        <card-item v-bind="$props"></card-item>
+        <CardItem v-bind="$props"></CardItem>
       </a>
     </div>
-    <div class="card-item-wrapper" v-else>
-      <card-item v-bind="$props"></card-item>
+    <div v-else class="card-item-wrapper">
+      <CardItem v-bind="$props"></CardItem>
       <a class="link-icon-link" href="https://lor.gg">
         <div class="link-icon">
-          <info-icon></info-icon>
+          <InfoIcon></InfoIcon>
         </div>
       </a>
     </div>
@@ -23,8 +23,8 @@ import CardItem from '@/lib-components/CardItem/src/CardItem.vue';
 import InfoIcon from '@/lib-components/icons/InfoIcon/src/InfoIcon.vue';
 
 export default defineComponent({
-  props: props,
   components: { CardItem, InfoIcon },
+  props: props,
 });
 </script>
 

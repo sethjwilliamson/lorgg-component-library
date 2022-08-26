@@ -13,7 +13,7 @@ const Template = (args) => ({
   },
 
   template: `<div style="width: 320px">
-              <card-item v-bind="args" />
+              <CardItem v-bind="args" />
             </div>`,
 });
 

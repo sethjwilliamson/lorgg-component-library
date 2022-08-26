@@ -13,7 +13,7 @@ const Template = (args) => ({
   },
 
   template: `<div style="width: 320px">
-              <info-icon v-bind="args" />
+              <InfoIcon v-bind="args" />
             </div>`,
 });
 

@@ -13,7 +13,7 @@ const Template = (args) => ({
   },
 
   template: `<div style="width: 320px">
-              <card-item-link-wrapper v-bind="args" />
+              <CardItemLinkWrapper v-bind="args" />
             </div>`,
 });
 
