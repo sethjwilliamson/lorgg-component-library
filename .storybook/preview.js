@@ -1,12 +1,8 @@
 import { app } from '@storybook/vue3';
-
-console.log(app);
+import '../src/App.css';
 
 import * as dataJson from '../data.json';
 import * as setJson from '../setJson.json';
-
-console.log(dataJson);
-console.log(setJson);
 
 let setJsonObject = {};
 

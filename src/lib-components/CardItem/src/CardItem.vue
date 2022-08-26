@@ -21,7 +21,9 @@
     />
 
     <div
-      v-if="(isDeckBuilder || userCardQuantity != undefined) && card.collectible"
+      v-if="
+        (isDeckBuilder || userCardQuantity != undefined) && card.collectible
+      "
       class="quantity-ticks-container"
     >
       <div
@@ -200,7 +202,7 @@ export default defineComponent({
 
       return keywordObjects;
     },
-    showDetailsOnHover(): Boolean {
+    showDetailsOnHover(): boolean {
       return (
         this.isRoot &&
         (this.userCardQuantity != undefined ||
@@ -208,7 +210,7 @@ export default defineComponent({
           this.card.associatedCardRefs.length > 0)
       );
     },
-    quantityPossessed(): Number {
+    quantityPossessed(): number {
       if (
         this.userCardQuantity == undefined ||
         !(this.card.cardCode in this.userCardQuantity)
@@ -329,19 +331,6 @@ export default defineComponent({
   width: 10px;
 }
 
-.disabled {
-  opacity: 0.25;
-}
-
-.icon {
-  color: white;
-  height: 20%;
-  position: absolute;
-  right: 5px;
-  top: 5px;
-  width: 20%;
-}
-
 .card-info {
   width: 20vh;
 }
@@ -361,22 +350,22 @@ export default defineComponent({
 }
 
 .card-info-text {
-  color: #828295;
+  color: var(--color-0);
   margin: 0;
 }
 
 .line {
-  background-color: #828295;
+  background-color: var(--color-0);
   border: none;
-  color: #828295;
+  color: var(--color-0);
   height: 2px;
-}
-
-.associated-card {
-  width: 20vh;
 }
 
 .associated-card-container {
   display: flex;
+}
+
+.associated-card {
+  width: 20vh;
 }
 </style>

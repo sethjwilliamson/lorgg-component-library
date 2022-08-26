@@ -1,13 +1,14 @@
 import { createApp } from 'vue';
 import App from './App.vue';
-import { DataJson, SetJson, SetJsonObject } from '../types/jsons';
+import { DataJson, SetJson, SetJsonCard, SetJsonObject } from '../types/jsons';
+import './App.css';
 
 import * as dataJson from '../data.json';
-import * as setJson from '../setJson.json';
+import { default as setJson } from '../setJson.json';
 
 const setJsonObject: SetJsonObject = {};
 
-for (const card of setJson as SetJson) {
+for ( const card of setJson as any as SetJson ) {
   setJsonObject[card.cardCode] = card;
 }
 
