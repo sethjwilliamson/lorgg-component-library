@@ -1,3 +1,5 @@
+import { ObjectWithNumber } from './helpers';
+
 export type SetJsonCard = {
   artistName: string;
   associatedCardRefs: Array<string>;
@@ -27,6 +29,8 @@ export type SetJsonCard = {
 };
 
 export type SetJson = Array<SetJsonCard>;
+
+export type Deck = ObjectWithNumber;
 
 export type SetJsonObject = { [key: string]: SetJsonCard };
 
@@ -137,6 +141,7 @@ export type DataJsonRuneterraChampion = {
   name: string;
   nameRef: string;
   order: number;
+  includedCardCodes?: Array<string>;
 };
 
 export type DataJson = {

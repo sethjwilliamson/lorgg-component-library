@@ -98,6 +98,7 @@ import tippy from 'tippy.js';
 import { DataJsonKeyword, SetJsonCard } from '#/jsons';
 import { props } from './CardItemProps';
 
+// TODO: Try switching to Composition API
 export default defineComponent({
   props: props,
   data() {

@@ -19,7 +19,9 @@
     "@fortawesome/free-regular-svg-icons": "^6.1.2",
     "@fortawesome/free-solid-svg-icons": "^6.1.2",
     "@fortawesome/vue-fontawesome": "^3.0.1",
+    "lor-deckcodes-ts": "^1.1.0",
     "node": "^16.17.0",
+    "pinia": "^2.0.21",
     "tippy.js": "^6.3.7",
     "vue": "^3.2.16"
   },

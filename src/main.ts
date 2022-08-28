@@ -1,7 +1,16 @@
-import { createApp } from 'vue';
+import { createApp, ref } from 'vue';
 import App from './App.vue';
-import { DataJson, SetJson, SetJsonObject } from '../types/jsons';
+import { createPinia, defineStore } from 'pinia';
+import { DataJson, SetJson, SetJsonCard, SetJsonObject } from '../types/jsons';
+import { useJsonStore } from './helpers/stores';
 import './App.css';
+
+const app = createApp(App);
+
+const pinia = createPinia();
+app.use(pinia);
+
+// TODO: This should be removed eventually. Just meant for testing.
 
 import * as dataJson from '../data.json';
 import { default as setJson } from '../setJson.json';
@@ -12,11 +21,11 @@ for (const card of setJson as any as SetJson) {
   setJsonObject[card.cardCode] = card;
 }
 
-const app = createApp(App);
+useJsonStore().updateDataJson(dataJson as DataJson);
+useJsonStore().updateSetJson(setJson as SetJson);
+useJsonStore().updateSetJsonObject(setJsonObject);
 
-app.config.globalProperties.dataJson = dataJson as DataJson;
-app.config.globalProperties.setJson = setJson as SetJson;
-app.config.globalProperties.setJsonObject = setJsonObject as SetJsonObject;
+//
 
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
@@ -105,6 +114,11 @@ declare module '@vue/runtime-core' {
   interface ComponentCustomProperties {
     dataJson: DataJson;
     setJson: SetJson;
+    bardCards: Array<SetJsonCard>;
+    jhinCards: Array<SetJsonCard>;
+    jaxCards: Array<SetJsonCard>;
+    kaynCards: Array<SetJsonCard>;
+    evelynnCards: Array<SetJsonCard>;
     setJsonObject: SetJsonObject;
   }
 }

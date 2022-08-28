@@ -16,6 +16,7 @@
   </div>
 </template>
 
+// TODO: Try switching to Composition API
 <script lang="ts">
 import { props } from '@/lib-components/CardItem/src/CardItemProps';
 import { defineComponent } from 'vue';
