@@ -4,9 +4,8 @@
     @mouseover="mouseOver = true"
     @mouseleave="mouseOver = false"
   >
-    <!-- TODO: Create a global function to get card -->
     <img
-      ref="card-item"
+      ref="cardItem"
       :alt="card.name"
       class="card-item"
       :class="cardImageClass"
@@ -36,7 +35,7 @@
 
     <div
       v-if="showDetailsOnHover"
-      ref="card-info"
+      ref="cardInfo"
       :class="showRelatedCards ? null : 'card-info'"
     >
       <div v-if="!showRelatedCards">
@@ -91,168 +90,168 @@
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent, PropType } from 'vue';
+<script setup lang="ts">
 import { Instance, Props } from 'tippy.js';
 import tippy from 'tippy.js';
 import { DataJsonKeyword, SetJsonCard } from '#/jsons';
-import { props } from './CardItemProps';
+import { useJsonStore } from '@/helpers/stores';
+import { computed, ComputedRef, onMounted, ref } from 'vue';
+import { CardItemProps, props as cardItemProps } from './CardItemProps';
 
-// TODO: Try switching to Composition API
-export default defineComponent({
-  props: props,
-  data() {
-    return {
-      mouseOver: false,
-      cardItemTippy: null as Instance<Props> | null,
-      showRelatedCards: false,
-    };
-  },
-  computed: {
-    card(): SetJsonCard {
-      console.log(this.setJson);
-      console.log(this.dataJson);
-      if (this.cardProp) {
-        return this.cardProp;
-      }
+const props: CardItemProps = defineProps(cardItemProps);
 
-      if (!this.cardCodeProp) {
-        throw new Error('CardProp or CardCodeProp must be defined.');
-      }
+const cardItem = ref<HTMLElement | null>(null);
+const cardInfo = ref<HTMLElement | null>(null);
 
-      return this.setJsonObject[this.cardCodeProp];
-    },
-    quantityNeededClass(): 'bad' | null {
-      if (
-        this.quantityNeeded != undefined &&
-        this.userCardQuantity != undefined &&
-        this.card.cardCode in this.userCardQuantity &&
-        this.quantityNeeded > this.userCardQuantity[this.card.cardCode]
-      ) {
-        return 'bad';
-      }
+const mouseOver = false;
+let cardItemTippy: Instance<Props> | null = null;
+let showRelatedCards = false;
 
-      return null;
-    },
-    associatedCards(): Array<SetJsonCard> {
-      const associatedCards = [];
+const store = useJsonStore();
 
-      if (this.isRoot) {
-        for (const associatedCardCode of this.card.associatedCardRefs) {
-          associatedCards.push(this.setJsonObject[associatedCardCode]);
-        }
-      }
+const card: ComputedRef<SetJsonCard> = computed(() => {
+  if (props.cardProp) {
+    return props.cardProp;
+  }
 
-      return associatedCards;
-    },
-    keywordObjects(): Array<DataJsonKeyword> {
-      const keywordObjects = [];
+  if (!props.cardCodeProp) {
+    throw new Error('CardProp or CardCodeProp must be defined.');
+  }
 
-      for (const keywordRef of this.card.keywordRefs) {
-        const keywordObject = this.dataJson.keywords.find(
-          (x) => x.nameRef === keywordRef,
-        );
+  return store.jsons.setJsonObject[props.cardCodeProp];
+});
 
-        if (keywordObject) {
-          keywordObjects.push(keywordObject);
-        }
-      }
+const quantityNeededClass: ComputedRef<'bad' | null> = computed(() => {
+  if (
+    props.quantityNeeded != undefined &&
+    props.userCardQuantity != undefined &&
+    card.value.cardCode in props.userCardQuantity &&
+    props.quantityNeeded > props.userCardQuantity[card.value.cardCode]
+  ) {
+    return 'bad';
+  }
 
-      return keywordObjects;
-    },
-    showDetailsOnHover(): boolean {
-      return (
-        this.isRoot &&
-        (this.userCardQuantity != undefined ||
-          this.card.keywordRefs.length > 0 ||
-          this.card.associatedCardRefs.length > 0)
-      );
-    },
-    quantityPossessed(): number {
-      if (
-        this.userCardQuantity == undefined ||
-        !(this.card.cardCode in this.userCardQuantity)
-      ) {
-        return 0;
-      }
+  return null;
+});
 
-      return this.userCardQuantity[this.card.cardCode];
-    },
-  },
-  mounted() {
+const associatedCards: ComputedRef<Array<SetJsonCard>> = computed(() => {
+  const associatedCards = [];
+
+  if (props.isRoot) {
+    for (const associatedCardCode of card.value.associatedCardRefs) {
+      associatedCards.push(store.jsons.setJsonObject[associatedCardCode]);
+    }
+  }
+
+  return associatedCards;
+});
+
+const keywordObjects: ComputedRef<Array<DataJsonKeyword>> = computed(() => {
+  const keywordObjects = [];
+
+  for (const keywordRef of card.value.keywordRefs) {
+    const keywordObject = store.jsons.dataJson.keywords.find(
+      (x) => x.nameRef === keywordRef,
+    );
+
+    if (keywordObject) {
+      keywordObjects.push(keywordObject);
+    }
+  }
+
+  return keywordObjects;
+});
+
+const showDetailsOnHover: ComputedRef<boolean> = computed(() => {
+  return (
+    props.isRoot &&
+    (props.userCardQuantity != undefined ||
+      card.value.keywordRefs.length > 0 ||
+      card.value.associatedCardRefs.length > 0)
+  );
+});
+
+const quantityPossessed: ComputedRef<number> = computed(() => {
+  if (
+    props.userCardQuantity == undefined ||
+    !(card.value.cardCode in props.userCardQuantity)
+  ) {
+    return 0;
+  }
+
+  return props.userCardQuantity[card.value.cardCode];
+});
+
+function forceShowTippy(isRight: boolean) {
+  if (cardItemTippy) {
+    cardItemTippy.setProps({
+      placement: isRight ? 'right-start' : 'left-start',
+    });
+    cardItemTippy.show();
+  }
+}
+
+function forceHideTippy() {
+  if (cardItemTippy) {
+    cardItemTippy.hide();
+  }
+}
+
+function keyUpRelatedCards() {
+  window.addEventListener('keyup', (e) => {
+    if (e.key == 'Shift') {
+      showRelatedCards = false;
+    }
+  });
+}
+
+function keyDownRelatedCards() {
+  window.addEventListener('keydown', (e) => {
+    if (e.key == 'Shift') {
+      showRelatedCards = true;
+    }
+  });
+}
+
+function quantityTickClass(index: number) {
+  if (props.isDeckBuilder) {
     if (
-      this.userCardQuantity != undefined ||
-      this.card.keywordRefs.length > 0 ||
-      this.card.associatedCardRefs.length > 0
+      !(card.value.cardCode in props.deckList) ||
+      index > props.deckList[card.value.cardCode]
     ) {
-      this.cardItemTippy = tippy(this.$refs['card-item'] as Element, {
-        allowHTML: true,
-        content: this.$refs['card-info'] as HTMLElement,
-        placement: 'right-start',
-        duration: 0,
-        role: 'card-info',
-        maxWidth: '50vw',
-      });
+      return 'disabled';
     }
 
-    if (this.card.associatedCardRefs.length > 0) {
-      this.keyUpRelatedCards();
-      this.keyDownRelatedCards();
-    }
-  },
-  unmounted() {
-    if (this.card.associatedCardRefs.length > 0) {
-      window.removeEventListener('keydown', this.keyUpRelatedCards);
-      window.removeEventListener('keyup', this.keyDownRelatedCards);
-    }
-  },
-  methods: {
-    forceShowTippy: function (isRight: boolean) {
-      if (this.cardItemTippy) {
-        this.cardItemTippy.setProps({
-          placement: isRight ? 'right-start' : 'left-start',
-        });
-        this.cardItemTippy.show();
-      }
-    },
-    forceHideTippy: function () {
-      if (this.cardItemTippy) {
-        this.cardItemTippy.hide();
-      }
-    },
-    keyUpRelatedCards: function () {
-      window.addEventListener('keyup', (e) => {
-        if (e.key == 'Shift') {
-          this.showRelatedCards = false;
-        }
-      });
-    },
-    keyDownRelatedCards: function () {
-      window.addEventListener('keydown', (e) => {
-        if (e.key == 'Shift') {
-          this.showRelatedCards = true;
-        }
-      });
-    },
-    quantityTickClass: function (index: number) {
-      if (this.isDeckBuilder) {
-        if (
-          !(this.card.cardCode in this.deckList) ||
-          index > this.deckList[this.card.cardCode]
-        ) {
-          return 'disabled';
-        }
+    return null;
+  }
 
-        return null;
-      }
+  if (index > quantityPossessed.value) {
+    return 'disabled';
+  }
 
-      if (index > this.quantityPossessed) {
-        return 'disabled';
-      }
+  return null;
+}
 
-      return null;
-    },
-  },
+onMounted(() => {
+  if (
+    props.userCardQuantity != undefined ||
+    card.value.keywordRefs.length > 0 ||
+    card.value.associatedCardRefs.length > 0
+  ) {
+    cardItemTippy = tippy(cardItem.value as HTMLElement, {
+      allowHTML: true,
+      content: cardInfo.value as HTMLElement,
+      placement: 'right-start',
+      duration: 0,
+      role: 'card-info',
+      maxWidth: '50vw',
+    });
+  }
+
+  if (card.value.associatedCardRefs.length > 0) {
+    keyUpRelatedCards();
+    keyDownRelatedCards();
+  }
 });
 </script>
 

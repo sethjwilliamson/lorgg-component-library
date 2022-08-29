@@ -1,5 +1,16 @@
-import { SetJsonCard } from '#/jsons';
+import { ObjectWithNumber } from '#/helpers';
+import { Deck, SetJsonCard } from '#/jsons';
 import { PropType } from 'vue';
+
+export type CardItemProps = {
+  cardProp?: SetJsonCard;
+  cardCodeProp?: string;
+  isRoot: boolean;
+  quantityNeeded?: number;
+  deckList: Deck;
+  isDeckBuilder: boolean;
+  userCardQuantity?: ObjectWithNumber;
+};
 
 const props = {
   cardProp: {

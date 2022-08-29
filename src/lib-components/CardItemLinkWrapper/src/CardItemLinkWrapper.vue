@@ -2,11 +2,11 @@
   <div class="card-item-link-wrapper">
     <div v-if="!isDeckBuilder" class="card-item-wrapper">
       <a href="https://lor.gg">
-        <CardItem v-bind="$props"></CardItem>
+        <CardItem v-bind="props"></CardItem>
       </a>
     </div>
     <div v-else class="card-item-wrapper">
-      <CardItem v-bind="$props"></CardItem>
+      <CardItem v-bind="props"></CardItem>
       <a class="link-icon-link" href="https://lor.gg">
         <div class="link-icon">
           <InfoIcon></InfoIcon>
@@ -16,17 +16,15 @@
   </div>
 </template>
 
-// TODO: Try switching to Composition API
-<script lang="ts">
-import { props } from '@/lib-components/CardItem/src/CardItemProps';
-import { defineComponent } from 'vue';
+<script setup lang="ts">
+import {
+  props as cardItemProps,
+  CardItemProps,
+} from '@/lib-components/CardItem/src/CardItemProps';
 import CardItem from '@/lib-components/CardItem/src/CardItem.vue';
 import InfoIcon from '@/lib-components/icons/InfoIcon/src/InfoIcon.vue';
 
-export default defineComponent({
-  components: { CardItem, InfoIcon },
-  props: props,
-});
+const props: CardItemProps = defineProps(cardItemProps);
 </script>
 
 <style scoped>

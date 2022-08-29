@@ -19,7 +19,7 @@ export function getRegionsQuantity(deck: Deck): ObjectWithNumber {
     (x) => cardCodes.includes(x.nameRef),
   );
 
-  for (let cardCode in deck) {
+  for (const cardCode in deck) {
     const runeterraChampion = runeterraChampsInDeck.find((x) =>
       x.includedCardCodes?.includes(cardCode),
     );
