@@ -1,7 +1,7 @@
-import { createApp, ref } from 'vue';
+import { createApp } from 'vue';
 import App from './App.vue';
-import { createPinia, defineStore } from 'pinia';
-import { DataJson, SetJson, SetJsonCard, SetJsonObject } from '../types/jsons';
+import { createPinia } from 'pinia';
+import { DataJson, SetJson, SetJsonObject } from '../types/jsons';
 import { useJsonStore } from './helpers/stores';
 import './App.css';
 
@@ -109,16 +109,3 @@ library.add(
 app.component('FontAwesomeIcon', FontAwesomeIcon);
 
 app.mount('#app');
-
-declare module '@vue/runtime-core' {
-  interface ComponentCustomProperties {
-    dataJson: DataJson;
-    setJson: SetJson;
-    bardCards: Array<SetJsonCard>;
-    jhinCards: Array<SetJsonCard>;
-    jaxCards: Array<SetJsonCard>;
-    kaynCards: Array<SetJsonCard>;
-    evelynnCards: Array<SetJsonCard>;
-    setJsonObject: SetJsonObject;
-  }
-}

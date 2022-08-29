@@ -1,24 +1,26 @@
 import { app } from '@storybook/vue3';
 import '../src/App.css';
+import { createPinia } from 'pinia';
+import { useJsonStore } from '../src/helpers/stores';
+
+// TODO: This should be removed eventually. Just meant for testing.
+const pinia = createPinia();
+app.use(pinia);
 
 import * as dataJson from '../data.json';
-import * as setJson from '../setJson.json';
+import { default as setJson } from '../setJson.json';
 
-let setJsonObject = {};
+const setJsonObject = {};
 
-for (let cardIndex in setJson) {
-  if (isNaN(cardIndex)) {
-    continue;
-  }
-
-  let card = setJson[cardIndex];
-
+for (const card of setJson) {
   setJsonObject[card.cardCode] = card;
 }
 
-app.config.globalProperties.dataJson = dataJson;
-app.config.globalProperties.setJson = setJson;
-app.config.globalProperties.setJsonObject = setJsonObject;
+useJsonStore().updateDataJson(dataJson);
+useJsonStore().updateSetJson(setJson);
+useJsonStore().updateSetJsonObject(setJsonObject);
+
+//
 
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
