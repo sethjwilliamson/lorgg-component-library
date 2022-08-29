@@ -1,16 +1,77 @@
+:root {
+  --color-0: #828295;
+  --color-1: #2c3e50;
+  --color-2: #2a313d;
+  --color-3: #212a39;
+
+  --color-text-disabled: #94989e;
+
+  --color-background-0: #0f131a;
+  --color-background-1: #181e2a;
+  --color-background-2: #1d2431;
+
+  --color-primary: #0067ee;
+
+  --color-good: #00adff;
+  --color-bad: #ff5153;
+
+  --color-white: #ffffff;
+  --color-gold: #ffc53e;
+
+  --box-border-radius: 20px;
+  --small-border-radius: 10px;
+
+  --input-height: 45px;
+
+  --font-size-xs: 12px;
+  --font-size-s: 14px;
+  --font-size-m: 16px;
+  --font-size-l: 20px;
+
+  --font-size-heading: 45px;
+  --font-size-heading-secondary: 30px;
+
+  --font-weight-light: 100;
+  --font-weight-normal: 500;
+  --font-weight-bold: 700;
+  --font-weight-heavy: 900;
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: var(--color-1);
   margin-top: 60px;
-}
-
-:root {
-  --color-0: #828295;
 }
 
 .disabled {
   opacity: 25%;
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.tippy-box:first-child {
+  background-color: var(--color-background-1);
+  border-radius: var(--small-border-radius);
+  border: 2px var(--color-2) solid;
+  color: var(--color-white);
+  padding: 10px;
+}
+
+.tippy-box[role='card-image'] {
+  background: none;
+  border: none;
+}
+
+.tippy-box[role='card-image'] > .tippy-arrow,
+.tippy-box[role='card-info'] > .tippy-arrow {
+  display: none;
+}
+
+.tippy-box > .tippy-arrow {
+  color: var(--color-2);
 }
