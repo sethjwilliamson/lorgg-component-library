@@ -77,10 +77,10 @@
         </div>
       </div>
       <div v-else class="associated-card-container">
-        <card-item
+        <CardItem
           v-for="associatedCard in associatedCards"
           :key="associatedCard.cardCode"
-          :card-prop="associatedCard"
+          :card-code-prop="associatedCard.cardCode"
           :is-deck-builder="false"
           :is-root="false"
           class="associated-card"
@@ -103,11 +103,11 @@ const props: CardItemProps = defineProps(cardItemProps);
 const cardItem = ref<HTMLElement | null>(null);
 const cardInfo = ref<HTMLElement | null>(null);
 
+const store = useJsonStore();
+
 const mouseOver = false;
 let cardItemTippy: Instance<Props> | null = null;
-let showRelatedCards = false;
-
-const store = useJsonStore();
+const showRelatedCards = ref(false);
 
 const card: ComputedRef<SetJsonCard> = computed(() => {
   if (props.cardProp) {
@@ -142,6 +142,8 @@ const associatedCards: ComputedRef<Array<SetJsonCard>> = computed(() => {
       associatedCards.push(store.jsons.setJsonObject[associatedCardCode]);
     }
   }
+
+  console.log(associatedCards);
 
   return associatedCards;
 });
@@ -182,6 +184,14 @@ const quantityPossessed: ComputedRef<number> = computed(() => {
   return props.userCardQuantity[card.value.cardCode];
 });
 
+const cardImageClass: ComputedRef<'disabled' | null> = computed(() => {
+  if (props.isDeckBuilder && props.deckList[card.value.cardCode] === 3) {
+    return 'disabled';
+  }
+
+  return null;
+});
+
 function forceShowTippy(isRight: boolean) {
   if (cardItemTippy) {
     cardItemTippy.setProps({
@@ -198,17 +208,21 @@ function forceHideTippy() {
 }
 
 function keyUpRelatedCards() {
+  console.log('RUN');
   window.addEventListener('keyup', (e) => {
     if (e.key == 'Shift') {
-      showRelatedCards = false;
+      showRelatedCards.value = false;
+      console.log(showRelatedCards);
     }
   });
 }
 
 function keyDownRelatedCards() {
+  console.log('RUN');
   window.addEventListener('keydown', (e) => {
     if (e.key == 'Shift') {
-      showRelatedCards = true;
+      showRelatedCards.value = true;
+      console.log(showRelatedCards);
     }
   });
 }
@@ -249,6 +263,7 @@ onMounted(() => {
   }
 
   if (card.value.associatedCardRefs.length > 0) {
+    console.log('TEST');
     keyUpRelatedCards();
     keyDownRelatedCards();
   }
@@ -281,7 +296,7 @@ onMounted(() => {
 }
 
 .quantity-tick {
-  background-color: #0067ee;
+  background-color: var(--color-primary);
   border-radius: 15px;
   height: 10px;
   margin: 3px;
@@ -301,7 +316,7 @@ onMounted(() => {
 }
 
 .card-info-title {
-  color: white;
+  color: var(--color-white);
   margin-bottom: 5px;
   margin: 0;
 }

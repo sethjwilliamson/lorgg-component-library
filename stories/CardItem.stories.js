@@ -67,6 +67,14 @@ DeckBuilder2.args = {
   isRoot: true,
 };
 
+export const DeckBuilder3 = Template.bind({});
+DeckBuilder3.args = {
+  cardCodeProp: '01IO015',
+  deckList: { '01IO015': 3 },
+  isDeckBuilder: true,
+  isRoot: true,
+};
+
 export const DeckBuilder2LoggedIn = Template.bind({});
 DeckBuilder2LoggedIn.args = {
   cardCodeProp: '01IO015',
