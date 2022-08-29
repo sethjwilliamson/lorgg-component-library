@@ -2,6 +2,8 @@ import { ObjectWithNumber } from '#/helpers';
 import { Deck, SetJsonCard } from '#/jsons';
 import { PropType } from 'vue';
 
+export type ShowTippyLocation = 'left-start' | 'right-start' | null;
+
 export type CardItemProps = {
   cardProp?: SetJsonCard;
   cardCodeProp?: string;
@@ -10,6 +12,7 @@ export type CardItemProps = {
   deckList: Deck;
   isDeckBuilder: boolean;
   userCardQuantity?: ObjectWithNumber;
+  showTippyLocation: ShowTippyLocation;
 };
 
 const props = {
@@ -55,6 +58,11 @@ const props = {
     type: Object as PropType<{ [key: string]: number }>,
     required: false,
     default: undefined,
+  },
+  showTippyLocation: {
+    type: String as PropType<ShowTippyLocation>,
+    required: false,
+    default: null,
   },
 };
 

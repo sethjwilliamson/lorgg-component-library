@@ -97,6 +97,8 @@ import { DataJsonKeyword, SetJsonCard } from '#/jsons';
 import { useJsonStore } from '@/helpers/stores';
 import { computed, ComputedRef, onMounted, ref } from 'vue';
 import { CardItemProps, props as cardItemProps } from './CardItemProps';
+import { propsToCard } from '@/helpers/functions';
+import { watch } from 'vue';
 
 const props: CardItemProps = defineProps(cardItemProps);
 
@@ -109,17 +111,7 @@ const mouseOver = false;
 let cardItemTippy: Instance<Props> | null = null;
 const showRelatedCards = ref(false);
 
-const card: ComputedRef<SetJsonCard> = computed(() => {
-  if (props.cardProp) {
-    return props.cardProp;
-  }
-
-  if (!props.cardCodeProp) {
-    throw new Error('CardProp or CardCodeProp must be defined.');
-  }
-
-  return store.jsons.setJsonObject[props.cardCodeProp];
-});
+const card = propsToCard(props.cardProp, props.cardCodeProp);
 
 const quantityNeededClass: ComputedRef<'bad' | null> = computed(() => {
   if (
@@ -142,8 +134,6 @@ const associatedCards: ComputedRef<Array<SetJsonCard>> = computed(() => {
       associatedCards.push(store.jsons.setJsonObject[associatedCardCode]);
     }
   }
-
-  console.log(associatedCards);
 
   return associatedCards;
 });
@@ -192,37 +182,36 @@ const cardImageClass: ComputedRef<'disabled' | null> = computed(() => {
   return null;
 });
 
-function forceShowTippy(isRight: boolean) {
-  if (cardItemTippy) {
-    cardItemTippy.setProps({
-      placement: isRight ? 'right-start' : 'left-start',
-    });
-    cardItemTippy.show();
-  }
-}
+watch(
+  () => props.showTippyLocation,
+  (newValue, oldValue) => {
+    if (!cardItemTippy) {
+      return;
+    }
 
-function forceHideTippy() {
-  if (cardItemTippy) {
-    cardItemTippy.hide();
-  }
-}
+    if (newValue) {
+      cardItemTippy.setProps({
+        placement: newValue,
+      });
+      cardItemTippy.show();
+    } else {
+      cardItemTippy.hide();
+    }
+  },
+);
 
 function keyUpRelatedCards() {
-  console.log('RUN');
   window.addEventListener('keyup', (e) => {
     if (e.key == 'Shift') {
       showRelatedCards.value = false;
-      console.log(showRelatedCards);
     }
   });
 }
 
 function keyDownRelatedCards() {
-  console.log('RUN');
   window.addEventListener('keydown', (e) => {
     if (e.key == 'Shift') {
       showRelatedCards.value = true;
-      console.log(showRelatedCards);
     }
   });
 }
@@ -263,7 +252,6 @@ onMounted(() => {
   }
 
   if (card.value.associatedCardRefs.length > 0) {
-    console.log('TEST');
     keyUpRelatedCards();
     keyDownRelatedCards();
   }

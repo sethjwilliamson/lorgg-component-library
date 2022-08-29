@@ -107,3 +107,12 @@ Deck21.args = {
   quantityNeeded: 1,
   userCardQuantity: { '01IO015': 2 },
 };
+
+export const ForceShowTippy = Template.bind({});
+ForceShowTippy.args = {
+  cardCodeProp: '01IO015',
+  isRoot: true,
+  quantityNeeded: 1,
+  userCardQuantity: { '01IO015': 2 },
+  showTippyLocation: 'left-start',
+};

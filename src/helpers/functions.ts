@@ -1,7 +1,8 @@
 import { ObjectWithNumber } from '#/helpers';
-import { Deck } from '#/jsons';
+import { Deck, SetJsonCard } from '#/jsons';
 import { useJsonStore } from '@/helpers/stores';
 import { getDeckFromCode } from 'lor-deckcodes-ts';
+import { computed, ComputedRef } from 'vue';
 
 export function getDeckObjectFromCode(deckcode: string) {
   return getDeckFromCode(deckcode).reduce(
@@ -57,4 +58,21 @@ function addQuantityToObject(
   }
 
   object[key] += quantity;
+}
+
+export function propsToCard(
+  cardProp?: SetJsonCard,
+  cardCodeProp?: string,
+): ComputedRef<SetJsonCard> {
+  return computed(() => {
+    if (cardProp) {
+      return cardProp;
+    }
+
+    if (!cardCodeProp) {
+      throw new Error('CardProp or CardCodeProp must be defined.');
+    }
+
+    return useJsonStore().jsons.setJsonObject[cardCodeProp];
+  });
 }
