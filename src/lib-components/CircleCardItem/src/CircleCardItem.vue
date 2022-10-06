@@ -10,14 +10,14 @@
       />
     </a>
 
-    <div class="circle-card-tippy" ref="circleCardTippy">
+    <div ref="circleCardTippy" class="circle-card-tippy">
       <CardItem
         v-if="!ignoreCardItem"
         ref="cardItem"
-        :cardCodeProp="card.cardCode"
-        :isDeckBuilder="false"
-        :isRoot="true"
-        :showTippyLocation="showTippyLocation"
+        :card-code-prop="card.cardCode"
+        :is-deck-builder="false"
+        :is-root="true"
+        :show-tippy-location="showTippyLocation"
       />
     </div>
   </div>
@@ -40,7 +40,7 @@ const circleCardImg = ref<HTMLElement | null>(null);
 const circleCardTippy = ref<HTMLElement | null>(null);
 const cardItem = ref<HTMLElement | null>(null);
 
-var showTippyLocation = ref<ShowTippyLocation>(null);
+const showTippyLocation = ref<ShowTippyLocation>(null);
 
 const imageSrc: ComputedRef<string> = computed(() => {
   return (
@@ -80,6 +80,11 @@ onMounted(() => {
 </script>
 
 <style scoped>
+.circle-card-item {
+  width: 100%;
+  height: 100%;
+}
+
 .circle-card-link {
   width: calc(100% - 4px);
   height: calc(100% - 4px);
