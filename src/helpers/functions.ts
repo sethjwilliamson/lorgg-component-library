@@ -1,5 +1,5 @@
 import { ObjectWithNumber } from '#/helpers';
-import { Deck, SetJsonCard } from '#/jsons';
+import { Deck, CardJsonCard } from '#/jsons';
 import { useJsonStore } from '@/helpers/stores';
 import { getDeckFromCode } from 'lor-deckcodes-ts';
 import { computed, ComputedRef } from 'vue';
@@ -35,7 +35,7 @@ export function getRegionsQuantity(deck: Deck): ObjectWithNumber {
     }
 
     const region = store.jsons.dataJson.regions.find(
-      (x) => x.nameRef === store.jsons.setJsonObject[cardCode].regionRefs[0],
+      (x) => x.nameRef === store.jsons.cardJsonObject[cardCode].regionRefs[0],
     );
 
     if (!region) {
@@ -61,9 +61,9 @@ function addQuantityToObject(
 }
 
 export function propsToCard(
-  cardProp?: SetJsonCard,
+  cardProp?: CardJsonCard,
   cardCodeProp?: string,
-): ComputedRef<SetJsonCard> {
+): ComputedRef<CardJsonCard> {
   return computed(() => {
     if (cardProp) {
       return cardProp;
@@ -73,6 +73,6 @@ export function propsToCard(
       throw new Error('CardProp or CardCodeProp must be defined.');
     }
 
-    return useJsonStore().jsons.setJsonObject[cardCodeProp];
+    return useJsonStore().jsons.cardJsonObject[cardCodeProp];
   });
 }

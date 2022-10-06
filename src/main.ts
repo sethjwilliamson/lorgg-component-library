@@ -1,7 +1,7 @@
 import { createApp } from 'vue';
 import App from './App.vue';
 import { createPinia } from 'pinia';
-import { DataJson, SetJson, SetJsonObject } from '../types/jsons';
+import { DataJson, CardJson, CardJsonObject } from '../types/jsons';
 import { useJsonStore } from './helpers/stores';
 import './App.css';
 
@@ -13,19 +13,11 @@ app.use(pinia);
 // TODO: This should be removed eventually. Just meant for testing.
 
 import * as dataJson from '../data.json';
-import { default as setJson } from '../setJson.json';
-
-const setJsonObject: SetJsonObject = {};
-
-for (const card of setJson as any as SetJson) {
-  setJsonObject[card.cardCode] = card;
-}
+import { default as cardJsonObject } from '../cardJson.json';
 
 useJsonStore().updateDataJson(dataJson as DataJson);
-useJsonStore().updateSetJson(setJson as SetJson);
-useJsonStore().updateSetJsonObject(setJsonObject);
-
-//
+useJsonStore().updateCardJson(Object.values(cardJsonObject) as CardJson);
+useJsonStore().updateCardJsonObject(cardJsonObject as CardJsonObject);
 
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
@@ -68,6 +60,7 @@ import {
   faRedditAlien,
   faDiscord,
 } from '@fortawesome/free-brands-svg-icons';
+import { forEach } from '@tiptap/core/dist/packages/core/src/commands';
 
 library.add(
   faChevronCircleDown,

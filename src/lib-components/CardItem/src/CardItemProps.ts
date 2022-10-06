@@ -1,11 +1,11 @@
 import { ObjectWithNumber } from '#/helpers';
-import { Deck, SetJsonCard } from '#/jsons';
+import { Deck, CardJsonCard } from '#/jsons';
 import { PropType } from 'vue';
 
 export type ShowTippyLocation = 'left-start' | 'right-start' | null;
 
 export type CardItemProps = {
-  cardProp?: SetJsonCard;
+  cardProp?: CardJsonCard;
   cardCodeProp?: string;
   isRoot: boolean;
   quantityNeeded?: number;
@@ -17,7 +17,7 @@ export type CardItemProps = {
 
 const props = {
   cardProp: {
-    type: Object as PropType<SetJsonCard>,
+    type: Object as PropType<CardJsonCard>,
     required: false,
     default: undefined,
   },

@@ -7,7 +7,7 @@
     "serve": "vite preview",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "lint": "eslint --ext .js,.ts,.vue --ignore-path .gitignore --ignore-path setJson.json --ignore-path data.json --fix src",
+    "lint": "eslint --ext .js,.ts,.vue --ignore-path .gitignore --ignore-path cardJson.json --ignore-path data.json --fix src",
     "lint:check": "eslint --ext .js,.ts,.vue",
     "format": "prettier . --write",
     "format:check": "prettier . --check",

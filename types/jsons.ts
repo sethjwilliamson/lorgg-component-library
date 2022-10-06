@@ -1,6 +1,6 @@
 import { ObjectWithNumber } from './helpers';
 
-export type SetJsonCard = {
+export type CardJsonCard = {
   artistName: string;
   associatedCardRefs: Array<string>;
   attack: number;
@@ -28,11 +28,11 @@ export type SetJsonCard = {
   updatedAt: string;
 };
 
-export type SetJson = Array<SetJsonCard>;
+export type CardJson = Array<CardJsonCard>;
 
 export type Deck = ObjectWithNumber;
 
-export type SetJsonObject = { [key: string]: SetJsonCard };
+export type CardJsonObject = { [key: string]: CardJsonCard };
 
 export type DataJsonVocabTerm = {
   description: string;

@@ -1,11 +1,11 @@
-import { SetJson, SetJsonObject, DataJson } from '#/jsons';
+import { CardJson, CardJsonObject, DataJson } from '#/jsons';
 import { defineStore } from 'pinia';
 import { ref } from 'vue';
 
 export const useJsonStore = defineStore('jsons', () => {
   const jsons = ref({
-    setJson: [] as SetJson,
-    setJsonObject: {} as SetJsonObject,
+    cardJson: [] as CardJson,
+    cardJsonObject: {} as CardJsonObject,
     dataJson: {
       vocabTerms: [],
       keywords: [],
@@ -22,22 +22,22 @@ export const useJsonStore = defineStore('jsons', () => {
     } as DataJson,
   });
 
-  function updateSetJson(setJson: SetJson) {
-    jsons.value.setJson = setJson;
+  function updateCardJson(cardJson: CardJson) {
+    jsons.value.cardJson = cardJson;
   }
 
   function updateDataJson(dataJson: DataJson) {
     jsons.value.dataJson = dataJson;
   }
 
-  function updateSetJsonObject(setJsonObject: SetJsonObject) {
-    jsons.value.setJsonObject = setJsonObject;
+  function updateCardJsonObject(cardJsonObject: CardJsonObject) {
+    jsons.value.cardJsonObject = cardJsonObject;
   }
 
   return {
     jsons,
-    updateSetJson,
-    updateSetJsonObject,
+    updateCardJson,
+    updateCardJsonObject,
     updateDataJson,
   };
 });

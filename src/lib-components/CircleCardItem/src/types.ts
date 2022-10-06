@@ -1,15 +1,15 @@
-import { SetJsonCard } from '#/jsons';
+import { CardJsonCard } from '#/jsons';
 import { PropType } from 'vue';
 
 export type CircleCardItemProps = {
-  cardProp?: SetJsonCard;
+  cardProp?: CardJsonCard;
   cardCodeProp?: string;
   ignoreCardItem: boolean;
 };
 
 export const circleCardItemProps = {
   cardProp: {
-    type: Object as PropType<SetJsonCard>,
+    type: Object as PropType<CardJsonCard>,
     required: false,
     default: undefined,
   },

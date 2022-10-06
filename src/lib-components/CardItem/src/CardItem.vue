@@ -93,7 +93,7 @@
 <script setup lang="ts">
 import { Instance, Props } from 'tippy.js';
 import tippy from 'tippy.js';
-import { DataJsonKeyword, SetJsonCard } from '#/jsons';
+import { DataJsonKeyword, CardJsonCard } from '#/jsons';
 import { useJsonStore } from '@/helpers/stores';
 import { computed, ComputedRef, onMounted, ref } from 'vue';
 import { CardItemProps, props as cardItemProps } from './CardItemProps';
@@ -126,12 +126,12 @@ const quantityNeededClass: ComputedRef<'bad' | null> = computed(() => {
   return null;
 });
 
-const associatedCards: ComputedRef<Array<SetJsonCard>> = computed(() => {
+const associatedCards: ComputedRef<Array<CardJsonCard>> = computed(() => {
   const associatedCards = [];
 
   if (props.isRoot) {
     for (const associatedCardCode of card.value.associatedCardRefs) {
-      associatedCards.push(store.jsons.setJsonObject[associatedCardCode]);
+      associatedCards.push(store.jsons.cardJsonObject[associatedCardCode]);
     }
   }
 

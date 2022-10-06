@@ -8,17 +8,11 @@ const pinia = createPinia();
 app.use(pinia);
 
 import * as dataJson from '../data.json';
-import { default as setJson } from '../setJson.json';
-
-const setJsonObject = {};
-
-for (const card of setJson) {
-  setJsonObject[card.cardCode] = card;
-}
+import { default as cardJsonObject } from '../cardJson.json';
 
 useJsonStore().updateDataJson(dataJson);
-useJsonStore().updateSetJson(setJson);
-useJsonStore().updateSetJsonObject(setJsonObject);
+useJsonStore().updateCardJson(Object.values(cardJsonObject));
+useJsonStore().updateCardJsonObject(cardJsonObject);
 
 //
 
