@@ -33,7 +33,7 @@ function resizeAspectRatio(grow: boolean) {
   } else {
     calcH = resizableImg.value.height - 1;
   }
-  
+
   const calcW = calcH * aspectRatio;
 
   props.updateAttributes({ width: calcW, height: calcH });

@@ -7,9 +7,11 @@ import { EditorContent, Editor } from '@tiptap/vue-3';
 import StarterKit from '@tiptap/starter-kit';
 import { onMounted, watch } from 'vue';
 import ResizableImage from '@/lib-components/TipTap Nodes/ResizableImage/src/ResizableImage';
+import CardItem from '@/lib-components/TipTap Nodes/CardItem/src/CardItem';
 
 const props = defineProps<{
   modelValue: string;
+  editable: boolean;
 }>();
 
 const emit = defineEmits<{
@@ -23,7 +25,9 @@ const editor = new Editor({
     ResizableImage.configure({
       inline: false,
     }),
+    CardItem,
   ],
+  editable: props.editable,
   onUpdate: () => {
     emit('update:modelValue', editor.getHTML());
   },
@@ -42,15 +46,6 @@ watch(
     editor.commands.setContent(newValue, false);
   },
 );
-
-onMounted(() => {
-  editor.commands.setImage({
-    src: 'https://lor.gg/storage/cards/card/en_us/06BW030.webp',
-  });
-  editor.commands.setImage({
-    src: 'https://lor.gg/storage/cards/card/en_us/06BW030.webp',
-  });
-});
 </script>
 
 <style scoped></style>
