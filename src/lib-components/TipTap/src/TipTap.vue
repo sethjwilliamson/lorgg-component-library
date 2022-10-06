@@ -5,7 +5,8 @@
 <script setup lang="ts">
 import { EditorContent, Editor } from '@tiptap/vue-3';
 import StarterKit from '@tiptap/starter-kit';
-import { watch } from 'vue';
+import { onMounted, watch } from 'vue';
+import ResizableImage from '@/lib-components/TipTap Nodes/ResizableImage/src/ResizableImage';
 
 const props = defineProps<{
   modelValue: string;
@@ -17,7 +18,12 @@ const emit = defineEmits<{
 
 const editor = new Editor({
   content: props.modelValue,
-  extensions: [StarterKit],
+  extensions: [
+    StarterKit,
+    ResizableImage.configure({
+      inline: false,
+    }),
+  ],
   onUpdate: () => {
     emit('update:modelValue', editor.getHTML());
   },
@@ -36,6 +42,15 @@ watch(
     editor.commands.setContent(newValue, false);
   },
 );
+
+onMounted(() => {
+  editor.commands.setImage({
+    src: 'https://lor.gg/storage/cards/card/en_us/06BW030.webp',
+  });
+  editor.commands.setImage({
+    src: 'https://lor.gg/storage/cards/card/en_us/06BW030.webp',
+  });
+});
 </script>
 
 <style scoped></style>
