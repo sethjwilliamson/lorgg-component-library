@@ -23,16 +23,19 @@ const editor = new Editor({
   },
 });
 
-watch(props.modelValue, (newValue, oldValue) => {
-  // HTML
-  const isSame = editor.getHTML() === newValue;
+watch(
+  () => props.modelValue,
+  (newValue, oldValue) => {
+    // HTML
+    const isSame = editor.getHTML() === newValue;
 
-  if (isSame) {
-    return;
-  }
+    if (isSame) {
+      return;
+    }
 
-  editor.commands.setContent(newValue, false);
-});
+    editor.commands.setContent(newValue, false);
+  },
+);
 </script>
 
 <style scoped></style>
