@@ -4,48 +4,76 @@ import { useJsonStore } from '@/helpers/stores';
 import { getDeckFromCode } from 'lor-deckcodes-ts';
 import { computed, ComputedRef } from 'vue';
 
-export function getDeckObjectFromCode(deckcode: string) {
+function isRegionRuneterran(cardCode: string): boolean {
+  return /^\d+$/.test(cardCode[0]);
+}
+
+export function getDeckObjectFromCode(deckcode: string): Deck {
   return getDeckFromCode(deckcode).reduce(
     (a, v) => ({ ...a, [v.cardCode]: v.count }),
     {},
   );
 }
 
-export function getRegionsQuantity(deck: Deck): ObjectWithNumber {
+export function getRegions(deck: Deck): Array<string> {
+  let regions: Array<string> = [];
+  const store = useJsonStore();
+
+  const cards = Object.keys(deck).map( cardCode => store.jsons.cardJsonObject[cardCode] )
+
+  for (const card of cards) {
+    if (card.regionRefs.length === 1) {
+      regions.push(card.regionRefs[0]);
+    }
+  }
+  
+  // Check to make sure all cards fit into a region
+  if (cards.every( x => x.regionRefs.filter( y => regions.includes(y)).length > 0)) {
+    return regions;
+  }
+  
+  // In the edge case where a card in a Runeterra region is the only non multi-region card
+  // EUBACBQMAIBAEBROHQAAA
+  // EIBACBQGDUBAEBROHQAAA
+  for (const card of cards) {
+    const nonRuneterraRegions = card.regionRefs.filter( x => !isRegionRuneterran(x))
+
+    if (nonRuneterraRegions.length === 1) {
+      regions.push(nonRuneterraRegions[0]);
+    }
+  }
+
+  return regions;
+}
+
+export function getRegionsQuantity(deck: Deck, regions?: Array<string>|null): ObjectWithNumber {
+  if (!regions) {
+    regions = getRegions(deck);
+  }
+
   const store = useJsonStore();
   const returnValue: ObjectWithNumber = {};
 
-  const cardCodes = Object.keys(deck);
-  const runeterraChampsInDeck = store.jsons.dataJson.runeterraChampions.filter(
-    (x) => cardCodes.includes(x.nameRef),
-  );
+  for (const region of regions) {
+    returnValue[region] = 0;
+  }
 
   for (const cardCode in deck) {
-    const runeterraChampion = runeterraChampsInDeck.find((x) =>
-      x.includedCardCodes?.includes(cardCode),
-    );
-
-    if (runeterraChampion) {
-      addQuantityToObject(
-        returnValue,
-        runeterraChampion.nameRef,
-        deck[cardCode],
-      );
-      continue;
-    }
-
-    const region = store.jsons.dataJson.regions.find(
-      (x) => x.nameRef === store.jsons.cardJsonObject[cardCode].regionRefs[0],
-    );
-
-    if (!region) {
-      continue;
-    }
-
-    addQuantityToObject(returnValue, region.nameRef, deck[cardCode]);
+    const card = store.jsons.cardJsonObject[cardCode];
+    returnValue[regionOfCard(card, regions)] += deck[cardCode];
   }
 
   return returnValue;
+}
+
+function regionOfCard(card: CardJsonCard, regions:Array<string>): string {
+  for (const regionRef of card.regionRefs) {
+    if (regions.includes(regionRef)) {
+      return regionRef
+    }
+  }
+
+  throw new Error("Card's region was unfound.");
 }
 
 function addQuantityToObject(
