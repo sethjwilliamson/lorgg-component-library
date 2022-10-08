@@ -184,7 +184,7 @@ const cardImageClass: ComputedRef<'disabled' | null> = computed(() => {
 
 watch(
   () => props.showTippyLocation,
-  (newValue, oldValue) => {
+  (newValue) => {
     if (!cardItemTippy) {
       return;
     }

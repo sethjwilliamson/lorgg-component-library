@@ -60,7 +60,6 @@ import {
   faRedditAlien,
   faDiscord,
 } from '@fortawesome/free-brands-svg-icons';
-import { forEach } from '@tiptap/core/dist/packages/core/src/commands';
 
 library.add(
   faChevronCircleDown,

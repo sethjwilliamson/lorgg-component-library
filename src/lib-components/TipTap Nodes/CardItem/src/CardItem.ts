@@ -1,4 +1,4 @@
-import { Extension, NodeView, VueNodeViewRenderer } from '@tiptap/vue-3';
+import { VueNodeViewRenderer } from '@tiptap/vue-3';
 import CardItemTipTapTemplateVue from '../CardItemTipTapTemplate.vue';
 import { mergeAttributes, Node } from '@tiptap/core';
 

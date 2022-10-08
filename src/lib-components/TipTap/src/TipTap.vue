@@ -5,7 +5,7 @@
 <script setup lang="ts">
 import { EditorContent, Editor } from '@tiptap/vue-3';
 import StarterKit from '@tiptap/starter-kit';
-import { onMounted, watch } from 'vue';
+import { watch } from 'vue';
 import ResizableImage from '@/lib-components/TipTap Nodes/ResizableImage/src/ResizableImage';
 import CardItem from '@/lib-components/TipTap Nodes/CardItem/src/CardItem';
 
@@ -35,7 +35,7 @@ const editor = new Editor({
 
 watch(
   () => props.modelValue,
-  (newValue, oldValue) => {
+  (newValue) => {
     // HTML
     const isSame = editor.getHTML() === newValue;
 
