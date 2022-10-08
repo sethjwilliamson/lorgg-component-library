@@ -5,14 +5,14 @@ import { PropType } from 'vue';
 export type ShowTippyLocation = 'left-start' | 'right-start' | null;
 
 export type CardItemProps = {
-  cardProp?: CardJsonCard;
   cardCodeProp?: string;
-  isRoot: boolean;
-  quantityNeeded?: number;
+  cardProp?: CardJsonCard;
   deckList: Deck;
   isDeckBuilder: boolean;
-  userCardQuantity?: ObjectWithNumber;
+  isRoot: boolean;
+  quantityNeeded?: number;
   showTippyLocation: ShowTippyLocation;
+  userCardQuantity?: ObjectWithNumber;
 };
 
 const props = {

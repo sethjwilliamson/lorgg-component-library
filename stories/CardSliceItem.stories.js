@@ -20,12 +20,12 @@ const Template = (args) => ({
 export const Yasuo = Template.bind({});
 Yasuo.args = {
   cardCodeProp: '01IO015',
-  ignoreCardItem: false,
   color: '#C45987',
-  name: 'Yasuo',
-  manaNumber: 4,
-  quantityNumber: 1,
+  ignoreCardItem: false,
   maintainAspectRatio: true,
+  manaNumber: 4,
+  name: 'Yasuo',
+  quantityNumber: 1,
   showPlusMinus: false,
 };
 
@@ -33,21 +33,32 @@ export const Leaderboard = Template.bind({});
 Leaderboard.args = {
   cardCodeProp: '03MT037',
   ignoreCardItem: true,
-  name: 'SevTheDev',
-  manaNumber: 4,
-  quantityNumber: 222,
   maintainAspectRatio: true,
+  manaNumber: 4,
+  name: 'SevTheDev',
+  quantityNumber: 222,
   showPlusMinus: false,
 };
 
 export const DeckBuilder = Template.bind({});
 DeckBuilder.args = {
   cardCodeProp: '01IO015',
-  ignoreCardItem: false,
   color: '#C45987',
-  name: 'Yasuo',
-  manaNumber: 4,
-  quantityNumber: 2,
+  ignoreCardItem: false,
   maintainAspectRatio: true,
+  manaNumber: 4,
+  name: 'Yasuo',
+  quantityNumber: 2,
   showPlusMinus: true,
+};
+
+export const NoQuantity = Template.bind({});
+NoQuantity.args = {
+  cardCodeProp: '01IO015',
+  color: '#C45987',
+  ignoreCardItem: false,
+  maintainAspectRatio: true,
+  manaNumber: 4,
+  name: 'Yasuo',
+  showPlusMinus: false,
 };

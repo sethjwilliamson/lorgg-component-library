@@ -146,35 +146,35 @@ onMounted(() => {
 
 <style scoped>
 .card-slice-wrapper {
-  width: 100%;
-  height: 100%;
   background-color: #1d2431;
-  margin-bottom: 5px;
   border-radius: 15px;
+  height: 100%;
+  margin-bottom: 5px;
   overflow: hidden;
   position: relative;
+  width: 100%;
 }
 .maintain-aspect-ratio {
   height: unset;
   padding-top: 16.66667%;
 }
 .card-slice {
-  position: absolute;
-  inset: 0;
-  display: flex;
   align-items: center;
-  padding: 0 15px;
+  display: flex;
   gap: 10px;
+  inset: 0;
+  padding: 0 15px;
+  position: absolute;
 }
 .card-image {
-  position: absolute;
-  inset: 0 0 0 30%;
-  background-size: cover;
   background-position: right;
+  background-size: cover;
+  inset: 0 0 0 30%;
+  position: absolute;
 }
 .region-gradient {
-  position: absolute;
   inset: 0;
+  position: absolute;
 }
 .mana-hexagon {
   height: 75%;
@@ -185,39 +185,39 @@ onMounted(() => {
   width: unset;
 }
 .mana-number {
-  position: absolute;
-  inset: 0;
-  display: flex;
   align-items: center;
-  justify-content: center;
-  font-weight: 600;
   color: #fff;
+  display: flex;
   font-size: 100%;
+  font-weight: 600;
+  inset: 0;
+  justify-content: center;
+  position: absolute;
 }
 .card-name {
-  font-weight: 500;
   color: #fff;
   font-size: 16px;
+  font-weight: 500;
   text-shadow: 2px 2px 4px black;
   z-index: 0;
 }
 .quantity {
-  position: absolute;
-  right: 0;
+  display: flex;
   height: 45%;
   max-height: 35px;
-  display: flex;
+  position: absolute;
+  right: 0;
   width: 30px;
 }
 .quantity-background {
+  align-items: center;
   background-color: #212a39;
-  width: 100%;
-  height: 100%;
-  position: relative;
   border-radius: 5px 0 0 5px;
   display: flex;
+  height: 100%;
   justify-content: center;
-  align-items: center;
+  position: relative;
+  width: 100%;
 }
 .num-quantity {
   color: #fff;
@@ -228,43 +228,42 @@ onMounted(() => {
   color: #ff006f;
 }
 .plus-minus {
+  align-items: center;
+  bottom: 0;
   display: flex;
   justify-content: center;
-  align-items: center;
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
   opacity: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
   transition: 0.4s;
 }
 .plus-minus:hover {
   opacity: 1;
 }
 .plus-minus::before {
-  content: '';
-  width: 80px;
-  height: 100%;
   background: linear-gradient(90deg, #181e2a00 0%, #181e2a 100%);
+  content: '';
+  height: 100%;
+  width: 80px;
 }
 .plus-minus-content {
-  display: flex;
-  justify-content: center;
   align-items: center;
-  height: 100%;
-
   background-color: #181e2a;
+  display: flex;
+  height: 100%;
+  justify-content: center;
 }
 .plus-minus-icon {
-  width: 20px;
-  padding: 3px 5px;
-  color: #ffffff99;
-  opacity: 1;
+  align-items: center;
   border-right: 2px solid #ffffff20;
+  color: #ffffff99;
+  cursor: pointer;
   display: flex;
   justify-content: center;
-  align-items: center;
-  cursor: pointer;
+  opacity: 1;
+  padding: 3px 5px;
+  width: 20px;
 }
 .plus-minus-icon:hover {
   color: #fff;
@@ -272,9 +271,7 @@ onMounted(() => {
 .plus-minus-quantity {
   color: #fff;
   font-weight: 600;
-  width: 30px;
   text-align: center;
-}
-.card-item-container {
+  width: 30px;
 }
 </style>
