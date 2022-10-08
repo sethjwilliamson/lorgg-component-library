@@ -25,15 +25,13 @@
 
 <script setup lang="ts">
 import tippy from 'tippy.js';
-import { propsToCard } from '@/helpers/functions';
-import { useJsonStore } from '@/helpers/stores';
+import { getRegionColorOfCard, propsToCard } from '@/helpers/functions';
 import CardItem from '@/lib-components/CardItem/src/CardItem.vue';
 import { computed, ComputedRef, onMounted, ref } from 'vue';
 import { CircleCardItemProps, circleCardItemProps } from './types';
 import { ShowTippyLocation } from '@/lib-components/CardItem/src/CardItemProps';
 
 const props: CircleCardItemProps = defineProps(circleCardItemProps);
-const store = useJsonStore();
 const card = propsToCard(props.cardProp, props.cardCodeProp);
 
 const circleCardImg = ref<HTMLElement | null>(null);
@@ -49,14 +47,14 @@ const imageSrc: ComputedRef<string> = computed(() => {
 });
 
 const regionColor: ComputedRef<string> = computed(() => {
-  return (
-    store.jsons.dataJson.regions.find(
-      (x) => x.nameRef === card.value.regionRefs[0],
-    )?.color || '#ffffff'
-  );
+  return getRegionColorOfCard(card.value, props.regions);
 });
 
 onMounted(() => {
+  if (props.ignoreCardItem) {
+    return;
+  }
+
   tippy(circleCardImg.value as HTMLElement, {
     content: circleCardTippy.value as HTMLElement,
     placement: 'right',

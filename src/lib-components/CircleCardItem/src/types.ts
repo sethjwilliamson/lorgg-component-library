@@ -5,6 +5,7 @@ export type CircleCardItemProps = {
   cardProp?: CardJsonCard;
   cardCodeProp?: string;
   ignoreCardItem: boolean;
+  regions?: Array<string>;
 };
 
 export const circleCardItemProps = {
@@ -21,5 +22,10 @@ export const circleCardItemProps = {
   ignoreCardItem: {
     type: Boolean,
     required: false,
+  },
+  regions: {
+    type: Array as PropType<Array<string>>,
+    required: false,
+    default: undefined,
   },
 };
