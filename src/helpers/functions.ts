@@ -16,27 +16,35 @@ export function getDeckObjectFromCode(deckcode: string): Deck {
 }
 
 export function getRegions(deck: Deck): Array<string> {
-  let regions: Array<string> = [];
+  const regions: Array<string> = [];
   const store = useJsonStore();
 
-  const cards = Object.keys(deck).map( cardCode => store.jsons.cardJsonObject[cardCode] )
+  const cards = Object.keys(deck).map(
+    (cardCode) => store.jsons.cardJsonObject[cardCode],
+  );
 
   for (const card of cards) {
     if (card.regionRefs.length === 1) {
       regions.push(card.regionRefs[0]);
     }
   }
-  
+
   // Check to make sure all cards fit into a region
-  if (cards.every( x => x.regionRefs.filter( y => regions.includes(y)).length > 0)) {
+  if (
+    cards.every(
+      (x) => x.regionRefs.filter((y) => regions.includes(y)).length > 0,
+    )
+  ) {
     return regions;
   }
-  
+
   // In the edge case where a card in a Runeterra region is the only non multi-region card
   // EUBACBQMAIBAEBROHQAAA
   // EIBACBQGDUBAEBROHQAAA
   for (const card of cards) {
-    const nonRuneterraRegions = card.regionRefs.filter( x => !isRegionRuneterran(x))
+    const nonRuneterraRegions = card.regionRefs.filter(
+      (x) => !isRegionRuneterran(x),
+    );
 
     if (nonRuneterraRegions.length === 1) {
       regions.push(nonRuneterraRegions[0]);
@@ -46,7 +54,37 @@ export function getRegions(deck: Deck): Array<string> {
   return regions;
 }
 
-export function getRegionsQuantity(deck: Deck, regions?: Array<string>|null): ObjectWithNumber {
+export function getRegionColorOfCard(
+  card: CardJsonCard,
+  regions?: Array<string> | null,
+) {
+  const store = useJsonStore();
+
+  const defaultRegion =
+    store.jsons.dataJson.regions.find((x) => x.nameRef === card.regionRefs[0])
+      ?.color || '#ffffff';
+
+  if (card.regionRefs.length === 1 || !regions || regions.length < 2) {
+    return defaultRegion;
+  }
+
+  for (const region of card.regionRefs) {
+    if (card.regionRefs.includes(region)) {
+      return (
+        store.jsons.dataJson.regions.find(
+          (x) => x.nameRef === card.regionRefs[0],
+        )?.color || '#ffffff'
+      );
+    }
+  }
+
+  return defaultRegion;
+}
+
+export function getRegionsQuantity(
+  deck: Deck,
+  regions?: Array<string> | null,
+): ObjectWithNumber {
   if (!regions) {
     regions = getRegions(deck);
   }
@@ -66,10 +104,10 @@ export function getRegionsQuantity(deck: Deck, regions?: Array<string>|null): Ob
   return returnValue;
 }
 
-function regionOfCard(card: CardJsonCard, regions:Array<string>): string {
+function regionOfCard(card: CardJsonCard, regions: Array<string>): string {
   for (const regionRef of card.regionRefs) {
     if (regions.includes(regionRef)) {
-      return regionRef
+      return regionRef;
     }
   }
 
