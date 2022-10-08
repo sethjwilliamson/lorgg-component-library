@@ -79,19 +79,19 @@ onMounted(() => {
 
 <style scoped>
 .circle-card-item {
-  width: 100%;
   height: 100%;
+  width: 100%;
 }
 
 .circle-card-link {
-  width: calc(100% - 4px);
   height: calc(100% - 4px);
+  width: calc(100% - 4px);
 }
 
 .circle-card-img {
-  width: inherit;
-  height: inherit;
   border-radius: 50%;
   border: 2px var(--color-white) solid;
+  height: inherit;
+  width: inherit;
 }
 </style>
