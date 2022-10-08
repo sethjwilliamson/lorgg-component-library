@@ -1,19 +1,19 @@
-import InfoIcon from '@/lib-components/icons/InfoIcon';
+import ManaHexagonIcon from '@/lib-components/icons/ManaHexagonIcon';
 
 export default {
-  title: 'Library/Icons/InfoIcon',
-  component: InfoIcon,
+  title: 'Library/Icons/ManaHexagonIcon',
+  component: ManaHexagonIcon,
   argTypes: {},
 };
 
 const Template = (args) => ({
-  components: { InfoIcon },
+  components: { ManaHexagonIcon },
   setup() {
     return { args };
   },
 
   template: `<div style="width: 320px">
-              <InfoIcon v-bind="args" />
+              <ManaHexagonIcon v-bind="args" />
             </div>`,
 });
 
