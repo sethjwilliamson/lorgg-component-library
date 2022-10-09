@@ -90,7 +90,7 @@ onMounted(() => {
 
 .circle-card-img {
   border-radius: 50%;
-  border: 2px var(--color-white) solid;
+  border: 2px var(--color-primary-2) solid;
   height: inherit;
   width: inherit;
 }

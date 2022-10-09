@@ -1,22 +1,55 @@
 :root {
   --color-0: #828295;
+  --color-0-rgb: 130, 130, 149;
   --color-1: #2c3e50;
+  --color-1-rgb: 44, 62, 80;
   --color-2: #2a313d;
+  --color-2-rgb: 42, 49, 61;
   --color-3: #212a39;
+  --color-3-rgb: 33, 42, 57;
 
   --color-text-disabled: #94989e;
+  --color-text-disabled-rgb: 148, 152, 158;
 
   --color-background-0: #0f131a;
+  --color-background-0-rgb: 15, 19, 26;
   --color-background-1: #181e2a;
+  --color-background-1-rgb: 24, 30, 42;
   --color-background-2: #1d2431;
+  --color-background-2-rgb: 29, 36, 49;
 
   --color-primary: #0067ee;
+  --color-primary-rgb: 0, 103, 238;
+  --color-gold: #ffc53e;
+  --color-gold-rgb: 255, 197, 62;
+  --color-primary-2: #ffffff;
+  --color-primary-2-rgb: 255, 255, 255;
 
   --color-good: #00adff;
+  --color-good-rgb: 0, 173, 255;
   --color-bad: #ff5153;
+  --color-bad-rgb: 255, 81, 83;
 
-  --color-white: #ffffff;
-  --color-gold: #ffc53e;
+  --color-Targon: #4d38b0;
+  --color-Targon-rgb: 77, 56, 176;
+  --color-Noxus: #962d27;
+  --color-Noxus-rgb: 150, 45, 39;
+  --color-Demacia: #b9ac98;
+  --color-Demacia-rgb: 185, 172, 152;
+  --color-Freljord: #4a7dc3;
+  --color-Freljord-rgb: 74, 125, 195;
+  --color-ShadowIsles: #2a725d;
+  --color-ShadowIsles-rgb: 42, 114, 93;
+  --color-Ionia: #c45987;
+  --color-Ionia-rgb: 196, 89, 135;
+  --color-Shurima: #c4ae3d;
+  --color-Shurima-rgb: 196, 174, 61;
+  --color-Bilgewater: #b05925;
+  --color-Bilgewater-rgb: 176, 89, 37;
+  --color-PiltoverZaun: #fd9061;
+  --color-PiltoverZaun-rgb: 253, 144, 97;
+  --color-BandleCity: #98a711;
+  --color-BandleCity-rgb: 152, 167, 17;
 
   --box-border-radius: 20px;
   --small-border-radius: 10px;
@@ -58,7 +91,7 @@
   background-color: var(--color-background-1);
   border-radius: var(--small-border-radius);
   border: 2px var(--color-2) solid;
-  color: var(--color-white);
+  color: var(--color-primary-2);
   padding: 10px;
 }
 

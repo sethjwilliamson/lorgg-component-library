@@ -688,7 +688,7 @@
             "abbreviation": "MT",
             "icon": "\/images\/targon.svg",
             "name": "Targon",
-            "nameRef": "Targon",
+            "nameRef": "var(--tc-color-Targon)",
             "color": "#4D38B0",
             "order": 2
         },
@@ -696,7 +696,7 @@
             "abbreviation": "NX",
             "icon": "\/images\/noxus.svg",
             "name": "Noxus",
-            "nameRef": "Noxus",
+            "nameRef": "var(--tc-color-Noxus)",
             "color": "#962d27",
             "order": 0
         },
@@ -704,7 +704,7 @@
             "abbreviation": "DE",
             "icon": "\/images\/demacia.svg",
             "name": "Demacia",
-            "nameRef": "Demacia",
+            "nameRef": "var(--tc-color-Demacia)",
             "color": "#B9AC98",
             "order": 0
         },
@@ -712,7 +712,7 @@
             "abbreviation": "FR",
             "icon": "\/images\/freljord.svg",
             "name": "Freljord",
-            "nameRef": "Freljord",
+            "nameRef": "var(--tc-color-Freljord)",
             "color": "#4A7DC3",
             "order": 0
         },
@@ -720,7 +720,7 @@
             "abbreviation": "SI",
             "icon": "\/images\/shadowisles.svg",
             "name": "Shadow Isles",
-            "nameRef": "ShadowIsles",
+            "nameRef": "var(--tc-color-ShadowIsles)",
             "color": "#2A725D",
             "order": 0
         },
@@ -728,7 +728,7 @@
             "abbreviation": "IO",
             "icon": "\/images\/ionia.svg",
             "name": "Ionia",
-            "nameRef": "Ionia",
+            "nameRef": "var(--tc-color-Ionia)",
             "color": "#C45987",
             "order": 0
         },
@@ -736,7 +736,7 @@
             "abbreviation": "SH",
             "icon": "\/images\/shurima.svg",
             "name": "Shurima",
-            "nameRef": "Shurima",
+            "nameRef": "var(--tc-color-Shurima)",
             "color": "#C4AE3D",
             "order": 3
         },
@@ -744,7 +744,7 @@
             "abbreviation": "BW",
             "icon": "\/images\/bilgewater.svg",
             "name": "Bilgewater",
-            "nameRef": "Bilgewater",
+            "nameRef": "var(--tc-color-Bilgewater)",
             "color": "#B05925",
             "order": 1
         },
@@ -752,7 +752,7 @@
             "abbreviation": "PZ",
             "icon": "\/images\/pnz.svg",
             "name": "Piltover & Zaun",
-            "nameRef": "PiltoverZaun",
+            "nameRef": "var(--tc-color-PiltoverZaun)",
             "color": "#FD9061",
             "order": 0
         },
@@ -760,7 +760,7 @@
             "abbreviation": "BC",
             "icon": "\/images\/bandlecity.svg",
             "name": "Bandle City",
-            "nameRef": "BandleCity",
+            "nameRef": "var(--tc-color-BandleCity)",
             "color": "#98A711",
             "order": 4
         }

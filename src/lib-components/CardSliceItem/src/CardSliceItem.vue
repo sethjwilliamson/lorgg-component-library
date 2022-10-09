@@ -1,5 +1,6 @@
 <template>
-  <localized-link :to="routerLink">
+  <!-- TODO: Add RounterLink -->
+  <localized-link :to="'routerLink'">
     <div ref="cardSlice" :class="cardSliceClasses">
       <div class="card-slice">
         <div
@@ -31,7 +32,7 @@
           class="quantity"
         >
           <div class="quantity-background">
-            <p class="num-quantity" :class="quantityClass">
+            <p class="num-quantity">
               {{ props.quantityNumber }}
             </p>
           </div>
@@ -59,7 +60,7 @@
       </div>
     </div>
     <div ref="cardItemWrapper" class="card-item-container">
-      <card-item
+      <CardItem
         v-if="!ignoreCardItem"
         ref="cardItem"
         :is-root="true"
@@ -94,11 +95,9 @@ const cardItemWrapper = ref<HTMLElement | null>(null);
 const showTippyLocation = ref<ShowTippyLocation>(null);
 
 const colorGradient: ComputedRef<string> = computed(() => {
-  const color = props.color || '#212a39';
+  const color = props.color || 'var(--color-3-rgb)';
 
-  console.log(color);
-
-  return `linear-gradient(90deg, ${color}FF 0%, ${color}FF 30%, ${color}10 70%, ${color}00 100%)`;
+  return `linear-gradient(90deg, rgba(${color}, 1) 0%, rgba(${color}, 1) 30%, rgba(${color}, .10) 70%, rgba(${color}, .00) 100%)`;
 });
 
 const imageSrc: ComputedRef<string> = computed(() => {
@@ -146,7 +145,7 @@ onMounted(() => {
 
 <style scoped>
 .card-slice-wrapper {
-  background-color: #1d2431;
+  background-color: var(--color-background-2);
   border-radius: 15px;
   height: 100%;
   margin-bottom: 5px;
@@ -186,7 +185,7 @@ onMounted(() => {
 }
 .mana-number {
   align-items: center;
-  color: #fff;
+  color: var(--color-primary-2);
   display: flex;
   font-size: 100%;
   font-weight: 600;
@@ -195,7 +194,7 @@ onMounted(() => {
   position: absolute;
 }
 .card-name {
-  color: #fff;
+  color: var(--color-primary-2);
   font-size: 16px;
   font-weight: 500;
   text-shadow: 2px 2px 4px black;
@@ -211,7 +210,7 @@ onMounted(() => {
 }
 .quantity-background {
   align-items: center;
-  background-color: #212a39;
+  background-color: var(--color-3);
   border-radius: 5px 0 0 5px;
   display: flex;
   height: 100%;
@@ -220,7 +219,7 @@ onMounted(() => {
   width: 100%;
 }
 .num-quantity {
-  color: #fff;
+  color: var(--color-primary-2);
   font-size: 14px;
   font-weight: 600;
 }
@@ -242,22 +241,26 @@ onMounted(() => {
   opacity: 1;
 }
 .plus-minus::before {
-  background: linear-gradient(90deg, #181e2a00 0%, #181e2a 100%);
+  background: linear-gradient(
+    90deg,
+    var(--color-background-1) 00 0%,
+    var(--color-background-1) 100%
+  );
   content: '';
   height: 100%;
   width: 80px;
 }
 .plus-minus-content {
   align-items: center;
-  background-color: #181e2a;
+  background-color: var(--color-background-1);
   display: flex;
   height: 100%;
   justify-content: center;
 }
 .plus-minus-icon {
   align-items: center;
-  border-right: 2px solid #ffffff20;
-  color: #ffffff99;
+  border-right: 2px solid rgba(var(--color-primary-2-rgb), 0.2);
+  color: rgba(var(--color-primary-2-rgb), 0.6);
   cursor: pointer;
   display: flex;
   justify-content: center;
@@ -266,10 +269,10 @@ onMounted(() => {
   width: 20px;
 }
 .plus-minus-icon:hover {
-  color: #fff;
+  color: var(--color-primary-2);
 }
 .plus-minus-quantity {
-  color: #fff;
+  color: var(--color-primary-2);
   font-weight: 600;
   text-align: center;
   width: 30px;

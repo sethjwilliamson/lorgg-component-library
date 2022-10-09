@@ -20,7 +20,7 @@ const Template = (args) => ({
 export const Yasuo = Template.bind({});
 Yasuo.args = {
   cardCodeProp: '01IO015',
-  color: '#C45987',
+  color: 'var(--color-Ionia-rgb)',
   ignoreCardItem: false,
   maintainAspectRatio: true,
   manaNumber: 4,
@@ -43,7 +43,7 @@ Leaderboard.args = {
 export const DeckBuilder = Template.bind({});
 DeckBuilder.args = {
   cardCodeProp: '01IO015',
-  color: '#C45987',
+  color: 'var(--color-Ionia-rgb)',
   ignoreCardItem: false,
   maintainAspectRatio: true,
   manaNumber: 4,
@@ -55,7 +55,7 @@ DeckBuilder.args = {
 export const NoQuantity = Template.bind({});
 NoQuantity.args = {
   cardCodeProp: '01IO015',
-  color: '#C45987',
+  color: 'var(--color-Ionia-rgb)',
   ignoreCardItem: false,
   maintainAspectRatio: true,
   manaNumber: 4,

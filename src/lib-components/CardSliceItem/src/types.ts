@@ -33,7 +33,7 @@ export const cardSliceItemProps = {
   color: {
     type: String,
     required: true,
-    default: '#212a39',
+    default: 'var(--color-3-rgb)',
   },
   name: {
     type: String,

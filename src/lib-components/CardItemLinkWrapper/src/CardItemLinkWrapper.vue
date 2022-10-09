@@ -1,4 +1,5 @@
 <template>
+  <!-- TODO: Add cardupdate  -->
   <div class="card-item-link-wrapper">
     <div v-if="!isDeckBuilder" class="card-item-wrapper">
       <a href="https://lor.gg">

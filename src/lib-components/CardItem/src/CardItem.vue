@@ -16,7 +16,6 @@
         card.cardCode +
         '.webp'
       "
-      @click="handleCardClick"
     />
 
     <div
@@ -304,7 +303,7 @@ onMounted(() => {
 }
 
 .card-info-title {
-  color: var(--color-white);
+  color: var(--color-primary-2);
   margin-bottom: 5px;
   margin: 0;
 }

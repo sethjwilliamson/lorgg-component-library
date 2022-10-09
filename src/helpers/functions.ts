@@ -62,7 +62,7 @@ export function getRegionColorOfCard(
 
   const defaultRegion =
     store.jsons.dataJson.regions.find((x) => x.nameRef === card.regionRefs[0])
-      ?.color || '#ffffff';
+      ?.color || 'var(--tc-color-primary-2)';
 
   if (card.regionRefs.length === 1 || !regions || regions.length < 2) {
     return defaultRegion;
@@ -73,7 +73,7 @@ export function getRegionColorOfCard(
       return (
         store.jsons.dataJson.regions.find(
           (x) => x.nameRef === card.regionRefs[0],
-        )?.color || '#ffffff'
+        )?.color || 'var(--tc-color-primary-2)'
       );
     }
   }
