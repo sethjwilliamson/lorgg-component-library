@@ -52,7 +52,8 @@
   --color-BandleCity-rgb: 152, 167, 17;
 
   --box-border-radius: 20px;
-  --small-border-radius: 10px;
+  --border-radius-s: 10px;
+  --border-radius-m: 15px;
 
   --input-height: 45px;
 

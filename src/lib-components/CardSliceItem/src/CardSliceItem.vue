@@ -146,7 +146,7 @@ onMounted(() => {
 <style scoped>
 .card-slice-wrapper {
   background-color: var(--color-background-2);
-  border-radius: 15px;
+  border-radius: var(--border-radius-m);
   height: 100%;
   margin-bottom: 5px;
   overflow: hidden;

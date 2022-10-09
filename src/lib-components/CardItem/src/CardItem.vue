@@ -284,7 +284,7 @@ onMounted(() => {
 
 .quantity-tick {
   background-color: var(--color-primary);
-  border-radius: 15px;
+  border-radius: var(--border-radius-m);
   height: 10px;
   margin: 3px;
   width: 10px;
