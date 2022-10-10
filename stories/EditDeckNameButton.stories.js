@@ -1,4 +1,4 @@
-import EditDeckNameButton from '@/lib-components/EditDeckNameButton';
+import EditDeckNameButton from '@/lib-components/Buttons/EditDeckNameButton';
 
 export default {
   title: 'Library/EditDeckNameButton',

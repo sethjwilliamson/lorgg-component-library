@@ -1,4 +1,4 @@
-import CopyDeckButton from '@/lib-components/CopyDeckButton';
+import CopyDeckButton from '@/lib-components/Buttons/CopyDeckButton';
 
 export default {
   title: 'Library/CopyDeckButton',
