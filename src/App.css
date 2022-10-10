@@ -90,10 +90,14 @@
 
 .tippy-box:first-child {
   background-color: var(--color-background-1);
-  border-radius: var(--small-border-radius);
+  border-radius: var(--border-radius-s);
   border: 2px var(--color-2) solid;
   color: var(--color-primary-2);
   padding: 10px;
+}
+
+.tippy-box:first-child > .tippy-content {
+  padding: 0;
 }
 
 .tippy-box[role='card-image'] {
@@ -108,4 +112,23 @@
 
 .tippy-box > .tippy-arrow {
   color: var(--color-2);
+}
+
+.circle-button {
+  align-items: center;
+  background-color: var(--color-3);
+  border-radius: 25px;
+  border: none;
+  color: var(--color-primary-2);
+  cursor: pointer;
+  display: flex;
+  height: 45px;
+  justify-content: center;
+  position: relative;
+  width: 45px;
+}
+
+.circle-button > svg {
+  height: 20px;
+  width: 20px;
 }

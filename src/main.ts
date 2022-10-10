@@ -4,6 +4,7 @@ import { createPinia } from 'pinia';
 import { DataJson, CardJson, CardJsonObject } from '../types/jsons';
 import { useJsonStore } from './helpers/stores';
 import './App.css';
+import 'tippy.js/dist/tippy.css';
 
 const app = createApp(App);
 

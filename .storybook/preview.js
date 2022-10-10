@@ -2,6 +2,7 @@ import { app } from '@storybook/vue3';
 import '../src/App.css';
 import { createPinia } from 'pinia';
 import { useJsonStore } from '../src/helpers/stores';
+import 'tippy.js/dist/tippy.css';
 
 // TODO: This should be removed eventually. Just meant for testing.
 const pinia = createPinia();
