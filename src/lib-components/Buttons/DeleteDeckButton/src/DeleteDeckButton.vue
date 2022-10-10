@@ -1,5 +1,5 @@
 <template>
-  <button class="circle-button" ref="button" @click="deleteDeck">
+  <button ref="button" class="circle-button" @click="deleteDeck">
     <font-awesome-icon icon="trash-alt" class="icon" />
   </button>
 </template>

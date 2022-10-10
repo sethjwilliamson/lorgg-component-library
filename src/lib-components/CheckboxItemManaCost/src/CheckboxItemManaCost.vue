@@ -1,5 +1,5 @@
 <template>
-  <button class="checkbox-item" :selected="props.modelValue" @click="onUpdate">
+  <button class="checkbox-item" :selected="props.isSelected" @click="onUpdate">
     <ManaHexagonIcon></ManaHexagonIcon>
     <div class="prompt">
       {{ props.prompt }}
@@ -14,11 +14,11 @@ import ManaHexagonIcon from '@/lib-components/icons/ManaHexagonIcon/src/ManaHexa
 
 const props: CheckboxItemProps = defineProps(checkboxItemProps);
 const emit = defineEmits<{
-  (e: 'update:modelValue', value: boolean): void;
+  (e: 'update:isSelected', value: boolean): void;
 }>();
 
 function onUpdate() {
-  emit('update:modelValue', !props.modelValue);
+  emit('update:isSelected', !props.isSelected);
 }
 </script>
 

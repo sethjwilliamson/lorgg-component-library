@@ -1,5 +1,5 @@
 <template>
-  <button class="circle-button" ref="button" @click="copyDeckCode">
+  <button ref="button" class="circle-button" @click="copyDeckCode">
     <font-awesome-icon icon="copy" class="icon" />
   </button>
 </template>

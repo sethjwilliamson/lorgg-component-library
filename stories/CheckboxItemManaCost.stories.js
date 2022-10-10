@@ -19,13 +19,12 @@ const Template = (args) => ({
 
 export const Default = Template.bind({});
 Default.args = {
-  modelValue: true,
-  // icon: '',
+  isSelected: true,
   prompt: 1,
 };
 
 export const NotEnabled = Template.bind({});
 NotEnabled.args = {
-  modelValue: false,
+  isSelected: false,
   prompt: 2,
 };

@@ -4,12 +4,7 @@
       <h2 class="title">
         {{ props.title }}
       </h2>
-      <p
-        v-if="filterArray"
-        class="clear"
-        :class="clearClass"
-        v-on:click="onUpdate"
-      >
+      <p v-if="filterArray" class="clear" :class="clearClass" @click="onClear">
         <!-- TODO: Translate -->
         Clear
       </p>
@@ -25,15 +20,15 @@ import { sidePanelSectionPaneProps, SidePanelSectionPaneProps } from './types';
 const props: SidePanelSectionPaneProps = defineProps(sidePanelSectionPaneProps);
 const emit = defineEmits<{
   // TODO: Switch to use filters instead of any
-  (e: 'update:filterArray', value: Array<any>): void;
+  (e: 'clear:filterArray'): void;
 }>();
 
 const clearClass: ComputedRef<string | null> = computed(() => {
   return props.filterArray && props.filterArray.length > 0 ? 'clickable' : null;
 });
 
-function onUpdate(e: Event) {
-  emit('update:filterArray', []);
+function onClear(e: Event) {
+  emit('clear:filterArray');
 }
 </script>
 

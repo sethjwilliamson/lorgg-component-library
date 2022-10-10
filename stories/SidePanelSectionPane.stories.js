@@ -16,8 +16,17 @@ const Template = (args) => ({
       filterArray: args.filterArray,
     };
   },
+  methods: {
+    onClear() {
+      console.log('clear');
+      console.log(this.filterArray);
+      this.filterArray.splice();
+      this.filterArray = [];
+      console.log(this.filterArray);
+    },
+  },
   template: `<div style="width: 320px;">
-              <SidePanelSectionPane v-bind="args" v-model:filterArray="filterArray">
+              <SidePanelSectionPane v-bind="args" @clear:filter-array="onClear">
                   Testing
               </SidePanelSectionPane>
             </div>`,
