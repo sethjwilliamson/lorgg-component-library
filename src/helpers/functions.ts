@@ -114,6 +114,22 @@ function regionOfCard(card: CardJsonCard, regions: Array<string>): string {
   throw new Error("Card's region was unfound.");
 }
 
+export function copyToClipboard(text: string) {
+  if (navigator.clipboard) {
+    navigator.clipboard.writeText(text);
+    return;
+  }
+
+  const dummy = document.createElement('textarea');
+  document.body.appendChild(dummy);
+  dummy.value = text;
+
+  dummy.select();
+  document.execCommand('copy');
+
+  document.body.removeChild(dummy);
+}
+
 function addQuantityToObject(
   object: ObjectWithNumber,
   key: string,
