@@ -1,7 +1,6 @@
 <template>
   <button class="checkbox-item" :selected="props.modelValue" @click="onUpdate">
     <div v-if="icon" class="checkbox-icon" :style="checkboxIconStyle"></div>
-    <!-- TODO: :style="icon ? {} : {'text-align' : 'center'}" -->
     <div class="checkbox-name">
       {{ props.prompt }}
     </div>
