@@ -1,15 +1,15 @@
 <template>
   <button class="circle-button" ref="button" @click="deleteDeck">
-    <font-awesome-icon icon="trash" class="icon" />
+    <font-awesome-icon icon="trash-alt" class="icon" />
   </button>
 </template>
 
 <script setup lang="ts">
 import tippy from 'tippy.js';
 import { onMounted, ref } from 'vue';
-import { copyDeckButtonProps, CopyDeckButtonProps } from './types';
+import { deleteDeckButtonProps, DeleteDeckButtonProps } from './types';
 
-const props: CopyDeckButtonProps = defineProps(copyDeckButtonProps);
+const props: DeleteDeckButtonProps = defineProps(deleteDeckButtonProps);
 const button = ref<HTMLElement | null>(null);
 
 // const emit = defineEmits<{
