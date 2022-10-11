@@ -40,8 +40,12 @@ const emit = defineEmits<{
   (e: 'update:filterArray', value: Array<any>): void;
 }>();
 
-const topRowRange = Array.from(new Array(6), (x, i) => i);
-const bottomRowRange = Array.from(new Array(5), (x, i) => i + 6);
+const topRowRange = Array(6)
+  .fill(1)
+  .map((_, i) => i);
+const bottomRowRange = Array(5)
+  .fill(1)
+  .map((_, i) => i + 6);
 
 function onUpdate(promptNumber: number) {
   let newFilterArray: Array<any>;

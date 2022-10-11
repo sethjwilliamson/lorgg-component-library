@@ -1,6 +1,10 @@
 <template>
-  <button class="checkbox-item" :selected="props.modelValue" @click="onUpdate">
-    <div v-if="icon" class="checkbox-icon" :style="checkboxIconStyle"></div>
+  <button class="checkbox-item" :selected="props.isSelected" @click="onUpdate">
+    <div
+      v-if="props.icon"
+      class="checkbox-icon"
+      :style="checkboxIconStyle"
+    ></div>
     <div class="checkbox-name">
       {{ props.prompt }}
     </div>
@@ -13,15 +17,16 @@ import { CheckboxItemProps, checkboxItemProps } from './types';
 
 const props: CheckboxItemProps = defineProps(checkboxItemProps);
 const emit = defineEmits<{
-  (e: 'update:modelValue', value: boolean): void;
+  (e: 'update:isSelected', value: boolean): void;
 }>();
 
 const checkboxIconStyle: ComputedRef<StyleValue> = computed(() => {
+  console.log(props.icon);
   return { content: props.icon };
 });
 
 function onUpdate() {
-  emit('update:modelValue', !props.modelValue);
+  emit('update:isSelected', !props.isSelected);
 }
 </script>
 
@@ -54,6 +59,7 @@ function onUpdate() {
 
 .checkbox-icon {
   height: 25px;
+  filter: drop-shadow(0px 0px 2px black);
   width: 25px;
 }
 

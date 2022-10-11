@@ -2,7 +2,7 @@
   <button class="checkbox-item" :selected="props.isSelected" @click="onUpdate">
     <ManaHexagonIcon></ManaHexagonIcon>
     <div class="prompt">
-      {{ props.prompt }}
+      {{ props.prompt === 10 ? '+' : props.prompt }}
     </div>
   </button>
 </template>

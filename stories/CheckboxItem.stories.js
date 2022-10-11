@@ -19,20 +19,20 @@ const Template = (args) => ({
 
 export const Default = Template.bind({});
 Default.args = {
-  modelValue: true,
+  isSelected: true,
   // icon: '',
   prompt: 'Test',
 };
 
 export const Icon = Template.bind({});
 Icon.args = {
-  modelValue: false,
+  isSelected: false,
   icon: 'url("https://lor.gg/images/noxus.svg")',
   prompt: 'Noxus',
 };
 
 export const NotEnabled = Template.bind({});
 NotEnabled.args = {
-  modelValue: false,
+  isSelected: false,
   prompt: 'Test',
 };

@@ -1,11 +1,11 @@
 export type CheckboxItemProps = {
-  modelValue: boolean;
+  isSelected: boolean;
   icon?: string;
   prompt: string;
 };
 
 export const checkboxItemProps = {
-  modelValue: {
+  isSelected: {
     type: Boolean,
     required: true,
     default: false,
