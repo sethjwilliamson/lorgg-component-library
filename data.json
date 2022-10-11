@@ -688,80 +688,80 @@
             "abbreviation": "MT",
             "icon": "\/images\/targon.svg",
             "name": "Targon",
-            "nameRef": "var(--tc-color-Targon)",
-            "color": "#4D38B0",
+            "nameRef": "Targon",
+            "color": "var(--tc-color-Targon)",
             "order": 2
         },
         {
             "abbreviation": "NX",
             "icon": "\/images\/noxus.svg",
             "name": "Noxus",
-            "nameRef": "var(--tc-color-Noxus)",
-            "color": "#962d27",
+            "nameRef": "Noxus",
+            "color": "var(--tc-color-Noxus)",
             "order": 0
         },
         {
             "abbreviation": "DE",
             "icon": "\/images\/demacia.svg",
             "name": "Demacia",
-            "nameRef": "var(--tc-color-Demacia)",
-            "color": "#B9AC98",
+            "nameRef": "Demacia",
+            "color": "var(--tc-color-Demacia)",
             "order": 0
         },
         {
             "abbreviation": "FR",
             "icon": "\/images\/freljord.svg",
             "name": "Freljord",
-            "nameRef": "var(--tc-color-Freljord)",
-            "color": "#4A7DC3",
+            "nameRef": "Freljord",
+            "color": "var(--tc-color-Freljord)",
             "order": 0
         },
         {
             "abbreviation": "SI",
             "icon": "\/images\/shadowisles.svg",
             "name": "Shadow Isles",
-            "nameRef": "var(--tc-color-ShadowIsles)",
-            "color": "#2A725D",
+            "nameRef": "ShadowIsles",
+            "color": "var(--tc-color-ShadowIsles)",
             "order": 0
         },
         {
             "abbreviation": "IO",
             "icon": "\/images\/ionia.svg",
             "name": "Ionia",
-            "nameRef": "var(--tc-color-Ionia)",
-            "color": "#C45987",
+            "nameRef": "Ionia",
+            "color": "var(--tc-color-Ionia)",
             "order": 0
         },
         {
             "abbreviation": "SH",
             "icon": "\/images\/shurima.svg",
             "name": "Shurima",
-            "nameRef": "var(--tc-color-Shurima)",
-            "color": "#C4AE3D",
+            "nameRef": "Shurima",
+            "color": "var(--tc-color-Shurima)",
             "order": 3
         },
         {
             "abbreviation": "BW",
             "icon": "\/images\/bilgewater.svg",
             "name": "Bilgewater",
-            "nameRef": "var(--tc-color-Bilgewater)",
-            "color": "#B05925",
+            "nameRef": "Bilgewater",
+            "color": "var(--tc-color-Bilgewater)",
             "order": 1
         },
         {
             "abbreviation": "PZ",
             "icon": "\/images\/pnz.svg",
             "name": "Piltover & Zaun",
-            "nameRef": "var(--tc-color-PiltoverZaun)",
-            "color": "#FD9061",
+            "nameRef": "PiltoverZaun",
+            "color": "var(--tc-color-PiltoverZaun)",
             "order": 0
         },
         {
             "abbreviation": "BC",
             "icon": "\/images\/bandlecity.svg",
             "name": "Bandle City",
-            "nameRef": "var(--tc-color-BandleCity)",
-            "color": "#98A711",
+            "nameRef": "BandleCity",
+            "color": "var(--tc-color-BandleCity)",
             "order": 4
         }
     ],
