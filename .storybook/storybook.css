@@ -1,0 +1,4 @@
+/* Overwrite storybook css */
+button + button {
+  margin-left: 0 !important;
+}
