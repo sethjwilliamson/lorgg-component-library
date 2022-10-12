@@ -4,6 +4,7 @@ import './storybook.css';
 import { createPinia } from 'pinia';
 import { useJsonStore } from '../src/helpers/stores';
 import 'tippy.js/dist/tippy.css';
+import '@vueform/multiselect/themes/default.css';
 
 // TODO: This should be removed eventually. Just meant for testing.
 const pinia = createPinia();

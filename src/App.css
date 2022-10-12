@@ -69,6 +69,83 @@
   --font-weight-normal: 500;
   --font-weight-bold: 700;
   --font-weight-heavy: 900;
+
+  /* Vue Multiselect */
+  --ms-font-size: 1rem;
+  --ms-line-height: 1.375;
+  --ms-bg: var(--color-2);
+  --ms-bg-disabled: #f3f4f6;
+  --ms-border-color: #d1d5db;
+  --ms-border-width: 0px;
+  --ms-radius: 25px;
+  --ms-py: 0.5rem;
+  --ms-px: 0.875rem;
+  --ms-ring-width: 0px;
+  --ms-ring-color: var(--color-primary);
+  --ms-placeholder-color: var(--color-0);
+  --ms-max-height: 180px;
+
+  /* --ms-spinner-color: #10B981; */
+  --ms-caret-color: var(--color-0);
+  --ms-clear-color: var(--color-0);
+  --ms-clear-color-hover: var(--color-primary-2);
+
+  --ms-tag-font-size: var(--font-size-m);
+  --ms-tag-line-height: var(--font-size-m);
+  --ms-tag-font-weight: var(--font-weight-normal);
+  --ms-tag-bg: var(--color-0);
+  --ms-tag-bg-disabled: var(--color-bad);
+  /* --ms-tag-color: #FFFFFF;
+  --ms-tag-color-disabled: #FFFFFF; */
+  --ms-tag-radius: 20px;
+  /* --ms-tag-py: 0.125rem;
+  --ms-tag-px: 0.5rem;
+  --ms-tag-my: 0.25rem;
+  --ms-tag-mx: 0.25rem; */
+
+  /* --ms-tag-remove-radius: 4px;
+  --ms-tag-remove-py: 0.25rem;
+  --ms-tag-remove-px: 0.25rem;
+  --ms-tag-remove-my: 0rem;
+  --ms-tag-remove-mx: 0.125rem; */
+
+  --ms-dropdown-bg: var(--color-2);
+  --ms-dropdown-border-color: var(--color-primary);
+  --ms-dropdown-border-width: 0px;
+  --ms-dropdown-radius: 22.5px;
+
+  /* --ms-group-label-py: 0.3rem;
+  --ms-group-label-px: 0.75rem;
+  --ms-group-label-line-height: 1.375;
+  --ms-group-label-bg: #E5E7EB;
+  --ms-group-label-color: #374151; */
+  --ms-group-label-bg-pointed: var(--color-1);
+  --ms-group-label-color-pointed: var(--color-primary-2);
+  /* --ms-group-label-bg-disabled: #F3F4F6;
+  --ms-group-label-color-disabled: #D1D5DB;
+  --ms-group-label-bg-selected: #059669;
+  --ms-group-label-color-selected: #FFFFFF;
+  --ms-group-label-bg-selected-pointed: #0c9e70;
+  --ms-group-label-color-selected-pointed: #FFFFFF;
+  --ms-group-label-bg-selected-disabled: #75cfb1;
+  --ms-group-label-color-selected-disabled: #D1FAE5; */
+
+  /* --ms-option-font-size: 1rem;
+  --ms-option-line-height: 1.375; */
+  --ms-option-bg-pointed: var(--color-0);
+  --ms-option-color-pointed: var(--color-primary-2);
+  /* --ms-option-bg-selected: #10B981;
+  --ms-option-color-selected: #FFFFFF;
+  --ms-option-bg-disabled: #FFFFFF;
+  --ms-option-color-disabled: #D1D5DB;
+  --ms-option-bg-selected-pointed: #26C08E;
+  --ms-option-color-selected-pointed: #FFFFFF;
+  --ms-option-bg-selected-disabled: #FFFFFF;
+  --ms-option-color-selected-disabled: #D1FAE5;
+  --ms-option-py: 0.5rem;
+  --ms-option-px: 0.75rem; */
+
+  /* --ms-empty-color: #4B5563; */
 }
 
 #app {
@@ -131,4 +208,8 @@
 .circle-button > svg {
   height: 20px;
   width: 20px;
+}
+
+.multiselect {
+  color: var(--color-primary-2);
 }
