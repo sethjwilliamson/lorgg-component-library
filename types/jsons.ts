@@ -48,22 +48,24 @@ export type DataJsonKeyword = {
   showInFilter: boolean;
 };
 
+export type RegionNameRefs =
+  | 'Targon'
+  | 'Noxus'
+  | 'Demacia'
+  | 'Freljord'
+  | 'ShadowIsles'
+  | 'Ionia'
+  | 'Shurima'
+  | 'Bilgewater'
+  | 'PiltoverZaun'
+  | 'BandleCity';
+
 export type DataJsonRegion = {
   abbreviation: string;
   color: string;
   icon: string;
   name: string;
-  nameRef:
-    | 'Targon'
-    | 'Noxus'
-    | 'Demacia'
-    | 'Freljord'
-    | 'ShadowIsles'
-    | 'Ionia'
-    | 'Shurima'
-    | 'Bilgewater'
-    | 'PiltoverZaun'
-    | 'BandleCity';
+  nameRef: RegionNameRefs;
   order: number;
 };
 
@@ -141,7 +143,6 @@ export type DataJsonRuneterraChampion = {
   name: string;
   nameRef: string;
   order: number;
-  includedCardCodes?: Array<string>;
 };
 
 export type DataJson = {

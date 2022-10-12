@@ -1065,8 +1065,7 @@
             "name": "Jhin",
             "nameRef": "06RU002",
             "color": "white",
-            "order": 0,
-            "includedCardCodes": ["01IO056", "01IO033", "01NX046", "01NX040", "01PZ013", "01PZ048", "01PZ054", "01PZ030", "01PZ044", "01FR036", "01FR021", "01FR052", "01SI035", "01SI033", "02BW056", "02BW060", "02BW028", "02NX004", "03NX017", "03DE004", "03FR003", "03MT001", "03MT220", "03SI006", "04PZ005", "04PZ005T1", "04PZ020", "04BW007", "04BW016", "04SH089", "04SH009", "04SH097", "04SI007", "04SI012", "04MT013", "04MT002", "05FR006", "05IO020", "05PZ031", "05PZ014", "06NX009", "06IO003", "06IO004", "06RU002", "06NX015", "06NX013", "06NX012T1"]
+            "order": 0
         },
         {
             "abbreviation": "06RU001",
@@ -1074,8 +1073,7 @@
             "name": "Bard",
             "nameRef": "06RU001",
             "color": "white",
-            "order": 0,
-            "includedCardCodes": ["06BC026", "06MT029", "06MT047", "06RU001", "06RU001T4", "06RU001T9", "06RU001T8", "06RU045", "06BC031", "06BC044", "06BC011", "06BC032"]
+            "order": 0
         },
         {
             "abbreviation": "06RU025",
@@ -1083,8 +1081,7 @@
             "name": "Evelynn",
             "nameRef": "06RU025",
             "color": "white",
-            "order": 0,
-            "includedCardCodes": ["06RU025", "06SI019", "06SI018", "06BW018", "06PZ025", "06SH034", "06SI020", "06DE030"]
+            "order": 0
         },
         {
             "abbreviation": "06RU005",
@@ -1092,8 +1089,7 @@
             "name": "Kayn",
             "nameRef": "06RU005",
             "color": "white",
-            "order": 0,
-            "includedCardCodes": ["06RU005", "06SH040", "06SH005", "06DE010", "06DE040", "06IO034", "06NX034", "06IO025", "06NX019", "06SI006"]
+            "order": 0
         },
         {
             "abbreviation": "06RU008",
@@ -1101,8 +1097,7 @@
             "name": "Jax",
             "nameRef": "06RU008",
             "color": "white",
-            "order": 0,
-            "includedCardCodes": ["06SI003", "06NX023", "06BW027", "06SI031", "06SI031T1", "06BW029", "06MT004", "06DE024", "06RU008", "06RU008T7", "06BC047", "06IO028"]
+            "order": 0
         }
     ]
 }
