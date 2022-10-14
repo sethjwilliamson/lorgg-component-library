@@ -70,7 +70,13 @@
   --font-weight-bold: 700;
   --font-weight-heavy: 900;
 
-  --transition-flip: cubic-bezier(0.75, -0.5, 0.25, 1.5);
+  --transition-1: cubic-bezier(0.75, -0.5, 0.25, 1.5);
+  --transition-2: cubic-bezier(0, 0, 0.7, 1.7);
+
+  --card-item-aspect-ratio-w: 643;
+  --card-item-aspect-ratio-h: 969;
+  --card-item-aspect-ratio: var(--card-item-aspect-ratio-w) /
+    var(--card-item-aspect-ratio-h);
 
   /* Vue Multiselect */
   --ms-font-size: 1rem;

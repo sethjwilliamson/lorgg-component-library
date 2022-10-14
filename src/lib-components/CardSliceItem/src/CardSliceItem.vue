@@ -148,7 +148,6 @@ onMounted(() => {
   background-color: var(--color-background-2);
   border-radius: var(--border-radius-m);
   height: 100%;
-  margin-bottom: 5px;
   overflow: hidden;
   position: relative;
   width: 100%;
