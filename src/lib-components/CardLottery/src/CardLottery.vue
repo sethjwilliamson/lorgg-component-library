@@ -31,9 +31,9 @@
         </div>
       </div>
       <div class="options">
-        <button>Set as Banner</button>
-        <button>Set as Icon</button>
-        <button @click="reset">Open Another (23)</button>
+        <button class="primary-button">Set as Banner</button>
+        <button class="primary-button">Set as Icon</button>
+        <button class="primary-button" @click="reset">Open Another (23)</button>
       </div>
       <div class="icon">
         <div class="circle-card-item-wrapper">
@@ -186,17 +186,6 @@ reset();
 .options {
   flex-direction: column;
   gap: 10px;
-}
-
-.options > button {
-  background-color: var(--color-primary);
-  border-radius: 30px;
-  border: none;
-  color: var(--color-primary-2);
-  cursor: pointer;
-  font-weight: var(--font-weight-bold);
-  height: 45px;
-  padding: 0 20px;
 }
 
 @keyframes append-animate {

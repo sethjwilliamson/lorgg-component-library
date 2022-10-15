@@ -55,6 +55,7 @@ import {
   faSignOutAlt,
   faSyncAlt,
   faCog,
+  faShareNodes,
 } from '@fortawesome/free-solid-svg-icons';
 import {
   faTwitter,
@@ -99,6 +100,7 @@ library.add(
   faSignOutAlt,
   faSyncAlt,
   faCog,
+  faShareNodes,
 );
 app.component('FontAwesomeIcon', FontAwesomeIcon);
 
