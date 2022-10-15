@@ -1,6 +1,6 @@
 <template>
   <div class="card-item-3d">
-    <div class="card clickcard" :class="props.flipped ? 'flipped' : null">
+    <div class="card" :class="cardClass">
       <div class="front face" :style="frontStyle"></div>
       <div class="back face" :style="backStyle"></div>
     </div>
@@ -9,9 +9,8 @@
 
 <script setup lang="ts">
 import { RegionNameRefs } from '#/jsons';
-import { getRegionColorOfCard, propsToCard } from '@/helpers/functions';
-import { watch } from 'vue';
-import { computed, ComputedRef, Ref, ref, StyleValue } from 'vue';
+import { propsToCard } from '@/helpers/functions';
+import { computed, ComputedRef, StyleValue } from 'vue';
 import { cardItem3dProps, CardItem3dProps } from './types';
 
 const props: CardItem3dProps = defineProps(cardItem3dProps);
@@ -55,6 +54,10 @@ const backStyle: ComputedRef<StyleValue> = computed(() => {
     'background-image': `url("https://lor.gg/storage/cards/card/en_us/${props.cardCode}.webp")`,
     'background-size': 'cover',
   };
+});
+
+const cardClass: ComputedRef<Array<string>> = computed(() => {
+  return props.flipped ? ['flipped'] : [];
 });
 </script>
 

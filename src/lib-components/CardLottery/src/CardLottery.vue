@@ -6,8 +6,8 @@
     ></div>
     <div class="cards-container">
       <div
-        v-for="card in cards"
-        :key="card.cardCode.value"
+        v-for="(card, index) in cards"
+        :key="index"
         class="card-item-3d-wrapper"
         :class="card.display.value ? null : 'hide'"
       >
@@ -23,6 +23,8 @@
       <div class="slice">
         <div class="circle-slice-item-wrapper">
           <CardSliceItem
+            :color="'133, 133, 133'"
+            :name="'Player'"
             :card-code-prop="chosenCardCode"
             :ignore-card-item="true"
           />
@@ -36,6 +38,7 @@
       <div class="icon">
         <div class="circle-card-item-wrapper">
           <CircleCardItem
+            :color="'133, 133, 133'"
             :card-code-prop="chosenCardCode"
             :ignore-card-item="true"
           />
@@ -61,10 +64,7 @@ const chosenCardCode: Ref<string | null> = ref(null);
 
 const cardLotteryBackgroundStyle: ComputedRef<StyleValue> = computed(() => {
   if (!chosenCardCode.value) {
-    console.log('TEST');
-    return {
-      background: 'blue',
-    };
+    return {};
   }
 
   return {
@@ -76,7 +76,6 @@ const cardLotteryBackgroundStyle: ComputedRef<StyleValue> = computed(() => {
 
 function cardClicked(card: CardFlip) {
   chosenCardCode.value = card.cardCode.value;
-  console.log(chosenCardCode.value);
   card.flipped.value = true;
 
   for (const card2 of cards) {
@@ -92,7 +91,6 @@ function cardClicked(card: CardFlip) {
 
 function reset() {
   chosenCardCode.value = null;
-
   cards.splice(0);
 
   for (let i = 0; i < 3; i++) {
