@@ -19,6 +19,9 @@ export function setupi18n() {
           deleteDeckConfirmation:
             'Are you sure you would like to delete this deck?',
           editDeckName: 'Edit Deck Name',
+          signInToUpload: 'Please sign in to upload deck to LoR',
+          uploadDeckToLor: 'Upload Deck to Legends of Runeterra',
+          deckUploaded: 'Deck Uploaded!',
         },
         general: {
           // runeterra: 'Runeterra',
