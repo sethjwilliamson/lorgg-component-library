@@ -1,6 +1,6 @@
 export type UploadDeckToLorButtonProps = {
   deckCode: string;
-  name: string;
+  deckName: string;
 };
 
 export const uploadDeckToLorButtonProps = {
@@ -9,7 +9,7 @@ export const uploadDeckToLorButtonProps = {
     required: true,
     default: '',
   },
-  name: {
+  deckName: {
     type: String,
     required: true,
     default: '',
