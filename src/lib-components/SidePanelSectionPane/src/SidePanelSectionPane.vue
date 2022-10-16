@@ -4,10 +4,13 @@
       <h2 class="title">
         {{ props.title }}
       </h2>
-      <p v-if="filterArray" class="clear" :class="clearClass" @click="onClear">
-        <!-- TODO: Translate -->
-        Clear
-      </p>
+      <p
+        v-if="filterArray"
+        v-t="'general.clear'"
+        class="clear"
+        :class="clearClass"
+        @click="onClear"
+      ></p>
     </div>
     <slot> </slot>
   </div>

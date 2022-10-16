@@ -1,8 +1,7 @@
 <template>
-  <!-- TODO: Translate -->
   <SidePanelSectionPane
     :filter-array="props.filterArray"
-    :title="'Mana Cost'"
+    :title="t('general.manaCost')"
     @clear:filter-array="onClear"
   >
     <div class="checkbox-rows-container">
@@ -34,6 +33,8 @@
 import { FilterProps, filterProps } from './types';
 import SidePanelSectionPane from '@/lib-components/SidePanelSectionPane/src/SidePanelSectionPane.vue';
 import CheckboxItemManaCost from '@/lib-components/CheckboxItemManaCost/src/CheckboxItemManaCost.vue';
+import { useI18n } from 'vue-i18n';
+const { t } = useI18n();
 
 const props: FilterProps = defineProps(filterProps);
 const emit = defineEmits<{

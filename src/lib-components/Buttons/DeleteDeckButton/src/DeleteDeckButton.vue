@@ -8,6 +8,8 @@
 import tippy from 'tippy.js';
 import { onMounted, ref } from 'vue';
 import { deleteDeckButtonProps, DeleteDeckButtonProps } from './types';
+import { useI18n } from 'vue-i18n';
+const { t } = useI18n();
 
 const props: DeleteDeckButtonProps = defineProps(deleteDeckButtonProps);
 const button = ref<HTMLElement | null>(null);
@@ -18,17 +20,13 @@ const button = ref<HTMLElement | null>(null);
 
 onMounted(() => {
   tippy(button.value as HTMLElement, {
-    // TODO: Translate
-    content: 'Delete Deck',
+    content: t('deck.deleteDeck'),
     arrow: true,
   });
 });
 
 function deleteDeck() {
-  // TODO: Translate
-  const confirmation = confirm(
-    'Are you sure you would like to delete this deck?',
-  );
+  const confirmation = confirm(t('deck.deleteDeckConfirmation'));
 
   if (confirmation) {
     // TODO: Implement

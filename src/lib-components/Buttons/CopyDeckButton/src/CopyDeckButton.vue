@@ -9,6 +9,8 @@ import { ref, onMounted } from 'vue';
 import { copyToClipboard } from '@/helpers/functions';
 import tippy, { Instance } from 'tippy.js';
 import { copyDeckButtonProps, CopyDeckButtonProps } from './types';
+import { useI18n } from 'vue-i18n';
+const { t } = useI18n();
 
 const props: CopyDeckButtonProps = defineProps(copyDeckButtonProps);
 const button = ref<HTMLElement | null>(null);
@@ -17,14 +19,12 @@ let copyButtonTippy: Instance;
 
 onMounted(() => {
   copyButtonTippy = tippy(button.value as HTMLElement, {
-    // TODO: Translate
-    content: 'Copy Deck Code',
+    content: t('deck.copyDeckCode'),
     arrow: true,
   });
 
   deckCopiedTippy = tippy(button.value as HTMLElement, {
-    // TODO: Translate
-    content: 'Deck Code Copied!',
+    content: t('deck.deckCodeCopied'),
     trigger: 'manual',
     arrow: true,
   });

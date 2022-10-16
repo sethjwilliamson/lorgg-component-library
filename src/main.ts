@@ -63,6 +63,7 @@ import {
   faRedditAlien,
   faDiscord,
 } from '@fortawesome/free-brands-svg-icons';
+import { setupi18n } from './setup/i18n';
 
 library.add(
   faChevronCircleDown,
@@ -103,5 +104,7 @@ library.add(
   faShareNodes,
 );
 app.component('FontAwesomeIcon', FontAwesomeIcon);
+
+app.use(setupi18n());
 
 app.mount('#app');

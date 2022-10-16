@@ -1,0 +1,36 @@
+import { createI18n } from 'vue-i18n';
+
+export function setupi18n() {
+  const i18n = createI18n({
+    legacy: false, // you must set `false`, to use Composition API
+    locale: 'en', // set locale
+    fallbackLocale: 'en', // set fallback locale
+    messages: {
+      en: {
+        cardLottery: {
+          setBanner: 'Set As Banner',
+          setIcon: 'Set As Icon',
+          openAnother: 'Open Another',
+        },
+        deck: {
+          copyDeckCode: 'Copy Deck Code',
+          deckCodeCopied: 'Deck Code Copied',
+          deleteDeck: 'Delete Deck',
+          deleteDeckConfirmation:
+            'Are you sure you would like to delete this deck?',
+          editDeckName: 'Edit Deck Name',
+        },
+        general: {
+          // runeterra: 'Runeterra',
+          manaCost: 'Mana Cost',
+          regions: 'Regions',
+          clear: 'Clear',
+        },
+      },
+    }, // set locale messages
+    // If you need to specify other options, you can set other options
+    // ...
+  });
+
+  return i18n;
+}

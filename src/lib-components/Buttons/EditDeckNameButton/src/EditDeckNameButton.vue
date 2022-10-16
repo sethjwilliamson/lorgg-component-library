@@ -8,21 +8,21 @@
 import { ref, onMounted } from 'vue';
 import tippy from 'tippy.js';
 import { EditDeckNameButtonProps, editDeckNameButtonProps } from './types';
+import { useI18n } from 'vue-i18n';
+const { t } = useI18n();
 
 const props: EditDeckNameButtonProps = defineProps(editDeckNameButtonProps);
 const button = ref<HTMLElement | null>(null);
 
 onMounted(() => {
   tippy(button.value as HTMLElement, {
-    // TODO: Translate
-    content: 'Edit Name',
+    content: t('deck.editDeckName'),
     arrow: true,
   });
 });
 
 function copyDeckCode() {
-  // TODO: Translate
-  const newName = prompt('Rename Deck', props.deckName);
+  const newName = prompt(t('deck.editDeckName'), props.deckName);
 
   if (!newName) {
     return;

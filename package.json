@@ -27,7 +27,8 @@
     "node": "^18.10.0",
     "pinia": "^2.0.21",
     "tippy.js": "^6.3.7",
-    "vue": "^3.2.16"
+    "vue": "^3.2.16",
+    "vue-i18n": "^9.2.2"
   },
   "devDependencies": {
     "@babel/core": "^7.15.8",

@@ -1,8 +1,7 @@
 <template>
-  <!-- TODO: Translate -->
   <SidePanelSectionPane
     :filter-array="props.filterArray"
-    :title="'Regions'"
+    :title="t('general.regions')"
     @clear:filter-array="onClear"
   >
     <div class="checkboxes-container">
@@ -41,6 +40,8 @@ import { useJsonStore } from '@/helpers/stores';
 import CheckboxItem from '@/lib-components/CheckboxItem/src/CheckboxItem.vue';
 import MultiSelect from '@vueform/multiselect';
 import { Ref, ref, watch } from 'vue';
+import { useI18n } from 'vue-i18n';
+const { t } = useI18n();
 
 const props: FilterProps = defineProps(filterProps);
 const emit = defineEmits<{

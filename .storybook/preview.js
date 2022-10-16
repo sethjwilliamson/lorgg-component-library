@@ -5,10 +5,13 @@ import { createPinia } from 'pinia';
 import { useJsonStore } from '../src/helpers/stores';
 import 'tippy.js/dist/tippy.css';
 import '@vueform/multiselect/themes/default.css';
+import { setupi18n } from '../src/setup/i18n';
 
 // TODO: This should be removed eventually. Just meant for testing.
 const pinia = createPinia();
 app.use(pinia);
+
+app.use(setupi18n());
 
 import * as dataJson from '../data.json';
 import { default as cardJsonObject } from '../cardJson.json';

@@ -31,9 +31,12 @@
         </div>
       </div>
       <div class="options">
-        <button class="primary-button">Set as Banner</button>
-        <button class="primary-button">Set as Icon</button>
-        <button class="primary-button" @click="reset">Open Another (23)</button>
+        <button v-t="'cardLottery.setBanner'" class="primary-button"></button>
+        <button v-t="'cardLottery.setIcon'" class="primary-button"></button>
+        <button class="primary-button" @click="reset">
+          <span v-t="'cardLottery.openAnother'"></span>
+          <span> (23) </span>
+        </button>
       </div>
       <div class="icon">
         <div class="circle-card-item-wrapper">
