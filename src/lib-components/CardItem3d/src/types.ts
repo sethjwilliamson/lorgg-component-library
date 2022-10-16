@@ -1,5 +1,3 @@
-import { Ref } from 'vue';
-
 export type CardItem3dProps = {
   flipped: boolean;
   cardCode: string;

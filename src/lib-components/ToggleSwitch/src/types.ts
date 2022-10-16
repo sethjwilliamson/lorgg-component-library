@@ -10,7 +10,7 @@ export const toggleSwitchProps = {
     default: -1,
   },
   options: {
-    type: Array,
+    type: Array<string>,
     required: true,
     default: [],
   },

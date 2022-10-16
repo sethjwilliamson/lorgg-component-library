@@ -30,7 +30,7 @@ const clearClass: ComputedRef<string | null> = computed(() => {
   return props.filterArray && props.filterArray.length > 0 ? 'clickable' : null;
 });
 
-function onClear(e: Event) {
+function onClear() {
   emit('clear:filterArray');
 }
 </script>

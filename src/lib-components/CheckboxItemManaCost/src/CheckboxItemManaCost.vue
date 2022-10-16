@@ -8,7 +8,6 @@
 </template>
 
 <script setup lang="ts">
-import { computed, ComputedRef, StyleValue } from 'vue';
 import { CheckboxItemProps, checkboxItemProps } from './types';
 import ManaHexagonIcon from '@/lib-components/icons/ManaHexagonIcon/src/ManaHexagonIcon.vue';
 

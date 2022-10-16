@@ -54,7 +54,7 @@
 <script setup lang="ts">
 import { useJsonStore } from '@/helpers/stores';
 import CardItem3d from '@/lib-components/CardItem3d/src/CardItem3d.vue';
-import { computed, ComputedRef, Ref, ref, StyleValue, watch } from 'vue';
+import { computed, ComputedRef, Ref, ref, StyleValue } from 'vue';
 import CardSliceItem from '@/lib-components/CardSliceItem/src/CardSliceItem.vue';
 import CircleCardItem from '@/lib-components/CircleCardItem/src/CircleCardItem.vue';
 import { CardFlip } from './types';
