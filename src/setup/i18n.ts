@@ -22,6 +22,9 @@ export function setupi18n() {
           signInToUpload: 'Please sign in to upload deck to LoR',
           uploadDeckToLor: 'Upload Deck to Legends of Runeterra',
           deckUploaded: 'Deck Uploaded!',
+          updatePrivacy: 'Update Deck Privacy',
+          deckPrivate: 'Currently Private',
+          deckPublic: 'Currently Public',
         },
         general: {
           // runeterra: 'Runeterra',

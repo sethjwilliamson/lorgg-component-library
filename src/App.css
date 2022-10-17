@@ -204,6 +204,11 @@
   color: var(--color-2);
 }
 
+.tippy-content {
+  text-align: center;
+  white-space: pre-line;
+}
+
 .circle-button {
   align-items: center;
   background-color: var(--color-3);
