@@ -25,6 +25,7 @@ export function setupi18n() {
           updatePrivacy: 'Update Deck Privacy',
           deckPrivate: 'Currently Private',
           deckPublic: 'Currently Public',
+          openInDeckBuilder: 'Open in Deck Builder',
         },
         general: {
           // runeterra: 'Runeterra',
