@@ -1,15 +1,22 @@
 <template>
-  <DoughnutChart :chart-data="testData" :options="options" :plugins="plugins" />
+  <DoughnutChart
+    ref="chart"
+    :chart-data="testData"
+    :options="options"
+    :plugins="plugins"
+  />
 </template>
 
 <script setup lang="ts">
-import { computed, ComputedRef } from 'vue';
+import { computed, ComputedRef, onMounted, ref } from 'vue';
 import {
   WinrateDoughtnutChartProps,
   winrateDoughtnutChartProps,
 } from './types';
 import { DoughnutChart } from 'vue-chart-3';
 import { Chart, ChartData, ChartOptions, registerables } from 'chart.js';
+
+const chart = ref<HTMLCanvasElement | null>(null);
 
 Chart.register(...registerables);
 

@@ -32,6 +32,8 @@ export function setupi18n() {
           manaCost: 'Mana Cost',
           regions: 'Regions',
           clear: 'Clear',
+          patch: 'Patch',
+          matches: 'Matches',
         },
       },
     }, // set locale messages
