@@ -157,6 +157,8 @@ const plugins = [
       gradientBad.addColorStop(ratio, 'rgba(255, 81, 83, 0)');
       gradientBad.addColorStop(1, 'rgba(255, 81, 83, 0.25)');
 
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
       chart.config.data.datasets[0].fill = {
         target: 1,
         above: gradientGood,
