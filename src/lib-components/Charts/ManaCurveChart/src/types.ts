@@ -1,5 +1,10 @@
 export type ManaCurveChartProps = {
   deckCode: string;
+  paddingTop: number;
+  showDataLabels: boolean;
+  dataLabelsOffset: number;
+  tooltipsEnabled: boolean;
+  displayXScale: boolean;
 };
 
 export const manaCurveChartProps = {
@@ -7,6 +12,31 @@ export const manaCurveChartProps = {
     type: String,
     required: true,
     default: '',
+  },
+  paddingTop: {
+    type: Number,
+    required: false,
+    default: 10,
+  },
+  showDataLabels: {
+    type: Boolean,
+    required: false,
+    default: true,
+  },
+  dataLabelsOffset: {
+    type: Number,
+    required: false,
+    default: -10,
+  },
+  tooltipsEnabled: {
+    type: Boolean,
+    required: false,
+    default: true,
+  },
+  displayXScale: {
+    type: Boolean,
+    required: false,
+    default: true,
   },
 };
 

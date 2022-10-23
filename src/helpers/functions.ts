@@ -96,6 +96,16 @@ export function getRegionColorOfRegionRef(regionRef: string) {
   );
 }
 
+export function getRegionNameOfRegionRef(regionRef: string) {
+  if (isRegionRuneterran(regionRef)) {
+    return useJsonStore().jsons.cardJsonObject[regionRef]?.name || 'Runeterra';
+  }
+
+  return useJsonStore().jsons.dataJson.regions.find(
+    (x) => x.nameRef === regionRef,
+  )?.name;
+}
+
 export function getRegionsQuantity(
   deck: Deck,
   regions?: Array<string> | null,

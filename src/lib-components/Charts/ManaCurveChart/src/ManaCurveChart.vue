@@ -19,6 +19,7 @@ import { useI18n } from 'vue-i18n';
 import {
   getDeckObjectFromCode,
   getRegionColorOfRegionRef,
+  getRegionNameOfRegionRef,
   getRegions,
   regionOfCard,
 } from '@/helpers/functions';
@@ -82,7 +83,7 @@ const testData: ComputedRef<ChartData<'bar'>> = computed(() => {
         data: regionDataSet.value[regionKey],
         borderRadius: borderRadiusAllCorners,
         borderSkipped: false,
-        label: regionKey,
+        label: getRegionNameOfRegionRef(regionKey),
       },
       {
         backgroundColor: 'transparent',
@@ -99,11 +100,13 @@ const testData: ComputedRef<ChartData<'bar'>> = computed(() => {
 
 const options: ChartOptions<'bar'> = {
   responsive: true,
+  maintainAspectRatio: false,
   plugins: {
     legend: {
       display: false,
     },
     tooltip: {
+      enabled: props.tooltipsEnabled,
       mode: 'index',
       intersect: false,
       filter(tooltipItem) {
@@ -145,7 +148,7 @@ const options: ChartOptions<'bar'> = {
     datalabels: {
       align: 'end',
       anchor: 'end',
-      offset: -15,
+      offset: props.dataLabelsOffset,
       formatter(value, context: Context) {
         let sum = 0;
 
@@ -162,6 +165,10 @@ const options: ChartOptions<'bar'> = {
         return sum || '';
       },
       display(context) {
+        if (!props.showDataLabels) {
+          return false;
+        }
+
         return context.datasetIndex === context.chart.data.datasets.length - 1;
       },
     },
@@ -172,6 +179,7 @@ const options: ChartOptions<'bar'> = {
       grid: {
         display: false,
       },
+      display: props.displayXScale,
     },
     y: {
       stacked: true,
@@ -183,7 +191,7 @@ const options: ChartOptions<'bar'> = {
   },
   layout: {
     padding: {
-      top: 30,
+      top: props.paddingTop,
     },
   },
 };
