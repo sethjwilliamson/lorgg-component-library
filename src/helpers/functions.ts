@@ -15,6 +15,10 @@ export function getDeckObjectFromCode(deckcode: string): Deck {
   );
 }
 
+export function getRegionsFromCode(deckCode: string): Array<string> {
+  return getRegions(getDeckObjectFromCode(deckCode));
+}
+
 export function getRegions(deck: Deck): Array<string> {
   const regions: Array<string> = [];
   const store = useJsonStore();
@@ -62,7 +66,7 @@ export function getRegionColorOfCard(
 
   const defaultRegion =
     store.jsons.dataJson.regions.find((x) => x.nameRef === card.regionRefs[0])
-      ?.color || 'var(--tc-color-primary-2)';
+      ?.color || 'var(--color-primary-2)';
 
   if (card.regionRefs.length === 1 || !regions || regions.length < 2) {
     return defaultRegion;
@@ -73,12 +77,23 @@ export function getRegionColorOfCard(
       return (
         store.jsons.dataJson.regions.find(
           (x) => x.nameRef === card.regionRefs[0],
-        )?.color || 'var(--tc-color-primary-2)'
+        )?.color || 'var(--color-primary-2)'
       );
     }
   }
 
   return defaultRegion;
+}
+
+export function getRegionColorOfRegionRef(regionRef: string) {
+  return (
+    getComputedStyle(document.documentElement).getPropertyValue(
+      `--color-${regionRef}`,
+    ) ||
+    getComputedStyle(document.documentElement).getPropertyValue(
+      '--color-primary-2',
+    )
+  );
 }
 
 export function getRegionsQuantity(
@@ -104,7 +119,10 @@ export function getRegionsQuantity(
   return returnValue;
 }
 
-function regionOfCard(card: CardJsonCard, regions: Array<string>): string {
+export function regionOfCard(
+  card: CardJsonCard,
+  regions: Array<string>,
+): string {
   for (const regionRef of card.regionRefs) {
     if (regions.includes(regionRef)) {
       return regionRef;

@@ -1,7 +1,7 @@
 import WinrateDoughnutChart from '@/lib-components/Charts/WinrateDoughtnutChart';
 
 export default {
-  title: 'Library/WinrateDoughnutChart',
+  title: 'Library/Charts/WinrateDoughnutChart',
   component: WinrateDoughnutChart,
   argTypes: {},
 };

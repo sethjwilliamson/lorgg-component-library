@@ -26,6 +26,7 @@ export function setupi18n() {
           deckPrivate: 'Currently Private',
           deckPublic: 'Currently Public',
           openInDeckBuilder: 'Open in Deck Builder',
+          numManaCards: '{num} Mana Cards',
         },
         general: {
           // runeterra: 'Runeterra',
@@ -34,6 +35,7 @@ export function setupi18n() {
           clear: 'Clear',
           patch: 'Patch',
           matches: 'Matches',
+          total: 'Total',
         },
       },
     }, // set locale messages

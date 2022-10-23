@@ -1,7 +1,7 @@
 import WinrateLineChart from '@/lib-components/Charts/WinrateLineChart';
 
 export default {
-  title: 'Library/WinrateLineChart',
+  title: 'Library/Charts/WinrateLineChart',
   component: WinrateLineChart,
   argTypes: {},
 };

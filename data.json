@@ -689,7 +689,7 @@
             "icon": "\/images\/targon.svg",
             "name": "Targon",
             "nameRef": "Targon",
-            "color": "var(--tc-color-Targon)",
+            "color": "--color-Targon",
             "order": 2
         },
         {
@@ -697,7 +697,7 @@
             "icon": "\/images\/noxus.svg",
             "name": "Noxus",
             "nameRef": "Noxus",
-            "color": "var(--tc-color-Noxus)",
+            "color": "--color-Noxus",
             "order": 0
         },
         {
@@ -705,7 +705,7 @@
             "icon": "\/images\/demacia.svg",
             "name": "Demacia",
             "nameRef": "Demacia",
-            "color": "var(--tc-color-Demacia)",
+            "color": "--color-Demacia",
             "order": 0
         },
         {
@@ -713,7 +713,7 @@
             "icon": "\/images\/freljord.svg",
             "name": "Freljord",
             "nameRef": "Freljord",
-            "color": "var(--tc-color-Freljord)",
+            "color": "--color-Freljord",
             "order": 0
         },
         {
@@ -721,7 +721,7 @@
             "icon": "\/images\/shadowisles.svg",
             "name": "Shadow Isles",
             "nameRef": "ShadowIsles",
-            "color": "var(--tc-color-ShadowIsles)",
+            "color": "--color-ShadowIsles",
             "order": 0
         },
         {
@@ -729,7 +729,7 @@
             "icon": "\/images\/ionia.svg",
             "name": "Ionia",
             "nameRef": "Ionia",
-            "color": "var(--tc-color-Ionia)",
+            "color": "--color-Ionia",
             "order": 0
         },
         {
@@ -737,7 +737,7 @@
             "icon": "\/images\/shurima.svg",
             "name": "Shurima",
             "nameRef": "Shurima",
-            "color": "var(--tc-color-Shurima)",
+            "color": "--color-Shurima",
             "order": 3
         },
         {
@@ -745,7 +745,7 @@
             "icon": "\/images\/bilgewater.svg",
             "name": "Bilgewater",
             "nameRef": "Bilgewater",
-            "color": "var(--tc-color-Bilgewater)",
+            "color": "--color-Bilgewater",
             "order": 1
         },
         {
@@ -753,7 +753,7 @@
             "icon": "\/images\/pnz.svg",
             "name": "Piltover & Zaun",
             "nameRef": "PiltoverZaun",
-            "color": "var(--tc-color-PiltoverZaun)",
+            "color": "--color-PiltoverZaun",
             "order": 0
         },
         {
@@ -761,7 +761,7 @@
             "icon": "\/images\/bandlecity.svg",
             "name": "Bandle City",
             "nameRef": "BandleCity",
-            "color": "var(--tc-color-BandleCity)",
+            "color": "--color-BandleCity",
             "order": 4
         }
     ],
