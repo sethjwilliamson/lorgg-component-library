@@ -101,12 +101,14 @@ export type DataJsonRarity = {
   color: string;
   icon: string;
   name: string;
+  order: number;
   nameRef: 'Common' | 'Rare' | 'Epic' | 'Champion';
 };
 export type DataJsonType = {
   color: string;
   icon: string;
   name: string;
+  order: number;
   nameRef:
     | 'Champion'
     | 'Follower'

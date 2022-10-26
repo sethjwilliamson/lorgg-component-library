@@ -858,24 +858,28 @@
             "name": "Common",
             "nameRef": "Common",
             "color": "#10C26E",
+            "order": 3,
             "icon": "..\/..\/images\/common.svg"
         },
         {
             "name": "Rare",
             "nameRef": "Rare",
             "color": "#3D98FB",
+            "order": 2,
             "icon": "..\/..\/images\/rare.svg"
         },
         {
             "name": "Epic",
             "nameRef": "Epic",
             "color": "#EF7DFF",
+            "order": 1,
             "icon": "..\/..\/images\/epic.svg"
         },
         {
             "name": "Champion",
             "nameRef": "Champion",
             "color": "#F7C321",
+            "order": 0,
             "icon": "..\/..\/images\/championRarity.svg"
         },
         {
@@ -925,36 +929,35 @@
             "name": "Champion",
             "nameRef": "Champion",
             "icon": "..\/..\/images\/champion.svg",
+            "order": 0,
             "color": "#FFC53E"
         },
         {
             "name": "Follower",
             "nameRef": "Follower",
             "icon": "..\/..\/images\/follower.svg",
+            "order": 1,
             "color": "#0067EE"
         },
         {
             "name": "Spell",
             "nameRef": "Spell",
             "icon": "..\/..\/images\/spell.svg",
+            "order": 2,
             "color": "#0050B9"
         },
         {
             "name": "Landmark",
             "nameRef": "Landmark",
             "icon": "..\/..\/images\/landmark.svg",
+            "order": 3,
             "color": "#003780"
         },
         {
             "name": "Skill",
             "nameRef": "Ability",
             "icon": "..\/..\/images\/spell.svg",
-            "color": "#003780"
-        },
-        {
-            "name": "Skill",
-            "nameRef": "Ability",
-            "icon": "..\/..\/images\/spell.svg",
+            "order": 4,
             "color": "#003780"
         }
     ],
