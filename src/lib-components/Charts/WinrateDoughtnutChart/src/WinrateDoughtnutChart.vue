@@ -48,6 +48,9 @@ const options: ChartOptions<'doughnut'> = {
     legend: {
       display: false,
     },
+    datalabels: {
+      display: false,
+    },
   },
 };
 

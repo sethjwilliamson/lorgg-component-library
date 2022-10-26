@@ -18,7 +18,6 @@ import {
   LinearScale,
   registerables,
   TooltipItem,
-  TooltipModel,
 } from 'chart.js';
 import 'chartjs-adapter-moment';
 import annotationPlugin from 'chartjs-plugin-annotation';
@@ -34,6 +33,7 @@ Chart.register(annotationPlugin);
 const props: WinrateLineChartProps = defineProps(winrateLineChartProps);
 
 const testData: ComputedRef<ChartData<'line'>> = computed(() => {
+  console.log(props.baseline);
   return {
     labels: props.data.map((x) => x.date),
     datasets: [
@@ -44,7 +44,7 @@ const testData: ComputedRef<ChartData<'line'>> = computed(() => {
       },
       {
         pointBackgroundColor: 'rgba(255, 255, 255, 0)',
-        data: props.data.map(() => 50),
+        data: props.data.map(() => props.baseline),
         borderColor: 'rgba(0, 0, 0, 0.05)',
       },
     ],
@@ -92,6 +92,9 @@ const options: ChartOptions<'line'> = {
     },
     annotation: {
       annotations: [],
+    },
+    datalabels: {
+      display: false,
     },
   },
   elements: {

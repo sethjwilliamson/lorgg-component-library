@@ -9,6 +9,7 @@ export type WinrateLineChartDataPoint = {
 
 export type WinrateLineChartProps = {
   data: Array<WinrateLineChartDataPoint>;
+  baseline: number;
 };
 
 export const winrateLineChartProps = {
@@ -16,5 +17,10 @@ export const winrateLineChartProps = {
     type: Array<WinrateLineChartDataPoint>,
     required: true,
     default: [],
+  },
+  baseline: {
+    type: Number,
+    required: false,
+    default: 50,
   },
 };
