@@ -8,6 +8,18 @@ function isRegionRuneterran(cardCode: string): boolean {
   return /^\d+$/.test(cardCode[0]);
 }
 
+export function getRandomInt(min: number, max: number): number {
+  return Math.floor(Math.random() * (max - min) + min);
+}
+
+// https://stackoverflow.com/a/62765924/8329408
+export function groupBy<T, K extends keyof any>(arr: T[], key: (i: T) => K) {
+  return arr.reduce((groups, item) => {
+    (groups[key(item)] ||= []).push(item);
+    return groups;
+  }, {} as Record<K, T[]>);
+}
+
 export function getDeckObjectFromCode(deckcode: string): Deck {
   return getDeckFromCode(deckcode).reduce(
     (a, v) => ({ ...a, [v.cardCode]: v.count }),

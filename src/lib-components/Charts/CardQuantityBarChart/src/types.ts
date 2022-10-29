@@ -16,7 +16,7 @@ export type CardQuantityBarChartProps = {
 
 export const cardQuantityBarChartProps = {
   data: {
-    type: Object as PropType<Array<CardQuantityData>>,
+    type: Array as PropType<Array<CardQuantityData>>,
     required: true,
     default: [],
   },
