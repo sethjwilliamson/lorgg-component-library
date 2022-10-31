@@ -76,21 +76,21 @@ export function getRegionColorOfCard(
 ) {
   const store = useJsonStore();
 
-  const defaultRegion =
+  const defaultRegion = `var(${
     store.jsons.dataJson.regions.find((x) => x.nameRef === card.regionRefs[0])
-      ?.color || 'var(--color-primary-2)';
+      ?.color || '--color-primary-2'
+  }-rgb)`;
 
   if (card.regionRefs.length === 1 || !regions || regions.length < 2) {
     return defaultRegion;
   }
 
-  for (const region of card.regionRefs) {
+  for (const region of regions) {
     if (card.regionRefs.includes(region)) {
-      return (
-        store.jsons.dataJson.regions.find(
-          (x) => x.nameRef === card.regionRefs[0],
-        )?.color || 'var(--color-primary-2)'
-      );
+      return `var(${
+        store.jsons.dataJson.regions.find((x) => x.nameRef === region)?.color ||
+        '--color-primary-2'
+      }-rgb)`;
     }
   }
 

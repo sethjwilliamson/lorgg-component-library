@@ -1,5 +1,3 @@
-import { PropType } from 'vue';
-
 export type WinrateLineChartDataPoint = {
   matches: number;
   wins: number;

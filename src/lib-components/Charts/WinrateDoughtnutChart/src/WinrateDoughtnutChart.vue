@@ -8,7 +8,7 @@
 </template>
 
 <script setup lang="ts">
-import { computed, ComputedRef, onMounted, ref } from 'vue';
+import { computed, ComputedRef, ref } from 'vue';
 import {
   WinrateDoughtnutChartProps,
   winrateDoughtnutChartProps,
