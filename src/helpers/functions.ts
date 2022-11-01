@@ -198,3 +198,13 @@ export function propsToCard(
     return useJsonStore().jsons.cardJsonObject[cardCodeProp];
   });
 }
+
+export function setDescription(description: string) {
+  document
+    .querySelector('meta[name="description"]')
+    ?.setAttribute('content', description);
+}
+
+export function setTitle(title: string) {
+  document.title = title;
+}
