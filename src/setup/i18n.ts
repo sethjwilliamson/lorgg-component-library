@@ -31,6 +31,9 @@ export function setupi18n() {
           deckPublic: 'Currently Public',
           openInDeckBuilder: 'Open in Deck Builder',
           numManaCards: '{num} Mana Cards',
+          simulateMulligan: 'Simulate Mulligan',
+          replaceAllCards: 'Replace All Cards',
+          replaceSelectedCards: 'Replace Selected Cards',
         },
         general: {
           // runeterra: 'Runeterra',
