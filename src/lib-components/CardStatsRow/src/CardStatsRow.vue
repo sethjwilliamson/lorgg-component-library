@@ -60,10 +60,13 @@ const props: CardStatsRowProps = defineProps(cardStatsRowProps);
   padding: 5px;
   background-color: var(--color-background-2);
   border-radius: var(--border-radius-l);
+  width: fit-content;
+  min-width: calc(100% - 10px);
 }
 
 .card-stats-row > :first-child {
   width: 300px;
+  min-width: 300px;
 }
 
 .card-stats-row > div {
@@ -74,6 +77,6 @@ const props: CardStatsRowProps = defineProps(cardStatsRowProps);
   flex-grow: 1;
   font-weight: var(--font-weight-bold);
   justify-content: center;
-  min-width: 150px;
+  min-width: 200px;
 }
 </style>

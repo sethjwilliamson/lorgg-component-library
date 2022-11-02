@@ -51,12 +51,15 @@ function onClick(button: string) {
 .card-stats-heading {
   display: flex;
   padding: 10px 0;
-  background-color: var(--color-background-2);
+  background-color: var(--color-3);
   border-radius: var(--border-radius-l);
+  width: fit-content;
+  min-width: 100%;
 }
 
 .card-stats-heading > :first-child {
   width: 300px;
+  min-width: 300px;
 }
 
 .card-stats-heading > div {

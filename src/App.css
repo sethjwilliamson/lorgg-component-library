@@ -179,6 +179,15 @@
   cursor: pointer;
 }
 
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
 .tippy-box:first-child {
   background-color: var(--color-background-1);
   border-radius: var(--border-radius-s);
