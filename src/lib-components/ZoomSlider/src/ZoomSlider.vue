@@ -1,16 +1,16 @@
 <template>
   <div>
-    <div class="circle-button" ref="button">
+    <div ref="button" class="circle-button">
       <font-awesome-icon icon="search-plus" class="zoom-button" />
     </div>
-    <div class="slider-wrapper" ref="slider">
+    <div ref="slider" class="slider-wrapper">
       <input
         type="range"
         min="1"
         max="10"
         class="slider"
         :value="props.modelValue"
-        v-on:input="onUpdate"
+        @input="onUpdate"
       />
     </div>
   </div>

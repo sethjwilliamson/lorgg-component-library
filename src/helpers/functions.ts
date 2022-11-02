@@ -8,6 +8,10 @@ function isRegionRuneterran(cardCode: string): boolean {
   return /^\d+$/.test(cardCode[0]);
 }
 
+export function localeNumber(num: number, decimalPlaces = 0) {
+  return Number(num.toFixed(decimalPlaces)).toLocaleString();
+}
+
 export function getRandomInt(min: number, max: number): number {
   return Math.floor(Math.random() * (max - min) + min);
 }

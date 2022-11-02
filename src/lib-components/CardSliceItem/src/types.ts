@@ -5,8 +5,8 @@ export type CardSliceItemProps = {
   cardProp?: CardJsonCard;
   cardCodeProp?: string;
   ignoreCardItem?: boolean;
-  color: string;
-  name: string;
+  color?: string;
+  name?: string;
   manaNumber?: number;
   // routerLink?: Object;
   quantityNumber?: number;
@@ -32,13 +32,13 @@ export const cardSliceItemProps = {
   },
   color: {
     type: String,
-    required: true,
-    default: 'var(--color-3-rgb)',
+    required: false,
+    default: undefined,
   },
   name: {
     type: String,
-    required: true,
-    default: '',
+    required: false,
+    default: undefined,
   },
   manaNumber: {
     type: Number,

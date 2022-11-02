@@ -22,7 +22,7 @@
         </div>
 
         <div class="card-name">
-          {{ props.name }}
+          {{ props.name ?? card.name }}
         </div>
 
         <div
@@ -75,7 +75,7 @@
 
 <script setup lang="ts">
 import tippy from 'tippy.js';
-import { propsToCard } from '@/helpers/functions';
+import { getRegionColorOfCard, propsToCard } from '@/helpers/functions';
 import CardItem from '@/lib-components/CardItem/src/CardItem.vue';
 import { computed, ComputedRef, onMounted, ref } from 'vue';
 import { cardSliceItemProps, CardSliceItemProps } from './types';
@@ -95,7 +95,7 @@ const cardItemWrapper = ref<HTMLElement | null>(null);
 const showTippyLocation = ref<ShowTippyLocation>(null);
 
 const colorGradient: ComputedRef<string> = computed(() => {
-  const color = props.color || 'var(--color-3-rgb)';
+  const color = props.color || getRegionColorOfCard(card.value);
 
   return `linear-gradient(90deg, rgba(${color}, 1) 0%, rgba(${color}, 1) 30%, rgba(${color}, .10) 70%, rgba(${color}, .00) 100%)`;
 });

@@ -11,8 +11,8 @@
         <div class="premium-button">Premium Button</div>
         <SocialMediaLinks></SocialMediaLinks>
         <div class="language-selection">Language Selction</div>
-        <div class="sign-in" v-if="true">Sign In</div>
-        <div class="user-profile" v-else>User Profile</div>
+        <div v-if="true" class="sign-in">Sign In</div>
+        <div v-else class="user-profile">User Profile</div>
       </div>
     </div>
   </div>
