@@ -15,6 +15,16 @@ export function setupi18n() {
         cards: {
           roundDrawn: 'Round Drawn',
           roundPlayed: 'Round Played',
+          card: 'Card',
+          matches: 'Matches',
+          winrate: 'Winrate',
+          inclusion: 'Inclusion',
+          avgCopies: 'Avg. Copies',
+          mulliganWinrate: 'Mull. Winrate',
+          keptInMulligan: 'Kept In Mull.',
+          drawnWinrate: 'Drawn Winrate',
+          turnPlayed: 'Turn Played',
+          turnsHeld: 'Turns Held',
         },
         deck: {
           copyDeckCode: 'Copy Deck Code',

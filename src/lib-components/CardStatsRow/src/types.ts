@@ -6,7 +6,7 @@ export type CardStatsToggle = {
   inclusion: boolean;
   avgCopies: boolean;
   mulliganWinrate: boolean;
-  kept: boolean;
+  keptInMulligan: boolean;
   drawnWinrate: boolean;
   turnsHeld: boolean;
   turnPlayed: boolean;
@@ -20,7 +20,7 @@ export type CardStatsRowProps = {
   inclusion: number;
   avgCopies: number;
   mulliganWinrate?: number;
-  kept?: number;
+  keptInMulligan?: number;
   drawnWinrate?: number;
   turnsHeld?: number;
   turnPlayed?: number;
@@ -72,7 +72,7 @@ export const cardStatsRowProps = {
     required: false,
     default: undefined,
   },
-  kept: {
+  keptInMulligan: {
     type: Number,
     required: false,
     default: undefined,

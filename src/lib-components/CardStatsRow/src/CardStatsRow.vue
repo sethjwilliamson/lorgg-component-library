@@ -23,8 +23,12 @@
           : '-'
       }}
     </div>
-    <div v-show="props.toggledStats.kept">
-      {{ props.kept ? localeNumber(props.kept * 100, 2) + '%' : '-' }}
+    <div v-show="props.toggledStats.keptInMulligan">
+      {{
+        props.keptInMulligan
+          ? localeNumber(props.keptInMulligan * 100, 2) + '%'
+          : '-'
+      }}
     </div>
     <div v-show="props.toggledStats.drawnWinrate">
       {{
