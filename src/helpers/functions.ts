@@ -4,7 +4,7 @@ import { useJsonStore } from '@/helpers/stores';
 import { getDeckFromCode } from 'lor-deckcodes-ts';
 import { computed, ComputedRef } from 'vue';
 
-function isRegionRuneterran(cardCode: string): boolean {
+export function isRegionRuneterran(cardCode: string): boolean {
   return /^\d+$/.test(cardCode[0]);
 }
 
