@@ -261,14 +261,12 @@ onMounted(() => {
 .card-item-container {
   display: flex;
   flex-direction: column;
-  padding-bottom: 5px;
-  padding-top: 5px;
-  padding: 3px;
   position: relative;
+  transition: transform 0.1s;
 }
 
 .card-item-container:hover {
-  padding: 0px;
+  transform: scale(1.05);
 }
 
 .card-item {
@@ -279,14 +277,14 @@ onMounted(() => {
 
 .quantity-ticks-container {
   display: flex;
-  margin: 0 auto;
+  margin: 5px auto 0;
+  gap: 5px;
 }
 
 .quantity-tick {
   background-color: var(--color-primary);
   border-radius: var(--border-radius-m);
   height: 10px;
-  margin: 3px;
   width: 10px;
 }
 
