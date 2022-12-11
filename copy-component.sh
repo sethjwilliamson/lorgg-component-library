@@ -14,3 +14,7 @@ mv "$COMPONENT_FILE/src/CopyMeComponent.vue" "$COMPONENT_FILE/src/$COMPONENT_NAM
 # Recursively search and replace all instances of "CopyMeComponent" with the component name
 find $COMPONENT_FILE -type f -exec sed -i "s/CopyMeComponent/$COMPONENT_NAME/g" {} \;
 find $COMPONENT_FILE -type f -exec sed -i "s/copyMeComponent/$COMPONENT_NAME_LOWERCASE/g" {} \;
+
+# Copy the "/stories/.CopyMeStory.stories.js" file to "/stories/<component-name>.stories.js"
+cp "stories/.CopyMeStory.stories.js" "stories/$COMPONENT_NAME.stories.js"
+find "stories/$COMPONENT_NAME.stories.js" -type f -exec sed -i "s/CopyMeComponent/$COMPONENT_NAME/g" {} \;
