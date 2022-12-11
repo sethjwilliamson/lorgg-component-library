@@ -25,6 +25,8 @@ export function setupi18n() {
           drawnWinrate: 'Drawn Winrate',
           turnPlayed: 'Turn Played',
           turnsHeld: 'Turns Held',
+          recommendedDecks: 'Recommended Decks',
+          similarCards: 'Similar Cards',
         },
         deck: {
           copyDeckCode: 'Copy Deck Code',
@@ -68,6 +70,7 @@ export function setupi18n() {
           spells: 'Spells',
           landmarks: 'Landmarks',
           equipments: 'Equipment',
+          statistics: 'Statistics',
         },
       },
     }, // set locale messages
