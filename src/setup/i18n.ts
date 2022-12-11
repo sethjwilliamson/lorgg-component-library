@@ -27,6 +27,10 @@ export function setupi18n() {
           turnsHeld: 'Turns Held',
           recommendedDecks: 'Recommended Decks',
           similarCards: 'Similar Cards',
+          attack: 'Attack',
+          health: 'Health',
+          cost: 'Cost',
+          quantityOwned: 'Quantity Owned',
         },
         deck: {
           copyDeckCode: 'Copy Deck Code',

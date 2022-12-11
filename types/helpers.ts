@@ -9,3 +9,8 @@ export type UnwrappedInstance<T> = Nullable<
 >;
 
 export type ObjectWithNumber = { [key: string]: number };
+
+export type MultiSelectOption = {
+  value: string;
+  label: string;
+};
