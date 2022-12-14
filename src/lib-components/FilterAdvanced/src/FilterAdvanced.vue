@@ -24,7 +24,7 @@ import SidePanelSectionPane from '@/lib-components/SidePanelSectionPane';
 import AdvancedFilterItem from '@/lib-components/AdvancedFilterItem';
 import { FilterAdvancedProps, filterAdvancedProps } from './types';
 import { useI18n } from 'vue-i18n';
-import { AdvancedFilter } from '@/lib-components/AdvancedFilterItem/src/types';
+import { AdvancedFilter } from '#/filters';
 import { reactive, watch } from 'vue';
 const { t } = useI18n();
 

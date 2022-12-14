@@ -1,4 +1,4 @@
-import { AdvancedFilter } from '@/lib-components/AdvancedFilterItem/src/types';
+import { AdvancedFilter } from '#/filters';
 import { PropType } from 'vue';
 
 export type FilterAdvancedProps = {
