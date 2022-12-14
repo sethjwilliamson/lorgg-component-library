@@ -75,6 +75,8 @@ export function setupi18n() {
           landmarks: 'Landmarks',
           equipments: 'Equipment',
           statistics: 'Statistics',
+          advanced: 'Advanced',
+          newAdvancedFilter: 'New Advanced Filter',
         },
       },
     }, // set locale messages

@@ -4,6 +4,7 @@
       v-model="advancedAttribute"
       class="advanced-attribute"
       :options="options"
+      :can-clear="false"
       label="label"
       value-prop="value"
     />
@@ -27,7 +28,7 @@ import { useI18n } from 'vue-i18n';
 import {
   AdvancedFilterAttribute,
   AdvancedFilterEquality,
-  AdvancedFilterItem,
+  AdvancedFilter,
   advancedFilterItemProps,
   AdvancedFilterItemProps,
 } from './types';
@@ -35,7 +36,7 @@ const { t } = useI18n();
 
 const props: AdvancedFilterItemProps = defineProps(advancedFilterItemProps);
 const emit = defineEmits<{
-  (e: 'update:filterValue', value: AdvancedFilterItem): void;
+  (e: 'update:filterValue', value: AdvancedFilter): void;
 }>();
 
 const options: MultiSelectOption[] = [

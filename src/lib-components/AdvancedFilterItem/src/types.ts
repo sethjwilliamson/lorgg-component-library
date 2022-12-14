@@ -7,19 +7,19 @@ export type AdvancedFilterAttribute =
   | 'quantityOwned';
 export type AdvancedFilterEquality = '>' | '<' | '=';
 
-export type AdvancedFilterItem = {
+export type AdvancedFilter = {
   attribute: AdvancedFilterAttribute;
   equality: AdvancedFilterEquality;
   number: number;
 };
 
 export type AdvancedFilterItemProps = {
-  filterValue: AdvancedFilterItem;
+  filterValue: AdvancedFilter;
 };
 
 export const advancedFilterItemProps = {
   filterValue: {
-    type: Object as PropType<AdvancedFilterItem>,
+    type: Object as PropType<AdvancedFilter>,
     required: true,
     default: {
       attribute: 'attack',
