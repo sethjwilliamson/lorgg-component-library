@@ -1,4 +1,4 @@
-import FilterAdvanced from '@/lib-components/FilterAdvanced';
+import FilterAdvanced from '@/lib-components/Filters/FilterAdvanced';
 
 export default {
   title: 'Library/FilterAdvanced',

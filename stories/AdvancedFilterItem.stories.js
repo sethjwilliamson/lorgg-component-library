@@ -1,4 +1,4 @@
-import AdvancedFilterItem from '@/lib-components/AdvancedFilterItem';
+import AdvancedFilterItem from '@/lib-components/Filters/AdvancedFilterItem';
 
 export default {
   title: 'Library/AdvancedFilterItem',

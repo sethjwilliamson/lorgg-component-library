@@ -1,5 +1,7 @@
 <template>
   <div>
+    <FilterManaCost v-model:filter-array="filters.manaCostFilters">
+    </FilterManaCost>
     <FilterRegions v-model:filter-array="filters.regionFilters"></FilterRegions>
     <FilterAdvanced
       v-model:filter-value="filters.advancedFilters"
@@ -9,9 +11,10 @@
 
 <script setup lang="ts">
 import { CardFilters } from '#/filters';
-import FilterAdvanced from '@/lib-components/FilterAdvanced';
+import FilterAdvanced from '@/lib-components/Filters/FilterAdvanced';
 import FilterRegions from '@/lib-components/Filters/FilterRegions';
 import { reactive, watch } from 'vue';
+import FilterManaCost from '../../FilterManaCost';
 import { FilterCardsProps, filterCardsProps } from './types';
 
 const props: FilterCardsProps = defineProps(filterCardsProps);

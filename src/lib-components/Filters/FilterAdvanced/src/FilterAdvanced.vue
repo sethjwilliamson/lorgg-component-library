@@ -21,7 +21,7 @@
 
 <script setup lang="ts">
 import SidePanelSectionPane from '@/lib-components/SidePanelSectionPane';
-import AdvancedFilterItem from '@/lib-components/AdvancedFilterItem';
+import AdvancedFilterItem from '@/lib-components/Filters/AdvancedFilterItem';
 import { FilterAdvancedProps, filterAdvancedProps } from './types';
 import { useI18n } from 'vue-i18n';
 import { AdvancedFilter } from '#/filters';

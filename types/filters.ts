@@ -14,4 +14,5 @@ export type AdvancedFilter = {
 export type CardFilters = {
   advancedFilters: AdvancedFilter[];
   regionFilters: string[];
+  manaCostFilters: number[];
 };

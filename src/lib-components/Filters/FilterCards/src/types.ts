@@ -12,6 +12,7 @@ export const filterCardsProps = {
     default: {
       advancedFilters: [],
       regionFilters: [],
+      manaCostFilters: [],
     },
   },
 };

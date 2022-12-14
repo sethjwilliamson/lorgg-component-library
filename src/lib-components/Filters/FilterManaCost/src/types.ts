@@ -1,10 +1,10 @@
 export type FilterProps = {
-  filterArray: Array<any>;
+  filterArray: Array<number>;
 };
 
 export const filterProps = {
   filterArray: {
-    type: Array,
+    type: Array<number>,
     required: true,
     default: [],
   },

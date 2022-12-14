@@ -1,4 +1,4 @@
-import FilterCards from '@/lib-components/FilterCards';
+import FilterCards from '@/lib-components/Filters/FilterCards';
 
 export default {
   title: 'Library/FilterCards',
@@ -28,5 +28,6 @@ Default.args = {
   filters: {
     advancedFilters: [],
     regionFilters: [],
+    manaCostFilters: [],
   },
 };
