@@ -1,17 +1,17 @@
 <template>
   <SidePanelSectionPane
     :filter-array="props.filterArray"
-    :title="t('general.types')"
+    :title="t('general.rarities')"
     @clear:filter-array="onClear"
   >
     <div class="checkboxes-container">
       <CheckboxItem
-        v-for="typeObject of types"
-        :key="typeObject.nameRef"
-        :icon="`url(${typeObject.icon})`"
-        :prompt="typeObject.name"
-        :is-selected="filterArray.includes(typeObject.nameRef)"
-        @update:is-selected="onUpdate(typeObject.nameRef)"
+        v-for="rarity of rarities"
+        :key="rarity.nameRef"
+        :icon="`url(${rarity.icon})`"
+        :prompt="rarity.name"
+        :is-selected="filterArray.includes(rarity.nameRef)"
+        @update:is-selected="onUpdate(rarity.nameRef)"
       />
     </div>
   </SidePanelSectionPane>
@@ -20,19 +20,19 @@
 <script setup lang="ts">
 import { useJsonStore } from '@/helpers/stores';
 import SidePanelSectionPane from '@/lib-components/SidePanelSectionPane';
-import { FilterTypesProps, filterTypesProps } from './types';
+import { FilterRaritiesProps, filterRaritiesProps } from './types';
 import { useI18n } from 'vue-i18n';
 import { reactive, watch } from 'vue';
 import CheckboxItem from '@/lib-components/CheckboxItem';
 const { t } = useI18n();
 
-const props: FilterTypesProps = defineProps(filterTypesProps);
+const props: FilterRaritiesProps = defineProps(filterRaritiesProps);
 const emit = defineEmits<{
   (e: 'update:filterArray', value: Array<string>): void;
 }>();
 
-const types = useJsonStore().jsons.dataJson.types.filter((x) =>
-  ['Unit', 'Spell', 'Landmark', 'Equipment'].includes(x.nameRef),
+const rarities = useJsonStore().jsons.dataJson.rarities.filter(
+  (x) => x.nameRef !== 'None',
 );
 const filterArray = reactive(props.filterArray);
 

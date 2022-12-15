@@ -102,7 +102,7 @@ export type DataJsonRarity = {
   icon: string;
   name: string;
   order: number;
-  nameRef: 'Common' | 'Rare' | 'Epic' | 'Champion';
+  nameRef: 'Common' | 'Rare' | 'Epic' | 'Champion' | 'None';
 };
 export type DataJsonType = {
   color: string;
