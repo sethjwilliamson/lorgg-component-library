@@ -13,6 +13,8 @@ export const filterCardsProps = {
       advancedFilters: [],
       regionFilters: [],
       manaCostFilters: [],
+      typeFilters: [],
+      rarityFilters: [],
     },
   },
 };

@@ -16,4 +16,5 @@ export type CardFilters = {
   regionFilters: string[];
   manaCostFilters: number[];
   typeFilters: string[];
+  rarityFilters: string[];
 };

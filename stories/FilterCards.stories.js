@@ -30,5 +30,6 @@ Default.args = {
     regionFilters: [],
     manaCostFilters: [],
     typeFilters: [],
+    rarityFilters: [],
   },
 };

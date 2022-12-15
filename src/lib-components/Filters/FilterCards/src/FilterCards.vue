@@ -4,6 +4,9 @@
     </FilterManaCost>
     <FilterRegions v-model:filter-array="filters.regionFilters"></FilterRegions>
     <FilterTypes v-model:filter-array="filters.typeFilters"></FilterTypes>
+    <FilterRarities
+      v-model:filter-array="filters.rarityFilters"
+    ></FilterRarities>
     <FilterAdvanced
       v-model:filter-value="filters.advancedFilters"
     ></FilterAdvanced>
@@ -12,6 +15,7 @@
 
 <script setup lang="ts">
 import { CardFilters } from '#/filters';
+import FilterRarities from '@/lib-components/FilterRarities';
 import FilterAdvanced from '@/lib-components/Filters/FilterAdvanced';
 import FilterRegions from '@/lib-components/Filters/FilterRegions';
 import FilterTypes from '@/lib-components/FilterTypes';
