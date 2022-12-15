@@ -1,6 +1,6 @@
 <template>
   <SidePanelSectionPane
-    :filter-array="props.filterArray"
+    :filter-array="filterArray"
     :title="t('general.regions')"
     @clear:filter-array="onClear"
   >
@@ -10,18 +10,18 @@
         :key="region.nameRef"
         :icon="`url(${region.icon})`"
         :prompt="region.name"
-        :is-selected="props.filterArray.includes(region.nameRef)"
+        :is-selected="filterArray.includes(region.nameRef)"
         @update:is-selected="onUpdate(region.nameRef)"
       />
       <CheckboxItem
         class="runeterra"
         :prompt="'Runeterra'"
-        :is-selected="props.filterArray.includes('Runeterra')"
+        :is-selected="filterArray.includes('Runeterra')"
         @update:is-selected="onUpdate('Runeterra')"
       />
 
       <MultiSelect
-        v-if="props.filterArray.includes('Runeterra')"
+        v-if="filterArray.includes('Runeterra')"
         v-model="selectedRuneterraChampions"
         class="runeterra-select"
         mode="tags"
@@ -39,8 +39,9 @@ import SidePanelSectionPane from '@/lib-components/SidePanelSectionPane/src/Side
 import { useJsonStore } from '@/helpers/stores';
 import CheckboxItem from '@/lib-components/CheckboxItem/src/CheckboxItem.vue';
 import MultiSelect from '@vueform/multiselect';
-import { Ref, ref, watch } from 'vue';
+import { reactive, ref, watch } from 'vue';
 import { useI18n } from 'vue-i18n';
+import { isRegionRuneterran } from '@/helpers/functions';
 const { t } = useI18n();
 
 const props: FilterProps = defineProps(filterProps);
@@ -48,45 +49,66 @@ const emit = defineEmits<{
   (e: 'update:filterArray', value: Array<string>): void;
 }>();
 
-const selectedRuneterraChampions: Ref<Array<string>> = ref([]);
-const selectedRegionsArray: Ref<Array<string>> = ref([]);
-
 const regions = useJsonStore().jsons.dataJson.regions;
 const runeterraChampions = useJsonStore().jsons.dataJson.runeterraChampions;
 
-watch(selectedRuneterraChampions, () => {
-  emitFilterUpdate();
+const filterArray = reactive(props.filterArray);
+const selectedRuneterraChampions = ref([] as string[]);
+
+selectedRuneterraChampions.value.push(
+  ...filterArray.filter((x) => isRegionRuneterran(x)),
+);
+
+watch(filterArray, () => {
+  emit('update:filterArray', filterArray);
 });
 
-function onUpdate(prompt: string) {
-  if (selectedRegionsArray.value.includes(prompt)) {
-    selectedRegionsArray.value = selectedRegionsArray.value.filter(
-      (x) => x !== prompt,
-    );
-  } else {
-    selectedRegionsArray.value = [...selectedRegionsArray.value, prompt];
+watch(selectedRuneterraChampions, (oldVal, newVal) => {
+  let changedString = oldVal.find((x) => !newVal.includes(x));
+
+  if (changedString) {
+    return onUpdate(changedString);
   }
 
-  emitFilterUpdate();
+  changedString = newVal.find((x) => !oldVal.includes(x));
+
+  if (changedString) {
+    return onUpdate(changedString);
+  }
+});
+
+function onClear() {
+  filterArray.splice(0);
+  selectedRuneterraChampions.value.slice(0);
 }
 
-function emitFilterUpdate() {
-  console.log(selectedRuneterraChampions);
-  if (!selectedRegionsArray.value.includes('Runeterra')) {
-    emit('update:filterArray', [...selectedRegionsArray.value]);
+function onUpdate(nameRef: string) {
+  console.log(nameRef);
+  const index = filterArray.indexOf(nameRef);
+
+  if (index === -1) {
+    filterArray.push(nameRef);
+
+    if (nameRef === 'Runeterra') {
+      filterArray.push(...selectedRuneterraChampions.value);
+    }
+
     return;
   }
 
-  emit('update:filterArray', [
-    ...selectedRegionsArray.value,
-    ...selectedRuneterraChampions.value,
-  ]);
-}
+  filterArray.splice(index, 1);
 
-function onClear() {
-  selectedRuneterraChampions.value = [];
-  selectedRegionsArray.value = [];
-  emit('update:filterArray', []);
+  if (nameRef !== 'Runeterra') {
+    return;
+  }
+
+  for (let i = 0; i < filterArray.length; i++) {
+    if (!isRegionRuneterran(filterArray[i])) {
+      continue;
+    }
+
+    filterArray.splice(i--, 1);
+  }
 }
 </script>
 
