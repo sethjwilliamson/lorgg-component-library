@@ -31,5 +31,6 @@ Default.args = {
     manaCostFilters: [],
     typeFilters: [],
     rarityFilters: [],
+    setFilters: [],
   },
 };

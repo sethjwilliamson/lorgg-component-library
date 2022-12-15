@@ -15,6 +15,7 @@ export const filterCardsProps = {
       manaCostFilters: [],
       typeFilters: [],
       rarityFilters: [],
+      setFilters: [],
     },
   },
 };

@@ -1,5 +1,6 @@
 <template>
   <div>
+    <div @click="onClear">CLEAR ALL</div>
     <FilterManaCost v-model:filter-array="filters.manaCostFilters">
     </FilterManaCost>
     <FilterRegions v-model:filter-array="filters.regionFilters"></FilterRegions>
@@ -7,6 +8,7 @@
     <FilterRarities
       v-model:filter-array="filters.rarityFilters"
     ></FilterRarities>
+    <FilterSets v-model:filter-array="filters.setFilters"></FilterSets>
     <FilterAdvanced
       v-model:filter-value="filters.advancedFilters"
     ></FilterAdvanced>
@@ -18,6 +20,7 @@ import { CardFilters } from '#/filters';
 import FilterRarities from '@/lib-components/FilterRarities';
 import FilterAdvanced from '@/lib-components/Filters/FilterAdvanced';
 import FilterRegions from '@/lib-components/Filters/FilterRegions';
+import FilterSets from '@/lib-components/FilterSets';
 import FilterTypes from '@/lib-components/FilterTypes';
 import { reactive, watch } from 'vue';
 import FilterManaCost from '../../FilterManaCost';
@@ -33,6 +36,12 @@ const filters = reactive(props.filters);
 watch(filters, () => {
   emit('update:filters', filters);
 });
+
+function onClear() {
+  for (const [, value] of Object.entries(filters)) {
+    value.splice(0);
+  }
+}
 </script>
 
 <style scoped></style>
