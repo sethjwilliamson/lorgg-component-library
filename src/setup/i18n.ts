@@ -79,6 +79,7 @@ export function setupi18n() {
           newAdvancedFilter: 'New Advanced Filter',
           types: 'Types',
           rarities: 'Rarities',
+          sets: 'Sets',
         },
       },
     }, // set locale messages

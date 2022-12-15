@@ -72,15 +72,15 @@ function onUpdate(prompt: string) {
 
 function emitFilterUpdate() {
   console.log(selectedRuneterraChampions);
-  if (selectedRegionsArray.value.includes('Runeterra')) {
-    emit('update:filterArray', [
-      ...selectedRegionsArray.value,
-      ...selectedRuneterraChampions.value,
-    ]);
+  if (!selectedRegionsArray.value.includes('Runeterra')) {
+    emit('update:filterArray', [...selectedRegionsArray.value]);
     return;
   }
 
-  emit('update:filterArray', [...selectedRegionsArray.value]);
+  emit('update:filterArray', [
+    ...selectedRegionsArray.value,
+    ...selectedRuneterraChampions.value,
+  ]);
 }
 
 function onClear() {

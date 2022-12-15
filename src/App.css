@@ -219,6 +219,16 @@
   white-space: pre-line;
 }
 
+.label-icon {
+  height: 25px;
+  max-width: 25px;
+  filter: drop-shadow(0px 0px 2px black);
+}
+
+.multiselect-option > .label-icon {
+  margin-right: 10px;
+}
+
 .circle-button {
   align-items: center;
   background-color: var(--color-3);
