@@ -29,5 +29,6 @@ Default.args = {
     advancedFilters: [],
     regionFilters: [],
     manaCostFilters: [],
+    typeFilters: [],
   },
 };

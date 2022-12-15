@@ -3,6 +3,7 @@
     <FilterManaCost v-model:filter-array="filters.manaCostFilters">
     </FilterManaCost>
     <FilterRegions v-model:filter-array="filters.regionFilters"></FilterRegions>
+    <FilterTypes v-model:filter-array="filters.typeFilters"></FilterTypes>
     <FilterAdvanced
       v-model:filter-value="filters.advancedFilters"
     ></FilterAdvanced>
@@ -13,6 +14,7 @@
 import { CardFilters } from '#/filters';
 import FilterAdvanced from '@/lib-components/Filters/FilterAdvanced';
 import FilterRegions from '@/lib-components/Filters/FilterRegions';
+import FilterTypes from '@/lib-components/FilterTypes';
 import { reactive, watch } from 'vue';
 import FilterManaCost from '../../FilterManaCost';
 import { FilterCardsProps, filterCardsProps } from './types';
