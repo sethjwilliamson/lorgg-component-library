@@ -1,6 +1,6 @@
 <template>
   <SidePanelSectionPane
-    :filter-array="props.filterArray"
+    :filter-array="filterArray"
     :title="t('general.rarities')"
     @clear:filter-array="onClear"
   >
