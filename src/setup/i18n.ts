@@ -77,6 +77,7 @@ export function setupi18n() {
           statistics: 'Statistics',
           advanced: 'Advanced',
           newAdvancedFilter: 'New Advanced Filter',
+          types: 'Types',
         },
       },
     }, // set locale messages

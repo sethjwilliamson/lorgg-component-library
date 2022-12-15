@@ -112,6 +112,7 @@ export type DataJsonType = {
   nameRef:
     | 'Champion'
     | 'Follower'
+    | 'Unit'
     | 'Spell'
     | 'Landmark'
     | 'Ability'

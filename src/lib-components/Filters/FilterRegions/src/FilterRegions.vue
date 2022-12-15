@@ -8,7 +8,7 @@
       <CheckboxItem
         v-for="region of regions"
         :key="region.nameRef"
-        :icon="`url(https://lor.gg${region.icon})`"
+        :icon="`url(${region.icon})`"
         :prompt="region.name"
         :is-selected="props.filterArray.includes(region.nameRef)"
         @update:is-selected="onUpdate(region.nameRef)"

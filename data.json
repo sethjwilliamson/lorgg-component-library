@@ -940,6 +940,13 @@
             "color": "#0067EE"
         },
         {
+            "name": "Unit",
+            "nameRef": "Unit",
+            "icon": "https://lor.gg/images/follower.svg",
+            "order": 1,
+            "color": "#0067EE"
+        },
+        {
             "name": "Spell",
             "nameRef": "Spell",
             "icon": "https://lor.gg/images/spell.svg",
@@ -958,6 +965,13 @@
             "nameRef": "Ability",
             "icon": "https://lor.gg/images/spell.svg",
             "order": 4,
+            "color": "#003780"
+        },
+        {
+            "name": "Equipment",
+            "nameRef": "Equipment",
+            "icon": "https://lor.gg/images/spell.svg",
+            "order": 5,
             "color": "#003780"
         }
     ],
