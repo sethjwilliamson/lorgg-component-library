@@ -1,7 +1,7 @@
 import FilterAdvanced from '@/lib-components/Filters/FilterAdvanced';
 
 export default {
-  title: 'Library/FilterAdvanced',
+  title: 'Library/Filters/FilterAdvanced',
   component: FilterAdvanced,
   argTypes: {},
 };

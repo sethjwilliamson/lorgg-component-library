@@ -1,7 +1,7 @@
 import FilterSets from '@/lib-components/FilterSets';
 
 export default {
-  title: 'Library/FilterSets',
+  title: 'Library/Filters/FilterSets',
   component: FilterSets,
   argTypes: {},
 };

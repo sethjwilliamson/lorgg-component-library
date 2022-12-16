@@ -1,7 +1,7 @@
 import FilterCards from '@/lib-components/Filters/FilterCards';
 
 export default {
-  title: 'Library/FilterCards',
+  title: 'Library/Filters/FilterCards',
   component: FilterCards,
   argTypes: {},
 };

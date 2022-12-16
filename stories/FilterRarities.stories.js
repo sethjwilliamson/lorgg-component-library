@@ -1,7 +1,7 @@
 import FilterRarities from '@/lib-components/FilterRarities';
 
 export default {
-  title: 'Library/FilterRarities',
+  title: 'Library/Filters/FilterRarities',
   component: FilterRarities,
   argTypes: {},
 };

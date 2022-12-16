@@ -1,7 +1,7 @@
 import FilterKeywords from '@/lib-components/FilterKeywords';
 
 export default {
-  title: 'Library/FilterKeywords',
+  title: 'Library/Filters/FilterKeywords',
   component: FilterKeywords,
   argTypes: {},
 };

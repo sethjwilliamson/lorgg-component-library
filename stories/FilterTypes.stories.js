@@ -1,7 +1,7 @@
 import FilterTypes from '@/lib-components/FilterTypes';
 
 export default {
-  title: 'Library/FilterTypes',
+  title: 'Library/Filters/FilterTypes',
   component: FilterTypes,
   argTypes: {},
 };
