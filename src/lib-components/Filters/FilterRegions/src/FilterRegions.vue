@@ -83,7 +83,6 @@ function onClear() {
 }
 
 function onUpdate(nameRef: string) {
-  console.log(nameRef);
   const index = filterArray.indexOf(nameRef);
 
   if (index === -1) {
