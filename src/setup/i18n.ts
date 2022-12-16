@@ -80,6 +80,7 @@ export function setupi18n() {
           types: 'Types',
           rarities: 'Rarities',
           sets: 'Sets',
+          keywords: 'Keywords',
         },
       },
     }, // set locale messages
