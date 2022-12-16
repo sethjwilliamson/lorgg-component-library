@@ -16,6 +16,7 @@ export const filterCardsProps = {
       typeFilters: [],
       rarityFilters: [],
       setFilters: [],
+      keywordFilters: [],
     },
   },
 };

@@ -18,4 +18,5 @@ export type CardFilters = {
   typeFilters: string[];
   rarityFilters: string[];
   setFilters: string[];
+  keywordFilters: string[];
 };

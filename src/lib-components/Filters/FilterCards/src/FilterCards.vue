@@ -9,6 +9,9 @@
       v-model:filter-array="filters.rarityFilters"
     ></FilterRarities>
     <FilterSets v-model:filter-array="filters.setFilters"></FilterSets>
+    <FilterKeywords
+      v-model:filter-array="filters.keywordFilters"
+    ></FilterKeywords>
     <FilterAdvanced
       v-model:filter-value="filters.advancedFilters"
     ></FilterAdvanced>
@@ -17,6 +20,7 @@
 
 <script setup lang="ts">
 import { CardFilters } from '#/filters';
+import FilterKeywords from '@/lib-components/FilterKeywords';
 import FilterRarities from '@/lib-components/FilterRarities';
 import FilterAdvanced from '@/lib-components/Filters/FilterAdvanced';
 import FilterRegions from '@/lib-components/Filters/FilterRegions';

@@ -32,5 +32,6 @@ Default.args = {
     typeFilters: [],
     rarityFilters: [],
     setFilters: [],
+    keywordFilters: [],
   },
 };
