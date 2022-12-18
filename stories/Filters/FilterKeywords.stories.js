@@ -1,4 +1,4 @@
-import FilterKeywords from '@/lib-components/FilterKeywords';
+import FilterKeywords from '@/lib-components/Filters/FilterKeywords';
 
 export default {
   title: 'Library/Filters/FilterKeywords',

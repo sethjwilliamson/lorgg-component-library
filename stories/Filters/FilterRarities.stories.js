@@ -1,4 +1,4 @@
-import FilterRarities from '@/lib-components/FilterRarities';
+import FilterRarities from '@/lib-components/Filters/FilterRarities';
 
 export default {
   title: 'Library/Filters/FilterRarities',

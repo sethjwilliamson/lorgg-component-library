@@ -1,4 +1,4 @@
-import FilterTypes from '@/lib-components/FilterTypes';
+import FilterTypes from '@/lib-components/Filters/FilterTypes';
 
 export default {
   title: 'Library/Filters/FilterTypes',

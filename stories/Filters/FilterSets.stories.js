@@ -1,4 +1,4 @@
-import FilterSets from '@/lib-components/FilterSets';
+import FilterSets from '@/lib-components/Filters/FilterSets';
 
 export default {
   title: 'Library/Filters/FilterSets',

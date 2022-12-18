@@ -20,12 +20,12 @@
 
 <script setup lang="ts">
 import { CardFilters } from '#/filters';
-import FilterKeywords from '@/lib-components/FilterKeywords';
-import FilterRarities from '@/lib-components/FilterRarities';
+import FilterKeywords from '@/lib-components/Filters/FilterKeywords';
+import FilterRarities from '@/lib-components/Filters/FilterRarities';
 import FilterAdvanced from '@/lib-components/Filters/FilterAdvanced';
 import FilterRegions from '@/lib-components/Filters/FilterRegions';
-import FilterSets from '@/lib-components/FilterSets';
-import FilterTypes from '@/lib-components/FilterTypes';
+import FilterSets from '@/lib-components/Filters/FilterSets';
+import FilterTypes from '@/lib-components/Filters/FilterTypes';
 import { reactive, watch } from 'vue';
 import FilterManaCost from '../../FilterManaCost';
 import { FilterCardsProps, filterCardsProps } from './types';
