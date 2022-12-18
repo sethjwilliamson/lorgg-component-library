@@ -85,6 +85,7 @@ export function setupi18n() {
           pastHours: 'Past {count} Hours',
           pastHour: 'Past Hour',
           season: 'Season',
+          servers: 'Servers',
         },
       },
     }, // set locale messages
