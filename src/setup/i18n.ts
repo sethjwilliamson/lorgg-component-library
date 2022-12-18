@@ -81,6 +81,10 @@ export function setupi18n() {
           rarities: 'Rarities',
           sets: 'Sets',
           keywords: 'Keywords',
+          pastDays: 'Past {count} Days',
+          pastHours: 'Past {count} Hours',
+          pastHour: 'Past Hour',
+          season: 'Season',
         },
       },
     }, // set locale messages
