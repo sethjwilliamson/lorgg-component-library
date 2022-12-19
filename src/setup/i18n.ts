@@ -86,6 +86,8 @@ export function setupi18n() {
           pastHour: 'Past Hour',
           season: 'Season',
           servers: 'Servers',
+          sampleSize: 'Sample Size',
+          minimumMatches: 'Minimum Matches',
         },
       },
     }, // set locale messages
