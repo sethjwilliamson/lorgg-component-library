@@ -45,6 +45,7 @@ function onUpdate() {
 
 /* When last child is odd or when there is less than 3 total children, span 2 */
 .checkbox-item:last-child:nth-child(odd),
+.checkbox-item:last-of-type:nth-child(odd),
 .checkbox-item:nth-child(1):nth-last-child(3),
 .checkbox-item:nth-child(2):nth-last-child(2),
 .checkbox-item:nth-child(3):nth-last-child(1),

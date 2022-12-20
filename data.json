@@ -767,49 +767,49 @@
     ],
     "ranks": [
         {
-            "icon": "..\/..\/images\/masters.svg",
+            "icon": "https://lor.gg/images\/masters.svg",
             "name": "Masters",
             "nameRef": "Masters",
             "color": "#4D38B0",
             "order": 0
         },
         {
-            "icon": "..\/..\/images\/diamond.svg",
+            "icon": "https://lor.gg/images\/diamond.svg",
             "name": "Diamond",
             "nameRef": "Diamond",
             "color": "#962d27",
             "order": 1
         },
         {
-            "icon": "..\/..\/images\/platinum.svg",
+            "icon": "https://lor.gg/images\/platinum.svg",
             "name": "Platinum",
             "nameRef": "Platinum",
             "color": "#B9AC98",
             "order": 2
         },
         {
-            "icon": "..\/..\/images\/gold.svg",
+            "icon": "https://lor.gg/images\/gold.svg",
             "name": "Gold",
             "nameRef": "Gold",
             "color": "#4A7DC3",
             "order": 3
         },
         {
-            "icon": "..\/..\/images\/silver.svg",
+            "icon": "https://lor.gg/images\/silver.svg",
             "name": "Silver",
             "nameRef": "Silver",
             "color": "#2A725D",
             "order": 4
         },
         {
-            "icon": "..\/..\/images\/bronze.svg",
+            "icon": "https://lor.gg/images\/bronze.svg",
             "name": "Bronze",
             "nameRef": "Bronze",
             "color": "#C45987",
             "order": 5
         },
         {
-            "icon": "..\/..\/images\/iron.svg",
+            "icon": "https://lor.gg/images\/iron.svg",
             "name": "Iron",
             "nameRef": "Iron",
             "color": "#C4AE3D",

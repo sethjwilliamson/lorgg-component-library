@@ -88,6 +88,9 @@ export function setupi18n() {
           servers: 'Servers',
           sampleSize: 'Sample Size',
           minimumMatches: 'Minimum Matches',
+          ranks: 'Ranks',
+          allRanks: 'All Ranks',
+          platPlus: 'Platinum+',
         },
       },
     }, // set locale messages
