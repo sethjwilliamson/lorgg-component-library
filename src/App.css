@@ -219,6 +219,10 @@
   white-space: pre-line;
 }
 
+.multiselect-tags-search {
+  background-color: var(--color-2);
+}
+
 .label-icon {
   height: 25px;
   max-width: 25px;

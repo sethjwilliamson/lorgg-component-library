@@ -10,6 +10,7 @@
       class="runeterra-select"
       mode="tags"
       :options="sets"
+      :searchable="true"
       label="name"
       value-prop="nameRef"
     >

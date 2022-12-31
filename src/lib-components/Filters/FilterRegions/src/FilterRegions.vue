@@ -26,6 +26,7 @@
         class="runeterra-select"
         mode="tags"
         :options="runeterraChampions"
+        :searchable="true"
         label="name"
         value-prop="nameRef"
       />

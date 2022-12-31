@@ -42,6 +42,7 @@
         v-if="filterArray.filter((x) => !x.startsWith('patch')).length === 0"
         v-model="selectedPatch"
         :options="patches"
+        :searchable="true"
         label="name"
         value-prop="nameRef"
       />
@@ -50,6 +51,7 @@
         v-if="filterArray.includes('season')"
         v-model="selectedSeason"
         :options="seasons"
+        :searchable="true"
         label="name"
         value-prop="nameRef"
       />
