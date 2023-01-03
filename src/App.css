@@ -221,6 +221,7 @@
 
 .multiselect-tags-search {
   background-color: var(--color-2);
+  color: var(--color-primary-2);
 }
 
 .label-icon {

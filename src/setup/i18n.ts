@@ -16,6 +16,7 @@ export function setupi18n() {
           roundDrawn: 'Round Drawn',
           roundPlayed: 'Round Played',
           card: 'Card',
+          cards: 'Cards',
           matches: 'Matches',
           winrate: 'Winrate',
           inclusion: 'Inclusion',
