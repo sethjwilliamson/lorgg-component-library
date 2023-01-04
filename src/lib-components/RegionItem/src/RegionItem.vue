@@ -3,7 +3,7 @@
     <img
       ref="regionImg"
       :alt="region?.name"
-      :src="`https://lor.gg/${region?.icon}`"
+      :src="region?.icon"
       class="region-img"
     />
     <div ref="regionTippy">
