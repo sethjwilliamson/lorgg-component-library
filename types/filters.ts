@@ -13,10 +13,18 @@ export type AdvancedFilter = {
 
 export type CardFilters = {
   advancedFilters: AdvancedFilter[];
-  regionFilters: string[];
-  manaCostFilters: number[];
-  typeFilters: string[];
-  rarityFilters: string[];
-  setFilters: string[];
   keywordFilters: string[];
+  manaCostFilters: number[];
+  rarityFilters: string[];
+  regionFilters: string[];
+  setFilters: string[];
+  typeFilters: string[];
+};
+
+export type DeckFilters = {
+  cardFilters: string[];
+  regionFilters: string[];
+  sampleSizeFilters: number[];
+  serverFilters: string[];
+  timeFilters: string[];
 };
