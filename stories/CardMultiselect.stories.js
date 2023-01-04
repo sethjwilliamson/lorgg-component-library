@@ -25,6 +25,26 @@ const Template = (args) => ({
 export const Default = Template.bind({});
 Default.args = {
   cardCodes: [],
-  onlyCollectible: false,
+  filterCallback: (x) => {
+    return true;
+  },
+  mode: 'tags',
+};
+
+export const Array = Template.bind({});
+Array.args = {
+  cardCodes: [],
+  filterCallback: (x) => {
+    return ['01IO001', '01IO002', '01IO003', '01IO004'].includes(x.cardCode);
+  },
+  mode: 'single',
+};
+
+export const Collectible = Template.bind({});
+Collectible.args = {
+  cardCodes: [],
+  filterCallback: (x) => {
+    return x.collectible;
+  },
   mode: 'tags',
 };

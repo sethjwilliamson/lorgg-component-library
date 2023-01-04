@@ -1,10 +1,15 @@
+import { CardJsonCard } from '#/jsons';
 import { PropType } from 'vue';
 
 export type CardMultiselectMode = 'single' | 'multiple' | 'tags';
 
+export interface CardMultiselectFitlerCallback {
+  (a: CardJsonCard): boolean;
+}
+
 export type CardMultiselectProps = {
   cardCodes: string[];
-  onlyCollectible: boolean;
+  filterCallback: CardMultiselectFitlerCallback;
   mode: CardMultiselectMode;
 };
 
@@ -14,10 +19,12 @@ export const cardMultiselectProps = {
     required: true,
     default: [],
   },
-  onlyCollectible: {
-    type: Boolean,
+  filterCallback: {
+    type: Function as PropType<CardMultiselectFitlerCallback>,
     required: false,
-    default: false,
+    default: () => {
+      return true;
+    },
   },
   mode: {
     type: String as PropType<CardMultiselectMode>,

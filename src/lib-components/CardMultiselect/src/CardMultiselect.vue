@@ -11,24 +11,6 @@
     label="name"
     value-prop="cardCode"
   >
-    <!-- <template #tag="{ option, handleTagRemove }">
-      <span
-        class="multiselect-tag"
-        tabindex="-1"
-        aria-label="{{option.name}} ❎"
-        ><img class="label-icon" :src="`https://lor.gg/${option.regionRefs[0]}.svg`" />
-        <span class="multiselect-tag-remove"
-          ><span
-            class="multiselect-tag-remove-icon"
-            @mousedown.prevent="handleTagRemove(option, $event)"
-          ></span></span
-      ></span>
-    </template>
-
-    <template #option="{ option }">
-      <img class="label-icon" :src="`https://lor.gg/${option.regionRefs[0]}.svg`" />
-      {{ option.name }}
-    </template> -->
   </MultiSelect>
 </template>
 
@@ -50,8 +32,8 @@ let cards = useJsonStore().jsons.cardJson.sort((a, b) =>
   a.name.localeCompare(b.name),
 );
 
-if (props.onlyCollectible) {
-  cards = cards.filter((x) => x.collectible);
+if (props.filterCallback) {
+  cards = cards.filter(props.filterCallback);
 }
 
 watch(cardCodes, () => {
