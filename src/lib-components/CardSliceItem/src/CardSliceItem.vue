@@ -1,6 +1,6 @@
 <template>
   <!-- TODO: Add RounterLink -->
-  <localized-link :to="'routerLink'">
+  <div>
     <div ref="cardSlice" :class="cardSliceClasses">
       <div class="card-slice">
         <div
@@ -70,7 +70,7 @@
         class="card-image-hover"
       />
     </div>
-  </localized-link>
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -95,7 +95,7 @@ const cardItemWrapper = ref<HTMLElement | null>(null);
 const showTippyLocation = ref<ShowTippyLocation>(null);
 
 const colorGradient: ComputedRef<string> = computed(() => {
-  const color = props.color || getRegionColorOfCard(card.value);
+  const color = props.color || getRegionColorOfCard(card.value, null, true);
 
   return `linear-gradient(90deg, rgba(${color}, 1) 0%, rgba(${color}, 1) 30%, rgba(${color}, .10) 70%, rgba(${color}, .00) 100%)`;
 });
@@ -150,7 +150,7 @@ onMounted(() => {
   height: 100%;
   overflow: hidden;
   position: relative;
-  width: 100%;
+  width: var(--card-slice-width, 100%);
 }
 .maintain-aspect-ratio {
   height: unset;
@@ -196,6 +196,7 @@ onMounted(() => {
   color: var(--color-primary-2);
   font-size: 16px;
   font-weight: 500;
+  text-align: start;
   text-shadow: 2px 2px 4px black;
   z-index: 0;
 }
