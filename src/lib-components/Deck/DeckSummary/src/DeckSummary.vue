@@ -16,7 +16,7 @@
               v-for="card of champions"
               :key="card.cardCode"
               :card-prop="card"
-              :color="getRegionColorOfCard(card, regions)"
+              :color="getRegionColorOfCard(card, regions, true)"
               :name="card.name"
               :mana-number="card.cost"
               :quantity-number="props.deck[card.cardCode]"
@@ -37,7 +37,7 @@
               v-for="card of landmarks"
               :key="card.cardCode"
               :card-prop="card"
-              :color="getRegionColorOfCard(card, regions)"
+              :color="getRegionColorOfCard(card, regions, true)"
               :name="card.name"
               :mana-number="card.cost"
               :quantity-number="props.deck[card.cardCode]"
@@ -58,7 +58,7 @@
               v-for="card of equipment"
               :key="card.cardCode"
               :card-prop="card"
-              :color="getRegionColorOfCard(card, regions)"
+              :color="getRegionColorOfCard(card, regions, true)"
               :name="card.name"
               :mana-number="card.cost"
               :quantity-number="props.deck[card.cardCode]"
@@ -81,7 +81,7 @@
             v-for="card of followers"
             :key="card.cardCode"
             :card-prop="card"
-            :color="getRegionColorOfCard(card, regions)"
+            :color="getRegionColorOfCard(card, regions, true)"
             :name="card.name"
             :mana-number="card.cost"
             :quantity-number="props.deck[card.cardCode]"
@@ -102,7 +102,7 @@
             v-for="card of spells"
             :key="card.cardCode"
             :card-prop="card"
-            :color="getRegionColorOfCard(card, regions)"
+            :color="getRegionColorOfCard(card, regions, true)"
             :name="card.name"
             :mana-number="card.cost"
             :quantity-number="props.deck[card.cardCode]"
@@ -116,29 +116,31 @@
 
 <script setup lang="ts">
 import { CardJsonCard } from '#/jsons';
-import { getRegionColorOfCard, getRegions } from '@/helpers/functions';
-import { useJsonStore } from '@/helpers/stores';
+import {
+  getCardsFromDeck,
+  getRegionColorOfCard,
+  getRegions,
+  isAChampion,
+} from '@/helpers/functions';
 import CardSliceItem from '@/lib-components/CardSliceItem';
 import { computed, ComputedRef } from 'vue';
 import { deckSummaryProps, DeckSummaryProps } from './types';
 
 const props: DeckSummaryProps = defineProps(deckSummaryProps);
-const cardJsonObject = useJsonStore().jsons.cardJsonObject;
 
 const cards: ComputedRef<Array<CardJsonCard>> = computed(() => {
-  return Object.keys(props.deck)
-    .map((x) => cardJsonObject[x])
-    .sort((a, b) => a.name.localeCompare(b.name))
-    .sort((a, b) => a.cost - b.cost);
+  if (props.cardsProp) {
+    return props.cardsProp;
+  }
+
+  return getCardsFromDeck(props.deck);
 });
 const regions: ComputedRef<Array<string>> = computed(() => {
-  return getRegions(props.deck);
+  return getRegions(cards.value);
 });
 
 const champions: ComputedRef<Array<CardJsonCard>> = computed(() => {
-  return cards.value.filter(
-    (x) => x.typeRef === 'Unit' && x.supertype === 'Champion',
-  );
+  return cards.value.filter((x) => isAChampion(x));
 });
 const followers: ComputedRef<Array<CardJsonCard>> = computed(() => {
   return cards.value.filter((x) => x.typeRef === 'Unit' && x.supertype === '');
@@ -213,6 +215,16 @@ function typeQuantity(cardArray: Array<CardJsonCard>) {
   grid-gap: 5px;
   padding-left: 20px;
   padding-right: 20px;
+}
+
+.champions-landmarks {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.champions-landmarks > .type {
+  flex-grow: unset;
 }
 
 @media (max-width: 992px) {
