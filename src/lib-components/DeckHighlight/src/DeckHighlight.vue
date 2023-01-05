@@ -1,26 +1,97 @@
 <template>
-  <div class="deck-highlight">
+  <div class="deck-highlight" :style="deckHighlightStyle">
     <DeckHighlightRegions
       class="deck-highlight-regions"
-      :regions="props.regions"
+      :regions="regions"
     ></DeckHighlightRegions>
     <DeckHighlightCards
       class="deck-highlight-cards"
-      :card-codes="props.cardCodes"
+      :cards="champions"
+      :regions="regions"
     ></DeckHighlightCards>
+    <FontAwesomeIcon ref="eyeIcon" icon="eye" class="icon" />
+
+    <div ref="deckSummary" class="deck-summary-wrapper">
+      <DeckSummary
+        v-if="hasShown"
+        class="deck-summary"
+        :deck="deck"
+        :cards-prop="cards"
+      ></DeckSummary>
+    </div>
   </div>
 </template>
 
 <script setup lang="ts">
+import {
+  getCardsFromDeck,
+  getDeckObjectFromCode,
+  getRegions,
+  isAChampion,
+} from '@/helpers/functions';
+import DeckSummary from '@/lib-components/Deck/DeckSummary';
 import DeckHighlightCards from '@/lib-components/DeckHighlightCards';
 import DeckHighlightRegions from '@/lib-components/DeckHighlightRegions';
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
+import tippy from 'tippy.js';
+import { computed, onMounted, ref } from 'vue';
 import { DeckHighlightProps, deckHighlightProps } from './types';
 
 const props: DeckHighlightProps = defineProps(deckHighlightProps);
+
+const deckSummary = ref<HTMLElement | null>(null);
+const eyeIcon = ref<InstanceType<typeof FontAwesomeIcon> | null>(null);
+
+const hasShown = ref(false);
+
+const deck = computed(() => {
+  if (props.deck) {
+    return props.deck;
+  }
+
+  return getDeckObjectFromCode(props.deckCode);
+});
+const cards = computed(() => {
+  if (props.cards) {
+    return props.cards;
+  }
+
+  return getCardsFromDeck(deck.value);
+});
+const regions = computed(() => {
+  return getRegions(cards.value);
+});
+const champions = computed(() => {
+  return cards.value.filter((x) => {
+    return isAChampion(x);
+  });
+});
+
+const deckHighlightStyle = computed(() => {
+  return {
+    '--tippy-background': `url(https://lor.gg/storage/cards/full-art/${
+      champions.value[champions.value.length - 1].cardCode
+    }.webp)`,
+  };
+});
+
+onMounted(() => {
+  tippy(eyeIcon.value?.$el as HTMLElement, {
+    content: deckSummary.value as HTMLElement,
+    arrow: true,
+    duration: 0,
+    maxWidth: '90vw',
+    appendTo: 'parent',
+    onShow() {
+      hasShown.value = true;
+    },
+  });
+});
 </script>
 
 <style scoped>
 .deck-highlight {
+  align-items: center;
   display: flex;
   gap: 15px;
 }
@@ -31,5 +102,13 @@ const props: DeckHighlightProps = defineProps(deckHighlightProps);
 
 .deck-highlight-cards {
   width: 85px;
+}
+
+.icon {
+  color: var(--color-primary-2);
+}
+
+.deck-summary {
+  --card-slice-width: 260px;
 }
 </style>

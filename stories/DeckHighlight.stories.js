@@ -18,6 +18,11 @@ const Template = (args) => ({
 
 export const Default = Template.bind({});
 Default.args = {
-  regions: ['Freljord', 'Demacia'],
-  cardCodes: ['01FR001', '01DE001'],
+  deckCode:
+    'CICQCAIDFYBAEBQ2FUBAGBQIB4BAMBQHDYCAEAYBA4EASAYBAIDAIAIDAYDQCBADCYAQCAYDBU',
+};
+
+export const BardNorra = Template.bind({});
+BardNorra.args = {
+  deckCode: 'CUCACBIKYYAQCBQMAEBAMCI5F4EAMCQLB4IRGFI2D4WACAQGBIIBQAA',
 };

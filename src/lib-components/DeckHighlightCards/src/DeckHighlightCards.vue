@@ -1,23 +1,40 @@
 <template>
   <div class="deck-highlight-cards">
     <div
-      v-for="cardCode in props.cardCodes"
-      :key="cardCode"
+      v-for="card in cards"
+      :key="card.cardCode"
       class="circle-card-item-wrapper"
     >
       <CircleCardItem
         class="circle-card-item"
-        :card-code-prop="cardCode"
+        :card-prop="card"
+        :regions="props.regions"
       ></CircleCardItem>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
+import { useJsonStore } from '@/helpers/stores';
 import CircleCardItem from '@/lib-components/CircleCardItem';
+import { computed } from 'vue';
 import { DeckHighlightCardsProps, deckHighlightCardsProps } from './types';
 
+const cardJsonObject = useJsonStore().jsons.cardJsonObject;
+
 const props: DeckHighlightCardsProps = defineProps(deckHighlightCardsProps);
+
+const cards = computed(() => {
+  if (props.cards) {
+    return props.cards;
+  }
+
+  if (props.cardCodes) {
+    return props.cardCodes.map((x) => cardJsonObject[x]);
+  }
+
+  throw new Error('CardProp or CardCodeProp must be defined.');
+});
 </script>
 
 <style scoped>

@@ -1,19 +1,24 @@
+import { CardJsonCard, Deck } from '#/jsons';
 import { PropType } from 'vue';
 
 export type DeckHighlightProps = {
-  cardCodes: string[];
-  regions: string[];
+  cards?: CardJsonCard[];
+  deck?: Deck;
+  deckCode: string;
 };
 
 export const deckHighlightProps = {
-  cardCodes: {
-    type: Array as PropType<string[]>,
-    required: true,
-    default: [],
+  cards: {
+    type: Array as PropType<CardJsonCard[]>,
+    required: false,
   },
-  regions: {
-    type: Array as PropType<string[]>,
+  deckCode: {
+    type: String,
     required: true,
-    default: [],
+    default: '',
+  },
+  deck: {
+    type: Object as PropType<Deck>,
+    required: false,
   },
 };
