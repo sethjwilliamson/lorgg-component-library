@@ -8,6 +8,10 @@ export function isRegionRuneterran(cardCode: string): boolean {
   return /^\d+$/.test(cardCode[0]);
 }
 
+export function isAChampion(card: CardJsonCard): boolean {
+  return card.supertype === 'Champion' && card.typeRef === 'Unit';
+}
+
 export function localeNumber(num: number, decimalPlaces = 0) {
   return Number(num.toFixed(decimalPlaces)).toLocaleString();
 }
@@ -31,20 +35,34 @@ export function getDeckObjectFromCode(deckcode: string): Deck {
   );
 }
 
-export function getRegionsFromCode(deckCode: string): Array<string> {
-  return getRegions(getDeckObjectFromCode(deckCode));
+export function getCardsFromDeck(deck: Deck) {
+  const cardJsonObject = useJsonStore().jsons.cardJsonObject;
+
+  return Object.keys(deck)
+    .map((x) => cardJsonObject[x])
+    .sort((a, b) => a.name.localeCompare(b.name))
+    .sort((a, b) => a.cost - b.cost);
 }
 
-export function getRegions(deck: Deck): Array<string> {
-  const regions: Array<string> = [];
+export function getRegionsFromCode(deckCode: string): Array<string> {
+  return getRegionsFromDeck(getDeckObjectFromCode(deckCode));
+}
+
+export function getRegionsFromDeck(deck: Deck): Array<string> {
   const store = useJsonStore();
 
   const cards = Object.keys(deck).map(
     (cardCode) => store.jsons.cardJsonObject[cardCode],
   );
 
+  return getRegions(cards);
+}
+
+export function getRegions(cards: CardJsonCard[]): Array<string> {
+  const regions: Array<string> = [];
+
   for (const card of cards) {
-    if (card.regionRefs.length === 1) {
+    if (card.regionRefs.length === 1 && !regions.includes(card.regionRefs[0])) {
       regions.push(card.regionRefs[0]);
     }
   }
@@ -77,13 +95,14 @@ export function getRegions(deck: Deck): Array<string> {
 export function getRegionColorOfCard(
   card: CardJsonCard,
   regions?: Array<string> | null,
+  isRgb = false,
 ) {
   const store = useJsonStore();
 
   const defaultRegion = `var(${
     store.jsons.dataJson.regions.find((x) => x.nameRef === card.regionRefs[0])
       ?.color || '--color-primary-2'
-  }-rgb)`;
+  }${isRgb ? '-rgb' : ''})`;
 
   if (card.regionRefs.length === 1 || !regions || regions.length < 2) {
     return defaultRegion;
@@ -94,7 +113,7 @@ export function getRegionColorOfCard(
       return `var(${
         store.jsons.dataJson.regions.find((x) => x.nameRef === region)?.color ||
         '--color-primary-2'
-      }-rgb)`;
+      }${isRgb ? '-rgb' : ''})`;
     }
   }
 
@@ -127,7 +146,7 @@ export function getRegionsQuantity(
   regions?: Array<string> | null,
 ): ObjectWithNumber {
   if (!regions) {
-    regions = getRegions(deck);
+    regions = getRegionsFromDeck(deck);
   }
 
   const store = useJsonStore();
