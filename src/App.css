@@ -1,4 +1,6 @@
 :root {
+  font-family: Arial, sans-serif;
+
   --color-0: #828295;
   --color-0-rgb: 130, 130, 149;
   --color-1: #2c3e50;
@@ -163,7 +165,7 @@
 }
 
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
