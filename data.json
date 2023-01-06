@@ -858,6 +858,7 @@
             "name": "Common",
             "nameRef": "Common",
             "color": "#10C26E",
+            "cost": 100,
             "order": 3,
             "icon": "https://lor.gg/images/common.svg"
         },
@@ -865,6 +866,7 @@
             "name": "Rare",
             "nameRef": "Rare",
             "color": "#3D98FB",
+            "cost": 300,
             "order": 2,
             "icon": "https://lor.gg/images/rare.svg"
         },
@@ -872,6 +874,7 @@
             "name": "Epic",
             "nameRef": "Epic",
             "color": "#EF7DFF",
+            "cost": 1200,
             "order": 1,
             "icon": "https://lor.gg/images/epic.svg"
         },
@@ -879,12 +882,14 @@
             "name": "Champion",
             "nameRef": "Champion",
             "color": "#F7C321",
+            "cost": 3000,
             "order": 0,
             "icon": "https://lor.gg/images/championRarity.svg"
         },
         {
             "name": "None",
-            "nameRef": "None"
+            "nameRef": "None",
+            "cost": 0
         }
     ],
     "sets": [

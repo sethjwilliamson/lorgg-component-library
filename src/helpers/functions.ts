@@ -28,6 +28,36 @@ export function groupBy<T, K extends keyof any>(arr: T[], key: (i: T) => K) {
   }, {} as Record<K, T[]>);
 }
 
+export function getGemsCost(deck: Deck, isPersonal: boolean) {
+  if (isPersonal /* && personal deck doesn't exist */) {
+    return null;
+  }
+
+  const cardJsonObject = useJsonStore().jsons.cardJsonObject;
+  const dataJson = useJsonStore().jsons.dataJson;
+
+  let cost = 0;
+
+  for (const cardCode in deck) {
+    const addedCost = dataJson.rarities.find(
+      (x) => x.nameRef === cardJsonObject[cardCode].rarityRef,
+    )?.cost;
+
+    if (addedCost === undefined) {
+      continue;
+    }
+
+    // TODO: Subtract deck[cardCode] from cardsOwned[cardCode]
+    const quantityMissing = isPersonal
+      ? Math.max(0, deck[cardCode])
+      : deck[cardCode];
+
+    cost += addedCost * quantityMissing;
+  }
+
+  return cost;
+}
+
 export function getMostImportantCards(
   cards: CardJsonCard[],
   deck: Deck,

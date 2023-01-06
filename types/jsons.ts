@@ -99,6 +99,7 @@ export type DataJsonSpellSpeed = {
 
 export type DataJsonRarity = {
   color: string;
+  cost: number;
   icon: string;
   name: string;
   order: number;

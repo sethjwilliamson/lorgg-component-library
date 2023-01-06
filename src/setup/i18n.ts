@@ -51,6 +51,8 @@ export function setupi18n() {
           simulateMulligan: 'Simulate Mulligan',
           replaceAllCards: 'Replace All Cards',
           replaceSelectedCards: 'Replace Selected Cards',
+          personalCost: 'Personal Cost',
+          originalCost: 'Original Cost',
         },
         general: {
           // runeterra: 'Runeterra',
