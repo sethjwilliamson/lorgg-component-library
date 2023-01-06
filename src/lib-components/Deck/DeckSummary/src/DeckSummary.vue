@@ -223,9 +223,9 @@ function typeQuantity(cardArray: Array<CardJsonCard>) {
   gap: 30px;
 }
 
-.champions-landmarks > .type {
+/* .champions-landmarks > .type {
   flex-grow: unset;
-}
+} */
 
 @media (max-width: 992px) {
   .deck-cards {
