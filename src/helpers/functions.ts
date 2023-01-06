@@ -28,6 +28,60 @@ export function groupBy<T, K extends keyof any>(arr: T[], key: (i: T) => K) {
   }, {} as Record<K, T[]>);
 }
 
+export function getMostImportantCards(
+  cards: CardJsonCard[],
+  deck: Deck,
+  quantity: number,
+) {
+  const returnCards: CardJsonCard[] = [];
+  const importanceFilter = [
+    (x: CardJsonCard) => {
+      return isAChampion(x);
+    },
+    (x: CardJsonCard) => {
+      return x.typeRef === 'Landmark';
+    },
+    (x: CardJsonCard) => {
+      return x.typeRef === 'Unit';
+    },
+    (x: CardJsonCard) => {
+      return x.typeRef === 'Spell';
+    },
+    (x: CardJsonCard) => {
+      return x.typeRef === 'Equipment';
+    },
+  ];
+
+  while (returnCards.length < quantity) {
+    const filterCardCodes = importanceFilter.shift();
+
+    if (!filterCardCodes) {
+      break;
+    }
+
+    returnCards.push(
+      ...getMostImportantCardsForSection(
+        cards.filter(filterCardCodes),
+        deck,
+        quantity - returnCards.length,
+      ),
+    );
+  }
+
+  return returnCards;
+}
+
+function getMostImportantCardsForSection(
+  cards: CardJsonCard[],
+  deck: Deck,
+  quantity: number,
+) {
+  return cards
+    .sort((a, b) => deck[b.cardCode] - deck[a.cardCode])
+    .sort((a, b) => b.cost - a.cost)
+    .slice(0, quantity);
+}
+
 export function getDeckObjectFromCode(deckcode: string): Deck {
   return getDeckFromCode(deckcode).reduce(
     (a, v) => ({ ...a, [v.cardCode]: v.count }),
