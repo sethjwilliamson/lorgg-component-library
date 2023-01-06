@@ -53,6 +53,10 @@ export function setupi18n() {
           replaceSelectedCards: 'Replace Selected Cards',
           personalCost: 'Personal Cost',
           originalCost: 'Original Cost',
+          openArchetypePage: 'Open Archetype Page',
+        },
+        archetype: {
+          abbreviation: 'A',
         },
         general: {
           // runeterra: 'Runeterra',
