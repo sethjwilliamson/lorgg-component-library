@@ -19,9 +19,11 @@ function onBackgroundClick(e: Event) {
 
 <style scoped>
 .modal-item {
-  display: flex;
-  position: fixed;
-  inset: 0;
+  align-items: center;
   background-color: rgba(var(--color-background-0-rgb), 0.4);
+  display: flex;
+  inset: 0;
+  justify-content: center;
+  position: fixed;
 }
 </style>
