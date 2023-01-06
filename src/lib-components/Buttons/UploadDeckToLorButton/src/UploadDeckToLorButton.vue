@@ -6,7 +6,6 @@
 
 <script setup lang="ts">
 import { ref, onMounted } from 'vue';
-import { copyToClipboard } from '@/helpers/functions';
 import tippy, { Instance } from 'tippy.js';
 import {
   uploadDeckToLorButtonProps,

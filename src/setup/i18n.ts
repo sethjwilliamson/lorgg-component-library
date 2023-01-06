@@ -54,6 +54,7 @@ export function setupi18n() {
           personalCost: 'Personal Cost',
           originalCost: 'Original Cost',
           openArchetypePage: 'Open Archetype Page',
+          shareDeck: 'Share Deck',
         },
         archetype: {
           abbreviation: 'A',

@@ -35,7 +35,8 @@ onMounted(() => {
 
 <style scoped>
 .circle-button {
-  font-size: 28px;
-  font-size: 900;
+  font-size: 25px;
+  font-weight: 900;
+  font-family: monospace;
 }
 </style>
