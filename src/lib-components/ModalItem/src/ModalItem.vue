@@ -1,5 +1,9 @@
 <template>
-  <div v-if="props.showModal" class="modal-item" @click="onBackgroundClick">
+  <div
+    v-if="props.showModal"
+    class="modal-item"
+    @click.self="onBackgroundClick"
+  >
     <slot></slot>
   </div>
 </template>
@@ -12,7 +16,7 @@ const emit = defineEmits<{
   (e: 'update:showModal', value: boolean): void;
 }>();
 
-function onBackgroundClick(e: Event) {
+function onBackgroundClick() {
   emit('update:showModal', false);
 }
 </script>
