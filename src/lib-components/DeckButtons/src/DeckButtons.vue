@@ -1,6 +1,13 @@
 <template>
   <div class="deck-buttons">
-    <div class="owned-deck-buttons buttons">
+    <div
+      v-if="
+        props.showButtons.deleteDeck ||
+        props.showButtons.updateDeckPrivacy ||
+        props.showButtons.editDeckName
+      "
+      class="owned-deck-buttons buttons"
+    >
       <DeleteDeckButton
         v-if="props.showButtons.deleteDeck"
         :deck-id="props.deckId"

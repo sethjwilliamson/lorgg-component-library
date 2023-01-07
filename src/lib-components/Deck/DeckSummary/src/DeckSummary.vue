@@ -177,6 +177,7 @@ function typeQuantity(cardArray: Array<CardJsonCard>) {
   flex-grow: 1;
   max-width: 400px;
   width: auto;
+  z-index: 1;
 }
 
 .type-heading {
