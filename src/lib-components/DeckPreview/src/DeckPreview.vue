@@ -75,11 +75,12 @@ const deckSummaryStyle = computed(() => {
   max-width: 90vw;
   overflow: auto;
   position: relative;
+  width: 1100px;
 }
 
 .top {
   background-color: var(--color-background-1);
-  border-bottom: solid 1px;
+  border-bottom: solid 1px var(--color-4);
   display: flex;
   position: sticky;
   top: 0;
@@ -95,6 +96,10 @@ const deckSummaryStyle = computed(() => {
 .deck-summary-wrapper {
   padding: 20px;
   position: relative;
+}
+
+.deck-summary {
+  margin: auto;
 }
 
 .deck-summary-wrapper::before {
