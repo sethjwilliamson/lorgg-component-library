@@ -25,6 +25,7 @@ function onBackgroundClick() {
 .modal-item {
   align-items: center;
   background-color: rgba(var(--color-background-0-rgb), 0.4);
+  cursor: default;
   display: flex;
   inset: 0;
   justify-content: center;
