@@ -20,7 +20,7 @@ import {
   getDeckObjectFromCode,
   getRegionColorOfRegionRef,
   getRegionNameOfRegionRef,
-  getRegions,
+  getRegionsFromDeck,
   regionOfCard,
 } from '@/helpers/functions';
 import { useJsonStore } from '@/helpers/stores';
@@ -50,7 +50,7 @@ const regionDataSet: ComputedRef<ManaCurveChartData> = computed(() => {
   const returnValue: ManaCurveChartData = {};
 
   const deck = getDeckObjectFromCode(props.deckCode);
-  const regions = getRegions(deck);
+  const regions = getRegionsFromDeck(deck);
 
   for (const region of regions) {
     returnValue[region] = labels.value.map(() => 0);
