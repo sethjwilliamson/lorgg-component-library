@@ -16,7 +16,7 @@ import {
   getDeckObjectFromCode,
   getRegionsFromDeck,
 } from '@/helpers/functions';
-import { computed, CSSProperties, StyleValue } from 'vue';
+import { computed, CSSProperties } from 'vue';
 import { RegionsLineProps, regionsLineProps } from './types';
 
 const props: RegionsLineProps = defineProps(regionsLineProps);
