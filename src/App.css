@@ -206,7 +206,7 @@
   background-size: cover;
   content: '';
   inset: 0;
-  opacity: 20%;
+  opacity: 30%;
   position: absolute;
 }
 
@@ -246,6 +246,15 @@
 
 .multiselect-option > .label-icon {
   margin-right: 10px;
+}
+
+.column-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  filter: drop-shadow(0px 0px 2px black);
+  color: var(--color-primary-2);
+  font-weight: 600;
 }
 
 .circle-button {
