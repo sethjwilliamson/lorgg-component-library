@@ -100,6 +100,7 @@ const testData: ComputedRef<ChartData<'bar'>> = computed(() => {
 
 const options: ChartOptions<'bar'> = {
   responsive: true,
+  animation: props.animation,
   maintainAspectRatio: false,
   plugins: {
     legend: {

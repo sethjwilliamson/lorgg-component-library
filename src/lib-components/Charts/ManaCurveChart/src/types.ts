@@ -1,3 +1,7 @@
+import { PropType } from 'vue';
+
+type DisabledOrUndefined = false | undefined;
+
 export type ManaCurveChartProps = {
   deckCode: string;
   paddingTop: number;
@@ -5,6 +9,7 @@ export type ManaCurveChartProps = {
   dataLabelsOffset: number;
   tooltipsEnabled: boolean;
   displayXScale: boolean;
+  animation?: DisabledOrUndefined;
 };
 
 export const manaCurveChartProps = {
@@ -37,6 +42,10 @@ export const manaCurveChartProps = {
     type: Boolean,
     required: false,
     default: true,
+  },
+  animation: {
+    type: Boolean as PropType<DisabledOrUndefined>,
+    required: false,
   },
 };
 
