@@ -1,5 +1,5 @@
 <template>
-  <div class="deck-highlight" :style="deckHighlightStyle">
+  <div class="deck-highlight">
     <DeckHighlightRegions
       class="deck-highlight-regions"
       :regions="regions"
@@ -80,23 +80,23 @@ const champions = computed(() => {
   });
 });
 
-const deckHighlightStyle = computed(() => {
-  return {
-    '--tippy-background': `url(https://lor.gg/storage/cards/full-art/${
-      getMostImportantCards(cards.value, deck.value, 1)[0].cardCode
-    }.webp)`,
-  };
-});
-
 onMounted(() => {
   tippy(eyeIcon.value?.$el as HTMLElement, {
     content: deckSummary.value as HTMLElement,
     arrow: true,
     duration: 0,
     maxWidth: '90vw',
-    appendTo: 'parent',
+    // appendTo: 'parent',
     onShow() {
       hasShown.value = true;
+    },
+    onCreate(instance) {
+      instance.popper.style.setProperty(
+        '--tippy-background',
+        `url(https://lor.gg/storage/cards/full-art/${
+          getMostImportantCards(cards.value, deck.value, 1)[0].cardCode
+        }.webp)`,
+      );
     },
   });
 });
