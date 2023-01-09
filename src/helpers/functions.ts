@@ -12,8 +12,15 @@ export function isAChampion(card: CardJsonCard): boolean {
   return card.supertype === 'Champion' && card.typeRef === 'Unit';
 }
 
-export function localeNumber(num: number, decimalPlaces = 0) {
-  return Number(num.toFixed(decimalPlaces)).toLocaleString();
+export function localeNumber(
+  num: number,
+  decimalPlaces = 0,
+  sigDigits?: number,
+) {
+  return Number(num.toFixed(decimalPlaces)).toLocaleString(undefined, {
+    maximumSignificantDigits:
+      sigDigits === undefined ? (num > 10_000 ? 3 : 2) : sigDigits,
+  });
 }
 
 export function getRandomInt(min: number, max: number): number {

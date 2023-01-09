@@ -18,8 +18,10 @@
             :cards="cards"
           ></DeckHighlight>
         </div>
-        <div class="column-content">2,500</div>
-        <div class="column-content">55.6%</div>
+        <div class="column-content">{{ localeNumber(props.matches) }}</div>
+        <div class="column-content">
+          {{ localeNumber((props.wins / props.matches) * 100, 1, 3) }}%
+        </div>
         <div class="column-content">
           <ManaCurveChart
             class="mana-curve-chart"
@@ -32,7 +34,13 @@
             :animation="false"
           ></ManaCurveChart>
         </div>
-        <div class="column-content">4,500</div>
+        <div class="column-content">
+          {{
+            (
+              getGemsCost(deck, true) ?? getGemsCost(deck, false)
+            )?.toLocaleString()
+          }}
+        </div>
         <div class="column-content region-chart-wrapper">
           <RegionsLine
             :cards="cards"
@@ -53,7 +61,9 @@ import { computed } from 'vue';
 import {
   getCardsFromDeck,
   getDeckObjectFromCode,
+  getGemsCost,
   getMostImportantCards,
+  localeNumber,
 } from '@/helpers/functions';
 import ManaCurveChart from '@/lib-components/Charts/ManaCurveChart';
 import RegionsLine from '@/lib-components/RegionsLine';
@@ -80,7 +90,6 @@ const backgroundCards = computed(() => {
   --border-radius: 20px;
   background-color: var(--color-background-2);
   border-radius: var(--border-radius);
-  /* overflow: hidden; */
   padding: 10px;
   position: relative;
 }
