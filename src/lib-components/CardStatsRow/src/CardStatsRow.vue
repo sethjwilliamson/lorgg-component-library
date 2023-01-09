@@ -4,44 +4,44 @@
       :card-code-prop="props.cardCode"
       :maintain-aspect-ratio="true"
     ></CardSliceItem>
-    <div v-show="props.toggledStats.matches">
+    <div class="column-content" v-show="props.toggledStats.matches">
       {{ localeNumber(props.matches) }}
     </div>
-    <div v-show="props.toggledStats.winrate">
-      {{ localeNumber((props.wins / props.matches) * 100, 2) + '%' }}
+    <div class="column-content" v-show="props.toggledStats.winrate">
+      {{ localeNumber((props.wins / props.matches) * 100, 2, 3) + '%' }}
     </div>
-    <div v-show="props.toggledStats.inclusion">
-      {{ localeNumber(props.inclusion * 100, 2) + '%' }}
+    <div class="column-content" v-show="props.toggledStats.inclusion">
+      {{ localeNumber(props.inclusion * 100, 2, 3) + '%' }}
     </div>
-    <div v-show="props.toggledStats.avgCopies">
-      {{ localeNumber(props.avgCopies, 2) }}
+    <div class="column-content" v-show="props.toggledStats.avgCopies">
+      {{ localeNumber(props.avgCopies, 2, 3) }}
     </div>
-    <div v-show="props.toggledStats.mulliganWinrate">
+    <div class="column-content" v-show="props.toggledStats.mulliganWinrate">
       {{
         props.mulliganWinrate
-          ? localeNumber(props.mulliganWinrate * 100, 2) + '%'
+          ? localeNumber(props.mulliganWinrate * 100, 2, 3) + '%'
           : '-'
       }}
     </div>
-    <div v-show="props.toggledStats.keptInMulligan">
+    <div class="column-content" v-show="props.toggledStats.keptInMulligan">
       {{
         props.keptInMulligan
-          ? localeNumber(props.keptInMulligan * 100, 2) + '%'
+          ? localeNumber(props.keptInMulligan * 100, 2, 3) + '%'
           : '-'
       }}
     </div>
-    <div v-show="props.toggledStats.drawnWinrate">
+    <div class="column-content" v-show="props.toggledStats.drawnWinrate">
       {{
         props.drawnWinrate
-          ? localeNumber(props.drawnWinrate * 100, 2) + '%'
+          ? localeNumber(props.drawnWinrate * 100, 2, 3) + '%'
           : '-'
       }}
     </div>
-    <div v-show="props.toggledStats.turnPlayed">
-      {{ props.turnPlayed ? localeNumber(props.turnPlayed, 2) : '-' }}
+    <div class="column-content" v-show="props.toggledStats.turnPlayed">
+      {{ props.turnPlayed ? localeNumber(props.turnPlayed, 2, 3) : '-' }}
     </div>
-    <div v-show="props.toggledStats.turnsHeld">
-      {{ props.turnsHeld ? localeNumber(props.turnsHeld, 2) : '-' }}
+    <div class="column-content" v-show="props.toggledStats.turnsHeld">
+      {{ props.turnsHeld ? localeNumber(props.turnsHeld, 2, 3) : '-' }}
     </div>
   </div>
 </template>
