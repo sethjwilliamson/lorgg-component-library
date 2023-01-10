@@ -92,6 +92,7 @@ const backgroundCards = computed(() => {
   border-radius: var(--border-radius);
   padding: 10px;
   position: relative;
+  width: fit-content;
 }
 
 .decks-row {
