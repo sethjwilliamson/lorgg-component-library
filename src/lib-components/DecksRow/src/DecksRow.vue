@@ -89,22 +89,27 @@ const backgroundCards = computed(() => {
 .decks-row-wrapper {
   --border-radius: 20px;
   background-color: var(--color-background-2);
+  border: var(--color-3) solid 1px;
   border-radius: var(--border-radius);
-  padding: 10px;
+  padding: 5px;
   position: relative;
+  transition: box-shadow 0.4s cubic-bezier(0, 1.08, 0.58, 1);
   width: fit-content;
+  min-width: -moz-available;
+  min-width: -webkit-fill-available;
+  min-width: stretch;
+}
+
+.decks-row-wrapper:hover {
+  border-color: #816f0d;
 }
 
 .decks-row {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  row-gap: 10px;
+  row-gap: 8px;
   position: relative;
   z-index: 1;
-}
-
-.deck-highlight-wrapper {
-  min-width: 250px;
 }
 
 .mana-curve-chart {
@@ -113,6 +118,7 @@ const backgroundCards = computed(() => {
 }
 
 .region-chart-wrapper {
+  display: none;
   grid-column: 1 / -1;
   padding: 0 10px;
 }

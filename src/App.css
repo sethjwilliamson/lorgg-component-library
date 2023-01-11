@@ -260,6 +260,10 @@
   min-width: 200px;
 }
 
+.deck-highlight-wrapper {
+  min-width: 250px;
+}
+
 .circle-button {
   align-items: center;
   background-color: var(--color-3);
