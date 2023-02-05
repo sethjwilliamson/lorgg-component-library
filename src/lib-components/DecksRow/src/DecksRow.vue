@@ -1,16 +1,18 @@
 <template>
   <!-- TODO: Add Router Link -->
-  <a href="/test">
-    <div class="decks-row-wrapper">
-      <div class="decks-row-background">
-        <div
-          v-for="backgroundCard in backgroundCards"
-          :key="backgroundCard"
-          class="background-card"
-          :style="{ '--background-image': `url(${backgroundCard})` }"
-        ></div>
+  <a href="/test" class="wrapper">
+    <div class="decks-row-wrapper wrapper" :style="{ '--index': props.index }">
+      <div class="decks-row-background-wrapper">
+        <div class="decks-row-background">
+          <div
+            v-for="backgroundCard in backgroundCards"
+            :key="backgroundCard"
+            class="background-card"
+            :style="{ '--background-image': `url(${backgroundCard})` }"
+          ></div>
+        </div>
       </div>
-      <div class="decks-row">
+      <div class="decks-row wrapper">
         <div class="column-content deck-highlight-wrapper" @click.stop.prevent>
           <DeckHighlight
             :deck-code="props.deckcode"
@@ -91,25 +93,14 @@ const backgroundCards = computed(() => {
   background-color: var(--color-background-2);
   border: var(--color-3) solid 1px;
   border-radius: var(--border-radius);
-  padding: 5px;
+  /* padding: 5px; */
   position: relative;
   transition: box-shadow 0.4s cubic-bezier(0, 1.08, 0.58, 1);
   width: fit-content;
-  min-width: -moz-available;
-  min-width: -webkit-fill-available;
-  min-width: stretch;
 }
 
 .decks-row-wrapper:hover {
   border-color: #816f0d;
-}
-
-.decks-row {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  row-gap: 8px;
-  position: relative;
-  z-index: 1;
 }
 
 .mana-curve-chart {
@@ -123,11 +114,22 @@ const backgroundCards = computed(() => {
   padding: 0 10px;
 }
 
+.decks-row-background-wrapper {
+  grid-row: var(--index);
+  grid-column: 1 / -1;
+  position: relative;
+}
+
 .decks-row-background {
+  background-color: var(--color-background-2);
   border-radius: var(--border-radius);
   overflow: hidden;
   position: absolute;
   inset: 0;
+}
+
+.column-content {
+  grid-row: var(--index);
 }
 
 .background-card {

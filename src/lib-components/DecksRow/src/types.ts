@@ -1,5 +1,6 @@
 export type DecksRowProps = {
   deckcode: string;
+  index: number;
   matches: number;
   wins: number;
 };
@@ -9,6 +10,11 @@ export const decksRowProps = {
     type: String,
     required: true,
     default: '',
+  },
+  index: {
+    type: Number,
+    required: true,
+    default: 1,
   },
   matches: {
     type: Number,
