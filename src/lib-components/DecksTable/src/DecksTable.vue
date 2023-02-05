@@ -23,7 +23,6 @@
     </div>
   </div>
 </template>
-<!--  Set grid layout, header uses it, row containers use it with span all, rows use it -->
 <script setup lang="ts">
 import DecksRow from '@/lib-components/DecksRow';
 import { DecksTableProps, decksTableProps } from './types';
@@ -37,7 +36,7 @@ const props: DecksTableProps = defineProps(decksTableProps);
   background-color: var(--background-color);
   gap: 10px;
   grid-auto-rows: 50px;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(5, 1fr) 50px;
   padding: 0 4px;
 }
 </style>

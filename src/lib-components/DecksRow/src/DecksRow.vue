@@ -43,6 +43,12 @@
             )?.toLocaleString()
           }}
         </div>
+        <div
+          class="column-content options-button"
+          @click.stop.prevent="toggleOptionsButton"
+        >
+          <FontAwesomeIcon icon="ellipsis-v"></FontAwesomeIcon>
+        </div>
         <div class="column-content region-chart-wrapper">
           <RegionsLine
             :cards="cards"
@@ -67,6 +73,7 @@ import {
   getMostImportantCards,
   localeNumber,
 } from '@/helpers/functions';
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import ManaCurveChart from '@/lib-components/Charts/ManaCurveChart';
 import RegionsLine from '@/lib-components/RegionsLine';
 
@@ -85,16 +92,25 @@ const backgroundCards = computed(() => {
     return `https://lor.gg/storage/cards/banner/${x.cardCode}.png`;
   });
 });
+
+function toggleOptionsButton() {
+  console.log('Options Button Clicked.');
+}
 </script>
 
 <style scoped>
-.decks-row-wrapper:hover {
-  border-color: #816f0d;
-}
-
 .mana-curve-chart {
   height: 40px;
   width: 90px;
+}
+
+.options-button {
+  opacity: 0.6;
+  min-width: unset;
+}
+
+.options-button:hover {
+  opacity: 1;
 }
 
 .region-chart-wrapper {
@@ -111,10 +127,16 @@ const backgroundCards = computed(() => {
 
 .decks-row-background {
   background-color: var(--color-background-2);
+  border: var(--color-3) solid 2px;
   border-radius: 20px;
   overflow: hidden;
   position: absolute;
   inset: 0;
+  transition: border-color 0.2s;
+}
+
+a.wrapper:hover .decks-row-background {
+  border-color: #816f0d;
 }
 
 .background-card {
