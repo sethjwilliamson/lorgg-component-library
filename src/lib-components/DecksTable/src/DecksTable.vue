@@ -6,11 +6,17 @@
         <div class="heading-background-inner"></div>
       </div>
       <div class="heading wrapper">
-        <div class="heading-cell column-content">Test</div>
-        <div class="heading-cell column-content">Test</div>
-        <div class="heading-cell column-content">Test</div>
-        <div class="heading-cell column-content">Test</div>
-        <div class="heading-cell column-content">Test</div>
+        <div class="heading-cell column-content">{{ t('general.deck') }}</div>
+        <div class="heading-cell column-content">
+          {{ t('general.matches') }}
+        </div>
+        <div class="heading-cell column-content">
+          {{ t('general.winrate') }}
+        </div>
+        <div class="heading-cell column-content">
+          {{ t('general.manaCurve') }}
+        </div>
+        <div class="heading-cell column-content">{{ t('general.cost') }}</div>
       </div>
       <DecksRow
         v-for="(deckRow, index) in props.deckRows"
@@ -26,6 +32,8 @@
 <script setup lang="ts">
 import DecksRow from '@/lib-components/DecksRow';
 import { DecksTableProps, decksTableProps } from './types';
+import { useI18n } from 'vue-i18n';
+const { t } = useI18n();
 
 const props: DecksTableProps = defineProps(decksTableProps);
 </script>

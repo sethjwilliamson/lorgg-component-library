@@ -17,8 +17,6 @@ export function setupi18n() {
           roundPlayed: 'Round Played',
           card: 'Card',
           cards: 'Cards',
-          matches: 'Matches',
-          winrate: 'Winrate',
           inclusion: 'Inclusion',
           avgCopies: 'Avg. Copies',
           mulliganWinrate: 'Mull. Winrate',
@@ -30,7 +28,6 @@ export function setupi18n() {
           similarCards: 'Similar Cards',
           attack: 'Attack',
           health: 'Health',
-          cost: 'Cost',
           quantityOwned: 'Quantity Owned',
         },
         deck: {
@@ -62,6 +59,7 @@ export function setupi18n() {
         general: {
           // runeterra: 'Runeterra',
           manaCost: 'Mana Cost',
+          cost: 'Cost',
           regions: 'Regions',
           clear: 'Clear',
           copy: 'Copy',
@@ -99,6 +97,8 @@ export function setupi18n() {
           ranks: 'Ranks',
           allRanks: 'All Ranks',
           platPlus: 'Platinum+',
+          deck: 'Deck',
+          manaCurve: 'Mana Curve',
         },
       },
     }, // set locale messages
