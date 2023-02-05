@@ -88,17 +88,6 @@ const backgroundCards = computed(() => {
 </script>
 
 <style scoped>
-.decks-row-wrapper {
-  --border-radius: 20px;
-  background-color: var(--color-background-2);
-  border: var(--color-3) solid 1px;
-  border-radius: var(--border-radius);
-  /* padding: 5px; */
-  position: relative;
-  transition: box-shadow 0.4s cubic-bezier(0, 1.08, 0.58, 1);
-  width: fit-content;
-}
-
 .decks-row-wrapper:hover {
   border-color: #816f0d;
 }
@@ -122,14 +111,10 @@ const backgroundCards = computed(() => {
 
 .decks-row-background {
   background-color: var(--color-background-2);
-  border-radius: var(--border-radius);
+  border-radius: 20px;
   overflow: hidden;
   position: absolute;
   inset: 0;
-}
-
-.column-content {
-  grid-row: var(--index);
 }
 
 .background-card {
