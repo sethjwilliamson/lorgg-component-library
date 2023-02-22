@@ -8,6 +8,7 @@ export enum SortDirection {
 }
 
 export type HeadingItem = {
+  id: string;
   isShown: boolean;
   sortDirection: SortDirection;
   title: string;

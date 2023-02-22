@@ -13,7 +13,23 @@ const Template = (args) => ({
   },
   template: `<div > 
               <LargeTable v-bind="args" style="--table-grid-auto-rows: 50px;" >
-                <div /><div>Test</div>
+                <div />
+                <div>Test</div>
+                <div>Test</div>
+                <div>Test</div>
+                <div>Test</div>
+                <div>Test</div>
+                <div>Test</div>
+                <div>Test</div>
+                <div>Test</div>
+                <div>Test</div>
+                <div>Test</div>
+                <div>Test</div>
+                <div>Test</div>
+                <div>Test</div>
+                <div>Test</div>
+                <div>Test</div>
+                <div>Test</div>
               </LargeTable>
             </div>`,
 });
@@ -23,8 +39,32 @@ Default.args = {
   headingItems: [
     {
       title: 'Test',
+      id: 'test1',
       isShown: true,
-      isSortable: true,
+      sortDirection: 'not-sortable',
+    },
+    {
+      title: 'Test2',
+      id: 'test2',
+      isShown: true,
+      sortDirection: 'sort-up',
+    },
+    {
+      title: 'Test3',
+      id: 'test3',
+      isShown: true,
+      sortDirection: 'sort-up',
+    },
+    {
+      title: 'Test4',
+      id: 'test4',
+      isShown: true,
+      sortDirection: 'sort-up',
+    },
+    {
+      title: 'Test5',
+      id: 'test5',
+      isShown: true,
       sortDirection: 'sort-up',
     },
   ],

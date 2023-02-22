@@ -1,6 +1,6 @@
 <template>
   <div class="table-wrapper">
-    <div class="large-table table no-scrollbar">
+    <div class="large-table table no-scrollbar" :style="largeTableStyle">
       <div class="heading-background-outer">
         <div class="heading-background-absolute"></div>
         <div class="heading-background-inner"></div>
@@ -11,9 +11,10 @@
           v-show="headingItem.isShown"
           :key="headingItem.title"
           class="heading-cell column-content"
+          :class="headingItem.sortDirection"
         >
           <div>{{ headingItem.title }}</div>
-          <div :class="['sort-icons', headingItem.sortDirection]">
+          <div class="sort-icons">
             <FontAwesomeIcon icon="sort-up" class="sort-icon" />
             <FontAwesomeIcon icon="sort-down" class="sort-icon" />
           </div>
@@ -26,9 +27,20 @@
 
 <script setup lang="ts">
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
+import { computed } from 'vue';
 import { LargeTableProps, largeTableProps } from './types';
 
 const props: LargeTableProps = defineProps(largeTableProps);
+
+const largeTableStyle = computed(() => {
+  return {
+    '--columns': props.headingItems
+      .filter((x) => x.isShown)
+      .reduce((prev) => {
+        return prev + 1;
+      }, 0),
+  };
+});
 </script>
 
 <style scoped>
@@ -41,8 +53,17 @@ const props: LargeTableProps = defineProps(largeTableProps);
   padding: 0 4px;
 }
 
+.heading-background-outer {
+  grid-column: 1 / span var(--columns);
+}
+
 .heading-cell {
+  cursor: pointer;
   gap: 10px;
+}
+
+.heading-cell.not-sortable {
+  cursor: default;
 }
 
 .sort-icons {
@@ -50,7 +71,7 @@ const props: LargeTableProps = defineProps(largeTableProps);
   flex-direction: column;
 }
 
-.sort-icons.not-sortable {
+.not-sortable .sort-icons {
   display: none;
 }
 
@@ -59,14 +80,14 @@ const props: LargeTableProps = defineProps(largeTableProps);
 }
 
 .sort-icons > :first-child {
-  margin-bottom: -12px;
+  margin-bottom: -15px;
 }
 
-.sort-icons.sort-up > [data-icon='sort-up'] {
+.sort-up .sort-icons > [data-icon='sort-up'] {
   opacity: 1;
 }
 
-.sort-icons.sort-down > [data-icon='sort-down'] {
+.sort-down .sort-icons > [data-icon='sort-down'] {
   opacity: 1;
 }
 </style>
