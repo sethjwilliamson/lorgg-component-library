@@ -1,5 +1,9 @@
 <template>
-  <LargeTable class="large-table" :heading-items="headingItems">
+  <LargeTable
+    class="large-table"
+    :heading-items="headingItems"
+    @toggle-sort="toggleSort"
+  >
     <DecksRow
       v-for="(deckRow, index) in props.deckRows"
       :key="deckRow.deckCode"
@@ -19,11 +23,12 @@ import {
   SortDirection,
 } from '@/lib-components/LargeTable/src/types';
 import LargeTable from '@/lib-components/LargeTable';
+import { ref, Ref } from 'vue';
 const { t } = useI18n();
 
 const props: DecksTableProps = defineProps(decksTableProps);
 
-const headingItems: HeadingItem[] = [
+const headingItems: Ref<HeadingItem[]> = ref([
   {
     id: 'deck',
     isShown: true,
@@ -45,16 +50,50 @@ const headingItems: HeadingItem[] = [
   {
     id: 'manaCurve',
     isShown: true,
-    sortDirection: SortDirection.NEITHER,
+    sortDirection: SortDirection.NOT_SORTABLE,
     title: t('general.manaCurve'),
   },
   {
     id: 'cost',
     isShown: true,
-    sortDirection: SortDirection.NEITHER,
+    sortDirection: SortDirection.NOT_SORTABLE,
     title: t('general.cost'),
   },
-];
+]);
+
+function toggleSort(id: string) {
+  const headingItem = headingItems.value.find((x) => x.id === id);
+  
+  if (
+    !headingItem ||
+    headingItem.sortDirection === SortDirection.NOT_SORTABLE
+  ) {
+    return;
+  }
+
+  const sortDirection = headingItem.sortDirection
+  clearSorts()
+
+  if (sortDirection === SortDirection.NEITHER) {
+    headingItem.sortDirection = SortDirection.DOWN;
+    return;
+  }
+
+  if (sortDirection === SortDirection.DOWN) {
+    headingItem.sortDirection = SortDirection.UP;
+    return;
+  }
+
+  headingItem.sortDirection = SortDirection.DOWN;
+}
+
+function clearSorts() {
+  headingItems.value.forEach((headingItem) => {
+    if (headingItem.sortDirection !== SortDirection.NOT_SORTABLE) {
+      headingItem.sortDirection = SortDirection.NEITHER;
+    }
+  });
+}
 </script>
 
 <style scoped>
