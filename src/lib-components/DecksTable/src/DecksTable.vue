@@ -62,7 +62,7 @@ const headingItems: Ref<HeadingItem[]> = ref([
 ]);
 
 function onToggleSort(id: string) {
-  toggleSort(id, headingItems)
+  toggleSort(id, headingItems);
 }
 </script>
 
