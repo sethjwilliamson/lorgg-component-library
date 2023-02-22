@@ -1,6 +1,6 @@
 <template>
   <div class="table-wrapper">
-    <div class="large-table table no-scrollbar" :style="largeTableStyle">
+    <div class="table no-scrollbar">
       <div class="heading-background-outer">
         <div class="heading-background-absolute"></div>
         <div class="heading-background-inner"></div>
@@ -28,37 +28,22 @@
 
 <script setup lang="ts">
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
-import { computed } from 'vue';
 import { LargeTableProps, largeTableProps } from './types';
 
 const props: LargeTableProps = defineProps(largeTableProps);
 const emit = defineEmits<{
   (e: 'toggleSort', value: string): void;
 }>();
-
-const largeTableStyle = computed(() => {
-  return {
-    '--columns': props.headingItems
-      .filter((x) => x.isShown)
-      .reduce((prev) => {
-        return prev + 1;
-      }, 0),
-  };
-});
 </script>
 
 <style scoped>
-.large-table {
+.table {
   --background-color: var(--color-background-1);
   background-color: var(--background-color);
   gap: var(--table-gap, 10px);
   grid-auto-rows: var(--table-grid-auto-rows);
   grid-template-columns: var(--table-grid-template-columns);
   padding: 0 4px;
-}
-
-.heading-background-outer {
-  grid-column: 1 / span var(--columns);
 }
 
 .heading-cell {
