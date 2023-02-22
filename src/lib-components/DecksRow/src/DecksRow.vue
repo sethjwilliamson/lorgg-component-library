@@ -21,7 +21,10 @@
           ></DeckHighlight>
         </div>
         <div class="column-content">{{ localeNumber(props.matches) }}</div>
-        <div class="column-content">
+        <div
+          class="column-content"
+          :style="{ color: `var(${winrateColor(props.wins / props.matches)})` }"
+        >
           {{ localeNumber((props.wins / props.matches) * 100, 1, 3) }}%
         </div>
         <div class="column-content">
@@ -72,6 +75,7 @@ import {
   getGemsCost,
   getMostImportantCards,
   localeNumber,
+  winrateColor,
 } from '@/helpers/functions';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import ManaCurveChart from '@/lib-components/Charts/ManaCurveChart';

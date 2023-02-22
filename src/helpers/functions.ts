@@ -12,6 +12,30 @@ export function isAChampion(card: CardJsonCard): boolean {
   return card.supertype === 'Champion' && card.typeRef === 'Unit';
 }
 
+export function winrateColor(winrate: number, baseWinrate = 0.5) {
+  if (winrate >= baseWinrate + 0.15 || winrate >= 1) {
+    return '--color-excellent';
+  }
+
+  if (winrate >= baseWinrate + 0.05) {
+    return '--color-good';
+  }
+
+  if (winrate >= baseWinrate + 0.005) {
+    return '--color-good-lite';
+  }
+
+  if (winrate < baseWinrate + 0.005 && winrate > baseWinrate - 0.005) {
+    return '--color-median';
+  }
+
+  if (winrate >= baseWinrate - 0.05) {
+    return '--color-bad-lite';
+  }
+
+  return '--color-bad';
+}
+
 export function localeNumber(
   num: number,
   decimalPlaces = 0,

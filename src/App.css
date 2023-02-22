@@ -28,10 +28,18 @@
   --color-primary-2: #ffffff;
   --color-primary-2-rgb: 255, 255, 255;
 
+  --color-execellent: var(--color-gold);
+  --color-execellent-rgb: var(--color-gold-rgb);
   --color-good: #00adff;
   --color-good-rgb: 0, 173, 255;
+  --color-good-lite: #77d3ff;
+  --color-good-lite-rgb: 0, 173, 255;
+  --color-bad-lite: #ff9ea0;
+  --color-bad-lite-rgb: 255, 158, 160;
   --color-bad: #ff5153;
   --color-bad-rgb: 255, 81, 83;
+  --color-median: var(--color-primary-2);
+  --color-median-rgb: var(--color-primary-2-rgb);
 
   --color-Targon: #4d38b0;
   --color-Targon-rgb: 77, 56, 176;
