@@ -12,6 +12,7 @@
           :key="headingItem.title"
           class="heading-cell column-content"
           :class="headingItem.sortDirection"
+          @click="emit('toggleSort', headingItem.id)"
         >
           <div>{{ headingItem.title }}</div>
           <div class="sort-icons">
@@ -31,6 +32,9 @@ import { computed } from 'vue';
 import { LargeTableProps, largeTableProps } from './types';
 
 const props: LargeTableProps = defineProps(largeTableProps);
+const emit = defineEmits<{
+  (e: 'toggleSort', value: string): void;
+}>();
 
 const largeTableStyle = computed(() => {
   return {
