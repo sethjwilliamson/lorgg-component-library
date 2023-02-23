@@ -20,7 +20,18 @@ useJsonStore().updateDataJson(dataJson);
 useJsonStore().updateCardJson(Object.values(cardJsonObject));
 useJsonStore().updateCardJsonObject(cardJsonObject);
 
-//
+// ----- DAYJS
+
+import dayjs from 'dayjs';
+import relativeTime from 'dayjs/plugin/relativeTime';
+
+dayjs.extend(relativeTime);
+
+console.log(dayjs().to(dayjs('1990-01-01')));
+
+app.provide('dayjs', dayjs);
+
+// ---- ICONS
 
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';

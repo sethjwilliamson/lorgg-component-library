@@ -33,8 +33,12 @@
         </template>
         <template v-else>
           <div class="column-content">{{ props.name }}</div>
-          <div class="column-content">{{ props.createdAt }}</div>
-          <div class="column-content">{{ props.updatedAt }}</div>
+          <div class="column-content">
+            {{ $dayjs(props.updatedAt).fromNow() }}
+          </div>
+          <div class="column-content">
+            {{ $dayjs(props.createdAt).fromNow() }}
+          </div>
         </template>
         <div class="column-content">
           <ManaCurveChart
@@ -89,6 +93,10 @@ import {
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import ManaCurveChart from '@/lib-components/Charts/ManaCurveChart';
 import RegionsLine from '@/lib-components/RegionsLine';
+import { inject } from 'vue';
+import dayjs from 'dayjs';
+
+const $dayjs = <typeof dayjs>inject('dayjs');
 
 const props: DecksRowProps = defineProps(decksRowProps);
 
