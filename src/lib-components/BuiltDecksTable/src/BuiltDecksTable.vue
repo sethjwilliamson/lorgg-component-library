@@ -6,10 +6,10 @@
   >
     <DecksRow
       v-for="(deckRow, index) in props.deckRows"
+      :id="deckRow.id"
       :key="deckRow.id"
       type="built"
       :deckcode="deckRow.deckCode"
-      :id="deckRow.id"
       :name="deckRow.name"
       :created-at="deckRow.createdAt"
       :updated-at="deckRow.updatedAt"

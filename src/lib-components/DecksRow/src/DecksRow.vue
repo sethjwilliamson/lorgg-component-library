@@ -96,7 +96,7 @@ import RegionsLine from '@/lib-components/RegionsLine';
 import { inject } from 'vue';
 import dayjs from 'dayjs';
 
-const $dayjs = <typeof dayjs>inject('dayjs');
+const $dayjs = inject('dayjs') as typeof dayjs;
 
 const props: DecksRowProps = defineProps(decksRowProps);
 
