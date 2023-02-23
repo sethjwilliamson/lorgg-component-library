@@ -20,13 +20,22 @@
             :cards="cards"
           ></DeckHighlight>
         </div>
-        <div class="column-content">{{ localeNumber(props.matches) }}</div>
-        <div
-          class="column-content"
-          :style="{ color: `var(${winrateColor(props.wins / props.matches)})` }"
-        >
-          {{ localeNumber((props.wins / props.matches) * 100, 1, 3) }}%
-        </div>
+        <template v-if="props.type === 'data'">
+          <div class="column-content">{{ localeNumber(props.matches) }}</div>
+          <div
+            class="column-content"
+            :style="{
+              color: `var(${winrateColor(props.wins / props.matches)})`,
+            }"
+          >
+            {{ localeNumber((props.wins / props.matches) * 100, 1, 3) }}%
+          </div>
+        </template>
+        <template v-else>
+          <div class="column-content">{{ props.name }}</div>
+          <div class="column-content">{{ props.createdAt }}</div>
+          <div class="column-content">{{ props.updatedAt }}</div>
+        </template>
         <div class="column-content">
           <ManaCurveChart
             class="mana-curve-chart"
