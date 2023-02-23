@@ -99,6 +99,9 @@ export function setupi18n() {
           platPlus: 'Platinum+',
           deck: 'Deck',
           manaCurve: 'Mana Curve',
+          name: 'Name',
+          updated: 'Updated',
+          created: 'Created',
         },
       },
     }, // set locale messages
