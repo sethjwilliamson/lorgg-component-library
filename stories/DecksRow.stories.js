@@ -12,7 +12,7 @@ const Template = (args) => ({
   setup() {
     return { args };
   },
-  template: `<div > 
+  template: `<div style="grid-template-columns: repeat(5, 1fr) 50px; grid-template-rows: 50px;" class="table large-table" > 
               <DecksRow v-bind="args" />
             </div>`,
 });
