@@ -47,7 +47,7 @@ Default.args = {
       ...cardRow(),
     },
     {
-      cardCode: '01IO009',
+      cardCode: '01FR009',
       ...cardRow(),
     },
     {
@@ -101,7 +101,7 @@ Full.args = {
       ...cardRow(),
     },
     {
-      cardCode: '01IO009',
+      cardCode: '01FR009',
       ...cardRow(),
     },
     {
