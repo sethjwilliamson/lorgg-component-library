@@ -129,7 +129,7 @@ const headingItems: Ref<HeadingItem[]> = ref(
 
 const largeTableStyle = computed(() => {
   const columns = Object.values(props.cardsRowToggle).reduce(
-    (prev) => prev + 1,
+    (prev, current) => (current ? prev + 1 : prev),
     0,
   );
 
