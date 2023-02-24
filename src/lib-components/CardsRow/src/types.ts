@@ -1,6 +1,7 @@
 import { PropType } from 'vue';
 
 export type CardsRowToggle = {
+  card: true;
   matches: boolean;
   winrate: boolean;
   inclusion: boolean;
@@ -12,12 +13,10 @@ export type CardsRowToggle = {
   turnPlayed: boolean;
 };
 
-export type CardsRowProps = {
+export type CardsRowData = {
   cardCode: string;
-  toggledStats: CardsRowToggle;
   matches: number;
   wins: number;
-  index: number;
   inclusion: number;
   avgCopies: number;
   mulliganWinrate?: number;
@@ -25,6 +24,11 @@ export type CardsRowProps = {
   drawnWinrate?: number;
   turnsHeld?: number;
   turnPlayed?: number;
+};
+
+export type CardsRowProps = CardsRowData & {
+  toggledStats: CardsRowToggle;
+  index: number;
 };
 
 export const cardsRowProps = {

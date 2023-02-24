@@ -7,6 +7,13 @@ export enum SortDirection {
   NOT_SORTABLE = 'not-sortable',
 }
 
+export type TogglableHeadingItem = {
+  id: string;
+  isAlwaysShown: boolean;
+  isSortable: boolean;
+  title: string;
+};
+
 export type HeadingItem = {
   id: string;
   isShown: boolean;
