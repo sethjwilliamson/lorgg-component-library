@@ -17,56 +17,112 @@ const Template = (args) => ({
             </div>`,
 });
 
+function cardRow() {
+  return {
+    matches: getRandomInt(2000, 4000),
+    wins: getRandomInt(1000, 2000),
+    inclusion: Math.random(),
+    avgCopies: Math.random() * 3,
+    mulliganWinrate: Math.random(),
+    keptInMulligan: Math.random(),
+    drawnWinrate: Math.random(),
+    turnsHeld: Math.random() * 10,
+    turnPlayed: Math.random() * 10,
+  };
+}
+
 export const Default = Template.bind({});
 Default.args = {
   cardRows: [
     {
       cardCode: '01IO009',
-      matches: 120,
-      wins: 70,
-      inclusion: 0.213,
-      avgCopies: 2.342,
-      mulliganWinrate: 0.564,
-      keptInMulligan: 0.892,
-      drawnWinrate: 0.734,
-      turnsHeld: 4.123,
-      turnPlayed: 6.313,
+      ...cardRow(),
     },
     {
       cardCode: '01IO010',
-      matches: 120,
-      wins: 70,
-      inclusion: 0.213,
-      avgCopies: 2.342,
-      mulliganWinrate: 0.564,
-      keptInMulligan: 0.892,
-      drawnWinrate: 0.734,
-      turnsHeld: 4.123,
-      turnPlayed: 6.313,
+      ...cardRow(),
     },
     {
       cardCode: '01DE009',
-      matches: 120,
-      wins: 70,
-      inclusion: 0.213,
-      avgCopies: 2.342,
-      mulliganWinrate: 0.564,
-      keptInMulligan: 0.892,
-      drawnWinrate: 0.734,
-      turnsHeld: 4.123,
-      turnPlayed: 6.313,
+      ...cardRow(),
     },
     {
-      cardCode: '01FR009',
-      matches: 120,
-      wins: 70,
-      inclusion: 0.213,
-      avgCopies: 2.342,
-      mulliganWinrate: 0.564,
-      keptInMulligan: 0.892,
-      drawnWinrate: 0.734,
-      turnsHeld: 4.123,
-      turnPlayed: 6.313,
+      cardCode: '01IO009',
+      ...cardRow(),
+    },
+    {
+      cardCode: '01NX009',
+      ...cardRow(),
+    },
+    {
+      cardCode: '02BW009',
+      ...cardRow(),
+    },
+    {
+      cardCode: '03MT009',
+      ...cardRow(),
+    },
+    {
+      cardCode: '04SH009',
+      ...cardRow(),
+    },
+    {
+      cardCode: '05BC001',
+      ...cardRow(),
+    },
+  ],
+  cardsRowToggle: {
+    card: true,
+    matches: true,
+    winrate: true,
+    inclusion: true,
+    avgCopies: true,
+    mulliganWinrate: false,
+    keptInMulligan: false,
+    drawnWinrate: false,
+    turnsHeld: false,
+    turnPlayed: false,
+  },
+};
+
+export const Full = Template.bind({});
+Full.args = {
+  cardRows: [
+    {
+      cardCode: '01IO009',
+      ...cardRow(),
+    },
+    {
+      cardCode: '01IO010',
+      ...cardRow(),
+    },
+    {
+      cardCode: '01DE009',
+      ...cardRow(),
+    },
+    {
+      cardCode: '01IO009',
+      ...cardRow(),
+    },
+    {
+      cardCode: '01NX009',
+      ...cardRow(),
+    },
+    {
+      cardCode: '02BW009',
+      ...cardRow(),
+    },
+    {
+      cardCode: '03MT009',
+      ...cardRow(),
+    },
+    {
+      cardCode: '04SH009',
+      ...cardRow(),
+    },
+    {
+      cardCode: '05BC001',
+      ...cardRow(),
     },
   ],
   cardsRowToggle: {
