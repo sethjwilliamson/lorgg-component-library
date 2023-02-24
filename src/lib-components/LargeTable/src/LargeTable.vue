@@ -7,8 +7,7 @@
       </div>
       <div class="heading wrapper">
         <div
-          v-for="headingItem in props.headingItems"
-          v-show="headingItem.isShown"
+          v-for="headingItem in headingItems"
           :key="headingItem.title"
           class="heading-cell column-content"
           :class="headingItem.sortDirection"
@@ -28,12 +27,17 @@
 
 <script setup lang="ts">
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
+import { computed } from 'vue';
 import { LargeTableProps, largeTableProps } from './types';
 
 const props: LargeTableProps = defineProps(largeTableProps);
 const emit = defineEmits<{
   (e: 'toggleSort', value: string): void;
 }>();
+
+const headingItems = computed(() => {
+  return props.headingItems.filter((x) => x.isShown);
+});
 </script>
 
 <style scoped>

@@ -2,6 +2,7 @@
   <LargeTable
     class="large-table"
     :heading-items="headingItems"
+    :style="largeTableStyle"
     @toggle-sort="onToggleSort"
   >
     <CardsRow
@@ -16,6 +17,8 @@
       :kept-in-mulligan="cardRow.keptInMulligan"
       :mulligan-winrate="cardRow.mulliganWinrate"
       :inclusion="cardRow.inclusion"
+      :turns-held="cardRow.turnsHeld"
+      :turn-played="cardRow.turnPlayed"
       :toggled-stats="cardsRowToggle"
     />
   </LargeTable>
@@ -43,11 +46,11 @@ const cardsRowToggle: CardsRowToggle = {
   winrate: true,
   inclusion: true,
   avgCopies: true,
-  mulliganWinrate: false,
-  keptInMulligan: false,
-  drawnWinrate: false,
+  mulliganWinrate: true,
+  keptInMulligan: true,
+  drawnWinrate: true,
   turnsHeld: true,
-  turnPlayed: false,
+  turnPlayed: true,
 };
 
 const togglableHeadingItems: TogglableHeadingItem[] = [
@@ -136,6 +139,12 @@ const headingItems: Ref<HeadingItem[]> = ref(
     };
   }),
 );
+
+const largeTableStyle = computed(() => {
+  const columns = Object.values(cardsRowToggle).reduce((prev) => prev + 1, 0);
+
+  return { '--table-grid-template-columns': `repeat(${columns}, 1fr)` };
+});
 
 function onToggleSort(id: string) {
   toggleSort(id, headingItems);
