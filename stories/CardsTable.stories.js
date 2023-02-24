@@ -69,4 +69,16 @@ Default.args = {
       turnPlayed: 6.313,
     },
   ],
+  cardsRowToggle: {
+    card: true,
+    matches: true,
+    winrate: true,
+    inclusion: true,
+    avgCopies: true,
+    mulliganWinrate: true,
+    keptInMulligan: true,
+    drawnWinrate: true,
+    turnsHeld: true,
+    turnPlayed: true,
+  },
 };

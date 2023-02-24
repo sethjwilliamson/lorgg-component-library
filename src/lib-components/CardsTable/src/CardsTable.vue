@@ -19,7 +19,7 @@
       :inclusion="cardRow.inclusion"
       :turns-held="cardRow.turnsHeld"
       :turn-played="cardRow.turnPlayed"
-      :toggled-stats="cardsRowToggle"
+      :toggled-stats="props.cardsRowToggle"
     />
   </LargeTable>
 </template>
@@ -33,25 +33,12 @@ import {
   TogglableHeadingItem,
 } from '@/lib-components/LargeTable/src/types';
 import LargeTable from '@/lib-components/LargeTable';
-import { computed, ComputedRef, ref, Ref } from 'vue';
+import { computed, ref, Ref } from 'vue';
 import { toggleSort } from '@/lib-components/ComponentFunctions';
 import { CardsRowToggle } from '@/lib-components/CardsRow/src/types';
 const { t } = useI18n();
 
 const props: CardsTableProps = defineProps(cardsTableProps);
-
-const cardsRowToggle: CardsRowToggle = {
-  card: true,
-  matches: true,
-  winrate: true,
-  inclusion: true,
-  avgCopies: true,
-  mulliganWinrate: true,
-  keptInMulligan: true,
-  drawnWinrate: true,
-  turnsHeld: true,
-  turnPlayed: true,
-};
 
 const togglableHeadingItems: TogglableHeadingItem[] = [
   {
@@ -133,7 +120,7 @@ const headingItems: Ref<HeadingItem[]> = ref(
 
     return {
       id: x.id,
-      isShown: cardsRowToggle[x.id as keyof CardsRowToggle],
+      isShown: props.cardsRowToggle[x.id as keyof CardsRowToggle],
       sortDirection: sortDirection,
       title: x.title,
     };
@@ -141,7 +128,10 @@ const headingItems: Ref<HeadingItem[]> = ref(
 );
 
 const largeTableStyle = computed(() => {
-  const columns = Object.values(cardsRowToggle).reduce((prev) => prev + 1, 0);
+  const columns = Object.values(props.cardsRowToggle).reduce(
+    (prev) => prev + 1,
+    0,
+  );
 
   return { '--table-grid-template-columns': `repeat(${columns}, 1fr)` };
 });
