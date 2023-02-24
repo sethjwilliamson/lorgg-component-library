@@ -23,7 +23,13 @@
         <div v-if="props.toggledStats.matches" class="column-content">
           {{ localeNumber(props.matches) }}
         </div>
-        <div v-if="props.toggledStats.winrate" class="column-content">
+        <div
+          v-if="props.toggledStats.winrate"
+          class="column-content"
+          :style="{
+            color: `var(${winrateColor(props.wins / props.matches)})`,
+          }"
+        >
           {{ localeNumber((props.wins / props.matches) * 100, 2, 3) + '%' }}
         </div>
         <div v-if="props.toggledStats.inclusion" class="column-content">
@@ -32,7 +38,13 @@
         <div v-if="props.toggledStats.avgCopies" class="column-content">
           {{ localeNumber(props.avgCopies, 2, 3) }}
         </div>
-        <div v-if="props.toggledStats.mulliganWinrate" class="column-content">
+        <div
+          v-if="props.toggledStats.mulliganWinrate"
+          class="column-content"
+          :style="{
+              color: `var(${winrateColor(props.mulliganWinrate as number, props.wins / props.matches)})`,
+            }"
+        >
           {{
             props.mulliganWinrate
               ? localeNumber(props.mulliganWinrate * 100, 2, 3) + '%'
@@ -46,7 +58,13 @@
               : '-'
           }}
         </div>
-        <div v-if="props.toggledStats.drawnWinrate" class="column-content">
+        <div
+          v-if="props.toggledStats.drawnWinrate"
+          class="column-content"
+          :style="{
+              color: `var(${winrateColor(props.drawnWinrate as number, props.wins / props.matches)})`,
+            }"
+        >
           {{
             props.drawnWinrate
               ? localeNumber(props.drawnWinrate * 100, 2, 3) + '%'
@@ -67,7 +85,7 @@
 <script setup lang="ts">
 import { CardsRowProps, cardsRowProps } from './types';
 import { computed } from 'vue';
-import { localeNumber } from '@/helpers/functions';
+import { localeNumber, winrateColor } from '@/helpers/functions';
 import CardSliceItem from '@/lib-components/CardSliceItem';
 
 const props: CardsRowProps = defineProps(cardsRowProps);
