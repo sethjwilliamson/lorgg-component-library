@@ -2,14 +2,16 @@
   <!-- TODO: Add Router Link -->
   <a href="/test" class="wrapper">
     <div class="decks-row-wrapper wrapper" :style="{ '--index': props.index }">
-      <div class="decks-row-background-wrapper">
-        <div class="decks-row-background">
+      <div class="table-card-row-background-wrapper">
+        <div class="table-card-row-background">
           <div
             v-for="backgroundCard in backgroundCards"
             :key="backgroundCard"
-            class="background-card"
+            class="background-card-wrapper"
             :style="{ '--background-image': `url(${backgroundCard})` }"
-          ></div>
+          >
+            <div class="background-card"></div>
+          </div>
         </div>
       </div>
       <div class="decks-row wrapper">
@@ -140,66 +142,7 @@ function toggleOptionsButton() {
   padding: 0 10px;
 }
 
-.decks-row-background-wrapper {
-  grid-row: var(--index);
-  grid-column: 1 / -1;
-  position: relative;
-}
-
-.decks-row-background {
-  background-color: var(--color-background-2);
-  border: var(--color-3) solid 2px;
-  border-radius: 20px;
-  overflow: hidden;
-  position: absolute;
-  inset: 0;
-  transition: border-color 0.2s;
-}
-
-a.wrapper:hover .decks-row-background {
+a.wrapper:hover .table-card-row-background {
   border-color: #816f0d;
-}
-
-.background-card {
-  background-image: var(--background-image);
-  background-size: cover;
-  background-position: center 25%;
-  bottom: 0;
-  opacity: 40%;
-  position: absolute;
-  top: 0;
-  width: 60%;
-}
-
-.background-card:first-child {
-  -webkit-mask-image: linear-gradient(
-    to right,
-    black 0%,
-    black 66.66%,
-    transparent 100%
-  );
-  mask-image: linear-gradient(
-    to right,
-    black 0%,
-    black 66.66%,
-    transparent 100%
-  );
-  left: 0;
-}
-
-.background-card:last-child {
-  -webkit-mask-image: linear-gradient(
-    to right,
-    transparent 0%,
-    black 33.33%,
-    black 100%
-  );
-  mask-image: linear-gradient(
-    to right,
-    transparent 0%,
-    black 33.33%,
-    black 100%
-  );
-  right: 0;
 }
 </style>
