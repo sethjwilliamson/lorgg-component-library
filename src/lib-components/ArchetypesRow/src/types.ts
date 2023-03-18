@@ -3,12 +3,12 @@ import { PropType } from 'vue';
 
 export type ArchetypesRowData = {
   archetypeId: number;
+  cards: string[];
   deckcode: string;
   matches: number;
-  wins: number;
   playrate: number;
-  cards: string[];
   regions: RegionNameRefs[];
+  wins: number;
 };
 
 export type ArchetypesRowProps = ArchetypesRowData & {

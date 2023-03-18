@@ -110,6 +110,7 @@ export function setupi18n() {
           keptInMulligan: 'Kept in Mulligan',
           drawnWinrate: 'Drawn Winrate',
           turnPlayed: 'Turn Played',
+          playrate: 'Playrate',
         },
       },
     }, // set locale messages
