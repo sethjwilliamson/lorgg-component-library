@@ -32,6 +32,7 @@ Default.args = {
     'CICQCAIDFYBAEBQ2FUBAGBQIB4BAMBQHDYCAEAYBA4EASAYBAIDAIAIDAYDQCBADCYAQCAYDBU',
   cards: ['02BW026', '02NX007'],
   regions: ['Bilgewater', 'Noxus'],
+  index: 0,
   ...properties(),
 };
 
@@ -40,6 +41,7 @@ BardNorra.args = {
   deckcode: 'CUCACBIKYYAQCBQMAEBAMCI5F4EAMCQLB4IRGFI2D4WACAQGBIIBQAA',
   cards: ['06BC015', '06RU001'],
   regions: ['BandleCity', '06RU001'],
+  // index: 0,
   ...properties(),
 };
 
@@ -49,6 +51,7 @@ Thralls.args = {
     'CECAIBABAECQUDQEAQDR6LCCJEAQMAI6AEDAOMQDAIAQCFBSAECAOOYBAQAQMAICAQDW26A',
   cards: ['04FR005', '04SH073'],
   regions: ['Freljord', 'Shurima'],
+  // index: 1,
   ...properties(),
 };
 
@@ -58,6 +61,7 @@ TFNami.args = {
     'CEDACBQFEUBQEBQODANAEAIFFAYQEBIGAUFQCBQGDYAQGBQRAMBACBIBF4AQMBQ4AEBAMJQCAEDAMDYBAECQG',
   cards: ['05BW005', '02BW026'],
   regions: ['ShadowIsles', 'Bilgewater'],
+  // index: 2,
   ...properties(),
 };
 
@@ -67,6 +71,7 @@ EliseGoHard.args = {
     'CEEACAYFCABAMAYODQAQEAYJAIAQKKBVAEAQGNYBAMBQ2AIFAUHACBADAIBQEAIFDUYQCBIKO4AQCAZOAIAQGBICAEAQGMY',
   cards: ['01SI053', '03SI016'],
   regions: ['ShadowIsles', 'Noxus'],
+  // index: 3,
   ...properties(),
 };
 
@@ -75,6 +80,7 @@ NoChampionBurn.args = {
   deckcode: 'CQCQCAQDAQAQGBAFAECAGAYEAECDMEJUE4CQCAYPBQUCKAQCAEBAGAYBAMCAWAA',
   cards: [],
   regions: ['PiltoverZaun', 'Noxus'],
+  // index: 4,
   ...properties(),
 };
 
@@ -84,6 +90,7 @@ FeelTheRush.args = {
     'CECACBQBEQAQMBJAAIAQKAJIAQBQCAYGBILAEAIEAEGAMAIBAEGBIJZKGQBACAIFDEAQGAIT',
   cards: ['03FR006', '01FR039', '03FR022'],
   regions: ['Freljord', 'ShadowIsles'],
+  // index: 5,
   ...properties(),
 };
 
@@ -93,5 +100,6 @@ Ziggs.args = {
     'CQCQCBAHBUAQMCRHAIDAOLRQAMCQUSNDAGTACBAFA4DQWEAUAIAQKCQ3AICAOJJ3AEAQKBYE',
   cards: ['05BC163'],
   regions: ['BandleCity', 'Shurima'],
+  // index: 6,
   ...properties(),
 };
