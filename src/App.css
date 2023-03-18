@@ -308,6 +308,90 @@
   display: contents;
 }
 
+.table-card-row-background-wrapper {
+  grid-row: var(--index);
+  grid-column: 1 / -1;
+  position: relative;
+}
+
+.table-card-row-background {
+  background-color: var(--color-background-2);
+  border: var(--color-3) solid 2px;
+  border-radius: 20px;
+  display: flex;
+  overflow: hidden;
+  position: absolute;
+  inset: 0;
+  transition: border-color 0.2s;
+}
+
+.background-card-wrapper {
+  flex-grow: 1;
+}
+
+.background-card {
+  --overlap-margin: 100px;
+  background-image: var(--background-image);
+  background-size: cover;
+  background-position: center 25%;
+  opacity: 40%;
+  height: 100%;
+  margin-left: calc(-1 * var(--overlap-margin));
+  margin-right: calc(-1 * var(--overlap-margin));
+
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black calc(0% + (2 * var(--overlap-margin))),
+    black calc(100% - (2 * var(--overlap-margin))),
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black calc(0% + (2 * var(--overlap-margin))),
+    black calc(100% - (2 * var(--overlap-margin))),
+    transparent 100%
+  );
+}
+
+.background-card-wrapper:first-child > .background-card {
+  -webkit-mask-image: linear-gradient(
+    to right,
+    black 0%,
+    black calc(100% - (2 * var(--overlap-margin))),
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to right,
+    black 0%,
+    black calc(100% - (2 * var(--overlap-margin))),
+    transparent 100%
+  );
+  margin-left: 0;
+}
+
+.background-card-wrapper:last-child > .background-card {
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black calc(0% + (2 * var(--overlap-margin))),
+    black 100%
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black calc(0% + (2 * var(--overlap-margin))),
+    black 100%
+  );
+  margin-right: 0;
+}
+
+.background-card-wrapper:first-child:last-child > .background-card {
+  mask-image: unset;
+  -webkit-mask-image: unset;
+}
+
 .tippy-box:first-child {
   background-color: var(--color-background-1);
   border-radius: var(--border-radius-s);
