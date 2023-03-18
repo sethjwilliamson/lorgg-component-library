@@ -10,9 +10,11 @@
           <div
             v-for="backgroundCard in backgroundCards"
             :key="backgroundCard"
-            class="background-card"
+            class="background-card-wrapper"
             :style="{ '--background-image': `url(${backgroundCard})` }"
-          ></div>
+          >
+          <div class="background-card"></div>
+        </div>
         </div>
       </div>
       <div class="archetypes-row wrapper">
@@ -82,6 +84,7 @@ const backgroundCards = computed(() => {
   background-color: var(--color-background-2);
   border: var(--color-3) solid 2px;
   border-radius: 20px;
+  display: flex;
   overflow: hidden;
   position: absolute;
   inset: 0;
@@ -92,47 +95,65 @@ a.wrapper:hover .archetypes-row-background {
   border-color: #816f0d;
 }
 
+.background-card-wrapper {
+  flex-grow: 1;
+}
+
 .background-card {
+  --overlap-margin: 100px;
   background-image: var(--background-image);
   background-size: cover;
   background-position: center 25%;
-  bottom: 0;
   opacity: 40%;
-  position: absolute;
-  top: 0;
-  width: 60%;
+  height: 100%;
+  margin-left: calc( -1 * var(--overlap-margin));
+  margin-right: calc( -1 * var(--overlap-margin));
+
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black calc(0% + (2 * var(--overlap-margin))),
+    black calc(100% - (2 * var(--overlap-margin))),
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black calc(0% + (2 * var(--overlap-margin))),
+    black calc(100% - (2 * var(--overlap-margin))),
+    transparent 100%
+  );
 }
 
-.background-card:first-child {
+.background-card-wrapper:first-child > .background-card {
   -webkit-mask-image: linear-gradient(
     to right,
     black 0%,
-    black 66.66%,
+    black calc(100% - (2 * var(--overlap-margin))),
     transparent 100%
   );
   mask-image: linear-gradient(
     to right,
     black 0%,
-    black 66.66%,
+    black calc(100% - (2 * var(--overlap-margin))),
     transparent 100%
   );
-  left: 0;
+  margin-left: 0;  
 }
 
-.background-card:last-child {
+.background-card-wrapper:last-child > .background-card {
   -webkit-mask-image: linear-gradient(
     to right,
     transparent 0%,
-    black 33.33%,
+    black calc(0% + (2 * var(--overlap-margin))),
     black 100%
   );
   mask-image: linear-gradient(
     to right,
     transparent 0%,
-    black 33.33%,
+    black calc(0% + (2 * var(--overlap-margin))),
     black 100%
   );
-  right: 0;
-  left: unset;
+  margin-right: 0;
 }
 </style>
