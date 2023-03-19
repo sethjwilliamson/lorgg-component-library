@@ -11,12 +11,12 @@ export const deckHighlightCardsProps = {
   cards: {
     type: Array as PropType<CardJsonCard[]>,
     required: false,
-    default: [],
+    default: undefined,
   },
   cardCodes: {
     type: Array as PropType<string[]>,
     required: false,
-    default: [],
+    default: undefined,
   },
   regions: {
     type: Array as PropType<string[]>,
