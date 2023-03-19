@@ -1,7 +1,7 @@
 export type SidePanelSectionPaneProps = {
   // TODO: Switch to use filters instead of any
   filterArray?: Array<any>;
-  title: string;
+  title?: string;
 };
 
 export const sidePanelSectionPaneProps = {
@@ -12,7 +12,7 @@ export const sidePanelSectionPaneProps = {
   },
   title: {
     type: String,
-    required: true,
-    default: '',
+    required: false,
+    default: undefined,
   },
 };
