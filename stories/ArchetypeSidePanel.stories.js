@@ -31,7 +31,7 @@ Default.args = {
     sampleSizeFilters: [],
     serverFilters: [],
     timeFilters: [],
-  }
+  },
 };
 
 export const BardNorra = Template.bind({});
@@ -42,7 +42,7 @@ BardNorra.args = {
     sampleSizeFilters: [],
     serverFilters: [],
     timeFilters: [],
-  }
+  },
 };
 
 export const Thralls = Template.bind({});
@@ -53,7 +53,7 @@ Thralls.args = {
     sampleSizeFilters: [],
     serverFilters: [],
     timeFilters: [],
-  }
+  },
 };
 
 export const TFNami = Template.bind({});
@@ -64,7 +64,7 @@ TFNami.args = {
     sampleSizeFilters: [],
     serverFilters: [],
     timeFilters: [],
-  }
+  },
 };
 
 export const EliseGoHard = Template.bind({});
@@ -75,7 +75,7 @@ EliseGoHard.args = {
     sampleSizeFilters: [],
     serverFilters: [],
     timeFilters: [],
-  }
+  },
 };
 
 export const NoChampionBurn = Template.bind({});
@@ -86,7 +86,7 @@ NoChampionBurn.args = {
     sampleSizeFilters: [],
     serverFilters: [],
     timeFilters: [],
-  }
+  },
 };
 
 export const FeelTheRush = Template.bind({});
@@ -97,7 +97,7 @@ FeelTheRush.args = {
     sampleSizeFilters: [],
     serverFilters: [],
     timeFilters: [],
-  }
+  },
 };
 
 export const Ziggs = Template.bind({});
@@ -108,5 +108,5 @@ Ziggs.args = {
     sampleSizeFilters: [],
     serverFilters: [],
     timeFilters: [],
-  }
+  },
 };
