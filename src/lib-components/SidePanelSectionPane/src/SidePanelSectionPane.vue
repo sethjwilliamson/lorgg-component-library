@@ -1,7 +1,7 @@
 <template>
   <div class="filter">
-    <div class="top" v-if="props.title || filterArray">
-      <h2 class="title" v-if="props.title">
+    <div v-if="props.title || filterArray" class="top">
+      <h2 v-if="props.title" class="title">
         {{ props.title }}
       </h2>
       <p

@@ -9,7 +9,7 @@
     <div class="number-container">
       {{ props.typeSummary.quantity }}
     </div>
-    <div class="type-icon" v-if="props.typeSummary.typeRef !== 'Deck'">
+    <div v-if="props.typeSummary.typeRef !== 'Deck'" class="type-icon">
       <ChampionIcon v-if="props.typeSummary.typeRef === 'Champion'" />
       <FollowerIcon v-else-if="props.typeSummary.typeRef === 'Follower'" />
       <SpellIcon v-else-if="props.typeSummary.typeRef === 'Spell'" />
