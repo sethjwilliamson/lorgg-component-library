@@ -105,19 +105,21 @@ export type DataJsonRarity = {
   order: number;
   nameRef: 'Common' | 'Rare' | 'Epic' | 'Champion' | 'None';
 };
+export type TypeRef =
+  | 'Champion'
+  | 'Follower'
+  | 'Unit'
+  | 'Spell'
+  | 'Landmark'
+  | 'Ability'
+  | 'Equipment';
+
 export type DataJsonType = {
   color: string;
   icon: string;
   name: string;
   order: number;
-  nameRef:
-    | 'Champion'
-    | 'Follower'
-    | 'Unit'
-    | 'Spell'
-    | 'Landmark'
-    | 'Ability'
-    | 'Equipment';
+  nameRef: TypeRef;
 };
 
 export type DataJsonSet = {
