@@ -19,29 +19,37 @@ const Template = (args) => ({
 });
 
 export const Default = Template.bind({});
-let deck = getDeckObjectFromCode('CIDACAQDAMAQKBQBAEDAMHQBAYBSSBABAMBAYKBXAQBAMFQ2EY5ACAICAYUAEAIBAMMQCBADAM');
+let deck = getDeckObjectFromCode(
+  'CIDACAQDAMAQKBQBAEDAMHQBAYBSSBABAMBAYKBXAQBAMFQ2EY5ACAICAYUAEAIBAMMQCBADAM',
+);
 Default.args = {
   cards: getCardsFromDeck(deck),
-  deck
+  deck,
 };
 
 export const DeckLimitChampionLimit = Template.bind({});
-deck = getDeckObjectFromCode('CICQCAQDAMAQKBQBAIDAGDBJAMAQGDBIG4BQEBQWDI5AEAIBAMBAEAQGEYUAIAICAYKACBADAMAQMBQ6AIAQGGJR');
+deck = getDeckObjectFromCode(
+  'CICQCAQDAMAQKBQBAIDAGDBJAMAQGDBIG4BQEBQWDI5AEAIBAMBAEAQGEYUAIAICAYKACBADAMAQMBQ6AIAQGGJR',
+);
 DeckLimitChampionLimit.args = {
   cards: getCardsFromDeck(deck),
-  deck
+  deck,
 };
 
 export const DeckUnderLimit = Template.bind({});
-deck = getDeckObjectFromCode('CICQCAQDAMAQKBQBAEDAGKIDAEBQYKBXAMBAMFQ2HIBACAIDAIBAEBRGFABQCBADAMAQMBQ6AIAQGGJR');
+deck = getDeckObjectFromCode(
+  'CICQCAQDAMAQKBQBAEDAGKIDAEBQYKBXAMBAMFQ2HIBACAIDAIBAEBRGFABQCBADAMAQMBQ6AIAQGGJR',
+);
 DeckUnderLimit.args = {
   cards: getCardsFromDeck(deck),
-  deck
+  deck,
 };
 
 export const ChampionLimit = Template.bind({});
-deck = getDeckObjectFromCode('CICQCAQDAMAQKBQBAIDAGDBJAMAQGDBIG4BQEBQWDI5AEAIBAMBAEAQGEYUAGAIEAMBQCBQGDYBACAYZGE');
+deck = getDeckObjectFromCode(
+  'CICQCAQDAMAQKBQBAIDAGDBJAMAQGDBIG4BQEBQWDI5AEAIBAMBAEAQGEYUAGAIEAMBQCBQGDYBACAYZGE',
+);
 ChampionLimit.args = {
   cards: getCardsFromDeck(deck),
-  deck
+  deck,
 };

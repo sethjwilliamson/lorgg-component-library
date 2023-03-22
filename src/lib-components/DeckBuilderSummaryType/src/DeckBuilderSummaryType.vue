@@ -21,7 +21,6 @@
 
 <script setup lang="ts">
 import ChampionIcon from '@/lib-components/icons/ChampionIcon';
-import DeckIcon from '@/lib-components/icons/DeckIcon';
 import EquipmentIcon from '@/lib-components/icons/EquipmentIcon';
 import FollowerIcon from '@/lib-components/icons/FollowerIcon';
 import LandmarkIcon from '@/lib-components/icons/LandmarkIcon';
