@@ -39,6 +39,7 @@ const props: DeckDifferenceItemProps = defineProps(deckDifferenceItemProps);
   font-size: 12px;
   color: var(--color-primary-2);
   font-weight: bold;
+  text-shadow: 0 0 2px black;
 }
 
 .difference.positive {
