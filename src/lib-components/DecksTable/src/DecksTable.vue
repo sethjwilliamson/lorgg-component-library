@@ -7,6 +7,7 @@
     <DecksRow
       v-for="(deckRow, index) in props.deckRows"
       :key="deckRow.deckCode"
+      type="data"
       :deckcode="deckRow.deckCode"
       :matches="deckRow.matches"
       :wins="deckRow.wins"
