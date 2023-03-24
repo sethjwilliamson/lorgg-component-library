@@ -79,8 +79,8 @@ onMounted(() => {
 
 <style scoped>
 .circle-card-item {
-  height: 100%;
-  width: 100%;
+  height: var(--circle-card-item-size, 100%);
+  width: var(--circle-card-item-size, 100%);
 }
 
 .circle-card-link {

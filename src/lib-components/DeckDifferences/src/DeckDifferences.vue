@@ -1,5 +1,5 @@
 <template>
-  <div class="deck-differences">
+  <div class="deck-differences no-scrollbar">
     <DeckDifferenceItem
       v-for="difference in props.differences"
       :card-code-prop="difference.cardCodeProp"
@@ -20,8 +20,24 @@ const props: DeckDifferencesProps = defineProps(deckDifferencesProps);
 
 <style scoped>
 .deck-differences {
+  --circle-card-item-size: 40px;
   display: flex;
   gap: 5px;
-  height: 40px;
+  padding: 0 10px;
+  overflow: scroll;
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 10px,
+    black calc(100% - 10px),
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 10px,
+    black calc(100% - 10px),
+    transparent 100%
+  );
 }
 </style>

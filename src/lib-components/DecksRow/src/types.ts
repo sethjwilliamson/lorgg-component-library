@@ -18,11 +18,23 @@ export type BuiltDecksRowProps = {
   createdAt: number;
 };
 
-export type DecksRowProps = DataDecksRowProps | BuiltDecksRowProps;
+export type SimilarDecksRowProps = {
+  type: 'similar';
+  deckcode: string;
+  comparedDeckcode: string;
+  index: number;
+  matches: number;
+  wins: number;
+};
+
+export type DecksRowProps =
+  | DataDecksRowProps
+  | BuiltDecksRowProps
+  | SimilarDecksRowProps;
 
 export const decksRowProps = {
   type: {
-    type: String as PropType<'data' | 'built'>,
+    type: String as PropType<'data' | 'built' | 'similar'>,
     required: true,
     default: 'data',
   },
@@ -45,6 +57,11 @@ export const decksRowProps = {
     type: Number,
     required: false,
     default: 1,
+  },
+  comparedDeckcode: {
+    type: String,
+    required: false,
+    default: '',
   },
   id: {
     type: Number,

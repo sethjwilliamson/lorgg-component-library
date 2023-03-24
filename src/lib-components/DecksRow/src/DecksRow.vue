@@ -22,7 +22,7 @@
             :cards="cards"
           ></DeckHighlight>
         </div>
-        <template v-if="props.type === 'data'">
+        <template v-if="props.type === 'data' || props.type === 'similar'">
           <div class="column-content">{{ localeNumber(props.matches) }}</div>
           <div
             class="column-content"
@@ -33,7 +33,7 @@
             {{ localeNumber((props.wins / props.matches) * 100, 1, 3) }}%
           </div>
         </template>
-        <template v-else>
+        <template v-else-if="props.type === 'built'">
           <div class="column-content">{{ props.name }}</div>
           <div class="column-content">
             {{ $dayjs(props.updatedAt).fromNow() }}
@@ -42,7 +42,7 @@
             {{ $dayjs(props.createdAt).fromNow() }}
           </div>
         </template>
-        <div class="column-content">
+        <div class="column-content" v-if="props.type !== 'similar'">
           <ManaCurveChart
             class="mana-curve-chart"
             :deck-code="props.deckcode"
@@ -60,6 +60,12 @@
               getGemsCost(deck, true) ?? getGemsCost(deck, false)
             )?.toLocaleString()
           }}
+        </div>
+        <div
+          class="column-content deck-differences-column"
+          v-if="props.type === 'similar'"
+        >
+          <DeckDifferences :differences="deckDifferences" />
         </div>
         <div
           class="column-content options-button"
@@ -97,6 +103,9 @@ import ManaCurveChart from '@/lib-components/Charts/ManaCurveChart';
 import RegionsLine from '@/lib-components/RegionsLine';
 import { inject } from 'vue';
 import dayjs from 'dayjs';
+import DeckDifferences from '@/lib-components/DeckDifferences';
+import { Deck } from '#/jsons';
+import { DeckDifferenceItemProps } from '@/lib-components/DeckDifferenceItem/src/types';
 
 const $dayjs = inject('dayjs') as typeof dayjs;
 
@@ -115,6 +124,52 @@ const backgroundCards = computed(() => {
     return `https://lor.gg/storage/cards/banner/${x.cardCode}.png`;
   });
 });
+
+function cardDifference(
+  originalDeck: Deck,
+  currentDeck: Deck,
+  cardcode: string,
+) {}
+
+const deckDifferences = computed(() => {
+  const differences = [] as DeckDifferenceItemProps[];
+  if (props.type !== 'similar') {
+    return differences;
+  }
+
+  const originalDeck = getDeckObjectFromCode(props.comparedDeckcode);
+
+  for (let [cardcode, quantity] of Object.entries(deck.value)) {
+    if (quantity === originalDeck[cardcode]) {
+      continue;
+    }
+
+    differences.push({
+      cardCodeProp: cardcode,
+      difference: quantity - (originalDeck[cardcode] ?? 0),
+      ignoreCardItem: false,
+    });
+  }
+
+  for (let [cardcode, quantity] of Object.entries(originalDeck)) {
+    if (
+      quantity === deck.value[cardcode] ||
+      differences.some((x) => x.cardCodeProp === cardcode)
+    ) {
+      continue;
+    }
+
+    differences.push({
+      cardCodeProp: cardcode,
+      difference: (deck.value[cardcode] ?? 0) - quantity,
+      ignoreCardItem: false,
+    });
+  }
+
+  return differences;
+});
+
+console.log(deckDifferences.value);
 
 function toggleOptionsButton() {
   console.log('Options Button Clicked.');
