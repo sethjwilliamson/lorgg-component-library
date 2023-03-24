@@ -125,12 +125,6 @@ const backgroundCards = computed(() => {
   });
 });
 
-function cardDifference(
-  originalDeck: Deck,
-  currentDeck: Deck,
-  cardcode: string,
-) {}
-
 const deckDifferences = computed(() => {
   const differences = [] as DeckDifferenceItemProps[];
   if (props.type !== 'similar') {

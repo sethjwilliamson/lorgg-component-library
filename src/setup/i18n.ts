@@ -111,6 +111,7 @@ export function setupi18n() {
           drawnWinrate: 'Drawn Winrate',
           turnPlayed: 'Turn Played',
           playrate: 'Playrate',
+          deckDifferences: 'Deck Differences',
         },
       },
     }, // set locale messages
