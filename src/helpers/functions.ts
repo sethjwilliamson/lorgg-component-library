@@ -103,7 +103,7 @@ export function getMostImportantCards(
       return x.typeRef === 'Landmark';
     },
     (x: CardJsonCard) => {
-      return x.typeRef === 'Unit';
+      return x.typeRef === 'Unit' && !isAChampion(x);
     },
     (x: CardJsonCard) => {
       return x.typeRef === 'Spell';
