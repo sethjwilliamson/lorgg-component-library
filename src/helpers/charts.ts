@@ -34,7 +34,6 @@ export function addPatchAnnotations(
   const patchesInRange = [];
 
   for (const patch of useJsonStore().jsons.dataJson.patches) {
-    console.log(patch);
     if (
       new Date(patch.startTime) <= maxDate &&
       new Date(patch.startTime) >= minDate

@@ -9,7 +9,7 @@
 
 <script setup lang="ts">
 import { computed, ComputedRef, ref } from 'vue';
-import { WinrateLineChartProps, winrateLineChartProps } from './types';
+import { lineChartProps, LineChartProps } from './types';
 import { LineChart } from 'vue-chart-3';
 import {
   Chart,
@@ -30,16 +30,19 @@ const chart = ref<InstanceType<typeof LineChart>>();
 Chart.register(...registerables);
 Chart.register(annotationPlugin);
 
-const props: WinrateLineChartProps = defineProps(winrateLineChartProps);
+const props: LineChartProps = defineProps(lineChartProps);
 
 const testData: ComputedRef<ChartData<'line'>> = computed(() => {
-  console.log(props.baseline);
   return {
     labels: props.data.map((x) => x.date),
     datasets: [
       {
         borderColor: 'rgba(255, 255, 255, 0.1)',
-        data: props.data.map((x) => x.winrate * 100),
+        data: props.data.map((x) =>
+          props.type === 'winrate'
+            ? x.winrate * 100
+            : (x.matches / x.totalMatches) * 100,
+        ),
         pointBackgroundColor: 'rgba(255, 255, 255, 0.25)',
       },
       {
@@ -129,6 +132,29 @@ const plugins = [
         return;
       }
 
+      const gradientGood = chart.ctx.createLinearGradient(
+        0,
+        0,
+        0,
+        chart.height,
+      );
+
+      gradientGood.addColorStop(0, 'rgba(0, 173, 255, 0.25)');
+
+      if (props.type === 'playrate') {
+        gradientGood.addColorStop(1, 'rgba(0, 173, 255, 0)');
+
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-ignore
+        chart.config.data.datasets[0].fill = {
+          target: 1,
+          above: gradientGood,
+        };
+
+        chart.update();
+        return;
+      }
+
       const yLinearScale = chart.scales.y as LinearScale;
 
       const max = Math.max.apply(null, chart.data.datasets[0].data as number[]);
@@ -142,14 +168,6 @@ const plugins = [
 
       const ratio = Math.max(Math.min((yGoal - yTop) / (yBottom - yTop), 1), 0);
 
-      const gradientGood = chart.ctx.createLinearGradient(
-        0,
-        0,
-        0,
-        chart.height,
-      );
-
-      gradientGood.addColorStop(0, 'rgba(0, 173, 255, 0.25)');
       gradientGood.addColorStop(
         Math.max(ratio - 0.08, 0),
         'rgba(0, 173, 255, 0)',
