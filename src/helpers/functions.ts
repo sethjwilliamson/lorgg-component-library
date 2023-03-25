@@ -323,14 +323,18 @@ function addQuantityToObject(
 export function propsToCard(
   cardProp?: CardJsonCard,
   cardCodeProp?: string,
-): ComputedRef<CardJsonCard> {
+  throwError: boolean = true,
+) {
   return computed(() => {
     if (cardProp) {
       return cardProp;
     }
 
     if (!cardCodeProp) {
-      throw new Error('CardProp or CardCodeProp must be defined.');
+      if (throwError) {
+        throw new Error('CardProp or CardCodeProp must be defined.');
+      }
+      return null;
     }
 
     return useJsonStore().jsons.cardJsonObject[cardCodeProp];

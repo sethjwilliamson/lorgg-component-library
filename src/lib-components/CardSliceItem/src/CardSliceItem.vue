@@ -22,7 +22,7 @@
         </div>
 
         <div class="card-name">
-          {{ props.name ?? card.name }}
+          {{ props.name ?? card?.name }}
         </div>
 
         <div
@@ -42,13 +42,13 @@
           <div class="plus-minus-content">
             <div
               class="plus-minus-icon"
-              @click.prevent="$emit('cardupdate', card.cardCode, -1)"
+              @click.prevent="$emit('cardupdate', card?.cardCode, -1)"
             >
               <font-awesome-icon :icon="'minus'" class="icon" />
             </div>
             <div
               class="plus-minus-icon"
-              @click.prevent="$emit('cardupdate', card.cardCode, +1)"
+              @click.prevent="$emit('cardupdate', card?.cardCode, +1)"
             >
               <font-awesome-icon :icon="'plus'" class="icon" />
             </div>
@@ -59,7 +59,7 @@
         </div>
       </div>
     </div>
-    <div ref="cardItemWrapper" class="card-item-container">
+    <div ref="cardItemWrapper" class="card-item-container" v-if="card">
       <CardItem
         v-if="!ignoreCardItem"
         ref="cardItem"
@@ -83,7 +83,7 @@ import { ShowTippyLocation } from '@/lib-components/CardItem/src/CardItemProps';
 import ManaHexagonIcon from '@/lib-components/icons/ManaHexagonIcon/src/ManaHexagonIcon.vue';
 
 const props: CardSliceItemProps = defineProps(cardSliceItemProps);
-const card = propsToCard(props.cardProp, props.cardCodeProp);
+const card = propsToCard(props.cardProp, props.cardCodeProp, false);
 
 defineEmits<{
   (e: 'cardupdate', value: number): void;
@@ -95,12 +95,19 @@ const cardItemWrapper = ref<HTMLElement | null>(null);
 const showTippyLocation = ref<ShowTippyLocation>(null);
 
 const colorGradient: ComputedRef<string> = computed(() => {
-  const color = props.color || getRegionColorOfCard(card.value, null, true);
+  let color = props.color;
+  if (!color && card.value) {
+    color = getRegionColorOfCard(card.value, null, true);
+  }
 
   return `linear-gradient(90deg, rgba(${color}, 1) 0%, rgba(${color}, 1) 30%, rgba(${color}, .10) 70%, rgba(${color}, .00) 100%)`;
 });
 
-const imageSrc: ComputedRef<string> = computed(() => {
+const imageSrc = computed(() => {
+  if (!card.value) {
+    return '';
+  }
+
   return (
     'https://lor.gg/storage/cards/slice/' + card.value.cardCode + '-slice.webp'
   );
@@ -154,7 +161,7 @@ onMounted(() => {
 }
 .maintain-aspect-ratio {
   height: unset;
-  padding-top: 16.66667%;
+  padding-top: var(--card-slice-aspect-ratio, 16.66667%);
 }
 .card-slice {
   align-items: center;

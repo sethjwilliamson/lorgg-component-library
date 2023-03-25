@@ -84,11 +84,17 @@ export type DataJsonRank = {
   order: number;
 };
 
+export enum ServerRegion {
+  AMERICAS = 'americas',
+  EUROPE = 'europe',
+  APAC = 'apac',
+}
+
 export type DataJsonServer = {
   abbreviation: string;
   color: string;
   name: string;
-  nameRef: 'americas' | 'europe' | 'apac';
+  nameRef: ServerRegion;
   order: number;
 };
 
