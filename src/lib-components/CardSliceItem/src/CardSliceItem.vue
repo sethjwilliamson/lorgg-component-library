@@ -59,7 +59,7 @@
         </div>
       </div>
     </div>
-    <div ref="cardItemWrapper" class="card-item-container" v-if="card">
+    <div v-if="card" ref="cardItemWrapper" class="card-item-container">
       <CardItem
         v-if="!ignoreCardItem"
         ref="cardItem"

@@ -323,7 +323,7 @@ function addQuantityToObject(
 export function propsToCard(
   cardProp?: CardJsonCard,
   cardCodeProp?: string,
-  throwError: boolean = true,
+  throwError = true,
 ) {
   return computed(() => {
     if (cardProp) {
