@@ -42,7 +42,7 @@
             {{ $dayjs(props.createdAt).fromNow() }}
           </div>
         </template>
-        <div class="column-content" v-if="props.type !== 'similar'">
+        <div v-if="props.type !== 'similar'" class="column-content">
           <ManaCurveChart
             class="mana-curve-chart"
             :deck-code="props.deckcode"
@@ -62,8 +62,8 @@
           }}
         </div>
         <div
-          class="column-content deck-differences-column"
           v-if="props.type === 'similar'"
+          class="column-content deck-differences-column"
         >
           <DeckDifferences :differences="deckDifferences" />
         </div>
@@ -133,7 +133,7 @@ const deckDifferences = computed(() => {
 
   const originalDeck = getDeckObjectFromCode(props.comparedDeckcode);
 
-  for (let [cardcode, quantity] of Object.entries(deck.value)) {
+  for (const [cardcode, quantity] of Object.entries(deck.value)) {
     if (quantity === originalDeck[cardcode]) {
       continue;
     }
@@ -145,7 +145,7 @@ const deckDifferences = computed(() => {
     });
   }
 
-  for (let [cardcode, quantity] of Object.entries(originalDeck)) {
+  for (const [cardcode, quantity] of Object.entries(originalDeck)) {
     if (
       quantity === deck.value[cardcode] ||
       differences.some((x) => x.cardCodeProp === cardcode)

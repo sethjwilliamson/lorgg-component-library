@@ -2,6 +2,7 @@
   <div class="deck-differences no-scrollbar">
     <DeckDifferenceItem
       v-for="difference in props.differences"
+      :key="difference.cardCodeProp"
       :card-code-prop="difference.cardCodeProp"
       :card-prop="difference.cardProp"
       :difference="difference.difference"

@@ -1,17 +1,17 @@
 <template>
   <div
+    ref="statitisticsPaneContainer"
     class="statitistics-pane-container"
     :class="isFullScreen ? 'full-screen' : ''"
-    ref="statitisticsPaneContainer"
   >
     <div class="top">
       <div class="heading">
         {{ props.heading }}
       </div>
       <FontAwesomeIcon
-        @click="maximizeSelf"
         class="maximize-icon"
         icon="fa-maximize"
+        @click="maximizeSelf"
       />
     </div>
     <div class="chart">
