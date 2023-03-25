@@ -194,4 +194,8 @@ function toggleOptionsButton() {
 a.wrapper:hover .table-card-row-background {
   border-color: #816f0d;
 }
+
+.deck-differences-column {
+  justify-content: start;
+}
 </style>
