@@ -1,19 +1,19 @@
 import { getRandomInt } from '@/helpers/functions';
-import WinrateLineChart from '@/lib-components/Charts/LineChart';
+import LineChart from '@/lib-components/Charts/LineChart';
 
 export default {
-  title: 'Library/Charts/WinrateLineChart',
-  component: WinrateLineChart,
+  title: 'Library/Charts/LineChart',
+  component: LineChart,
   argTypes: {},
 };
 
 const Template = (args) => ({
-  components: { WinrateLineChart },
+  components: { LineChart },
   setup() {
     return { args };
   },
   template: `<div style="background-color: var(--color-2)">
-              <WinrateLineChart v-bind="args" />
+              <LineChart v-bind="args" />
             </div>`,
 });
 
@@ -117,42 +117,42 @@ Winrate.args = {
       matches: getRandomInt(500, 1500),
       totalMatches: getRandomInt(2000, 30000),
       wins: getRandomInt(1, 500),
-      winrate: 0.6,
+      winrate: 0.48,
       date: new Date('2022-08-16 00:00:00'),
     },
     {
       matches: getRandomInt(500, 1500),
       totalMatches: getRandomInt(2000, 30000),
       wins: getRandomInt(1, 500),
-      winrate: 0.6,
+      winrate: 0.48,
       date: new Date('2022-08-15 00:00:00'),
     },
     {
       matches: getRandomInt(500, 1500),
       totalMatches: getRandomInt(2000, 30000),
       wins: getRandomInt(1, 500),
-      winrate: 0.6,
+      winrate: 0.46,
       date: new Date('2022-08-14 00:00:00'),
     },
     {
       matches: getRandomInt(500, 1500),
       totalMatches: getRandomInt(2000, 30000),
       wins: getRandomInt(1, 500),
-      winrate: 0.6,
+      winrate: 0.43,
       date: new Date('2022-08-13 00:00:00'),
     },
     {
       matches: getRandomInt(500, 1500),
       totalMatches: getRandomInt(2000, 30000),
       wins: getRandomInt(1, 500),
-      winrate: 0.6,
+      winrate: 0.42,
       date: new Date('2022-08-12 00:00:00'),
     },
     {
       matches: getRandomInt(500, 1500),
       totalMatches: getRandomInt(2000, 30000),
       wins: getRandomInt(1, 500),
-      winrate: 0.6,
+      winrate: 0.4,
       date: new Date('2022-08-11 00:00:00'),
     },
   ],
@@ -161,7 +161,7 @@ Winrate.args = {
 export const Playrate = Template.bind({});
 Playrate.args = {
   type: 'playrate',
-  baseline: 5,
+  baseline: 0,
   data: [
     {
       matches: getRandomInt(500, 1500),
