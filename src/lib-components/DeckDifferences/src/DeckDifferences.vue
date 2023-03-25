@@ -23,8 +23,9 @@ const props: DeckDifferencesProps = defineProps(deckDifferencesProps);
   --circle-card-item-size: 40px;
   display: flex;
   gap: 5px;
+  overflow-x: scroll;
+  overflow-y: hidden;
   padding: 0 10px;
-  overflow: scroll;
   -webkit-mask-image: linear-gradient(
     to right,
     transparent 0%,
