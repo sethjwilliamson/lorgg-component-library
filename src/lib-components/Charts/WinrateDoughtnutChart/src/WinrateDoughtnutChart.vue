@@ -40,8 +40,7 @@ const options: ChartOptions<'doughnut'> = {
   cutout: 145,
   elements: {
     arc: {
-      borderRadius: 999,
-      borderWidth: 15,
+      borderWidth: 0,
     },
   },
   plugins: {
