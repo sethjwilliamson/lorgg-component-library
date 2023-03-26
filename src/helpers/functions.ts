@@ -144,6 +144,10 @@ function getMostImportantCardsForSection(
 }
 
 export function getDeckObjectFromCode(deckcode: string): Deck {
+  if (deckcode === '') {
+    return {};
+  }
+
   return getDeckFromCode(deckcode).reduce(
     (a, v) => ({ ...a, [v.cardCode]: v.count }),
     {},

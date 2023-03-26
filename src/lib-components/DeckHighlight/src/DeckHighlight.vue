@@ -91,6 +91,9 @@ onMounted(() => {
       hasShown.value = true;
     },
     onCreate(instance) {
+      if (cards.value.length < 1) {
+        return;
+      }
       instance.popper.style.setProperty(
         '--tippy-background',
         `url(https://lor.gg/storage/cards/full-art/${

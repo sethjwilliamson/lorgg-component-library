@@ -112,6 +112,10 @@ export function setupi18n() {
           turnPlayed: 'Turn Played',
           playrate: 'Playrate',
           deckDifferences: 'Deck Differences',
+          player: 'Player',
+          lp: 'LP',
+          change: 'Change',
+          favoriteDeck: 'Favorite Deck',
         },
       },
     }, // set locale messages

@@ -3,7 +3,7 @@ import { PropType } from 'vue';
 
 // TODO: Move elsewhere
 export type PlayerData = {
-  change: number;
+  change: number | null;
   favorite_deck: string;
   lp: number;
   matches: number;

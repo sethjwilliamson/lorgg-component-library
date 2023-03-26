@@ -16,7 +16,7 @@
         </div>
       </div>
       <div class="leaderboard-detail-row wrapper">
-        <div class="column-content deck-highlight-wrapper" @click.stop.prevent>
+        <div class="column-content card-wrapper" @click.stop.prevent>
           <CardSliceItem
             class="card-slice-item"
             :card-code-prop="props.selected_banner_card ?? undefined"
@@ -35,10 +35,13 @@
         </div>
 
         <div class="column-content change" :class="changeClass">
-          <FontAwesomeIcon class="icon" icon="fa-chevron-down" />
-          <span>
-            {{ localeNumber(Math.abs(props.change)) }}
-          </span>
+          <template v-if="props.change !== null">
+            <FontAwesomeIcon class="icon" icon="fa-chevron-down" />
+            <span>
+              {{ localeNumber(Math.abs(props.change)) }}
+            </span>
+          </template>
+          <template v-else> Test </template>
         </div>
 
         <div class="column-content">
@@ -82,11 +85,15 @@ const backgroundCards = computed(() => {
 });
 
 const changeClass = computed(() => {
+  if (props.change === null) {
+    return [];
+  }
+
   if (props.change === 0) {
     return ['neutral'];
   }
 
-  return [props.change > 0 ? `good` : 'bad'];
+  return [props.change > 0 ? 'good' : 'bad'];
 });
 </script>
 
@@ -94,6 +101,11 @@ const changeClass = computed(() => {
 .card-slice-item {
   margin-left: 5px;
   width: 100%;
+}
+
+.card-wrapper {
+  filter: unset;
+  min-width: 250px;
 }
 
 .deck-highlight-wrapper {

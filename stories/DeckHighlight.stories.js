@@ -26,3 +26,8 @@ export const BardNorra = Template.bind({});
 BardNorra.args = {
   deckCode: 'CUCACBIKYYAQCBQMAEBAMCI5F4EAMCQLB4IRGFI2D4WACAQGBIIBQAA',
 };
+
+export const EmptyString = Template.bind({});
+EmptyString.args = {
+  deckCode: '',
+};

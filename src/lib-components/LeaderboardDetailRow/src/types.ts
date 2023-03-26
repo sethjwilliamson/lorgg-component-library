@@ -13,7 +13,7 @@ export const leaderboardDetailRowProps = {
     default: 0,
   },
   change: {
-    type: Number,
+    type: Number as PropType<number | null>,
     required: true,
     default: 0,
   },
@@ -44,13 +44,13 @@ export const leaderboardDetailRowProps = {
   },
   selected_banner_card: {
     type: String as PropType<string | null>,
-    required: true,
-    default: '',
+    required: false,
+    default: null,
   },
   selected_banner_color: {
     type: String as PropType<string | null>,
-    required: true,
-    default: '',
+    required: false,
+    default: null,
   },
   server: {
     type: String as PropType<ServerRegion>,
