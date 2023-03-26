@@ -56,6 +56,12 @@ export function setupi18n() {
         archetype: {
           abbreviation: 'A',
         },
+        leaderboard: {
+          totalPlayers: 'Total Players',
+          lp: 'LP',
+          rank: 'Rank',
+          updated: 'Updated',
+        },
         general: {
           // runeterra: 'Runeterra',
           manaCost: 'Mana Cost',
@@ -116,6 +122,8 @@ export function setupi18n() {
           lp: 'LP',
           change: 'Change',
           favoriteDeck: 'Favorite Deck',
+          server: 'Server',
+          players: 'Players',
         },
       },
     }, // set locale messages
