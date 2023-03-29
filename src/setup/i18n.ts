@@ -124,6 +124,7 @@ export function setupi18n() {
           favoriteDeck: 'Favorite Deck',
           server: 'Server',
           players: 'Players',
+          time: 'Time',
         },
       },
     }, // set locale messages

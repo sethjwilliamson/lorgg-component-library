@@ -1,7 +1,7 @@
 <template>
   <SidePanelSectionPane
     :filter-array="filterArray"
-    :title="t('general.regions')"
+    :title="t('general.time')"
     @clear:filter-array="onClear"
   >
     <div class="checkboxes-container">
