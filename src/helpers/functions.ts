@@ -12,6 +12,30 @@ export function isAChampion(card: CardJsonCard): boolean {
   return card.supertype === 'Champion' && card.typeRef === 'Unit';
 }
 
+export function randomWithSeed(seed?: number | string) {
+  if (seed === undefined) {
+    return Math.random();
+  }
+
+  if (typeof seed === 'string') {
+    seed = Number(
+      seed
+        .split('')
+        .map(function (char) {
+          return char.charCodeAt(0) + 1;
+        })
+        .join(''),
+    );
+  }
+
+  let x = Math.sin(seed++) * 10000;
+  return x - Math.floor(x);
+}
+
+export function getRandomColor(seed?: number | string) {
+  return `#${Math.floor(randomWithSeed(seed) * 16777215).toString(16)}`;
+}
+
 export function winrateColor(winrate: number, baseWinrate = 0.5) {
   if (winrate >= baseWinrate + 0.15 || winrate >= 1) {
     return '--color-excellent';
