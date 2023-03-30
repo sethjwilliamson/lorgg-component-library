@@ -18,7 +18,7 @@ import {
   registerables,
 } from 'chart.js';
 import { ObjectWithNumber } from '#/helpers';
-import { getDeckObjectFromCode } from '@/helpers/functions';
+import { getCssVarValue, getDeckObjectFromCode } from '@/helpers/functions';
 import { useJsonStore } from '@/helpers/stores';
 import { DataJsonRarity, DataJsonType } from '#/jsons';
 
@@ -87,7 +87,13 @@ const testData: ComputedRef<ChartData<'doughnut'>> = computed(() => {
 });
 
 const options: ChartOptions<'doughnut'> = {
-  cutout: 145,
+  cutout: 55,
+  layout: {
+    padding: {
+      top: 10,
+      bottom: 10,
+    },
+  },
   elements: {
     arc: {
       // borderRadius: 999,
@@ -111,6 +117,7 @@ const options: ChartOptions<'doughnut'> = {
               borderRadius: 999,
               datasetIndex: 0,
               index: i,
+              fontColor: getCssVarValue('--color-0'),
               fillStyle: (chart.data.datasets[0].backgroundColor as string[])[
                 i
               ],

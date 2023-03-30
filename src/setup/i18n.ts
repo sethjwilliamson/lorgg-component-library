@@ -125,6 +125,8 @@ export function setupi18n() {
           server: 'Server',
           players: 'Players',
           time: 'Time',
+          type: 'Type',
+          rarity: 'Rarity',
         },
       },
     }, // set locale messages

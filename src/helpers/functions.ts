@@ -265,13 +265,13 @@ export function getRegionColorOfCard(
 
 export function getRegionColorOfRegionRef(regionRef: string) {
   return (
-    getComputedStyle(document.documentElement).getPropertyValue(
-      `--color-${regionRef}`,
-    ) ||
-    getComputedStyle(document.documentElement).getPropertyValue(
-      '--color-primary-2',
-    )
+    getCssVarValue(`--color-${regionRef}`) ||
+    getCssVarValue('--color-primary-2')
   );
+}
+
+export function getCssVarValue(varName: string) {
+  return getComputedStyle(document.documentElement).getPropertyValue(varName);
 }
 
 export function getRegionNameOfRegionRef(regionRef: string) {
