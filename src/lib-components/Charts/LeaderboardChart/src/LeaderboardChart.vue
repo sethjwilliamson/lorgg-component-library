@@ -17,16 +17,13 @@ import {
   ChartDataset,
   ChartOptions,
   registerables,
-  TooltipItem,
 } from 'chart.js';
 import 'chartjs-adapter-moment';
 import annotationPlugin from 'chartjs-plugin-annotation';
 import { addPatchAnnotations } from '@/helpers/charts';
-import { useI18n } from 'vue-i18n';
 import { getRandomColor } from '@/helpers/functions';
 import { useJsonStore } from '@/helpers/stores';
 import { PlayerData } from '@/lib-components/LeaderboardTop10Region/src/types';
-const { t } = useI18n();
 
 const servers = useJsonStore().jsons.dataJson.servers;
 
@@ -37,7 +34,9 @@ Chart.register(annotationPlugin);
 
 const props: LeaderboardChartProps = defineProps(leaderboardChartProps);
 
-const data = props.data.sort((a, b) => +a.date - +b.date);
+const data = computed(() => {
+  return props.data.slice().sort((a, b) => +a.date - +b.date);
+});
 
 const chartData: ComputedRef<ChartData<'line'>> = computed(() => {
   let datasets: ChartDataset<'line'>[];
@@ -55,14 +54,14 @@ const chartData: ComputedRef<ChartData<'line'>> = computed(() => {
         return {
           label: server.name,
           borderColor: getRandomColor(server.nameRef),
-          data: (data as LeaderboardChartServerPlayersDataPoint[])
+          data: (data.value as LeaderboardChartServerPlayersDataPoint[])
             .filter((x) => x.server === server.nameRef)
             .map((x) => x.players),
           pointBackgroundColor: 'rgba(255, 255, 255, 0.25)',
         };
       });
   } else {
-    datasets = (data as LeaderboardChartPlayerDataPoint[])
+    datasets = (data.value as LeaderboardChartPlayerDataPoint[])
       .reduce((prev, curr) => {
         if (prev.includes(curr.player)) {
           return prev;
@@ -74,7 +73,7 @@ const chartData: ComputedRef<ChartData<'line'>> = computed(() => {
         return {
           label: player.name,
           borderColor: getRandomColor(player.user_id),
-          data: (data as LeaderboardChartPlayerDataPoint[])
+          data: (data.value as LeaderboardChartPlayerDataPoint[])
             .filter((x) => x.player.user_id === player.user_id)
             .map((x) => (props.type === 'lp' ? x.lp : x.rank)),
           pointBackgroundColor: 'rgba(255, 255, 255, 0.25)',
@@ -83,7 +82,7 @@ const chartData: ComputedRef<ChartData<'line'>> = computed(() => {
   }
 
   return {
-    labels: data
+    labels: data.value
       .map((x) => x.date)
       .filter(
         (date, i, self) =>
