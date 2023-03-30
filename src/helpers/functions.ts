@@ -28,7 +28,7 @@ export function randomWithSeed(seed?: number | string) {
     );
   }
 
-  let x = Math.sin(seed++) * 10000;
+  const x = Math.sin(seed++) * 10000;
   return x - Math.floor(x);
 }
 
