@@ -5,6 +5,7 @@ export type RegionsLineProps = {
   deckCode: string;
   deck?: Deck;
   cards?: CardJsonCard[];
+  describeRegions: boolean;
 };
 
 export const regionsLineProps = {
@@ -20,5 +21,10 @@ export const regionsLineProps = {
   cards: {
     type: Array as PropType<CardJsonCard[]>,
     required: false,
+  },
+  describeRegions: {
+    type: Boolean,
+    required: false,
+    default: false,
   },
 };

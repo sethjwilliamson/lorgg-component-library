@@ -109,6 +109,7 @@ export function setupi18n() {
           updated: 'Updated',
           created: 'Created',
           card: 'Card',
+          cards: 'Cards',
           inclusion: 'Inclusion',
           avgCopies: 'Avg. Copies',
           turnsHeld: 'Turns Held',

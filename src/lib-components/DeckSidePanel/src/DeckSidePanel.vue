@@ -4,6 +4,21 @@
       :card-codes="championCardcodes"
       :regions="regions"
     />
+    <SidePanelSectionPane :title="t('general.regions')">
+      <RegionsLine :deck-code="props.deckcode" :describe-regions="true" />
+    </SidePanelSectionPane>
+    <SidePanelSectionPane :title="t('general.manaCurve')">
+      <ManaCurveChart
+        class="mana-curve-chart"
+        :deck-code="props.deckcode"
+        :padding-top="5"
+        :show-data-labels="true"
+        :data-labels-offset="-5"
+        :tooltips-enabled="true"
+        :display-x-scale="true"
+        :animation="undefined"
+      />
+    </SidePanelSectionPane>
     <SidePanelSectionPane :title="t('general.type')">
       <InfoDoughtnutChart
         class="side-panel-chart"
@@ -46,6 +61,8 @@ import {
 import { useJsonStore } from '@/helpers/stores';
 import { useI18n } from 'vue-i18n';
 import InfoDoughtnutChart from '@/lib-components/Charts/InfoDoughnutChart';
+import RegionsLine from '@/lib-components/RegionsLine';
+import ManaCurveChart from '@/lib-components/Charts/ManaCurveChart';
 
 const { t } = useI18n();
 
@@ -75,5 +92,8 @@ watch(filters, () => {
 <style scoped>
 .side-panel-chart {
   height: 160px;
+}
+.mana-curve-chart {
+  height: 120px;
 }
 </style>

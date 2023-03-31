@@ -1,11 +1,23 @@
 <template>
   <div class="regions-line">
-    <div
-      v-for="(count, region) in regionCount"
-      :key="region"
-      :style="regionLineStyle(count, region)"
-      class="region-line"
-    ></div>
+    <div v-if="props.describeRegions" class="describe-regions">
+      <div
+        v-for="(count, region) in regionCount"
+        :key="region"
+        class="region-description"
+      >
+        <RegionItem :region-ref="(region as string)" class="icon" />
+        <span>{{ `${count} ${t('general.cards')}` }}</span>
+      </div>
+    </div>
+    <div class="lines">
+      <div
+        v-for="(count, region) in regionCount"
+        :key="region"
+        :style="regionLineStyle(count, region)"
+        class="region-line"
+      ></div>
+    </div>
   </div>
 </template>
 
@@ -16,8 +28,11 @@ import {
   getDeckObjectFromCode,
   getRegionsFromDeck,
 } from '@/helpers/functions';
+import RegionItem from '@/lib-components/RegionItem';
 import { computed, CSSProperties } from 'vue';
 import { RegionsLineProps, regionsLineProps } from './types';
+import { useI18n } from 'vue-i18n';
+const { t } = useI18n();
 
 const props: RegionsLineProps = defineProps(regionsLineProps);
 
@@ -70,6 +85,38 @@ function regionLineStyle(
 
 <style scoped>
 .regions-line {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.describe-regions {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.icon {
+  --size: 25px;
+  height: var(--size);
+  width: var(--size);
+}
+
+.region-description {
+  color: var(--color-0);
+  display: flex;
+  font-size: 11px;
+  gap: 5px;
+  text-transform: uppercase;
+  align-items: flex-end;
+}
+
+.region-description:last-child {
+  flex-direction: row-reverse;
+}
+
+.lines {
   display: flex;
   gap: 10px;
   width: 100%;

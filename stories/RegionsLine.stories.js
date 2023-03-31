@@ -21,3 +21,10 @@ Default.args = {
   deckCode:
     'CICQCAIDFYBAEBQ2FUBAGBQIB4BAMBQHDYCAEAYBA4EASAYBAIDAIAIDAYDQCBADCYAQCAYDBU',
 };
+
+export const DescribeRegions = Template.bind({});
+DescribeRegions.args = {
+  deckCode:
+    'CICQCAIDFYBAEBQ2FUBAGBQIB4BAMBQHDYCAEAYBA4EASAYBAIDAIAIDAYDQCBADCYAQCAYDBU',
+  describeRegions: true,
+};

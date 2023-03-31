@@ -84,6 +84,7 @@ const testData: ComputedRef<ChartData<'bar'>> = computed(() => {
         borderRadius: borderRadiusAllCorners,
         borderSkipped: false,
         label: getRegionNameOfRegionRef(regionKey),
+        barPercentage: 0.5,
       },
       {
         backgroundColor: 'transparent',
