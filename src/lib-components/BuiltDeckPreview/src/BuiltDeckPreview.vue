@@ -10,7 +10,7 @@
       <div class="options-button icon" @click.stop.prevent>
         <FontAwesomeIcon icon="ellipsis-v"></FontAwesomeIcon>
       </div>
-      <div class="deck-content" @click.stop.prevent>
+      <div class="deck-content">
         <DeckHighlight
           class="deck-highlight"
           :show-eye="false"
