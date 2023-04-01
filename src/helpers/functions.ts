@@ -390,6 +390,8 @@ export function getDeckFormats(
     FormatEnum.CommonsOnly,
     FormatEnum.Eternal,
     FormatEnum.Standard,
+    FormatEnum.EvenCost,
+    FormatEnum.Singleton,
   ];
 
   for (let card of cards) {
