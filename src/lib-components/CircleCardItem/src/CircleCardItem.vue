@@ -1,6 +1,6 @@
 <template>
   <div class="circle-card-item">
-    <a class="circle-card-link">
+    <a href="test/card" class="circle-card-link" @click.stop.prevent>
       <img
         ref="circleCardImg"
         :alt="card.name"
