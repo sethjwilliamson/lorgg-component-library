@@ -394,7 +394,7 @@ export function getDeckFormats(
     FormatEnum.Singleton,
   ];
 
-  for (let card of cards) {
+  for (const card of cards) {
     formats = formats.filter((x) => card.formats.includes(x));
   }
 
