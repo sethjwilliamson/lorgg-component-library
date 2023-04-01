@@ -1,11 +1,19 @@
 <template>
   <div class="built-deck-preview" :style="builtDeckPreviewStyle">
     <div class="background"></div>
-    <div class="options-button">
+    <DeckHighlightEye
+      class="deck-highlight-eye icon"
+      :deck-code="props.deckcode"
+    />
+    <div class="options-button icon">
       <FontAwesomeIcon icon="ellipsis-v"></FontAwesomeIcon>
     </div>
     <div class="deck-content">
-      <DeckHighlight class="deck-highlight" :deck-code="props.deckcode" />
+      <DeckHighlight
+        class="deck-highlight"
+        :show-eye="false"
+        :deck-code="props.deckcode"
+      />
     </div>
     <div class="details">
       <div class="title">
@@ -34,6 +42,7 @@ import {
   getDeckObjectFromCode,
   getMostImportantCards,
 } from '@/helpers/functions';
+import DeckHighlightEye from '@/lib-components/DeckHighlightEye';
 
 const $dayjs = inject('dayjs') as typeof dayjs;
 
@@ -69,6 +78,7 @@ const builtDeckPreviewStyle = computed(() => {
   padding: 15px;
   overflow: hidden;
   position: relative;
+  gap: 10px;
 }
 
 .background {
@@ -78,17 +88,27 @@ const builtDeckPreviewStyle = computed(() => {
   opacity: 0.4;
   position: absolute;
   inset: 0;
+  z-index: 0;
 }
 
 .built-deck-preview > div {
   filter: drop-shadow(0px 0px 2px black);
 }
 
-.options-button {
+.icon {
   color: var(--color-0);
   position: absolute;
   top: 15px;
+  z-index: 1;
+}
+
+.options-button {
   right: 15px;
+}
+
+.deck-highlight-eye {
+  color: var(--color-primary-2);
+  left: 15px;
 }
 
 .deck-content {
