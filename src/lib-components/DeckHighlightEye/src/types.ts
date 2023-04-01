@@ -1,14 +1,13 @@
 import { CardJsonCard, Deck } from '#/jsons';
 import { PropType } from 'vue';
 
-export type DeckHighlightProps = {
+export type DeckHighlightEyeProps = {
   cards?: CardJsonCard[];
   deck?: Deck;
   deckCode: string;
-  showEye: boolean;
 };
 
-export const deckHighlightProps = {
+export const deckHighlightEyeProps = {
   cards: {
     type: Array as PropType<CardJsonCard[]>,
     required: false,
@@ -21,10 +20,5 @@ export const deckHighlightProps = {
   deck: {
     type: Object as PropType<Deck>,
     required: false,
-  },
-  showEye: {
-    type: Boolean,
-    required: false,
-    default: true,
   },
 };

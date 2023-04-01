@@ -1,5 +1,5 @@
 <template>
-  <div class="deck-highlight">
+  <div class="deck-highlight" :class="props.showEye ? '' : 'hide-eye'">
     <DeckHighlightRegions
       class="deck-highlight-regions"
       :regions="regions"
@@ -9,25 +9,12 @@
       :cards="champions"
       :regions="regions"
     ></DeckHighlightCards>
-    <FontAwesomeIcon
-      ref="eyeIcon"
-      icon="eye"
-      class="icon"
-      @click="onEyeClick"
+    <DeckHighlightEye
+      class="deck-highlight-eye"
+      :cards="cards"
+      :deck="deck"
+      :deck-code="props.deckCode"
     />
-
-    <div ref="deckSummary" class="deck-summary-wrapper">
-      <DeckSummary
-        v-if="hasShown"
-        class="deck-summary"
-        :deck="deck"
-        :cards-prop="cards"
-      ></DeckSummary>
-    </div>
-
-    <ModalItem v-model:show-modal="showModal">
-      <DeckPreview :cards="cards" :deck="deck" :deck-code="props.deckCode" />
-    </ModalItem>
   </div>
 </template>
 
@@ -35,27 +22,16 @@
 import {
   getCardsFromDeck,
   getDeckObjectFromCode,
-  getMostImportantCards,
   getRegions,
   isAChampion,
 } from '@/helpers/functions';
-import DeckSummary from '@/lib-components/Deck/DeckSummary';
 import DeckHighlightCards from '@/lib-components/DeckHighlightCards';
+import DeckHighlightEye from '@/lib-components/DeckHighlightEye';
 import DeckHighlightRegions from '@/lib-components/DeckHighlightRegions';
-import DeckPreview from '@/lib-components/DeckPreview';
-import ModalItem from '@/lib-components/ModalItem';
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
-import tippy from 'tippy.js';
-import { computed, onMounted, ref } from 'vue';
+import { computed } from 'vue';
 import { DeckHighlightProps, deckHighlightProps } from './types';
 
 const props: DeckHighlightProps = defineProps(deckHighlightProps);
-
-const deckSummary = ref<HTMLElement | null>(null);
-const eyeIcon = ref<InstanceType<typeof FontAwesomeIcon> | null>(null);
-
-const hasShown = ref(false);
-const showModal = ref(false);
 
 const deck = computed(() => {
   if (props.deck) {
@@ -79,34 +55,6 @@ const champions = computed(() => {
     return isAChampion(x);
   });
 });
-
-onMounted(() => {
-  tippy(eyeIcon.value?.$el as HTMLElement, {
-    content: deckSummary.value as HTMLElement,
-    arrow: true,
-    duration: 0,
-    maxWidth: '90vw',
-    // appendTo: 'parent',
-    onShow() {
-      hasShown.value = true;
-    },
-    onCreate(instance) {
-      if (cards.value.length < 1) {
-        return;
-      }
-      instance.popper.style.setProperty(
-        '--tippy-background',
-        `url(https://lor.gg/storage/cards/full-art/${
-          getMostImportantCards(cards.value, deck.value, 1)[0].cardCode
-        }.webp)`,
-      );
-    },
-  });
-});
-
-function onEyeClick() {
-  showModal.value = true;
-}
 </script>
 
 <style scoped>
@@ -124,11 +72,11 @@ function onEyeClick() {
   width: var(--deck-highlight-cards-size, 85px);
 }
 
-.icon {
+.deck-highlight-eye {
   color: var(--color-primary-2);
 }
 
-.deck-summary {
-  --card-slice-width: 260px;
+.hide-eye .deck-highlight-eye {
+  display: none;
 }
 </style>
