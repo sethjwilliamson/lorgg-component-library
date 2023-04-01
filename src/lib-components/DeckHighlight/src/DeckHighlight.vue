@@ -117,11 +117,11 @@ function onEyeClick() {
 }
 
 .deck-highlight-regions {
-  width: 85px;
+  width: var(--deck-highlight-regions-size, 85px);
 }
 
 .deck-highlight-cards {
-  width: 85px;
+  width: var(--deck-highlight-cards-size, 85px);
 }
 
 .icon {

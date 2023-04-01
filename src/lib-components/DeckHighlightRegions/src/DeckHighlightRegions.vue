@@ -19,7 +19,7 @@ const props: DeckHighlightRegionsProps = defineProps(deckHighlightRegionsProps);
 
 <style scoped>
 .deck-highlight-regions {
-  --region-item-size: 40px;
+  --region-item-size: var(--region-item-size-override, 40px);
   align-items: center;
   box-sizing: border-box;
   display: flex;

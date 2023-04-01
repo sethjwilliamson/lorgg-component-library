@@ -39,7 +39,7 @@ const cards = computed(() => {
 
 <style scoped>
 .deck-highlight-cards {
-  --circle-card-item-size: 40px;
+  --circle-card-item-size: var(--circle-card-item-size-override, 40px);
   align-items: center;
   box-sizing: border-box;
   display: flex;
