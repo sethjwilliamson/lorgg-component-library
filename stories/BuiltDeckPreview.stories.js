@@ -38,3 +38,15 @@ LongName.args = {
     'Testing Test Testing Test Testing Test Testing Test Testing Test Testing Test',
   updatedAt: new Date('2023-01-01'),
 };
+
+export const NoChampions = Template.bind({});
+NoChampions.args = {
+  deckcode:
+    'CQCQCAQDAQAQGBAFAECAGAYEAECDMEJUE4CQCAYPBQUCKAQCAEBAGAYBAMCAWAA',
+  deckId: 10,
+  userName: 'SevTheDev',
+  userId: 10,
+  deckName:
+    'Testing Test',
+  updatedAt: new Date('2023-01-01'),
+};
