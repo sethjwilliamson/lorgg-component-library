@@ -1,5 +1,11 @@
 import { ObjectWithNumber } from './helpers';
 
+export enum FormatEnum {
+  Standard = 'Standard',
+  Eternal = 'Eternal',
+  CommonsOnly = 'Commons Only',
+}
+
 export type CardJsonCard = {
   artistName: string;
   associatedCardRefs: Array<string>;
@@ -11,6 +17,7 @@ export type CardJsonCard = {
   description: string;
   descriptionRaw: string;
   flavorText: string;
+  formats: FormatEnum[];
   health: number;
   keywordRefs: Array<string>;
   keywords: Array<string>;
