@@ -4,7 +4,7 @@ export type BuiltDeckPreviewProps = {
   deckcode: string;
   deckId: number;
   userName: string;
-  userId: string;
+  userId: number;
   deckName: string;
   updatedAt: Date;
 };
@@ -26,9 +26,9 @@ export const builtDeckPreviewProps = {
     default: '',
   },
   userId: {
-    type: String,
+    type: Number,
     required: true,
-    default: '',
+    default: 0,
   },
   deckName: {
     type: String,
