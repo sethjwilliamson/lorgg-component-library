@@ -141,6 +141,9 @@ const builtDeckPreviewStyle = computed(() => {
   color: var(--color-primary-2);
   font-size: 16px;
   font-weight: bold;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .extra-info {

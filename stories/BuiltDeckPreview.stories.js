@@ -26,3 +26,15 @@ Default.args = {
   deckName: 'Testing Test',
   updatedAt: new Date('2023-01-01'),
 };
+
+export const LongName = Template.bind({});
+LongName.args = {
+  deckcode:
+    'CECAIBABAECQUDQEAQDR6LCCJEAQMAI6AEDAOMQDAIAQCFBSAECAOOYBAQAQMAICAQDW26A',
+  deckId: 10,
+  userName: 'SevTheDev',
+  userId: 10,
+  deckName:
+    'Testing Test Testing Test Testing Test Testing Test Testing Test Testing Test',
+  updatedAt: new Date('2023-01-01'),
+};
