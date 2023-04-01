@@ -1,9 +1,11 @@
 import { ObjectWithNumber } from './helpers';
 
 export enum FormatEnum {
-  Standard = 'Standard',
-  Eternal = 'Eternal',
-  CommonsOnly = 'Commons Only',
+  Standard = 'client_Formats_Standard_name',
+  Eternal = 'client_Formats_Eternal_name',
+  CommonsOnly = 'client_Formats_CommonsOnly_name',
+  Singleton = 'client_Deckbuilder_RulesFilters_Singleton',
+  EvenCost = 'client_Formats_EvenCostCards_name',
 }
 
 export type CardJsonCard = {
@@ -164,6 +166,13 @@ export type DataJsonRuneterraChampion = {
   order: number;
 };
 
+export type DataJsonFormat = {
+  abbreviation: string;
+  color: string;
+  name: string;
+  nameRef: FormatEnum;
+};
+
 export type DataJson = {
   keywords: Array<DataJsonKeyword>;
   patches: Array<DataJsonPatch>;
@@ -177,4 +186,5 @@ export type DataJson = {
   spellSpeeds: Array<DataJsonSpellSpeed>;
   types: Array<DataJsonType>;
   vocabTerms: Array<DataJsonVocabTerm>;
+  formats: Array<DataJsonFormat>;
 };
