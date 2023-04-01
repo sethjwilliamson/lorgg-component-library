@@ -1,34 +1,39 @@
 <template>
-  <div class="built-deck-preview" :style="builtDeckPreviewStyle">
-    <div class="background"></div>
-    <DeckHighlightEye
-      class="deck-highlight-eye icon"
-      :deck-code="props.deckcode"
-    />
-    <div class="options-button icon">
-      <FontAwesomeIcon icon="ellipsis-v"></FontAwesomeIcon>
-    </div>
-    <div class="deck-content">
-      <DeckHighlight
-        class="deck-highlight"
-        :show-eye="false"
+  <a href="/test/built-deck">
+    <div class="built-deck-preview" :style="builtDeckPreviewStyle">
+      <div class="background"></div>
+      <DeckHighlightEye
+        class="deck-highlight-eye icon"
         :deck-code="props.deckcode"
+        @click.stop.prevent
       />
-    </div>
-    <div class="details">
-      <div class="title">
-        {{ props.deckName }}
+      <div class="options-button icon" @click.stop.prevent>
+        <FontAwesomeIcon icon="ellipsis-v"></FontAwesomeIcon>
       </div>
-      <div class="extra-info">
-        <div class="info-user">
-          {{ props.userName }}
+      <div class="deck-content" @click.stop.prevent>
+        <DeckHighlight
+          class="deck-highlight"
+          :show-eye="false"
+          :deck-code="props.deckcode"
+        />
+      </div>
+      <div class="details">
+        <div class="title">
+          {{ props.deckName }}
         </div>
-        <div class="info-time">
-          {{ $dayjs(props.updatedAt).fromNow() }}
+        <div class="extra-info">
+          <div class="info-user" @click.stop.prevent>
+            <a href="test/user">
+              {{ props.userName }}
+            </a>
+          </div>
+          <div class="info-time">
+            {{ $dayjs(props.updatedAt).fromNow() }}
+          </div>
         </div>
       </div>
     </div>
-  </div>
+  </a>
 </template>
 
 <script setup lang="ts">
@@ -73,12 +78,19 @@ const builtDeckPreviewStyle = computed(() => {
   --region-item-size-override: 50px;
   background-color: var(--color-background-1);
   border-radius: 20px;
+  border: var(--color-3) solid 2px;
   display: flex;
   flex-direction: column;
-  padding: 15px;
+  gap: 15px;
   overflow: hidden;
+  padding-top: 10px;
   position: relative;
-  gap: 10px;
+  transition: border-color 0.3s;
+}
+
+.built-deck-preview:hover {
+  border-color: var(--color-gold);
+  transition: border-color 0s;
 }
 
 .background {
@@ -111,9 +123,6 @@ const builtDeckPreviewStyle = computed(() => {
   left: 15px;
 }
 
-.deck-content {
-}
-
 .deck-highlight {
   flex-direction: column;
 }
@@ -122,6 +131,10 @@ const builtDeckPreviewStyle = computed(() => {
   display: flex;
   flex-direction: column;
   gap: 5px;
+  padding: 15px;
+  background-color: var(--color-background-2);
+  border-top: var(--color-gold) 1px solid;
+  z-index: 0;
 }
 
 .title {
@@ -139,6 +152,10 @@ const builtDeckPreviewStyle = computed(() => {
 .info-user {
   color: var(--color-gold);
   font-size: 14px;
+}
+
+.info-user > a {
+  color: currentColor;
 }
 
 .info-time {
