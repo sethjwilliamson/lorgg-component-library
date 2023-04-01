@@ -1,5 +1,5 @@
 import { ObjectWithNumber } from '#/helpers';
-import { Deck, CardJsonCard } from '#/jsons';
+import { Deck, CardJsonCard, FormatEnum } from '../../types/jsons';
 import { useJsonStore } from '@/helpers/stores';
 import { getDeckFromCode } from 'lor-deckcodes-ts';
 import { computed, ComputedRef } from 'vue';
@@ -367,6 +367,36 @@ export function propsToCard(
 
     return useJsonStore().jsons.cardJsonObject[cardCodeProp];
   });
+}
+
+export function getDeckFormats(
+  cards?: CardJsonCard[],
+  deck?: Deck,
+  deckCode?: string,
+) {
+  if (!cards && deck) {
+    cards = getCardsFromDeck(deck);
+  }
+
+  if (!cards && deckCode) {
+    cards = getCardsFromDeck(getDeckObjectFromCode(deckCode));
+  }
+
+  if (!cards) {
+    throw new Error('At least one argument must be defined.');
+  }
+
+  let formats = [
+    FormatEnum.CommonsOnly,
+    FormatEnum.Eternal,
+    FormatEnum.Standard,
+  ];
+
+  for (let card of cards) {
+    formats = formats.filter((x) => card.formats.includes(x));
+  }
+
+  return formats;
 }
 
 export function setDescription(description: string) {
