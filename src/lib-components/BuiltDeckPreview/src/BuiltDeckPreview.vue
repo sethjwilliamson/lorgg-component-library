@@ -16,6 +16,9 @@
           :show-eye="false"
           :deck-code="props.deckcode"
         />
+        <div class="format-tags">
+          <FormatTag v-for="format in formats" :key="format" :format="format" />
+        </div>
       </div>
       <div class="details">
         <div class="title">
@@ -44,10 +47,12 @@ import dayjs from 'dayjs';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import {
   getCardsFromDeck,
+  getDeckFormats,
   getDeckObjectFromCode,
   getMostImportantCards,
 } from '@/helpers/functions';
 import DeckHighlightEye from '@/lib-components/DeckHighlightEye';
+import FormatTag from '@/lib-components/FormatTag';
 
 const $dayjs = inject('dayjs') as typeof dayjs;
 
@@ -68,6 +73,12 @@ const builtDeckPreviewStyle = computed(() => {
     }.webp)`,
   };
 });
+
+const formats = computed(() => {
+  return getDeckFormats(cards.value);
+});
+
+console.log(formats.value);
 </script>
 
 <style scoped>
@@ -105,6 +116,18 @@ const builtDeckPreviewStyle = computed(() => {
 
 .built-deck-preview > div {
   filter: drop-shadow(0px 0px 2px black);
+}
+
+.deck-content {
+  position: relative;
+}
+
+.format-tags {
+  position: absolute;
+  bottom: -5px;
+  left: 15px;
+  display: flex;
+  gap: 5px;
 }
 
 .icon {

@@ -41,12 +41,31 @@ LongName.args = {
 
 export const NoChampions = Template.bind({});
 NoChampions.args = {
-  deckcode:
-    'CQCQCAQDAQAQGBAFAECAGAYEAECDMEJUE4CQCAYPBQUCKAQCAEBAGAYBAMCAWAA',
+  deckcode: 'CQCQCAQDAQAQGBAFAECAGAYEAECDMEJUE4CQCAYPBQUCKAQCAEBAGAYBAMCAWAA',
   deckId: 10,
   userName: 'SevTheDev',
   userId: 10,
-  deckName:
-    'Testing Test',
+  deckName: 'Testing Test',
+  updatedAt: new Date('2023-01-01'),
+};
+
+export const Standard = Template.bind({});
+Standard.args = {
+  deckcode:
+    'CQCQCBYKBEAQOBARAICQUBBRAMCQIBQNBYCACBAIDE2DUAQBAUCAEAQFBLDADVIBAEAQMCQX',
+  deckId: 10,
+  userName: 'SevTheDev',
+  userId: 10,
+  deckName: 'Testing Test',
+  updatedAt: new Date('2023-01-01'),
+};
+
+export const CommonOnly = Template.bind({});
+CommonOnly.args = {
+  deckcode: 'CIBQCBQGDYCAOAYDAYEA6BQHAYBQQDIOCIKQAAA',
+  deckId: 10,
+  userName: 'SevTheDev',
+  userId: 10,
+  deckName: 'Testing Test',
   updatedAt: new Date('2023-01-01'),
 };
