@@ -171,6 +171,7 @@ export type DataJsonFormat = {
   color: string;
   name: string;
   nameRef: FormatEnum;
+  order: number;
 };
 
 export type DataJson = {

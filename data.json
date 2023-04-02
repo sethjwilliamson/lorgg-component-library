@@ -1127,31 +1127,36 @@
         "abbreviation": "S",
         "color": "#007ba5",
         "name": "Standard",
-        "nameRef": "client_Formats_Standard_name"
+        "nameRef": "client_Formats_Standard_name",
+        "order": 3
       },
       {
         "abbreviation": "1",
         "color": "#a50035",
         "name": "Singleton",
-        "nameRef": "client_Deckbuilder_RulesFilters_Singleton"
+        "nameRef": "client_Deckbuilder_RulesFilters_Singleton",
+        "order": 0
       },
       {
         "abbreviation": "E",
         "color": "#0b5d17",
         "name": "Eternal",
-        "nameRef": "client_Formats_Eternal_name"
+        "nameRef": "client_Formats_Eternal_name",
+        "order": 4
       },
       {
         "abbreviation": "C",
         "color": "#008345",
         "name": "Commons Only",
-        "nameRef": "client_Formats_CommonsOnly_name"
+        "nameRef": "client_Formats_CommonsOnly_name",
+        "order": 1
       },
       {
         "abbreviation": "Even",
         "color": "#b300e9",
         "name": "Even Cost Cards",
-        "nameRef": "client_Formats_EvenCostCards_name"
+        "nameRef": "client_Formats_EvenCostCards_name",
+        "order": 2
       }
     ]
 }
