@@ -10,15 +10,27 @@
       <div class="options-button icon" @click.stop.prevent>
         <FontAwesomeIcon icon="ellipsis-v"></FontAwesomeIcon>
       </div>
-      <div class="deck-content">
-        <DeckHighlight
-          class="deck-highlight"
-          :show-eye="false"
-          :deck-code="props.deckcode"
-        />
-        <div class="format-tags">
-          <FormatTag v-for="format in formats" :key="format" :format="format" />
+      <DeckHighlightRegions
+        class="deck-highlight-regions deck-highlight-section"
+        :regions="regions"
+      />
+      <div class="content">
+        <div class="format">
+          <EternalIcon
+            v-if="displayedFormat.nameRef === FormatEnum.Eternal"
+            class="format-icon"
+          />
+          <StandardIcon
+            v-else-if="displayedFormat.nameRef === FormatEnum.Standard"
+            class="format-icon"
+          />
+          <GauntletIcon v-else class="format-icon" />
+          <span class="format-text">{{ displayedFormat.name }}</span>
         </div>
+        <DeckHighlightCards
+          class="deck-highlight-cards deck-highlight-section"
+          :cards="champions"
+        />
       </div>
       <div class="details">
         <div class="title">
@@ -40,9 +52,9 @@
 </template>
 
 <script setup lang="ts">
-import DeckHighlight from '@/lib-components/DeckHighlight';
 import { BuiltDeckPreviewProps, builtDeckPreviewProps } from './types';
 import { computed, inject } from 'vue';
+import { DataJsonFormat, FormatEnum } from '../../../../types/jsons';
 import dayjs from 'dayjs';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import {
@@ -50,13 +62,21 @@ import {
   getDeckFormats,
   getDeckObjectFromCode,
   getMostImportantCards,
+  getRegions,
+  isAChampion,
 } from '@/helpers/functions';
 import DeckHighlightEye from '@/lib-components/DeckHighlightEye';
-import FormatTag from '@/lib-components/FormatTag';
+import DeckHighlightRegions from '@/lib-components/DeckHighlightRegions';
+import { useJsonStore } from '@/helpers/stores';
+import EternalIcon from '@/lib-components/icons/EternalIcon';
+import StandardIcon from '@/lib-components/icons/StandardIcon';
+import GauntletIcon from '@/lib-components/icons/GauntletIcon';
+import DeckHighlightCards from '@/lib-components/DeckHighlightCards';
 
 const $dayjs = inject('dayjs') as typeof dayjs;
 
 const props: BuiltDeckPreviewProps = defineProps(builtDeckPreviewProps);
+const formatsStore = useJsonStore().jsons.dataJson.formats;
 
 const deck = computed(() => {
   return getDeckObjectFromCode(props.deckcode);
@@ -64,6 +84,14 @@ const deck = computed(() => {
 
 const cards = computed(() => {
   return getCardsFromDeck(deck.value);
+});
+
+const regions = computed(() => {
+  return getRegions(cards.value);
+});
+
+const champions = computed(() => {
+  return cards.value.filter((x) => isAChampion(x));
 });
 
 const builtDeckPreviewStyle = computed(() => {
@@ -78,21 +106,28 @@ const formats = computed(() => {
   return getDeckFormats(cards.value);
 });
 
+const displayedFormat = computed(() => {
+  return (
+    formats.value
+      .map((x) => formatsStore.find((y) => y.nameRef === x))
+      .filter((x) => x !== undefined) as DataJsonFormat[]
+  ).sort((a, b) => a.order - b.order)[0];
+});
+
 console.log(formats.value);
 </script>
 
 <style scoped>
 .built-deck-preview {
   --circle-card-item-size-override: 50px;
-  --deck-highlight-cards-size: 105px;
-  --deck-highlight-regions-size: 105px;
   --region-item-size-override: 50px;
+  align-items: center;
   background-color: var(--color-background-1);
   border-radius: 20px;
   border: var(--color-3) solid 2px;
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 10px;
   overflow: hidden;
   padding-top: 10px;
   position: relative;
@@ -118,23 +153,38 @@ console.log(formats.value);
   filter: drop-shadow(0px 0px 2px black);
 }
 
-.deck-content {
-  position: relative;
-}
-
-.format-tags {
-  position: absolute;
-  bottom: -5px;
-  left: 15px;
-  display: flex;
-  gap: 5px;
+.deck-highlight-section {
+  width: 110px;
 }
 
 .icon {
-  color: var(--color-0);
+  color: var(--color-primary-2);
   position: absolute;
   top: 15px;
   z-index: 1;
+}
+
+.content {
+  display: flex;
+  align-self: stretch;
+  padding: 0 15px;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.format {
+  display: flex;
+  gap: 5px;
+  color: var(--color-primary-2);
+  align-items: center;
+  text-transform: uppercase;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 20px;
+}
+
+.format-icon {
+  width: 30px;
+  height: 30px;
 }
 
 .options-button {
@@ -151,12 +201,13 @@ console.log(formats.value);
 }
 
 .details {
+  align-self: stretch;
   display: flex;
   flex-direction: column;
   gap: 5px;
   padding: 15px;
   background-color: var(--color-background-2);
-  border-top: var(--color-gold) 1px solid;
+  border-top: var(--color-primary-2) 2px solid;
   z-index: 0;
 }
 
