@@ -60,6 +60,14 @@ export function winrateColor(winrate: number, baseWinrate = 0.5) {
   return '--color-bad';
 }
 
+export function getDate(days: number) {
+  const today = new Date();
+  const newDate = new Date(today);
+  newDate.setTime(newDate.getTime() + days * 3600 * 1000 * 24);
+
+  return newDate;
+}
+
 export function localeNumber(
   num: number,
   decimalPlaces = 0,
