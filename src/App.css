@@ -258,6 +258,10 @@
   min-width: 150px;
 }
 
+.small-table .column-content {
+  min-width: unset;
+}
+
 .table .column-content:nth-child(1) {
   grid-column: 1;
 }
@@ -312,6 +316,15 @@
   grid-row: var(--index);
   grid-column: 1 / -1;
   position: relative;
+}
+
+.table .small-table-background {
+  grid-row: var(--index);
+  grid-column: 1 / -1;
+  background-image: var(--background-image);
+  background-position: center;
+  background-size: cover;
+  opacity: 40%;
 }
 
 .table-card-row-background {
