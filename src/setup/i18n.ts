@@ -129,6 +129,7 @@ export function setupi18n() {
           type: 'Type',
           rarity: 'Rarity',
           archetypes: 'Archetypes',
+          leaderboard: 'Leaderboard',
         },
       },
     }, // set locale messages

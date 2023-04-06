@@ -321,10 +321,18 @@
 .table .small-table-background {
   grid-row: var(--index);
   grid-column: 1 / -1;
+  position: relative;
+  background-color: var(--background-color);
+}
+
+.table .small-table-background::before {
+  content: '';
   background-image: var(--background-image);
   background-position: center;
   background-size: cover;
   opacity: 40%;
+  position: absolute;
+  inset: 0;
 }
 
 .table-card-row-background {
@@ -340,6 +348,24 @@
 
 .background-card-wrapper {
   flex-grow: 1;
+}
+
+.change {
+  display: flex;
+  gap: 10px;
+}
+
+.change.good {
+  color: var(--color-good);
+}
+.change.bad {
+  color: var(--color-bad);
+}
+.change.good > .icon {
+  transform: rotate(180deg);
+}
+.change.neutral > .icon {
+  display: none;
 }
 
 .background-card {

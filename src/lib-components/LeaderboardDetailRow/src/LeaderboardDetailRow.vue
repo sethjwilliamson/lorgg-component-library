@@ -174,22 +174,4 @@ a.wrapper:hover .leaderboard-detail-row-background {
   );
   right: 0;
 }
-
-.change {
-  display: flex;
-  gap: 10px;
-}
-
-.change.good {
-  color: var(--color-good);
-}
-.change.bad {
-  color: var(--color-bad);
-}
-.change.good > .icon {
-  transform: rotate(180deg);
-}
-.change.neutral > .icon {
-  display: none;
-}
 </style>
