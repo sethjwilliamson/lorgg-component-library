@@ -1,9 +1,10 @@
 <template>
   <SmallTable class="small-table" :heading-items="headingItems">
-    <ProfileChampionRow
+    <ProfileArchetypeRow
       v-for="row in props.rows"
-      :key="row.cardCode"
-      :card-code="row.cardCode"
+      :key="row.archetypeId"
+      :archetype-id="row.archetypeId"
+      :deck-code="row.deckCode"
       :matches="row.matches"
       :wins="row.wins"
       :index="row.index + 2"
@@ -12,14 +13,19 @@
 </template>
 
 <script setup lang="ts">
-import ProfileChampionRow from '@/lib-components/ProfileChampionRow';
 import SmallTable from '@/lib-components/SmallTable';
 import { HeadingItem } from '@/lib-components/SmallTable/src/types';
-import { ProfileChampionTableProps, profileChampionTableProps } from './types';
+import {
+  ProfileArchetypeTableProps,
+  profileArchetypeTableProps,
+} from './types';
 import { useI18n } from 'vue-i18n';
+import ProfileArchetypeRow from '@/lib-components/ProfileArchetypeRow';
 const { t } = useI18n();
 
-const props: ProfileChampionTableProps = defineProps(profileChampionTableProps);
+const props: ProfileArchetypeTableProps = defineProps(
+  profileArchetypeTableProps,
+);
 
 const headingItems = [
   {

@@ -40,7 +40,7 @@ const headingItems = [
 <style scoped>
 .small-table {
   --table-gap: 1px;
-  --table-grid-auto-rows: 40px;
+  --table-grid-auto-rows: 50px;
   --table-grid-template-columns: repeat(3, 1fr);
 }
 </style>
