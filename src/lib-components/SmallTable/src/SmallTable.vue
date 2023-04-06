@@ -9,6 +9,7 @@
         >
           <div>{{ headingItem.title }}</div>
         </div>
+        <slot name="heading"></slot>
       </div>
       <slot></slot>
     </div>
@@ -29,6 +30,7 @@ const props: SmallTableProps = defineProps(smallTableProps);
 
 .table {
   gap: var(--table-gap, 10px);
+  grid-template-rows: var(--table-grid-template-rows);
   grid-auto-rows: var(--table-grid-auto-rows);
   grid-template-columns: var(--table-grid-template-columns);
 }

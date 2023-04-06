@@ -12,13 +12,20 @@ const Template = (args) => ({
   setup() {
     return { args };
   },
+  data() {
+    return {
+      selectedRegion: args.selectedRegion,
+    };
+  },
   template: `<div style="width: 360px"> 
-              <DashboardLeaderboardTable v-bind="args" />
+              <DashboardLeaderboardTable v-bind="args" v-model:selectedRegion="selectedRegion" />
+              {{ selectedRegion }}
             </div>`,
 });
 
 export const Default = Template.bind({});
 Default.args = {
+  selectedRegion: 'americas',
   rows: [
     '06RU026',
     '02DE002',

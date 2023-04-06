@@ -8,7 +8,4 @@ DashboardCardRow.install = (app: App): void => {
   app.component(DashboardCardRow.name, DashboardCardRow);
 };
 
-export default DashboardCardRow as SFCWithInstall<
-  App,
-  typeof DashboardCardRow
->;
+export default DashboardCardRow as SFCWithInstall<App, typeof DashboardCardRow>;
