@@ -42,7 +42,7 @@ const backgroundCard = computed(() => {
 
 <style scoped>
 .champion-column {
-  --circle-card-item-size: 35px;
+  --circle-card-item-size: 40px;
   display: flex;
   gap: 10px;
   justify-content: start;
@@ -50,6 +50,6 @@ const backgroundCard = computed(() => {
 }
 
 .circle-card-item {
-  min-width: 35px;
+  min-width: var(--circle-card-item-size);
 }
 </style>
