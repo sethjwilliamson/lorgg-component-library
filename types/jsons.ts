@@ -71,6 +71,7 @@ export type RegionNameRefs =
 
 export type DataJsonRegion = {
   abbreviation: string;
+  cardCode: string;
   color: string;
   icon: string;
   name: string;
@@ -159,6 +160,7 @@ export type DataJsonSeason = {
 
 export type DataJsonRuneterraChampion = {
   abbreviation: string;
+  cardCode: string;
   color: string;
   icon: string;
   name: string;

@@ -42,6 +42,7 @@ onMounted(() => {
 <style scoped>
 .region-img,
 .region-item {
-  width: inherit;
+  height: var(--region-item-size, 100%);
+  width: var(--region-item-size, 100%);
 }
 </style>

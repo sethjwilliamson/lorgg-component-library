@@ -686,6 +686,7 @@
     "regions": [
         {
             "abbreviation": "MT",
+            "cardCode": "03MT064",
             "icon": "https://lor.gg/images/targon.svg",
             "name": "Targon",
             "nameRef": "Targon",
@@ -694,6 +695,7 @@
         },
         {
             "abbreviation": "NX",
+            "cardCode": "03NX004",
             "icon": "https://lor.gg/images/noxus.svg",
             "name": "Noxus",
             "nameRef": "Noxus",
@@ -702,6 +704,7 @@
         },
         {
             "abbreviation": "DE",
+            "cardCode": "03DE010",
             "icon": "https://lor.gg/images/demacia.svg",
             "name": "Demacia",
             "nameRef": "Demacia",
@@ -710,6 +713,7 @@
         },
         {
             "abbreviation": "FR",
+            "cardCode": "03FR009",
             "icon": "https://lor.gg/images/freljord.svg",
             "name": "Freljord",
             "nameRef": "Freljord",
@@ -718,6 +722,7 @@
         },
         {
             "abbreviation": "SI",
+            "cardCode": "06SI033",
             "icon": "https://lor.gg/images/shadowisles.svg",
             "name": "Shadow Isles",
             "nameRef": "ShadowIsles",
@@ -726,6 +731,7 @@
         },
         {
             "abbreviation": "IO",
+            "cardCode": "03IO006",
             "icon": "https://lor.gg/images/ionia.svg",
             "name": "Ionia",
             "nameRef": "Ionia",
@@ -734,6 +740,7 @@
         },
         {
             "abbreviation": "SH",
+            "cardCode": "04SH062",
             "icon": "https://lor.gg/images/shurima.svg",
             "name": "Shurima",
             "nameRef": "Shurima",
@@ -742,6 +749,7 @@
         },
         {
             "abbreviation": "BW",
+            "cardCode": "04BW013",
             "icon": "https://lor.gg/images/bilgewater.svg",
             "name": "Bilgewater",
             "nameRef": "Bilgewater",
@@ -750,6 +758,7 @@
         },
         {
             "abbreviation": "PZ",
+            "cardCode": "05PZ021",
             "icon": "https://lor.gg/images/pnz.svg",
             "name": "Piltover & Zaun",
             "nameRef": "PiltoverZaun",
@@ -758,6 +767,7 @@
         },
         {
             "abbreviation": "BC",
+            "cardCode": "05BC194",
             "icon": "https://lor.gg/images/bandlecity.svg",
             "name": "Bandle City",
             "nameRef": "BandleCity",
@@ -1083,6 +1093,7 @@
     "runeterraChampions": [
         {
             "abbreviation": "06RU002",
+            "cardCode": "06RU002",
             "icon": "https://lor.gg/images/06RU002.svg",
             "name": "Jhin",
             "nameRef": "06RU002",
@@ -1091,6 +1102,7 @@
         },
         {
             "abbreviation": "06RU001",
+            "cardCode": "06RU001",
             "icon": "https://lor.gg/images/06RU001.svg",
             "name": "Bard",
             "nameRef": "06RU001",
@@ -1099,6 +1111,7 @@
         },
         {
             "abbreviation": "06RU025",
+            "cardCode": "06RU025",
             "icon": "https://lor.gg/images/06RU025.svg",
             "name": "Evelynn",
             "nameRef": "06RU025",
@@ -1107,6 +1120,7 @@
         },
         {
             "abbreviation": "06RU005",
+            "cardCode": "06RU005",
             "icon": "https://lor.gg/images/06RU005.svg",
             "name": "Kayn",
             "nameRef": "06RU005",
@@ -1115,6 +1129,7 @@
         },
         {
             "abbreviation": "06RU008",
+            "cardCode": "06RU008",
             "icon": "https://lor.gg/images/06RU008.svg",
             "name": "Jax",
             "nameRef": "06RU008",

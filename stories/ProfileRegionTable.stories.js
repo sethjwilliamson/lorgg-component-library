@@ -1,35 +1,38 @@
 import { getRandomInt } from '@/helpers/functions';
-import ProfileChampionTable from '@/lib-components/ProfileChampionTable';
+import ProfileRegionTable from '@/lib-components/ProfileRegionTable';
 
 export default {
-  title: 'Library/ProfileChampionTable',
-  component: ProfileChampionTable,
+  title: 'Library/ProfileRegionTable',
+  component: ProfileRegionTable,
   argTypes: {},
 };
 
 const Template = (args) => ({
-  components: { ProfileChampionTable },
+  components: { ProfileRegionTable },
   setup() {
     return { args };
   },
   template: `<div style="width: 360px"> 
-              <ProfileChampionTable v-bind="args" />
+              <ProfileRegionTable v-bind="args" />
             </div>`,
 });
 
 export const Default = Template.bind({});
 Default.args = {
   rows: [
-    '06RU026',
-    '02DE002',
-    '06DE021',
-    '03NX007',
-    '02NX007',
-    '03MT087',
-    '02BW026',
+    'Targon',
+    'Noxus',
+    'Demacia',
+    'Freljord',
+    'ShadowIsles',
+    'Ionia',
+    'Shurima',
+    'Bilgewater',
+    'PiltoverZaun',
+    'BandleCity',
   ].map((x, index) => {
     return {
-      cardCode: x,
+      regionNameRef: x,
       matches: getRandomInt(800, 1600),
       wins: getRandomInt(1, 800),
       index: index,
