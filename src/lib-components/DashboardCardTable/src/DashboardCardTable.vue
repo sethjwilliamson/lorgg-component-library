@@ -23,8 +23,8 @@ const props: DashboardCardTableProps = defineProps(dashboardCardTableProps);
 
 const headingItems = [
   {
-    title: t('general.champions'),
-    id: 'champions',
+    title: t('general.cards'),
+    id: 'cards',
   },
   {
     title: t('general.matches'),
