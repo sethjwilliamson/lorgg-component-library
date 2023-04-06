@@ -23,8 +23,8 @@ const props: ProfileRegionTableProps = defineProps(profileRegionTableProps);
 
 const headingItems = [
   {
-    title: t('general.champions'),
-    id: 'champions',
+    title: t('general.regions'),
+    id: 'regions',
   },
   {
     title: t('general.matches'),

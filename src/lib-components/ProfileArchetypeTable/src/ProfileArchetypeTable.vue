@@ -29,8 +29,8 @@ const props: ProfileArchetypeTableProps = defineProps(
 
 const headingItems = [
   {
-    title: t('general.champions'),
-    id: 'champions',
+    title: t('general.archetypes'),
+    id: 'archetypes',
   },
   {
     title: t('general.matches'),

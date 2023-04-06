@@ -128,6 +128,7 @@ export function setupi18n() {
           time: 'Time',
           type: 'Type',
           rarity: 'Rarity',
+          archetypes: 'Archetypes',
         },
       },
     }, // set locale messages
