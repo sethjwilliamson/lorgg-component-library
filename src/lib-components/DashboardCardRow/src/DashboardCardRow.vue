@@ -27,10 +27,10 @@ import { localeNumber, winrateColor } from '@/helpers/functions';
 import { useJsonStore } from '@/helpers/stores';
 import CircleCardItem from '@/lib-components/CircleCardItem';
 import { computed } from 'vue';
-import { ProfileChampionRowProps, profileChampionRowProps } from './types';
+import { dashboardCardRowProps, DashboardCardRowProps } from './types';
 
-const props: ProfileChampionRowProps = defineProps(profileChampionRowProps);
-console.log(props);
+const props: DashboardCardRowProps = defineProps(dashboardCardRowProps);
+
 const champion = computed(() => {
   return useJsonStore().jsons.cardJsonObject[props.cardCode];
 });

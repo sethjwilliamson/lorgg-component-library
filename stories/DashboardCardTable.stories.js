@@ -1,19 +1,19 @@
 import { getRandomInt } from '@/helpers/functions';
-import ProfileChampionTable from '@/lib-components/ProfileChampionTable';
+import DashboardCardTable from '@/lib-components/DashboardCardTable';
 
 export default {
-  title: 'Library/ProfileChampionTable',
-  component: ProfileChampionTable,
+  title: 'Library/DashboardCardTable',
+  component: DashboardCardTable,
   argTypes: {},
 };
 
 const Template = (args) => ({
-  components: { ProfileChampionTable },
+  components: { DashboardCardTable },
   setup() {
     return { args };
   },
   template: `<div style="width: 360px"> 
-              <ProfileChampionTable v-bind="args" />
+              <DashboardCardTable v-bind="args" />
             </div>`,
 });
 

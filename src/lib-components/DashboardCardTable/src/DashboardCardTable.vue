@@ -1,6 +1,6 @@
 <template>
   <SmallTable class="small-table" :heading-items="headingItems">
-    <ProfileChampionRow
+    <DashboardCardRow
       v-for="row in props.rows"
       :key="row.cardCode"
       :card-code="row.cardCode"
@@ -12,14 +12,14 @@
 </template>
 
 <script setup lang="ts">
-import ProfileChampionRow from '@/lib-components/ProfileChampionRow';
 import SmallTable from '@/lib-components/SmallTable';
 import { HeadingItem } from '@/lib-components/SmallTable/src/types';
-import { ProfileChampionTableProps, profileChampionTableProps } from './types';
+import { dashboardCardTableProps, DashboardCardTableProps } from './types';
 import { useI18n } from 'vue-i18n';
+import DashboardCardRow from '@/lib-components/DashboardCardRow';
 const { t } = useI18n();
 
-const props: ProfileChampionTableProps = defineProps(profileChampionTableProps);
+const props: DashboardCardTableProps = defineProps(dashboardCardTableProps);
 
 const headingItems = [
   {

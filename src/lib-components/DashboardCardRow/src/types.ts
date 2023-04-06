@@ -1,11 +1,11 @@
-export type ProfileChampionRowProps = {
+export type DashboardCardRowProps = {
   cardCode: string;
   matches: number;
   wins: number;
   index: number;
 };
 
-export const profileChampionRowProps = {
+export const dashboardCardRowProps = {
   cardCode: {
     type: String,
     required: true,
