@@ -1,6 +1,6 @@
 <template>
   <a href="/test/built-deck">
-    <div class="built-deck-preview" :style="builtDeckPreviewStyle">
+    <div class="built-deck-preview" :style="DeckBlockStyle">
       <div class="background"></div>
       <DeckHighlightEye
         class="deck-highlight-eye icon"
@@ -32,7 +32,7 @@
           :cards="champions"
         />
       </div>
-      <div class="details">
+      <div v-if="props.type === 'built'" class="details built">
         <div class="title">
           {{ props.deckName }}
         </div>
@@ -47,12 +47,35 @@
           </div>
         </div>
       </div>
+      <div v-if="props.type === 'stats'" class="details stats">
+        <div class="stat-column">
+          <div
+            class="number"
+            :style="{
+              color: `var(${winrateColor(props.wins / props.matches)})`,
+            }"
+          >
+            {{ localeNumber((props.wins / props.matches) * 100, 1, 3) }}%
+          </div>
+          <div class="descriptor">
+            {{ t('general.winrate') }}
+          </div>
+        </div>
+        <div class="stat-column">
+          <div class="number">
+            {{ localeNumber(props.matches, 0, 10) }}
+          </div>
+          <div class="descriptor">
+            {{ t('general.matches') }}
+          </div>
+        </div>
+      </div>
     </div>
   </a>
 </template>
 
 <script setup lang="ts">
-import { BuiltDeckPreviewProps, builtDeckPreviewProps } from './types';
+import { DeckBlockProps, deckBlockProps } from './types';
 import { computed, inject } from 'vue';
 import { DataJsonFormat, FormatEnum } from '../../../../types/jsons';
 import dayjs from 'dayjs';
@@ -64,6 +87,8 @@ import {
   getMostImportantCards,
   getRegions,
   isAChampion,
+  localeNumber,
+  winrateColor,
 } from '@/helpers/functions';
 import DeckHighlightEye from '@/lib-components/DeckHighlightEye';
 import DeckHighlightRegions from '@/lib-components/DeckHighlightRegions';
@@ -72,10 +97,12 @@ import EternalIcon from '@/lib-components/icons/EternalIcon';
 import StandardIcon from '@/lib-components/icons/StandardIcon';
 import GauntletIcon from '@/lib-components/icons/GauntletIcon';
 import DeckHighlightCards from '@/lib-components/DeckHighlightCards';
+import { useI18n } from 'vue-i18n';
+const { t } = useI18n();
 
 const $dayjs = inject('dayjs') as typeof dayjs;
 
-const props: BuiltDeckPreviewProps = defineProps(builtDeckPreviewProps);
+const props: DeckBlockProps = defineProps(deckBlockProps);
 const formatsStore = useJsonStore().jsons.dataJson.formats;
 
 const deck = computed(() => {
@@ -94,7 +121,7 @@ const champions = computed(() => {
   return cards.value.filter((x) => isAChampion(x));
 });
 
-const builtDeckPreviewStyle = computed(() => {
+const DeckBlockStyle = computed(() => {
   return {
     '--background-image': `url(https://lor.gg/storage/cards/full-art/${
       getMostImportantCards(cards.value, deck.value, 1)[0].cardCode
@@ -203,12 +230,19 @@ console.log(formats.value);
 .details {
   align-self: stretch;
   display: flex;
-  flex-direction: column;
-  gap: 5px;
   padding: 15px;
   background-color: var(--color-background-2);
   border-top: var(--color-primary-2) 2px solid;
   z-index: 0;
+}
+
+.details.built {
+  flex-direction: column;
+  gap: 5px;
+}
+
+.details.stats {
+  justify-content: space-around;
 }
 
 .title {
@@ -238,5 +272,25 @@ console.log(formats.value);
 .info-time {
   color: var(--color-primary-2);
   font-size: 13px;
+}
+
+.stat-column {
+  color: var(--color-primary-2);
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.stat-column > .number {
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.stat-column > .descriptor {
+  text-align: center;
+  font-size: 12px;
+  font-weight: lighter;
+  text-transform: uppercase;
 }
 </style>
