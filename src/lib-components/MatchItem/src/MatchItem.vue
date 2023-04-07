@@ -94,6 +94,10 @@ const backgroundCards = computed(() => {
   position: relative;
 }
 
+.match-item > * {
+  filter: drop-shadow(0px 0px 2px black);
+}
+
 .background {
   background-color: var(--color-background-0);
   display: flex;
