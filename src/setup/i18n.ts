@@ -130,6 +130,8 @@ export function setupi18n() {
           rarity: 'Rarity',
           archetypes: 'Archetypes',
           leaderboard: 'Leaderboard',
+          victory: 'Victory',
+          defeat: 'Defeat',
         },
       },
     }, // set locale messages
