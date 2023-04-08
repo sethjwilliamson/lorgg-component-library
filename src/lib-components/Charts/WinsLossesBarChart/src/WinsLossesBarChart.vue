@@ -74,7 +74,7 @@ const testData: ComputedRef<ChartData<'bar'>> = computed(() => {
                 bottomRight: 0,
               },
         borderSkipped: false,
-        label: t(x[0]),
+        label: t(`general.${x[0]}`),
         barPercentage: 0.5,
       };
     }),
@@ -120,10 +120,6 @@ ${t('general.winrate')}: ${localeNumber((wins / sum) * 100, 1, 3)}%`;
         let sum = 0;
 
         for (let i = 0; i < context.chart.data.datasets.length; i++) {
-          if (i % 2 === 1) {
-            continue;
-          }
-
           sum += context.chart.data.datasets[i].data[
             context.dataIndex
           ] as number;
@@ -132,10 +128,6 @@ ${t('general.winrate')}: ${localeNumber((wins / sum) * 100, 1, 3)}%`;
         return sum || '';
       },
       display(context) {
-        // if (!props.showDataLabels) {
-        //   return false;
-        // }
-
         return context.datasetIndex === context.chart.data.datasets.length - 1;
       },
     },

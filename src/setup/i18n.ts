@@ -72,6 +72,7 @@ export function setupi18n() {
           patch: 'Patch',
           matches: 'Matches',
           wins: 'Wins',
+          losses: 'Losses',
           winrate: 'Winrate',
           quantity: 'Quantity',
           round: 'Round',

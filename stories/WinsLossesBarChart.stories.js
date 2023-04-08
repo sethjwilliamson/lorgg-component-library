@@ -173,3 +173,131 @@ Regions.args = {
     },
   ],
 };
+
+export const RoundAttacking = Template.bind({});
+RoundAttacking.args = {
+  data: [
+    {
+      matches: getRandomInt(500, 1000),
+      wins: getRandomInt(1, 500),
+      column: 'Round 1 Attacking',
+    },
+    {
+      matches: getRandomInt(500, 1000),
+      wins: getRandomInt(1, 500),
+      column: 'Round 2 Attacking',
+    },
+  ],
+};
+
+export const Champions = Template.bind({});
+Champions.args = {
+  data: [
+    {
+      matches: getRandomInt(500, 1000),
+      wins: getRandomInt(1, 500),
+      column: 'Annie',
+    },
+    {
+      matches: getRandomInt(500, 1000),
+      wins: getRandomInt(1, 500),
+      column: 'Fizz',
+    },
+    {
+      matches: getRandomInt(500, 1000),
+      wins: getRandomInt(1, 500),
+      column: 'Kennen',
+    },
+    {
+      matches: getRandomInt(500, 1000),
+      wins: getRandomInt(1, 500),
+      column: 'Lucian',
+    },
+    {
+      matches: getRandomInt(500, 1000),
+      wins: getRandomInt(1, 500),
+      column: 'Teemo',
+    },
+    {
+      matches: getRandomInt(500, 1000),
+      wins: getRandomInt(1, 500),
+      column: 'Zoe',
+    },
+    {
+      matches: getRandomInt(500, 1000),
+      wins: getRandomInt(1, 500),
+      column: 'Ahri',
+    },
+    {
+      matches: getRandomInt(500, 1000),
+      wins: getRandomInt(1, 500),
+      column: 'Akshan',
+    },
+    {
+      matches: getRandomInt(500, 1000),
+      wins: getRandomInt(1, 500),
+      column: 'Diana',
+    },
+    {
+      matches: getRandomInt(500, 1000),
+      wins: getRandomInt(1, 500),
+      column: 'Elise',
+    },
+  ],
+};
+
+export const CommonOpponents = Template.bind({});
+CommonOpponents.args = {
+  data: [
+    {
+      matches: getRandomInt(50, 100),
+      wins: getRandomInt(1, 50),
+      column: 'ChronoMirage',
+    },
+    {
+      matches: getRandomInt(50, 100),
+      wins: getRandomInt(1, 50),
+      column: 'Drisoth',
+    },
+    {
+      matches: getRandomInt(50, 100),
+      wins: getRandomInt(1, 50),
+      column: 'Ichiran Ramen',
+    },
+    {
+      matches: getRandomInt(50, 100),
+      wins: getRandomInt(1, 50),
+      column: 'Smiley',
+    },
+    {
+      matches: getRandomInt(50, 100),
+      wins: getRandomInt(1, 50),
+      column: 'Snugguls',
+    },
+    {
+      matches: getRandomInt(50, 100),
+      wins: getRandomInt(1, 50),
+      column: 'HighInOrbit',
+    },
+    {
+      matches: getRandomInt(50, 100),
+      wins: getRandomInt(1, 50),
+      column: 'Alæxænder',
+    },
+    {
+      matches: getRandomInt(50, 100),
+      wins: getRandomInt(1, 50),
+      column: '藍天风暴',
+    },
+    {
+      matches: getRandomInt(50, 100),
+      wins: getRandomInt(1, 50),
+      column: 'Farly Fangirl',
+    },
+    {
+      matches: getRandomInt(50, 100),
+      wins: getRandomInt(1, 50),
+      column: 'AJäy',
+    },
+  ],
+};
