@@ -484,6 +484,10 @@
   filter: drop-shadow(0px 0px 2px black);
 }
 
+.multiselect-option {
+  margin-bottom: 0;
+}
+
 .multiselect-option > .label-icon {
   margin-right: 10px;
 }
@@ -511,7 +515,8 @@
   width: 20px;
 }
 
-.multiselect {
+.multiselect,
+.multiselect input {
   color: var(--color-primary-2);
 }
 
