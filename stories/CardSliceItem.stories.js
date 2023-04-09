@@ -62,3 +62,9 @@ NoQuantity.args = {
   name: 'Yasuo',
   showPlusMinus: false,
 };
+
+export const NoValues = Template.bind({});
+NoValues.args = {
+  manaNumber: 4,
+  name: 'Yasuo',
+};
