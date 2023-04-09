@@ -14,11 +14,14 @@
         ></div>
 
         <div
-          v-if="props.manaNumber !== undefined && props.manaNumber !== null"
+          v-if="
+            card ||
+            (props.manaNumber !== undefined && props.manaNumber !== null)
+          "
           class="mana-hexagon"
         >
           <mana-hexagon-icon class="hexagon-icon"></mana-hexagon-icon>
-          <div class="mana-number">{{ props.manaNumber }}</div>
+          <div class="mana-number">{{ props.manaNumber ?? card?.cost }}</div>
         </div>
 
         <div class="card-name">
@@ -75,7 +78,11 @@
 
 <script setup lang="ts">
 import tippy from 'tippy.js';
-import { getRegionColorOfCard, propsToCard } from '@/helpers/functions';
+import {
+  getCssVarValue,
+  getRegionColorOfCard,
+  propsToCard,
+} from '@/helpers/functions';
 import CardItem from '@/lib-components/CardItem/src/CardItem.vue';
 import { computed, ComputedRef, onMounted, ref } from 'vue';
 import { cardSliceItemProps, CardSliceItemProps } from './types';
@@ -98,6 +105,9 @@ const colorGradient: ComputedRef<string> = computed(() => {
   let color = props.color;
   if (!color && card.value) {
     color = getRegionColorOfCard(card.value, null, true);
+  }
+  if (!color) {
+    color = 'var(--color-background-2-rgb)';
   }
 
   return `linear-gradient(90deg, rgba(${color}, 1) 0%, rgba(${color}, 1) 30%, rgba(${color}, .10) 70%, rgba(${color}, .00) 100%)`;
