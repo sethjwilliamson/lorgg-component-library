@@ -133,6 +133,7 @@ export function setupi18n() {
           leaderboard: 'Leaderboard',
           victory: 'Victory',
           defeat: 'Defeat',
+          newCards: 'New Cards',
         },
       },
     }, // set locale messages

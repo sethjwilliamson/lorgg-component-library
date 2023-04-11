@@ -262,6 +262,11 @@
   min-width: unset;
 }
 
+.small-table .heading-cell:nth-child(1) {
+  justify-content: flex-start;
+  padding-left: 10px;
+}
+
 .table .column-content:nth-child(1) {
   grid-column: 1;
 }
