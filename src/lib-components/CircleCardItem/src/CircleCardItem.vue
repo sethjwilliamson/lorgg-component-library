@@ -6,7 +6,7 @@
         :alt="card.name"
         :src="imageSrc"
         class="circle-card-img"
-        :style="{ 'border-color': regionColor }"
+        :style="{ borderColor: props.colorOverride ?? regionColor }"
       />
     </a>
 

@@ -6,6 +6,7 @@ export type CircleCardItemProps = {
   cardCodeProp?: string;
   ignoreCardItem: boolean;
   regions?: Array<string>;
+  colorOverride?: string;
 };
 
 export const circleCardItemProps = {
@@ -25,6 +26,11 @@ export const circleCardItemProps = {
   },
   regions: {
     type: Array as PropType<Array<string>>,
+    required: false,
+    default: undefined,
+  },
+  colorOverride: {
+    type: String,
     required: false,
     default: undefined,
   },
