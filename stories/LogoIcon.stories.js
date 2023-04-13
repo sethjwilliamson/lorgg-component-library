@@ -1,7 +1,7 @@
 import LogoIcon from '@/lib-components/icons/LogoIcon';
 
 export default {
-  title: 'Library/LogoIcon',
+  title: 'Library/Icons/LogoIcon',
   component: LogoIcon,
   argTypes: {
     logoType: {

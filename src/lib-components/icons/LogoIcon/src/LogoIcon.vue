@@ -59,4 +59,8 @@ import { LogoIconProps, logoIconProps } from './types';
 const props: LogoIconProps = defineProps(logoIconProps);
 </script>
 
-<style scoped></style>
+<style scoped>
+svg {
+  fill: currentColor;
+}
+</style>
