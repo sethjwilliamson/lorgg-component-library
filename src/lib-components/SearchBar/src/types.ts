@@ -16,15 +16,3 @@ export type SearchBarOptionCard = {
 };
 
 export type SearchBarOption = SearchBarOptionCard | SearchBarOptionPlayer;
-
-export type SearchBarProps = {
-  // value: string;
-};
-
-export const searchBarProps = {
-  // value: {
-  //   type: String,
-  //   required: true,
-  //   default: [],
-  // },
-};
