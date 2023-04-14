@@ -35,7 +35,9 @@ function onIconClick() {
 
 <style scoped>
 .language-selection {
+  align-items: center;
   color: var(--color-0);
-  font-size: var(--language-selection-size, 25px);
+  display: flex;
+  font-size: var(--language-selection-size, 30px);
 }
 </style>
