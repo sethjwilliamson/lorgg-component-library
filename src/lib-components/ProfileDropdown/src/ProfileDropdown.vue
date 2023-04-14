@@ -1,12 +1,10 @@
 <template>
   <div class="profile-dropdown-wrapper">
-    <div class="profile-dropdown" ref="profile">
+    <div ref="profile" class="profile-dropdown">
       {{ props.name }}
     </div>
 
-    <div ref="dropdown" class="slider-wrapper">
-      Test
-    </div>
+    <div ref="dropdown" class="slider-wrapper">Test</div>
   </div>
 </template>
 
@@ -31,5 +29,17 @@ onMounted(() => {
 </script>
 
 <style scoped>
+.profile-dropdown-wrapper {
+  display: flex;
+  align-items: center;
+}
 
+.profile-dropdown {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  font-weight: bold;
+  color: var(--color-gold);
+  font-size: 18px;
+}
 </style>
