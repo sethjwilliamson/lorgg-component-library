@@ -436,6 +436,12 @@
   -webkit-mask-image: unset;
 }
 
+.modal-content {
+  background-color: var(--color-background-2);
+  border-radius: 20px;
+  padding: 20px;
+}
+
 .tippy-box:first-child {
   background-color: var(--color-background-1);
   border-radius: var(--border-radius-s);
