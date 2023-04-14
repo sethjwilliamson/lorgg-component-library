@@ -1,5 +1,5 @@
 import NavigationTop from '@/lib-components/NavigationTop';
-console.log(1);
+
 export default {
   title: 'Library/NavigationTop',
   component: NavigationTop,
@@ -11,10 +11,18 @@ const Template = (args) => ({
   setup() {
     return { args };
   },
-  template: `<div>
+  template: `<div > 
               <NavigationTop v-bind="args" />
             </div>`,
 });
 
 export const Default = Template.bind({});
-Default.args = {};
+Default.args = {
+  isLoggedIn: false,
+};
+
+export const LoggedIn = Template.bind({});
+LoggedIn.args = {
+  isLoggedIn: true,
+  name: 'SevTheDev',
+};

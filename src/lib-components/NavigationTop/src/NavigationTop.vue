@@ -1,42 +1,54 @@
 <template>
   <div class="navigation-top">
-    <div class="mobile"></div>
-    <div class="desktop">
-      <div class="left content">
-        <img src="lorgg-logo-w-text-horiz" alt="LOR.GG Logo" />
-        <!-- TODO: Search Bar -->
-        <div class="search-bar">Search Bar</div>
-      </div>
-      <div class="right content">
-        <div class="premium-button">Premium Button</div>
-        <SocialMediaLinks></SocialMediaLinks>
-        <div class="language-selection">Language Selction</div>
-        <div v-if="true" class="sign-in">Sign In</div>
-        <div v-else class="user-profile">User Profile</div>
-      </div>
+    <div class="left content">
+      <LogoIcon class="logo-icon" logo-type="logo-and-text" />
+      <SearchBar class="search-bar" />
+    </div>
+    <div class="right content">
+      <SocialLinks class="social-links" />
+      <LanguageSelection class="language-selection" />
+      <ProfileDropdown v-if="props.isLoggedIn" :name="props.name" />
+      <div v-else class="fancy-button">Sign In</div>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import SocialMediaLinks from '@/lib-components/SocialMediaLinks';
-console.log('TEST');
+import LogoIcon from '@/lib-components/icons/LogoIcon';
+import { NavigationTopProps, navigationTopProps } from './types';
+import SearchBar from '@/lib-components/SearchBar';
+import SocialLinks from '@/lib-components/SocialLinks';
+import LanguageSelection from '@/lib-components/LanguageSelection';
+import ProfileDropdown from '@/lib-components/ProfileDropdown';
+
+const props: NavigationTopProps = defineProps(navigationTopProps);
 </script>
 
 <style scoped>
-.desktop {
+.navigation-top {
+  align-items: center;
+  padding: 10px 20px;
   display: flex;
+  background-color: var(--color-background-1);
+  gap: 40px;
   justify-content: space-between;
 }
 
 .content {
   display: flex;
+  gap: inherit;
 }
 
-.content > *:not(:last-child)::after {
-  content: '';
-  margin: 0 20px;
-  height: 20px;
-  border: 1px solid black;
+.logo-icon {
+  color: var(--color-primary-2);
+  width: 200px;
+}
+
+.search-bar {
+  width: 360px;
+}
+
+.fancy-button {
+  color: var(--color-primary-2);
 }
 </style>
