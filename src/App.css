@@ -98,6 +98,7 @@
     var(--card-item-aspect-ratio-h);
 
   /* Vue Multiselect */
+  /* TODO: Improve how it looks */
   --ms-font-size: 1rem;
   --ms-line-height: 1.375;
   --ms-bg: var(--color-2);
@@ -544,6 +545,33 @@
   height: 45px;
   justify-content: start;
   padding: 0 15px;
+}
+
+.fancy-button {
+  align-items: center;
+  background-image: linear-gradient(
+    to right,
+    var(--fancy-button-color-0, #0466c8) 0%,
+    var(--fancy-button-color-1, #003a9e) 51%,
+    var(--fancy-button-color-2, #0466c8) 100%
+  );
+  background-size: 200% auto;
+  border-radius: 25px;
+  cursor: pointer;
+  display: flex;
+  font-size: 20px;
+  font-weight: bolder;
+  height: var(--fancy-button-height, 45px);
+  justify-content: center;
+  padding: 0 20px;
+  text-align: center;
+  text-decoration: none;
+  transition: 0.5s;
+  transition: background-position 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.fancy-button:hover {
+  background-position: right center;
 }
 
 .flex-center {
