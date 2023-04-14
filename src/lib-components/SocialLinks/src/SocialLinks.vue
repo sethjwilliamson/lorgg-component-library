@@ -11,6 +11,7 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 
 <style scoped>
 .social-links {
+  align-items: center;
   display: flex;
   gap: 10px;
 }
