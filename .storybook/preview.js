@@ -68,7 +68,17 @@ import {
   faSyncAlt,
   faCog,
   faShareNodes,
+  faGift,
+  faNewspaper,
+  faRankingStar,
+  faHammer,
 } from '@fortawesome/free-solid-svg-icons';
+import {
+  faCardsBlank,
+  faTreasureChest,
+  faChartMixed,
+  faBooks,
+} from '@fortawesome/pro-solid-svg-icons';
 import {
   faTwitter,
   faFacebook,
@@ -113,6 +123,14 @@ library.add(
   faSyncAlt,
   faCog,
   faShareNodes,
+  faGift,
+  faCardsBlank,
+  faTreasureChest,
+  faNewspaper,
+  faChartMixed,
+  faBooks,
+  faRankingStar,
+  faHammer,
 );
 app.component('font-awesome-icon', FontAwesomeIcon);
 

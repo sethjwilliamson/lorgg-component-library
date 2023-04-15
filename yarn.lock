@@ -1208,6 +1208,13 @@
   dependencies:
     "@fortawesome/fontawesome-common-types" "6.4.0"
 
+"@fortawesome/pro-solid-svg-icons@^6.4.0":
+  version "6.4.0"
+  resolved "https://npm.fontawesome.com/@fortawesome/pro-solid-svg-icons/-/6.4.0/pro-solid-svg-icons-6.4.0.tgz#834623f95fbff288d05bb1b6ce04d1007e0fc30a"
+  integrity sha512-R54gxoqHAZdlSCmE7JYpQKT64Jgw59nQIyabT6oh3jsb70O4A3ea+ojVBCKsvoW4UhYe1IOXS1o4PqDEW8Y7Tg==
+  dependencies:
+    "@fortawesome/fontawesome-common-types" "6.4.0"
+
 "@fortawesome/vue-fontawesome@^3.0.1":
   version "3.0.3"
   resolved "https://registry.yarnpkg.com/@fortawesome/vue-fontawesome/-/vue-fontawesome-3.0.3.tgz#633e2998d11f7d4ed41f0d5ea461a22ec9b9d034"
