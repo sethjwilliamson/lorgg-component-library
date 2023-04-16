@@ -11,7 +11,7 @@ const Template = (args) => ({
   setup() {
     return { args };
   },
-  template: `<div > 
+  template: `<div style="height: 50px; display: grid"> 
               <NavigationTop v-bind="args" />
             </div>`,
 });

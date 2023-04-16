@@ -1,7 +1,6 @@
 <template>
   <div class="navigation-top">
     <div class="left content">
-      <LogoIcon class="logo-icon" logo-type="logo-and-text" />
       <SearchBar class="search-bar" />
     </div>
     <div class="right content">
@@ -14,7 +13,6 @@
 </template>
 
 <script setup lang="ts">
-import LogoIcon from '@/lib-components/icons/LogoIcon';
 import { NavigationTopProps, navigationTopProps } from './types';
 import SearchBar from '@/lib-components/SearchBar';
 import SocialLinks from '@/lib-components/SocialLinks';
@@ -27,7 +25,7 @@ const props: NavigationTopProps = defineProps(navigationTopProps);
 <style scoped>
 .navigation-top {
   align-items: center;
-  padding: 10px 20px;
+  padding: 0px 10px;
   display: flex;
   background-color: var(--color-background-1);
   gap: 40px;
@@ -45,10 +43,11 @@ const props: NavigationTopProps = defineProps(navigationTopProps);
 }
 
 .search-bar {
-  width: 360px;
+  width: 300px;
 }
 
 .fancy-button {
   color: var(--color-primary-2);
+  height: 40px;
 }
 </style>
