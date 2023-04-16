@@ -134,6 +134,9 @@ export function setupi18n() {
           victory: 'Victory',
           defeat: 'Defeat',
           newCards: 'New Cards',
+          signIn: 'Log In',
+          syncUserData: 'Sync User Data',
+          settings: 'Settings',
         },
       },
     }, // set locale messages
