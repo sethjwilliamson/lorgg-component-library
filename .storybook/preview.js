@@ -32,106 +32,10 @@ console.log(dayjs().to(dayjs('1990-01-01')));
 app.provide('dayjs', dayjs);
 
 // ---- ICONS
-
-import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
-import {
-  faChevronCircleDown,
-  faChevronDown,
-  faSearchPlus,
-  faFilter,
-  faTimes,
-  faPlus,
-  faMinus,
-  faInfoCircle,
-  faEye,
-  faCheck,
-  faQuestionCircle,
-  faSort,
-  faSortUp,
-  faSortDown,
-  faLock,
-  faUnlock,
-  faBars,
-  faSearch,
-  faLanguage,
-  faTh,
-  faMaximize,
-  faCopy,
-  faHandPaper,
-  faWrench,
-  faPencilAlt,
-  faTrashAlt,
-  faEllipsisV,
-  faImage,
-  faSignOutAlt,
-  faSyncAlt,
-  faCog,
-  faShareNodes,
-  faGift,
-  faNewspaper,
-  faRankingStar,
-  faHammer,
-} from '@fortawesome/free-solid-svg-icons';
-import {
-  faCardsBlank,
-  faTreasureChest,
-  faChartMixed,
-  faBooks,
-} from '@fortawesome/pro-solid-svg-icons';
-import {
-  faTwitter,
-  faFacebook,
-  faRedditAlien,
-  faDiscord,
-} from '@fortawesome/free-brands-svg-icons';
+import { importIcons } from '../src/icons';
 
-library.add(
-  faChevronCircleDown,
-  faChevronDown,
-  faSearchPlus,
-  faFilter,
-  faTimes,
-  faPlus,
-  faMinus,
-  faInfoCircle,
-  faEye,
-  faCheck,
-  faQuestionCircle,
-  faSort,
-  faSortUp,
-  faSortDown,
-  faLock,
-  faUnlock,
-  faBars,
-  faSearch,
-  faLanguage,
-  faTh,
-  faMaximize,
-  faCopy,
-  faHandPaper,
-  faWrench,
-  faPencilAlt,
-  faTrashAlt,
-  faEllipsisV,
-  faTwitter,
-  faImage,
-  faFacebook,
-  faRedditAlien,
-  faDiscord,
-  faSignOutAlt,
-  faSyncAlt,
-  faCog,
-  faShareNodes,
-  faGift,
-  faCardsBlank,
-  faTreasureChest,
-  faNewspaper,
-  faChartMixed,
-  faBooks,
-  faRankingStar,
-  faHammer,
-);
+importIcons();
 app.component('font-awesome-icon', FontAwesomeIcon);
 
 export const parameters = {
