@@ -1,0 +1,21 @@
+.navigation-template {
+  display: grid;
+  height: 90vh;
+  grid-template-columns: 50px 1fr;
+  grid-template-rows: 50px 1fr;
+  grid-template-areas:
+    'navigationSide navigationTop'
+    'navigationSide .';
+}
+
+@media (max-width: 769px) {
+  .navigation-template {
+    grid-template-areas:
+      'navigationTop navigationTop'
+      '. .';
+  }
+
+  .navigation-template > .navigation-side {
+    display: none !important;
+  }
+}

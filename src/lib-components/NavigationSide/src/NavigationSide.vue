@@ -1,7 +1,7 @@
 <template>
-  <div class="navigation-side">
-    <div class="pages content no-scrollbar">
-      <div class="nav-item logo">
+  <div class="navigation-side" :class="props.expanded ? 'expanded' : ''">
+    <div class="content logo no-scrollbar">
+      <div class="nav-item">
         <div class="nav-icon-wrapper">
           <LogoIcon logo-type="logo-only" />
         </div>
@@ -9,6 +9,8 @@
           <LogoIcon logo-type="text-only" />
         </div>
       </div>
+    </div>
+    <div class="pages content no-scrollbar">
       <a
         v-for="item in props.items"
         :key="item.routerLocation"
@@ -91,10 +93,10 @@
 
 <script setup lang="ts">
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
-import { NavigationSideProps, navigationSideProps } from './types';
 import { useI18n } from 'vue-i18n';
 import CircleCardItem from '@/lib-components/CircleCardItem';
 import LogoIcon from '@/lib-components/icons/LogoIcon';
+import { NavigationSideProps, navigationSideProps } from './types';
 const { t } = useI18n();
 
 const props: NavigationSideProps = defineProps(navigationSideProps);
@@ -103,18 +105,25 @@ const props: NavigationSideProps = defineProps(navigationSideProps);
 <style scoped>
 .navigation-side {
   --width-collapsed: 50px;
-  --width-expanded: 200px;
+  --width-expanded: 250px;
   background-color: var(--color-background-1);
   display: flex;
   flex-direction: column;
   height: inherit;
-  justify-content: space-between;
+  max-width: 80vw;
+  position: relative;
   transition: width 0.3s;
   width: var(--width-collapsed);
+  z-index: 2;
 }
 
+.navigation-side.expanded,
 .navigation-side:hover {
   width: var(--width-expanded);
+}
+
+.navigation-side.expanded {
+  animation: 0.3s slideIn;
 }
 
 .content {
@@ -126,6 +135,10 @@ const props: NavigationSideProps = defineProps(navigationSideProps);
   grid-auto-rows: var(--width-collapsed);
 }
 
+.content.logo {
+  overflow: hidden;
+}
+
 .pages {
   overflow-y: auto;
 }
@@ -134,6 +147,7 @@ const props: NavigationSideProps = defineProps(navigationSideProps);
   --circle-card-item-size: 35px;
   border-top: solid 1px var(--color-1);
   flex-shrink: 0;
+  margin-top: auto;
 }
 
 .nav-item {
@@ -141,8 +155,10 @@ const props: NavigationSideProps = defineProps(navigationSideProps);
   display: contents;
 }
 
-.nav-item.logo {
+.content.logo .nav-item {
   color: var(--color-primary-2);
+  position: sticky;
+  top: 0;
 }
 
 .highlight.nav-item {
@@ -164,7 +180,7 @@ const props: NavigationSideProps = defineProps(navigationSideProps);
   background-color: var(--color-background-2);
 }
 
-.nav-item.logo > .nav-icon-wrapper {
+.content.logo > .nav-item > .nav-icon-wrapper {
   padding: 8px;
 }
 
@@ -175,9 +191,10 @@ const props: NavigationSideProps = defineProps(navigationSideProps);
   font-weight: bold;
 }
 
-.nav-item.logo > .nav-text {
+.content.logo .nav-item > .nav-text {
   justify-content: center;
-  padding: 10px;
+  padding-left: 10px;
+  width: 150px;
 }
 
 .nav-text.settings {

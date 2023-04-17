@@ -585,3 +585,9 @@
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 10px;
 }
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+  }
+}

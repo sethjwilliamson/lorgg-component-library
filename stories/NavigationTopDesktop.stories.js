@@ -1,18 +1,18 @@
-import NavigationTop from '@/lib-components/NavigationTop';
+import NavigationTopDesktop from '@/lib-components/NavigationTopDesktop';
 
 export default {
-  title: 'Library/NavigationTop',
-  component: NavigationTop,
+  title: 'Library/NavigationTopDesktop',
+  component: NavigationTopDesktop,
   argTypes: {},
 };
 
 const Template = (args) => ({
-  components: { NavigationTop },
+  components: { NavigationTopDesktop },
   setup() {
     return { args };
   },
   template: `<div style="height: 50px; display: grid"> 
-              <NavigationTop v-bind="args" />
+              <NavigationTopDesktop v-bind="args" />
             </div>`,
 });
 

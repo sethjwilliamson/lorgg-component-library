@@ -1,18 +1,21 @@
+import NavigationSide from '@/lib-components/NavigationSide';
 import NavigationTop from '@/lib-components/NavigationTop';
+import './Navigation.css';
 
 export default {
-  title: 'Library/NavigationTop',
-  component: NavigationTop,
+  title: 'Library/Navigation',
+  component: [NavigationSide, NavigationTop],
   argTypes: {},
 };
 
 const Template = (args) => ({
-  components: { NavigationTop },
+  components: { NavigationSide, NavigationTop },
   setup() {
     return { args };
   },
-  template: `<div style="height: 50px; display: grid"> 
-              <NavigationTop v-bind="args" />
+  template: `<div class="navigation-template" > 
+              <NavigationTop style="grid-area: navigationTop" v-bind="args" />
+              <NavigationSide style="grid-area: navigationSide" v-bind="args" />
             </div>`,
 });
 

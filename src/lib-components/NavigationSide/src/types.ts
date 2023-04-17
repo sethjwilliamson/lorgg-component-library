@@ -1,60 +1,14 @@
-import { PropType } from 'vue';
+import { NavigationProps, navigationProps } from '@/types';
 
-export type SideNavigationItem = {
-  faIcon: string;
-  highlighted: boolean;
-  routerLocation: string;
-  text: string;
-};
-
-export type LoggedInNavigationSideProps = {
-  isLoggedIn: true;
-  name: string;
-  iconCard?: string;
-  bannerColor?: string;
-  userId: number;
-};
-
-export type LoggedOutNavigationSideProps = {
-  isLoggedIn: false;
-};
-
-export type NavigationSideProps = (
-  | LoggedInNavigationSideProps
-  | LoggedOutNavigationSideProps
-) & {
-  items: SideNavigationItem[];
+export type NavigationSideProps = NavigationProps & {
+  expanded: boolean;
 };
 
 export const navigationSideProps = {
-  items: {
-    type: Array as PropType<SideNavigationItem[]>,
-    required: true,
-    default: [],
-  },
-  isLoggedIn: {
-    type: Boolean as PropType<true | false>,
-    required: true,
+  ...navigationProps,
+  expanded: {
+    type: Boolean,
+    required: false,
     default: false,
-  },
-  name: {
-    type: String,
-    required: false,
-    default: '',
-  },
-  iconCard: {
-    type: String,
-    required: false,
-    default: '',
-  },
-  bannerColor: {
-    type: String,
-    required: false,
-    default: '',
-  },
-  userId: {
-    type: Number,
-    required: false,
-    default: 1,
   },
 };

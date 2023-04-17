@@ -1,21 +1,20 @@
-import NavigationTop from '@/lib-components/NavigationTop';
+import NavigationTopMobile from '@/lib-components/NavigationTopMobile';
 
 export default {
-  title: 'Library/NavigationTop',
-  component: NavigationTop,
+  title: 'Library/NavigationTopMobile',
+  component: NavigationTopMobile,
   argTypes: {},
 };
 
 const Template = (args) => ({
-  components: { NavigationTop },
+  components: { NavigationTopMobile },
   setup() {
     return { args };
   },
   template: `<div style="height: 50px; display: grid"> 
-              <NavigationTop v-bind="args" />
+              <NavigationTopMobile v-bind="args" />
             </div>`,
 });
-
 export const Default = Template.bind({});
 Default.args = {
   isLoggedIn: false,
