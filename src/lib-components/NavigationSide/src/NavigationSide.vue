@@ -1,5 +1,9 @@
 <template>
-  <div class="navigation-side" :class="props.expanded ? 'expanded' : ''">
+  <div
+    ref="navigationSide"
+    class="navigation-side"
+    :class="props.expanded ? 'expanded' : ''"
+  >
     <div class="content logo no-scrollbar">
       <div class="nav-item">
         <div class="nav-icon-wrapper">
@@ -10,7 +14,7 @@
         </div>
       </div>
     </div>
-    <div class="pages content no-scrollbar">
+    <div ref="navigationPages" class="pages content no-scrollbar">
       <a
         v-for="item in props.items"
         :key="item.routerLocation"
@@ -97,9 +101,47 @@ import { useI18n } from 'vue-i18n';
 import CircleCardItem from '@/lib-components/CircleCardItem';
 import LogoIcon from '@/lib-components/icons/LogoIcon';
 import { NavigationSideProps, navigationSideProps } from './types';
+import { onMounted, onUnmounted, ref } from 'vue';
 const { t } = useI18n();
 
 const props: NavigationSideProps = defineProps(navigationSideProps);
+const navigationSide = ref<HTMLElement>();
+const navigationPages = ref<HTMLElement>();
+let resizeObserver: ResizeObserver;
+
+onMounted(() => {
+  resizeObserver = new ResizeObserver(updateScroll);
+
+  if (navigationSide.value) {
+    resizeObserver.observe(navigationSide.value);
+  }
+
+  navigationPages.value?.addEventListener('scroll', updateScroll);
+  updateScroll();
+});
+onUnmounted(() => {
+  resizeObserver.disconnect();
+  navigationPages.value?.removeEventListener('scroll', updateScroll);
+});
+
+function updateScroll() {
+  let scrollableUp = false;
+  let scrollableDown = false;
+
+  if (!navigationPages.value) {
+    return;
+  }
+
+  if (navigationPages.value.clientHeight < navigationPages.value.scrollHeight) {
+    scrollableUp = navigationPages.value.scrollTop > 0;
+    scrollableDown =
+      navigationPages.value.scrollTop <
+      navigationPages.value.scrollHeight - navigationPages.value.clientHeight;
+  }
+
+  navigationPages.value?.classList.toggle('scrollable-up', scrollableUp);
+  navigationPages.value?.classList.toggle('scrollable-down', scrollableDown);
+}
 </script>
 
 <style scoped>
@@ -136,11 +178,23 @@ const props: NavigationSideProps = defineProps(navigationSideProps);
 }
 
 .content.logo {
-  overflow: hidden;
+  flex-shrink: 0;
+  border-bottom: solid 1px var(--color-1);
 }
 
 .pages {
   overflow-y: auto;
+}
+
+.content.pages.scrollable-down {
+  box-shadow: inset 0 -20px 20px -20px var(--color-0);
+}
+.content.pages.scrollable-up {
+  box-shadow: inset 0px 20px 20px -20px var(--color-0);
+}
+.content.pages.scrollable-down.scrollable-up {
+  box-shadow: inset 0 -20px 20px -20px var(--color-0),
+    inset 0px 20px 20px -20px var(--color-0);
 }
 
 .profile {
@@ -173,6 +227,7 @@ const props: NavigationSideProps = defineProps(navigationSideProps);
   align-items: center;
   display: flex;
   justify-content: center;
+  z-index: -1;
 }
 
 .nav-item:hover > .nav-icon-wrapper,
@@ -189,6 +244,7 @@ const props: NavigationSideProps = defineProps(navigationSideProps);
   display: flex;
   font-size: 14px;
   font-weight: bold;
+  z-index: -1;
 }
 
 .content.logo .nav-item > .nav-text {
