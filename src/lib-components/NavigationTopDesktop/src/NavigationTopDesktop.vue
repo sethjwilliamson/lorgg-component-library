@@ -17,8 +17,6 @@ import SearchBar from '@/lib-components/SearchBar';
 import SocialLinks from '@/lib-components/SocialLinks';
 import LanguageSelection from '@/lib-components/LanguageSelection';
 import ProfileDropdown from '@/lib-components/ProfileDropdown';
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
-import LogoIcon from '@/lib-components/icons/LogoIcon';
 import { NavigationProps, navigationProps } from '@/types';
 
 const props: NavigationProps = defineProps(navigationProps);

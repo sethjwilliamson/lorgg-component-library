@@ -1,5 +1,5 @@
 <template>
-  <div class="navigation-top-mobile" ref="navigationTopMobile">
+  <div ref="navigationTopMobile" class="navigation-top-mobile">
     <template v-if="!isSearching">
       <FontAwesomeIcon class="icon" icon="bars" @click="onMenuClick" />
       <LogoIcon class="logo-icon" logo-type="text-only" />
@@ -9,7 +9,7 @@
         @click.stop.prevent="onSearchClick"
       />
     </template>
-    <SearchBar v-else class="search-bar" ref="searchBar" />
+    <SearchBar v-else ref="searchBar" class="search-bar" />
 
     <ModalItem v-model:show-modal="showModal">
       <NavigationSide class="navigation-side" v-bind="props" :expanded="true" />
@@ -21,7 +21,7 @@
 import SearchBar from '@/lib-components/SearchBar';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import LogoIcon from '@/lib-components/icons/LogoIcon';
-import { nextTick, onUnmounted, ref } from 'vue';
+import { ComponentPublicInstance, nextTick, onUnmounted, ref } from 'vue';
 import NavigationSide from '@/lib-components/NavigationSide';
 import ModalItem from '@/lib-components/ModalItem';
 import { NavigationProps, navigationProps } from '@/types';
@@ -30,7 +30,7 @@ const props: NavigationProps = defineProps(navigationProps);
 
 const isSearching = ref(false);
 const showModal = ref(false);
-const searchBar = ref<any>();
+const searchBar = ref<ComponentPublicInstance>();
 const navigationTopMobile = ref<HTMLElement>();
 
 window.addEventListener('click', onWindowClick);
@@ -48,7 +48,7 @@ function onSearchClick() {
     isSearching.value = true;
 
     nextTick(() => {
-      (searchBar.value.$el as HTMLElement).querySelector('input')?.focus();
+      searchBar.value?.$el.querySelector('input')?.focus();
     });
   });
 }
