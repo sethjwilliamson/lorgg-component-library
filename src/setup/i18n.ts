@@ -142,6 +142,7 @@ export function setupi18n() {
           renews: 'Renews',
           expires: 'Expires',
           getPremium: 'Get Premium!',
+          becomeTheMaster: 'Become The Master',
         },
       },
     }, // set locale messages
