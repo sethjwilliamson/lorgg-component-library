@@ -137,6 +137,11 @@ export function setupi18n() {
           signIn: 'Log In',
           syncUserData: 'Sync User Data',
           settings: 'Settings',
+          gamesPlayed: 'Games Played',
+          premium: 'Premium',
+          renews: 'Renews',
+          expires: 'Expires',
+          getPremium: 'Get Premium!',
         },
       },
     }, // set locale messages
