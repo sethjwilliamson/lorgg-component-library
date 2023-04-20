@@ -1,0 +1,40 @@
+.parent {
+  --gap: 10px;
+  display: grid;
+  grid-template-columns: 50px 360px 1fr 150px;
+  grid-template-rows: repeat(2, 50px) 1fr;
+}
+
+.navigationSideBar {
+  grid-area: 1 / 1 / 4 / 2;
+  background-color: darkorchid;
+}
+
+.navigationTopBar {
+  grid-area: 1 / 2 / 2 / 5;
+  background-color: coral;
+}
+
+.filterPane {
+  grid-area: 2 / 2 / 4 / 3;
+  background-color: teal;
+  margin: var(--gap);
+}
+
+.title {
+  grid-area: 2 / 3 / 3 / 4;
+  background-color: blue;
+  margin-top: var(--gap);
+}
+
+.content {
+  grid-area: 3 / 3 / 4 / 4;
+  background-color: chartreuse;
+  margin-bottom: var(--gap);
+}
+
+.sidebar {
+  grid-area: 2 / 4 / 4 / 5;
+  background-color: yellow;
+  margin: var(--gap);
+}
