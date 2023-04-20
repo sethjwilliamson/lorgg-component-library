@@ -1,6 +1,7 @@
 export type WinrateDoughtnutChartProps = {
-  wins: number;
+  cutout: number;
   matches: number;
+  wins: number;
 };
 
 export const winrateDoughtnutChartProps = {
@@ -13,5 +14,10 @@ export const winrateDoughtnutChartProps = {
     type: Number,
     required: true,
     default: 2,
+  },
+  cutout: {
+    type: Number,
+    required: false,
+    default: 145,
   },
 };

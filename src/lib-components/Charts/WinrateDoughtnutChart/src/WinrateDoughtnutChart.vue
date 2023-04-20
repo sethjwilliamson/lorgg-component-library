@@ -37,7 +37,7 @@ const testData: ComputedRef<ChartData<'doughnut'>> = computed(() => {
 });
 
 const options: ChartOptions<'doughnut'> = {
-  cutout: 145,
+  cutout: props.cutout,
   elements: {
     arc: {
       borderWidth: 0,
