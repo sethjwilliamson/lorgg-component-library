@@ -18,9 +18,9 @@
       </div>
     </div>
     <div class="profile-text">
-      <localized-link :to="{ name: 'profile' }" class="profile-name">
+      <LocalizedLink :to="{ name: 'profile' }" class="profile-name">
         {{ props.name }}
-      </localized-link>
+      </LocalizedLink>
       <div class="profile-region">{{ props.server }}</div>
     </div>
     <div class="profile-tiles">
@@ -51,13 +51,13 @@
       }}</b>
     </div>
 
-    <localized-link
+    <LocalizedLink
       v-else
       :to="{ name: 'premium' }"
       class="profile-premium fancy-button"
     >
       {{ t('general.getPremium') }}
-    </localized-link>
+    </LocalizedLink>
   </div>
 </template>
 
