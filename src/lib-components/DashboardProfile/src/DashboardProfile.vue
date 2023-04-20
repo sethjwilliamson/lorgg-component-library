@@ -136,7 +136,7 @@ const props: DashboardProfileProps = defineProps(dashboardProfileProps);
 
 .profile-region {
   font-size: 20px;
-  color: #5c677d;
+  color: var(--color-0);
   text-align: center;
 }
 
@@ -173,7 +173,7 @@ const props: DashboardProfileProps = defineProps(dashboardProfileProps);
 .tile-text {
   text-align: center;
   font-size: 16px;
-  color: #5c677d;
+  color: var(--color-0);
   white-space: nowrap;
 }
 
@@ -191,7 +191,7 @@ const props: DashboardProfileProps = defineProps(dashboardProfileProps);
 }
 
 .profile-premium-expiration {
-  color: #5c677d;
+  color: var(--color-0);
 }
 
 .profile-premium-expiration-time {
