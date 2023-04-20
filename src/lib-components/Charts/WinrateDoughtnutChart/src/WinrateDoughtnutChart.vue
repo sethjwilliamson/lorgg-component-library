@@ -87,5 +87,3 @@ const plugins = [
   },
 ];
 </script>
-
-<style scoped></style>

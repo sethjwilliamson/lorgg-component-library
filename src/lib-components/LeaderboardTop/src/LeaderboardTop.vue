@@ -69,9 +69,6 @@ const leaderboardTop10s = computed(() => {
   display: flex;
 }
 
-.top-10 {
-}
-
 .heading:nth-child(1) {
   grid-column: 1;
 }

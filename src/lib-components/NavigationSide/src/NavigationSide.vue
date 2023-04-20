@@ -209,18 +209,18 @@ function updateScroll() {
   display: contents;
 }
 
-.content.logo .nav-item {
-  color: var(--color-primary-2);
-  position: sticky;
-  top: 0;
-}
-
 .highlight.nav-item {
   color: var(--color-gold);
 }
 
 .nav-item:hover {
   color: var(--color-primary-2);
+}
+
+.content.logo .nav-item {
+  color: var(--color-primary-2);
+  position: sticky;
+  top: 0;
 }
 
 .nav-icon-wrapper {
@@ -247,12 +247,6 @@ function updateScroll() {
   z-index: -1;
 }
 
-.content.logo .nav-item > .nav-text {
-  justify-content: center;
-  padding-left: 10px;
-  width: 150px;
-}
-
 .nav-text.settings {
   justify-content: space-between;
   padding-right: 15px;
@@ -269,6 +263,12 @@ function updateScroll() {
 .nav-item:hover > .nav-text,
 .nav-item.highlight > .nav-text {
   background-color: var(--color-background-2);
+}
+
+.content.logo .nav-item > .nav-text {
+  justify-content: center;
+  padding-left: 10px;
+  width: 150px;
 }
 
 .sign-in-container {

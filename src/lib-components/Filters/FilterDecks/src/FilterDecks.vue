@@ -40,5 +40,3 @@ function onClear() {
   }
 }
 </script>
-
-<style scoped></style>

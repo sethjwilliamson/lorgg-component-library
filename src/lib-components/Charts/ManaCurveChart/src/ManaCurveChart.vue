@@ -198,5 +198,3 @@ const options: ChartOptions<'bar'> = {
   },
 };
 </script>
-
-<style scoped></style>

@@ -134,5 +134,3 @@ addPatchAnnotations(
   props.data.map((x) => x.date),
 );
 </script>
-
-<style scoped></style>

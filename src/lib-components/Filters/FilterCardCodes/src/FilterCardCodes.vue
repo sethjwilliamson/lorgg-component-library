@@ -41,5 +41,3 @@ function filterCallback(x: CardJsonCard) {
   return x.collectible;
 }
 </script>
-
-<style scoped></style>

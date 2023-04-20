@@ -56,14 +56,16 @@ function onClear() {
 
 .title {
   color: var(--color-primary-2);
-  font: 600 var(--font-size-xs) Arial;
+  font-size: var(--font-size-xs);
+  font-weight: 600;
   margin: 0;
   text-transform: uppercase;
 }
 
 .clear {
   color: var(--color-text-disabled);
-  font: 400 var(--font-size-xs) Arial;
+  font-size: var(--font-size-xs);
+  font-weight: 400;
   margin: 0;
   cursor: default;
 }

@@ -153,13 +153,11 @@ const props: DashboardProfileProps = defineProps(dashboardProfileProps);
 
 .profile-tile {
   background-color: var(--color-background-2);
-  flex-grow: 1;
   border-radius: 15px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  flex-basis: 0;
   padding: 10px;
   gap: 10px;
   flex: 1 1 0;

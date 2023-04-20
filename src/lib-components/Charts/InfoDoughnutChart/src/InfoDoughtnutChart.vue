@@ -134,5 +134,3 @@ const options: ChartOptions<'doughnut'> = {
   },
 };
 </script>
-
-<style scoped></style>

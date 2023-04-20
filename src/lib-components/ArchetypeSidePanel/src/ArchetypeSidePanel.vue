@@ -35,5 +35,3 @@ watch(filters, () => {
   emit('update:filters', filters);
 });
 </script>
-
-<style scoped></style>

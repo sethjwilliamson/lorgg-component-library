@@ -61,5 +61,3 @@ function onClear() {
   filterArray.value.splice(0);
 }
 </script>
-
-<style scoped></style>

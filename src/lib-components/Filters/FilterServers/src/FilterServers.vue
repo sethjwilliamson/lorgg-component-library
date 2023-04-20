@@ -52,5 +52,3 @@ function onUpdate(nameRef: string) {
   filterArray.splice(index, 1);
 }
 </script>
-
-<style scoped></style>

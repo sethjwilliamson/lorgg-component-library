@@ -90,6 +90,7 @@
 </template>
 
 <script setup lang="ts">
+// TODO: Fix
 import { Instance, Props } from 'tippy.js';
 import tippy from 'tippy.js';
 import { DataJsonKeyword, CardJsonCard } from '#/jsons';
@@ -302,8 +303,8 @@ onMounted(() => {
 
 .card-info-title {
   color: var(--color-primary-2);
-  margin-bottom: 5px;
   margin: 0;
+  margin-bottom: 5px;
 }
 
 .card-info-text {

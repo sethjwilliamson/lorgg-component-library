@@ -157,5 +157,3 @@ ${t('general.winrate')}: ${localeNumber((wins / sum) * 100, 1, 3)}%`;
   },
 };
 </script>
-
-<style scoped></style>
