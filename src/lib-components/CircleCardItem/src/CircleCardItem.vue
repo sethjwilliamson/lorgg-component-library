@@ -84,13 +84,14 @@ onMounted(() => {
 }
 
 .circle-card-link {
-  height: calc(100% - 4px);
-  width: calc(100% - 4px);
+  height: 100%;
+  width: 100%;
 }
 
 .circle-card-img {
   border-radius: 50%;
-  border: 2px var(--color-primary-2) solid;
+  box-sizing: border-box;
+  border: var(--circle-card-item-border-size, 2px) var(--color-primary-2) solid;
   height: inherit;
   width: inherit;
 }
