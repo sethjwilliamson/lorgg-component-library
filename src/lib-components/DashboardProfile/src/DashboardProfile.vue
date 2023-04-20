@@ -127,7 +127,7 @@ const props: DashboardProfileProps = defineProps(dashboardProfileProps);
 }
 
 .edit-banner:hover {
-  color: var(--color-0)
+  color: var(--color-0);
 }
 
 .profile-name {
