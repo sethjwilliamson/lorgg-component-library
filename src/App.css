@@ -13,21 +13,18 @@
   --color-4-rgb: 66, 67, 92;
   --color-text-disabled: #94989e;
   --color-text-disabled-rgb: 148, 152, 158;
-
   --color-background-0: #0f131a;
   --color-background-0-rgb: 15, 19, 26;
   --color-background-1: #181e2a;
   --color-background-1-rgb: 24, 30, 42;
   --color-background-2: #1d2431;
   --color-background-2-rgb: 29, 36, 49;
-
   --color-primary: #0067ee;
   --color-primary-rgb: 0, 103, 238;
   --color-gold: #ffc53e;
   --color-gold-rgb: 255, 197, 62;
-  --color-primary-2: #ffffff;
+  --color-primary-2: #fff;
   --color-primary-2-rgb: 255, 255, 255;
-
   --color-execellent: var(--color-gold);
   --color-execellent-rgb: var(--color-gold-rgb);
   --color-good: #00adff;
@@ -40,64 +37,56 @@
   --color-bad-rgb: 255, 81, 83;
   --color-median: var(--color-primary-2);
   --color-median-rgb: var(--color-primary-2-rgb);
-
-  --color-Targon: #4d38b0;
-  --color-Targon-rgb: 77, 56, 176;
-  --color-Noxus: #962d27;
-  --color-Noxus-rgb: 150, 45, 39;
-  --color-Demacia: #b9ac98;
-  --color-Demacia-rgb: 185, 172, 152;
-  --color-Freljord: #4a7dc3;
-  --color-Freljord-rgb: 74, 125, 195;
-  --color-ShadowIsles: #2a725d;
-  --color-ShadowIsles-rgb: 42, 114, 93;
-  --color-Ionia: #c45987;
-  --color-Ionia-rgb: 196, 89, 135;
-  --color-Shurima: #c4ae3d;
-  --color-Shurima-rgb: 196, 174, 61;
-  --color-Bilgewater: #b05925;
-  --color-Bilgewater-rgb: 176, 89, 37;
-  --color-PiltoverZaun: #fd9061;
-  --color-PiltoverZaun-rgb: 253, 144, 97;
-  --color-BandleCity: #98a711;
-  --color-BandleCity-rgb: 152, 167, 17;
-  --color-Runeterra: #fff;
-  --color-Runeterra-rgb: 255, 255, 255;
-
+  --color-Targon: #4d38b0; /* stylelint-disable-line */
+  --color-Targon-rgb: 77, 56, 176; /* stylelint-disable-line */
+  --color-Noxus: #962d27; /* stylelint-disable-line */
+  --color-Noxus-rgb: 150, 45, 39; /* stylelint-disable-line */
+  --color-Demacia: #b9ac98; /* stylelint-disable-line */
+  --color-Demacia-rgb: 185, 172, 152; /* stylelint-disable-line */
+  --color-Freljord: #4a7dc3; /* stylelint-disable-line */
+  --color-Freljord-rgb: 74, 125, 195; /* stylelint-disable-line */
+  --color-ShadowIsles: #2a725d; /* stylelint-disable-line */
+  --color-ShadowIsles-rgb: 42, 114, 93; /* stylelint-disable-line */
+  --color-Ionia: #c45987; /* stylelint-disable-line */
+  --color-Ionia-rgb: 196, 89, 135; /* stylelint-disable-line */
+  --color-Shurima: #c4ae3d; /* stylelint-disable-line */
+  --color-Shurima-rgb: 196, 174, 61; /* stylelint-disable-line */
+  --color-Bilgewater: #b05925; /* stylelint-disable-line */
+  --color-Bilgewater-rgb: 176, 89, 37; /* stylelint-disable-line */
+  --color-PiltoverZaun: #fd9061; /* stylelint-disable-line */
+  --color-PiltoverZaun-rgb: 253, 144, 97; /* stylelint-disable-line */
+  --color-BandleCity: #98a711; /* stylelint-disable-line */
+  --color-BandleCity-rgb: 152, 167, 17; /* stylelint-disable-line */
+  --color-Runeterra: #fff; /* stylelint-disable-line */
+  --color-Runeterra-rgb: 255, 255, 255; /* stylelint-disable-line */
   --box-border-radius: 20px;
   --border-radius-s: 10px;
   --border-radius-m: 15px;
   --border-radius-l: 20px;
-
   --input-height: 45px;
-
   --font-size-xs: 12px;
   --font-size-s: 14px;
   --font-size-m: 16px;
   --font-size-l: 20px;
-
   --font-size-heading: 45px;
   --font-size-heading-secondary: 30px;
-
   --font-weight-light: 100;
   --font-weight-normal: 500;
   --font-weight-bold: 700;
   --font-weight-heavy: 900;
-
   --transition-1: cubic-bezier(0.75, -0.5, 0.25, 1.5);
   --transition-2: cubic-bezier(0, 0, 0.7, 1.7);
   --transition-3: cubic-bezier(0, 0, 0.2, 1);
-
   --spacing-1: 5px;
   --spacing-2: 10px;
   --spacing-3: 15px;
-
   --card-item-aspect-ratio-w: 643;
   --card-item-aspect-ratio-h: 969;
   --card-item-aspect-ratio: var(--card-item-aspect-ratio-w) /
     var(--card-item-aspect-ratio-h);
 
   /* Vue Multiselect */
+
   /* TODO: Improve how it looks */
   --ms-font-size: 1rem;
   --ms-line-height: 1.375;
@@ -117,15 +106,16 @@
   --ms-caret-color: var(--color-0);
   --ms-clear-color: var(--color-0);
   --ms-clear-color-hover: var(--color-primary-2);
-
   --ms-tag-font-size: var(--font-size-m);
   --ms-tag-line-height: var(--font-size-m);
   --ms-tag-font-weight: var(--font-weight-normal);
   --ms-tag-bg: var(--color-0);
   --ms-tag-bg-disabled: var(--color-bad);
+
   /* --ms-tag-color: #FFFFFF;
   --ms-tag-color-disabled: #FFFFFF; */
   --ms-tag-radius: 20px;
+
   /* --ms-tag-py: 0.125rem;
   --ms-tag-px: 0.5rem;
   --ms-tag-my: 0.25rem;
@@ -149,6 +139,7 @@
   --ms-group-label-color: #374151; */
   --ms-group-label-bg-pointed: var(--color-1);
   --ms-group-label-color-pointed: var(--color-primary-2);
+
   /* --ms-group-label-bg-disabled: #F3F4F6;
   --ms-group-label-color-disabled: #D1D5DB;
   --ms-group-label-bg-selected: #059669;
@@ -162,6 +153,7 @@
   --ms-option-line-height: 1.375; */
   --ms-option-bg-pointed: var(--color-0);
   --ms-option-color-pointed: var(--color-primary-2);
+
   /* --ms-option-bg-selected: #10B981;
   --ms-option-color-selected: #FFFFFF;
   --ms-option-bg-disabled: #FFFFFF;
@@ -186,7 +178,7 @@
 }
 
 .disabled {
-  opacity: 25%;
+  opacity: 0.25;
 }
 
 .clickable {
@@ -219,6 +211,7 @@
 
 .heading-cell {
   --index: 1;
+
   position: sticky;
   top: 0;
   z-index: 1;
@@ -240,11 +233,8 @@
 
 .heading-background-absolute {
   background-color: var(--background-color);
-  bottom: -10px;
-  left: 0;
+  inset: 0 0 -10px;
   position: absolute;
-  right: 0;
-  top: 0;
   z-index: -1;
 }
 
@@ -252,7 +242,7 @@
   align-items: center;
   color: var(--color-primary-2);
   display: flex;
-  filter: drop-shadow(0px 0px 2px black);
+  filter: drop-shadow(0 0 2px black);
   font-weight: 600;
   grid-row: var(--index);
   justify-content: center;
@@ -271,45 +261,59 @@
 .table .column-content:nth-child(1) {
   grid-column: 1;
 }
+
 .table .column-content:nth-child(2) {
   grid-column: 2;
 }
+
 .table .column-content:nth-child(3) {
   grid-column: 3;
 }
+
 .table .column-content:nth-child(4) {
   grid-column: 4;
 }
+
 .table .column-content:nth-child(5) {
   grid-column: 5;
 }
+
 .table .column-content:nth-child(6) {
   grid-column: 6;
 }
+
 .table .column-content:nth-child(7) {
   grid-column: 7;
 }
+
 .table .column-content:nth-child(8) {
   grid-column: 8;
 }
+
 .table .column-content:nth-child(9) {
   grid-column: 9;
 }
+
 .table .column-content:nth-child(10) {
   grid-column: 10;
 }
+
 .table .column-content:nth-child(11) {
   grid-column: 11;
 }
+
 .table .column-content:nth-child(12) {
   grid-column: 12;
 }
+
 .table .column-content:nth-child(13) {
   grid-column: 13;
 }
+
 .table .column-content:nth-child(14) {
   grid-column: 14;
 }
+
 .table .column-content:nth-child(15) {
   grid-column: 15;
 }
@@ -336,7 +340,7 @@
   background-image: var(--background-image);
   background-position: center;
   background-size: cover;
-  opacity: 40%;
+  opacity: 0.4;
   position: absolute;
   inset: 0;
 }
@@ -364,26 +368,29 @@
 .change.good {
   color: var(--color-good);
 }
+
 .change.bad {
   color: var(--color-bad);
 }
+
 .change.good > .icon {
   transform: rotate(180deg);
 }
+
 .change.neutral > .icon {
   display: none;
 }
 
 .background-card {
   --overlap-margin: 100px;
+
   background-image: var(--background-image);
   background-size: cover;
   background-position: center 25%;
-  opacity: 40%;
+  opacity: 0.4;
   height: 100%;
   margin-left: calc(-1 * var(--overlap-margin));
   margin-right: calc(-1 * var(--overlap-margin));
-
   -webkit-mask-image: linear-gradient(
     to right,
     transparent 0%,
@@ -458,8 +465,13 @@
   background-size: cover;
   content: '';
   inset: 0;
-  opacity: 30%;
+  opacity: 0.3;
   position: absolute;
+}
+
+.tippy-content {
+  text-align: center;
+  white-space: pre-line;
 }
 
 .tippy-box:first-child > .tippy-content {
@@ -471,18 +483,13 @@
   border: none;
 }
 
-.tippy-box[role='card-image'] > .tippy-arrow,
-.tippy-box[role='card-info'] > .tippy-arrow {
-  display: none;
-}
-
 .tippy-box > .tippy-arrow {
   color: var(--color-2);
 }
 
-.tippy-content {
-  text-align: center;
-  white-space: pre-line;
+.tippy-box[role='card-image'] > .tippy-arrow,
+.tippy-box[role='card-info'] > .tippy-arrow {
+  display: none;
 }
 
 .multiselect-tags-search {
@@ -493,7 +500,7 @@
 .label-icon {
   height: 25px;
   max-width: 25px;
-  filter: drop-shadow(0px 0px 2px black);
+  filter: drop-shadow(0 0 2px black);
 }
 
 .multiselect-option {
@@ -586,7 +593,7 @@
   grid-gap: 10px;
 }
 
-@keyframes slideIn {
+@keyframes slide-in {
   from {
     transform: translateX(-100%);
   }

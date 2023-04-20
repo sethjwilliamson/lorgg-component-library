@@ -7,10 +7,10 @@
   width: 40px;
 }
 
-.swiper-button-next:after,
-.swiper-button-prev:after {
+.swiper-button-next::after,
+.swiper-button-prev::after {
   color: var(--color-gold);
-  font-family: swiper-icons;
+  font-family: swiper-icons; /* stylelint-disable-line */
   font-size: 25px;
   font-variant: initial;
   letter-spacing: 0;

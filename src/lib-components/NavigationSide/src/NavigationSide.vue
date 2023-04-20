@@ -165,7 +165,7 @@ function updateScroll() {
 }
 
 .navigation-side.expanded {
-  animation: 0.3s slideIn;
+  animation: 0.3s slide-in;
 }
 
 .content {
