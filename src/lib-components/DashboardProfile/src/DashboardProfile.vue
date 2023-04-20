@@ -126,6 +126,10 @@ const props: DashboardProfileProps = defineProps(dashboardProfileProps);
   filter: drop-shadow(0px 0px 2px black);
 }
 
+.edit-banner:hover {
+  color: var(--color-0)
+}
+
 .profile-name {
   color: var(--color-primary-2);
   font-size: 34px;
